@@ -1,0 +1,191 @@
+import './style.css';
+import React from 'react'
+import {Selected, Checkbox, Radio, RadioGroup} from '../../Utils/MTUI/MTUI'
+import mtuiMixins from '../../Utils/MTUI/Mixins/mtuiMixins'
+import conf from '../Conf/Conf'
+
+// 类
+const Froms = React.createClass({
+  mixins: [mtuiMixins],
+  getInitialState: function(){
+  	return {
+  		checkedVal : '女'
+  	}
+  },
+  handleClick: function(e){ //获取 checkbox 的值
+  	var arr = this.getCheckboxGroupVal($("#group-checkbox"));
+  	console.log("==>",arr);
+  }, 
+  handleClickRadio: function(e){ //获取radio的值
+  	console.log($(":radio:checked").val());
+  },
+  handleRadioChange: function(e) { //重新选择radio后执行
+  	//console.log("help里面的change");
+  	console.log(e.target.value);
+  	this.setState({
+  		checkedVal : e.target.value
+  	});
+  },
+  componentDidMount: function() { //ajax请求数据后，重新渲染页面
+     setTimeout(function(){
+     	console.log("重新设置了组的选项为中性~");
+      if(this.isMounted()){
+     	  this.setState({
+     		  checkedVal : '中性'
+     	  });
+      }
+     }.bind(this),2000);
+  },
+  render: function() { 
+
+    //下拉选择
+    var selectProp = {
+      width : '160px',
+      className :'index-selected',
+      value : 2,
+      placeholder : "高级选项",
+      name : 'testselect',
+      id : 'indexSelected',
+      data : [
+        {value: 1, label: '金融业'},
+        {value: 2, label: '房地产业'},
+        {value: 3, label: '卫生'},
+        {value: 4, label: '教育'},
+        {value: 5, label: '体育和娱乐业'},
+        {value: 6, label: '其他'}
+      ], 
+      onChange: function(value) {
+        console.log('当前值为：', value);
+      }
+    }
+
+    return (
+    	<div className={conf.pageAnimate+" contents"}>
+    		<h1>自定义表单 </h1>
+
+        <div className="mt-page-content">
+          <h3 className="mt-padding">input</h3>
+          <div className="mt-g">
+              <div className="mt-g-4">
+                  <label>输入框:</label>
+                  <div className="mt-input">
+                    <input type="text" placeholder="请输入用户名"/>
+                  </div>
+                 
+                  <br/><br/>
+                
+                  <label>block输入框:</label>
+                  <div className="mt-input-block">
+                    <input type="text" />
+                  </div>
+                
+                  <br/><br/>
+
+                  <label>图标合并:</label>
+                  <div className="mt-input mt-icon-input">
+                    <input type="text"/>
+                    <a href="javascript:;" className="mt-iconbtn"><i className="iconfont icon-sousuo1"></i></a>
+                  </div>
+                
+                  <br/><br/>
+
+                  <label>block图标合并:</label>
+                  <div className="mt-input-block mt-icon-input">
+                    <input type="text"/>
+                    <a href="javascript:;" className="mt-iconbtn"><i className="iconfont icon-sousuo1"></i></a>
+                  </div>
+
+                  <br/><br/>
+                  <label>圆角输入框:</label>
+                  <div className="mt-input">
+                    <input type="text" className="mt-round"/>
+                  </div>
+
+                  <br/><br/>
+                  <label>block圆角输入框:</label>
+                  <div className="mt-input-block">
+                    <input type="text" className="mt-round"/>
+                  </div>
+
+                  <br/><br/>
+                  <label>block圆角输入框图标合并:</label>
+                  <div className="mt-input-block mt-icon-input">
+                    <input type="text" className="mt-round"/>
+                    <a href="javascript:;" className="mt-iconbtn"><i className="iconfont icon-sousuo1"></i></a>
+                  </div>
+              </div>
+              <div className="mt-g-4">
+                  <label>密码输入框:</label>
+                  <div className="mt-input">
+                    <input type="password" placeholder="请输入密码"/>
+                  </div>
+
+                  <br/><br/>
+                  <label>输入框图标合并:</label>
+                  <div className="mt-input mt-icon-inputr">
+                    <input type="text" className=""/>
+                    <a href="javascript:;" className="mt-iconbtn"><i className="iconfont icon-yonghu"></i></a>
+                  </div>
+
+                  <br/><br/>
+                  <label>密码框图标合并:</label>
+                  <div className="mt-input mt-icon-inputr">
+                    <input type="password" className=""/>
+                    <a href="javascript:;" className="mt-iconbtn"><i className="iconfont icon-mima"></i></a>
+                  </div>
+
+                  <br/><br/>
+                  <label>密码框图标合并disabled:</label>
+                  <div className="mt-input mt-icon-inputr">
+                    <input disabled="disabled" type="password" className=""/>
+                    <a href="javascript:;" className="mt-iconbtn"><i className="iconfont icon-mima"></i></a>
+                  </div>
+              </div> 
+          </div>
+        </div>
+
+        <div className="mt-page-content">
+          <h3 className="mt-padding">下拉选择框：</h3>
+          <div className="mt-g">
+            <div className="mt-g-12">
+              <Selected {...selectProp}/>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-page-content">
+          <h3 className="mt-padding">checkbox切换：</h3>
+          <div className="mt-g">
+            <div className="mt-g-12">
+                <div id="group-checkbox"> 
+                  <Checkbox onClick={this.handleClick} value="1" label="选中" checked/>
+                  <Checkbox onClick={this.handleClick} value="2" label="未选中"/>
+                  <Checkbox value="3" label="禁用选中" disabled checked/>
+                  <Checkbox value="4" label="禁用未选中" disabled/>
+                  mixins 中的 getCheckboxGroupVal() 获取checkbox值：<a href="javascript:;" onClick={this.handleClick}>获取checkbox值</a>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-page-content">
+          <h3 className="mt-padding">radio选择：</h3>
+          <div className="mt-g">
+            <div className="mt-g-12">
+                <RadioGroup radioChange={this.handleRadioChange} defaultValue={this.state.checkedVal}>
+                  <Radio name="sex" value="男" label="男"/>
+                  <Radio name="sex" value="女" label="女"/>
+                  <Radio name="sex" value="中性" label="中性" disabled/> 
+                  <Radio name="sex" value="无" label="无" disabled/>
+                  <a href="javascript:;" onClick={this.handleClickRadio}>获取radio值</a>
+                </RadioGroup>
+            </div>
+          </div>
+        </div>
+
+    	</div>
+    );
+  }
+});
+//帮助中心
+module.exports = Froms;
