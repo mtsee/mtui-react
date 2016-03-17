@@ -52,7 +52,7 @@ var DateInput = React.createClass({
 
 	//点击input按钮后
 	handleClick: function(e){
-		$(".mt-date-yearMonth").show().siblings().hide();
+		$(".mt-date-yearMonth").show().siblings('div').hide();
 		$(".mt-date-months").hide().removeClass('mt-date-animate');
 		$(".mt-date-years").hide().removeClass('mt-date-animate');
 		if(e.target.value != ""){
