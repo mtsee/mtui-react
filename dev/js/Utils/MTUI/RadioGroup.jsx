@@ -41,7 +41,6 @@ const RadioGroup = React.createClass({
 	    		arr.push(index);
 	    	}
 		}.bind(this)); 
-		//this.state.childrens = arr;
 		return arr;
 	},
 	render : function(){
