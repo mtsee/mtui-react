@@ -1,7 +1,7 @@
 import './style.css';
 import React from 'react'
-import {Selected, Checkbox, Radio, RadioGroup} from '../../Utils/MTUI/MTUI'
-import mtuiMixins from '../../Utils/MTUI/Mixins/mtuiMixins'
+import {Selected, Checkbox, Radio, RadioGroup} from '../../MTUI/index'
+import mtuiMixins from '../../MTUI/Mixins/mtuiMixins'
 import conf from '../Conf/Conf'
 
 // 类
@@ -28,7 +28,7 @@ const Froms = React.createClass({
   },
   componentDidMount: function() { //ajax请求数据后，重新渲染页面
      setTimeout(function(){
-     	console.log("重新设置了组的选项为中性~");
+     	//console.log("重新设置了组的选项为中性~");
       if(this.isMounted()){
      	  this.setState({
      		  checkedVal : '中性'

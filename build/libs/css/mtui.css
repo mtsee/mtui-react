@@ -1,53 +1,53 @@
 /*格式化，UI*/
 /* ---------------CSS 格式化------------------------ */
-@font-face {font-family: 'iconfont'; 
-    src: url('../iconfont/iconfont.eot'); /* IE9*/
-    src: url('../iconfont/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-    url('../iconfont/iconfont.woff') format('woff'), /* chrome、firefox */
-    url('../iconfont/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-    url('../iconfont/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
-}
-.iconfont {
-  font-family:"iconfont" !important;
-  font-size:16px;
-  font-style:normal;
-  -webkit-font-smoothing: antialiased;
-  -webkit-text-stroke-width: 0.2px;
-  -moz-osx-font-smoothing: grayscale;
-}
-.icon-chajian:before { content: "\e60a"; }
-.icon-sousuo1:before { content: "\e600"; }
-.icon-tupian:before { content: "\e60e"; }
-.icon-duigou:before { content: "\e611"; }
-.icon-mima:before { content: "\e60f"; }
-.icon-shang:before { content: "\e601"; }
-.icon-xia:before { content: "\e602"; }
-.icon-xianshiqi:before { content: "\e619"; }
-.icon-yonghu:before { content: "\e610"; }
-.icon-error:before { content: "\e617"; }
-.icon-icon46:before { content: "\e613"; }
-.icon-uibutton:before { content: "\e60b"; }
-.icon-fenping:before { content: "\e60c"; }
-.icon-shangchuan:before { content: "\e615"; }
-.icon-iconfontkehujigongyingshangguanli:before { content: "\e61a"; }
-.icon-xiao75:before { content: "\e603"; }
-.icon-xiao76:before { content: "\e604"; }
-.icon-gerenzhongxin:before { content: "\e609"; }
-.icon-zidongpeizhi:before { content: "\e61b"; }
-.icon-zhuye:before { content: "\e605"; }
-.icon-chongzhi:before { content: "\e61c"; }
-.icon-iconfontbiaodandingyi:before { content: "\e60d"; }
-.icon-tixing:before { content: "\e606"; }
-.icon-gmrili:before { content: "\e614"; }
-.icon-iconfontbofang:before { content: "\e607"; }
-.icon-caidan:before { content: "\e608"; }
-.icon-radio:before { content: "\e612"; }
-.icon-shanchu:before { content: "\e618"; }
-.icon-iconbiaoge:before { content: "\e616"; }
-.icon-duduyinleappicon1401:before { content: "\e61f"; }
-.icon-duduyinleappicon0501:before { content: "\e620"; }
-.icon-kehuguanli:before { content: "\e61d"; }
-.icon-yuangongguanli:before { content: "\e61e"; }
+// @font-face {font-family: 'iconfont'; 
+//     src: url('../iconfont/iconfont.eot'); /* IE9*/
+//     src: url('../iconfont/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+//     url('../iconfont/iconfont.woff') format('woff'), /* chrome、firefox */
+//     url('../iconfont/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+//     url('../iconfont/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+// }
+// .iconfont {
+//   font-family:"iconfont" !important;
+//   font-size:16px;
+//   font-style:normal;
+//   -webkit-font-smoothing: antialiased;
+//   -webkit-text-stroke-width: 0.2px;
+//   -moz-osx-font-smoothing: grayscale;
+// }
+// .icon-chajian:before { content: "\e60a"; }
+// .icon-sousuo1:before { content: "\e600"; }
+// .icon-tupian:before { content: "\e60e"; }
+// .icon-duigou:before { content: "\e611"; }
+// .icon-mima:before { content: "\e60f"; }
+// .icon-shang:before { content: "\e601"; }
+// .icon-xia:before { content: "\e602"; }
+// .icon-xianshiqi:before { content: "\e619"; }
+// .icon-yonghu:before { content: "\e610"; }
+// .icon-error:before { content: "\e617"; }
+// .icon-icon46:before { content: "\e613"; }
+// .icon-uibutton:before { content: "\e60b"; }
+// .icon-fenping:before { content: "\e60c"; }
+// .icon-shangchuan:before { content: "\e615"; }
+// .icon-iconfontkehujigongyingshangguanli:before { content: "\e61a"; }
+// .icon-xiao75:before { content: "\e603"; }
+// .icon-xiao76:before { content: "\e604"; }
+// .icon-gerenzhongxin:before { content: "\e609"; }
+// .icon-zidongpeizhi:before { content: "\e61b"; }
+// .icon-zhuye:before { content: "\e605"; }
+// .icon-chongzhi:before { content: "\e61c"; }
+// .icon-iconfontbiaodandingyi:before { content: "\e60d"; }
+// .icon-tixing:before { content: "\e606"; }
+// .icon-gmrili:before { content: "\e614"; }
+// .icon-iconfontbofang:before { content: "\e607"; }
+// .icon-caidan:before { content: "\e608"; }
+// .icon-radio:before { content: "\e612"; }
+// .icon-shanchu:before { content: "\e618"; }
+// .icon-iconbiaoge:before { content: "\e616"; }
+// .icon-duduyinleappicon1401:before { content: "\e61f"; }
+// .icon-duduyinleappicon0501:before { content: "\e620"; }
+// .icon-kehuguanli:before { content: "\e61d"; }
+// .icon-yuangongguanli:before { content: "\e61e"; }
 
 *:not(input,textarea) {
   margin: 0;
@@ -243,6 +243,9 @@ input[type=password][disabled] + .mt-iconbtn {
   border-radius: 10px;
   background-color: #ccc;
 }
+
+#MTUI_MODAL,#MTUI_POPUP{position: absolute; top: 0; left: 0; height: 0; width: 0; z-index: 99999999;}
+#MTUI_BG {position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.3); z-index: 9999; display: none; }
 /*馒头UI grid 24多栏栅格 (A*n)-i=W i=4 n=24 A=4 */
 .mt-g {
   position: relative;
@@ -1673,10 +1676,10 @@ body {
   content: "\e601";
 }
 /*模态弹窗*/
+/*模态弹窗*/
 .mt-modal-dialog {
-  padding: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  position: absolute;
+  position: fixed;
   background: #fff;
   display: none;
   -webkit-animation-name: bounceInDown;
@@ -1685,26 +1688,33 @@ body {
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
+  z-index: 10000;
 }
 .mt-modal-dialog .mt-modal-close {
   position: absolute;
-  top: 5px;
-  right: 5px;
+  top: 10px;
+  right: 10px;
   color: #333;
   transition: 0.3s;
+  z-index: 100;
 }
 .mt-modal-dialog .mt-modal-close:hover {
   transform: rotate(180deg);
 }
-#mt-modal-bg {
-  position: fixed;
+.mt-modal-dialog .mt-dialog-title {
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: #fff;
+  background: #4a89dc;
+  position: relative;
+}
+.mt-modal-dialog .mt-dialog-title .mt-modal-close {
   top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 9999;
-  display: none;
+  color: #fff;
+}
+.mt-modal-dialog .mt-dialog-content {
+  padding: 10px;
 }
 .mt-popup {
   background: #fff;
@@ -1716,6 +1726,8 @@ body {
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
+  position: absolute;
+  z-index: 1000;
 }
 .mt-popup .mt-btn-grey,
 .mt-popup .mt-btn-blue {
@@ -1748,23 +1760,16 @@ body {
   width: 30px;
   height: 30px;
 }
-.mt-popup .mt-popup-ico.success {
-  background: url(../images/success.png);
-}
-.mt-popup .mt-popup-ico.warning {
-  background: url(../images/warning.png);
-}
-.mt-popup .mt-popup-ico.danger {
-  background: url(../images/danger.png);
-}
-.mt-popup .mt-popup-ico.loading {
-  background: url(../images/loading.gif);
-}
 .mt-popup .mt-popup-btn-close {
   position: absolute;
   top: 5px;
   right: 10px;
   color: #fff;
+  transition:0.3s;
+}
+.mt-popup .mt-popup-btn-close:hover {
+  top: 7px;
+  transform: rotate(180deg);
 }
 .mt-popup .mt-popup-btn-close .iconfont {
   font-size: 12px;
