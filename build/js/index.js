@@ -44,15 +44,15 @@ webpackJsonp([1],{
 
 	var _Forms2 = _interopRequireDefault(_Forms);
 
-	var _Plus = __webpack_require__(251);
+	var _Plus = __webpack_require__(253);
 
 	var _Plus2 = _interopRequireDefault(_Plus);
 
-	var _Index7 = __webpack_require__(252);
+	var _Index7 = __webpack_require__(254);
 
 	var _Index8 = _interopRequireDefault(_Index7);
 
-	var _App = __webpack_require__(256);
+	var _App = __webpack_require__(258);
 
 	var _App2 = _interopRequireDefault(_App);
 
@@ -952,7 +952,7 @@ webpackJsonp([1],{
 
 	var _index = __webpack_require__(238);
 
-	var _mtuiMixins = __webpack_require__(246);
+	var _mtuiMixins = __webpack_require__(247);
 
 	var _mtuiMixins2 = _interopRequireDefault(_mtuiMixins);
 
@@ -1074,7 +1074,7 @@ webpackJsonp([1],{
 	              _react2.default.createElement(
 	                'a',
 	                { href: 'javascript:;', className: 'mt-iconbtn' },
-	                _react2.default.createElement('i', { className: 'iconfont icon-sousuo1' })
+	                _react2.default.createElement('i', { className: 'iconfont icon-search' })
 	              )
 	            ),
 	            _react2.default.createElement('br', null),
@@ -1091,7 +1091,7 @@ webpackJsonp([1],{
 	              _react2.default.createElement(
 	                'a',
 	                { href: 'javascript:;', className: 'mt-iconbtn' },
-	                _react2.default.createElement('i', { className: 'iconfont icon-sousuo1' })
+	                _react2.default.createElement('i', { className: 'iconfont icon-search' })
 	              )
 	            ),
 	            _react2.default.createElement('br', null),
@@ -1163,7 +1163,7 @@ webpackJsonp([1],{
 	              _react2.default.createElement(
 	                'a',
 	                { href: 'javascript:;', className: 'mt-iconbtn' },
-	                _react2.default.createElement('i', { className: 'iconfont icon-yonghu' })
+	                _react2.default.createElement('i', { className: 'iconfont icon-user' })
 	              )
 	            ),
 	            _react2.default.createElement('br', null),
@@ -1180,7 +1180,7 @@ webpackJsonp([1],{
 	              _react2.default.createElement(
 	                'a',
 	                { href: 'javascript:;', className: 'mt-iconbtn' },
-	                _react2.default.createElement('i', { className: 'iconfont icon-mima' })
+	                _react2.default.createElement('i', { className: 'iconfont icon-password' })
 	              )
 	            ),
 	            _react2.default.createElement('br', null),
@@ -1197,7 +1197,7 @@ webpackJsonp([1],{
 	              _react2.default.createElement(
 	                'a',
 	                { href: 'javascript:;', className: 'mt-iconbtn' },
-	                _react2.default.createElement('i', { className: 'iconfont icon-mima' })
+	                _react2.default.createElement('i', { className: 'iconfont icon-password' })
 	              )
 	            )
 	          )
@@ -1296,9 +1296,9 @@ webpackJsonp([1],{
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-		value: true
+	    value: true
 	});
-	exports.Popup = exports.ModalShow = exports.Modal = exports.DateInput = exports.RadioGroup = exports.Radio = exports.Checkbox = exports.Selected = exports.Tabs = undefined;
+	exports.PageList = exports.Popup = exports.ModalShow = exports.Modal = exports.DateInput = exports.RadioGroup = exports.Radio = exports.Checkbox = exports.Selected = exports.Tabs = undefined;
 
 	var _react = __webpack_require__(1);
 
@@ -1308,35 +1308,44 @@ webpackJsonp([1],{
 
 	var _DateInput2 = _interopRequireDefault(_DateInput);
 
-	var _Tabs = __webpack_require__(243);
+	var _Tabs = __webpack_require__(244);
 
 	var _Tabs2 = _interopRequireDefault(_Tabs);
 
-	var _Selected = __webpack_require__(244);
+	var _Selected = __webpack_require__(245);
 
 	var _Selected2 = _interopRequireDefault(_Selected);
 
-	var _ModalShow = __webpack_require__(245);
+	var _ModalShow = __webpack_require__(246);
 
 	var _ModalShow2 = _interopRequireDefault(_ModalShow);
 
-	var _Modal = __webpack_require__(247);
+	var _Modal = __webpack_require__(248);
 
 	var _Modal2 = _interopRequireDefault(_Modal);
 
-	var _Popup = __webpack_require__(248);
+	var _Popup = __webpack_require__(249);
 
 	var _Popup2 = _interopRequireDefault(_Popup);
 
-	var _Checkbox = __webpack_require__(249);
+	var _Checkbox = __webpack_require__(250);
 
 	var _Checkbox2 = _interopRequireDefault(_Checkbox);
 
-	var _RadioGroup = __webpack_require__(250);
+	var _PageList = __webpack_require__(251);
+
+	var _PageList2 = _interopRequireDefault(_PageList);
+
+	var _RadioGroup = __webpack_require__(252);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	//配置信息
+	/**
+	* MTUI
+	* @author : Mantou
+	* @date : 2016-03-01
+	*/
 	exports.Tabs = _Tabs2.default;
 	exports. //tabs切换
 	Selected = _Selected2.default;
@@ -1353,98 +1362,346 @@ webpackJsonp([1],{
 	exports. //modal弹窗
 	ModalShow = _ModalShow2.default;
 	exports. //modal弹窗
-	Popup //提示框
-	 = _Popup2.default; /**
-	                    * MTUI
-	                    * @author : Mantou
-	                    * @date : 2016-03-01
-	                    */
+	Popup = _Popup2.default;
+	exports. //提示框
+	PageList //页面列表
+	 = _PageList2.default;
+
+
+	/**
+	* 分页插件
+	*/
+	(function ($) {
+	    $.fn.pagelist = function (setting) {
+	        var defaults = {
+	            nowpage: 1, //当前第几页
+	            count: 80, //总共多少条数据
+	            maxcount: 10, //每页多少条
+	            url: 'javascript:;',
+	            callback: false
+	        };
+
+	        var shtml = '<div class="mt-pagelist-left">\
+	                        <div class="mt-select" style="width: 90px;">\
+	                            <div class="mt-select-title" data-val="10">10条/页</div>\
+	                            <i class="iconfont icon-xia"></i>\
+	                            <ul class="mt-select-box">\
+	                                <li class="option" data-val="10">10条/页</li>\
+	                                <li class="option" data-val="20">20条/页</li>\
+	                                <li class="option" data-val="50">50条/页</li>\
+	                            </ul>\
+	                        </div>\
+	                        <span>共 <em class="mt-pagelist-count">0</em> 页 /  <em class="mt-pagelist-total">0</em> 条</span>\
+	                    </div>\
+	                    <div class="mt-pagelist-right">\
+	                        <a href="javascript:;" class="mt-btn-grey ink-reaction mt-pagelist-first">首页</a>\
+	                        <a href="javascript:;" class="mt-btn-grey ink-reaction mt-pagelist-prev">上一页</a>\
+	                        <a href="javascript:;" class="mt-btn-grey ink-reaction mt-pagelist-btn mt-pagelist-runprev"><i class="iconfont icon-duduyinleappicon0501"></i></a>\
+	                        <div class="mt-pagelist-content">\
+	                            <ul class="mt-pagelist-page"></ul>\
+	                        </div>\
+	                        <a href="javascript:;" class="mt-btn-grey ink-reaction mt-pagelist-btn mt-pagelist-runnext"><i class="iconfont icon-duduyinleappicon1401"></i></a>\
+	                        <a href="javascript:;" class="mt-btn-grey ink-reaction mt-pagelist-next">下一页</a>\
+	                        <a href="javascript:;" class="mt-btn-grey ink-reaction mt-pagelist-end">尾页</a>\
+	                        <span class="mt-pagelist-input">\
+	                            第<input class="mt-input" type="text">页\
+	                        </span>\
+	                        <a href="javascript:;" class="mt-btn-grey ink-reaction mt-pagelist-btn">跳转</a>\
+	                    </div>';
+
+	        //设置HTML
+	        $(this).addClass('mt-pagelist clearfix').html(shtml);
+	        mtui.select();
+
+	        if ($(this).length > 1) {
+	            console.log("分页插件对象必须唯一！请使用ID");
+	            return;
+	        }
+	        var setting = $.extend(defaults, setting);
+	        var liWid = 40; //每个li标签的宽度
+	        var speed = 300;
+	        var showPage = 7;
+	        var $this = $(this);
+	        var $ul = $this.find(".mt-pagelist-page");
+	        var pagecount = null;
+
+	        var init = function init() {
+	            pagecount = Math.ceil(setting.count / setting.maxcount); //计算有多少页
+	            //设置mt-pagelist-count
+	            $this.find(".mt-pagelist-count").html(pagecount);
+	            $this.find(".mt-pagelist-total").html(setting.count);
+
+	            //初始化select
+	            $this.find(".mt-select-title").html(setting.maxcount + '条/页');
+
+	            if (pagecount <= showPage) {
+	                $this.find(".mt-pagelist-runnext").hide();
+	                $this.find(".mt-pagelist-runprev").hide();
+	                $ul.css('left', 0);
+	            } else {
+	                $this.find(".mt-pagelist-runnext").show();
+	                $this.find(".mt-pagelist-runprev").show();
+	            }
+	        };
+
+	        init();
+
+	        //执行动画事件，滚动到指定的位置
+	        var runTo = function runTo(page) {
+	            console.log("runTo");
+	            //console.log(page,pix);
+	            setting.nowpage = page;
+	            var pix = -parseInt($ul.position().left / liWid); //偏移量
+
+	            if (pagecount <= showPage) return;
+
+	            //如果点击的是中点，保持
+	            if (page == pix + 4) {
+	                return;
+	            } else if (page > pix + 4) {
+	                //console.log("page >　pix+4");
+	                if (page >= pagecount - 4) {
+	                    pix = pagecount - showPage;
+	                } else {
+	                    pix = page - 4;
+	                }
+	            } else {
+	                //console.log("page <　pix+4");
+	                if (page <= 4) {
+	                    pix = 0;
+	                } else {
+	                    pix = page - 4;
+	                }
+	            }
+	            //console.log("====>",pix);
+	            $ul.stop();
+	            $ul.animate({
+	                left: -pix * liWid
+	            }, speed);
+	        };
+
+	        //跳转到第几页
+	        var gotoPage = function gotoPage(page) {
+	            if (page >= pagecount) {
+	                page = pagecount;
+	            }
+	            if (page <= 0) {
+	                page = 1;
+	            }
+	            console.log(page);
+	            //if($ul.find(".on").index() == page-1)return;
+	            $ul.find(".on").removeClass('on');
+	            $ul.find("li").eq(page - 1).addClass('on');
+	            runTo(page);
+	            callbackFun(page);
+	        };
+
+	        //设置UL里面的HTML
+	        var setPageHtml = function setPageHtml() {
+	            var str = "";
+	            for (var i = 0; i < pagecount; i++) {
+	                str += '<li ' + (setting.nowpage == i + 1 ? 'class="on"' : "") + '><a class="ink-reaction" href="' + setting.url + '">' + (i + 1) + '</a></li>';
+	            }
+	            $ul.html(str).width(liWid * pagecount);
+	        };
+
+	        var callbackFun = function callbackFun(page) {
+	            if (setting.callback) {
+	                setting.callback(page, setting.maxcount);
+	            }
+	        };
+	        setPageHtml();
+	        runTo(setting.nowpage);
+
+	        //点击页码
+	        $ul.on('click', 'li', function (e) {
+	            e.stopPropagation();
+	            if ($ul.is(':animated')) return;
+	            var page = $(this).text();
+	            //设置class
+	            $(this).addClass('on').siblings('.on').removeClass('on');
+	            //console.log(page,pix+4);
+	            callbackFun(page);
+	            runTo(page);
+	        });
+
+	        //点击下一分页
+	        $this.find(".mt-pagelist-runnext").on('click', function (e) {
+	            e.stopPropagation();
+	            if ($ul.is(':animated')) return;
+	            var pix = -parseInt($ul.position().left / liWid); //偏移量
+	            //console.log(pix);
+	            runTo(pix + showPage + 3);
+	        });
+
+	        //点击上一分页
+	        $this.find(".mt-pagelist-runprev").on('click', function (e) {
+	            e.stopPropagation();
+	            if ($ul.is(':animated')) return;
+	            var pix = -parseInt($ul.position().left / liWid); //偏移量
+	            runTo(pix - 2);
+	        });
+
+	        //点击下一页
+	        $this.find(".mt-pagelist-next").on('click', function (e) {
+	            e.stopPropagation();
+	            var page = parseInt($ul.find(".on").text()) + 1; //偏移量
+	            gotoPage(page);
+	        });
+
+	        //点击上一页
+	        $this.find(".mt-pagelist-prev").on('click', function (e) {
+	            e.stopPropagation();
+	            var page = parseInt($ul.find(".on").text()) - 1; //偏移量
+	            gotoPage(page);
+	        });
+
+	        //首页
+	        $this.find(".mt-pagelist-first").on('click', function (e) {
+	            e.stopPropagation();
+	            gotoPage(1);
+	        });
+
+	        //尾页
+	        $this.find(".mt-pagelist-end").on('click', function (e) {
+	            e.stopPropagation();
+	            gotoPage(pagecount);
+	        });
+
+	        //跳转到
+	        $this.on('click', '.mt-pagelist-btn', function (e) {
+	            e.stopPropagation();
+	            var val = $(this).siblings('.mt-pagelist-input').find(".mt-input").val();
+	            gotoPage(val);
+	        });
+
+	        //控制输入框的数字
+	        $this.on('keyup focus', '.mt-input', function (e) {
+	            var val = $(this).val();
+	            if (!RegExp('^[1-9]\\d*$').test(val) || val > pagecount || val < 1) {
+	                $(this).val("");
+	            }
+	        });
+
+	        //选择下拉列表
+	        $this.on('click', '.option', function (e) {
+	            console.log($(this).attr("data-val"));
+	            setting.maxcount = $(this).attr("data-val");
+	            init();
+	            setPageHtml();
+	            runTo(1);
+	            gotoPage(1);
+	        });
+
+	        //页码刷新
+	        this.refresh = function (opt) {
+	            console.log(opt);
+	            setting.maxcount = opt.maxcount;
+	            setting.nowpage = opt.nowpage;
+	            $this.find(".mt-select input").mtSelectVal(opt.maxcount);
+	            if (opt.count != setting.count) {
+	                setting.count = opt.count;
+	            }
+	            init();
+	            setPageHtml();
+	            runTo(setting.nowpage);
+	            //$this.find("input[type='hidden']").mtSelectVal(opt.maxcount);
+	        };
+
+	        this.data = {
+	            maxcount: setting.maxcount,
+	            nowpage: setting.nowpage
+	        };
+
+	        return this;
+	    };
+	})(jQuery);
 
 	//拖拽插件 by mantou
-	(function ($) {
-		$.fn.dragMt = function (setting) {
-			var defaults = {
-				//drag_callback : null//默认回调函数为空
-				down_callback: null,
-				move_callback: null,
-				up_callback: null
-			};
-			//如果setting为空，就取default的值
-			var setting = $.extend(defaults, setting);
-			this.each(function () {
-				//插件实现代码
-				var $this = $(this);
+	;(function ($) {
+	    $.fn.dragMt = function (setting) {
+	        var defaults = {
+	            //drag_callback : null//默认回调函数为空
+	            down_callback: null,
+	            move_callback: null,
+	            up_callback: null
+	        };
+	        //如果setting为空，就取default的值
+	        var setting = $.extend(defaults, setting);
+	        this.each(function () {
+	            //插件实现代码
+	            var $this = $(this);
 
-				//点击事件
-				$this.on("mousedown", function (e) {
-					var ev = {
-						x_start: null,
-						y_start: null,
-						x_move: null,
-						y_move: null,
-						x_end: null,
-						y_end: null,
-						left: null,
-						top: null
-					};
+	            //点击事件
+	            $this.on("mousedown", function (e) {
+	                var ev = {
+	                    x_start: null,
+	                    y_start: null,
+	                    x_move: null,
+	                    y_move: null,
+	                    x_end: null,
+	                    y_end: null,
+	                    left: null,
+	                    top: null
+	                };
 
-					ev.x_start = e.pageX;
-					ev.y_start = e.pageY;
-					ev.left = $this.position().left + $this.parent().get(0).scrollLeft;
-					ev.top = $this.position().top + $this.parent().get(0).scrollTop;
+	                ev.x_start = e.pageX;
+	                ev.y_start = e.pageY;
+	                ev.left = $this.position().left + $this.parent().get(0).scrollLeft;
+	                ev.top = $this.position().top + $this.parent().get(0).scrollTop;
 
-					if (setting.down_callback != null) {
-						setting.down_callback(ev);
-					}
+	                if (setting.down_callback != null) {
+	                    setting.down_callback(ev);
+	                }
 
-					$(document).on("mousemove.dragMt", function (e) {
-						ev.x_move = e.pageX - ev.x_start + ev.left;
-						ev.y_move = e.pageY - ev.y_start + ev.top;
-						if (setting.move_callback != null) {
-							setting.move_callback(ev, e.pageX - ev.x_start + e.pageY - ev.y_start);
-						}
-						$this.css({
-							"left": ev.x_move,
-							"top": ev.y_move
-						});
-					}).on("mouseup.dragMt", function (e) {
-						ev.x_end = e.pageX;
-						ev.y_end = e.pageY;
-						if (setting.up_callback != null) {
-							setting.up_callback(ev);
-						}
-						$(document).off("mousemove.dragMt mouseup.dragMt");
-					});
-				});
-			});
-		};
+	                $(document).on("mousemove.dragMt", function (e) {
+	                    ev.x_move = e.pageX - ev.x_start + ev.left;
+	                    ev.y_move = e.pageY - ev.y_start + ev.top;
+	                    if (setting.move_callback != null) {
+	                        setting.move_callback(ev, e.pageX - ev.x_start + e.pageY - ev.y_start);
+	                    }
+	                    $this.css({
+	                        "left": ev.x_move,
+	                        "top": ev.y_move
+	                    });
+	                }).on("mouseup.dragMt", function (e) {
+	                    ev.x_end = e.pageX;
+	                    ev.y_end = e.pageY;
+	                    if (setting.up_callback != null) {
+	                        setting.up_callback(ev);
+	                    }
+	                    $(document).off("mousemove.dragMt mouseup.dragMt");
+	                });
+	            });
+	        });
+	    };
 	})(jQuery);
 
 	//点击空白，收起选择框，特殊情况
 	$(document).on('click', function (e) {
-		e.stopPropagation();
-		if (!$(e.target).closest('.mt-select')[0]) {
-			$(".mt-select-box").slideUp(200);
-		}
-		if (!$(e.target).closest('.mt-date-main')[0]) {
-			$(".mt-date-main").hide();
-		}
+	    e.stopPropagation();
+	    if (!$(e.target).closest('.mt-select')[0]) {
+	        $(".mt-select-box").slideUp(200);
+	    }
+	    if (!$(e.target).closest('.mt-date-main')[0]) {
+	        $(".mt-date-main").hide();
+	    }
 	}).on('click', '.ink-reaction', function (e) {
-		var $this = $(this);
-		//获取当前的点击点
-		var x = e.pageX - $this.offset().left;
-		var y = e.pageY - $this.offset().top;
-		var timestamp = new Date().getTime();
-		$(this).append('<div style="left:' + x + 'px; top:' + y + 'px;" class="ink ink_' + timestamp + '"></div>');
-		var $thisInk = $(".ink_" + timestamp);
+	    var $this = $(this);
+	    //获取当前的点击点
+	    var x = e.pageX - $this.offset().left;
+	    var y = e.pageY - $this.offset().top;
+	    var timestamp = new Date().getTime();
+	    $(this).append('<div style="left:' + x + 'px; top:' + y + 'px;" class="ink ink_' + timestamp + '"></div>');
+	    var $thisInk = $(".ink_" + timestamp);
 
-		if (window.applicationCache) {
-			//如果支持
-			$thisInk[0].addEventListener("webkitAnimationEnd", function () {
-				//动画结束时事件
-				$thisInk.remove();
-			}, false);
-		}
+	    if (window.applicationCache) {
+	        //如果支持
+	        $thisInk[0].addEventListener("webkitAnimationEnd", function () {
+	            //动画结束时事件
+	            $thisInk.remove();
+	        }, false);
+	    }
 	});
 
 /***/ },
@@ -1460,7 +1717,7 @@ webpackJsonp([1],{
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _DateBox = __webpack_require__(242);
+	var _DateBox = __webpack_require__(243);
 
 	var _DateBox2 = _interopRequireDefault(_DateBox);
 
@@ -1567,7 +1824,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 242:
+/***/ 243:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1735,7 +1992,7 @@ webpackJsonp([1],{
 			for (var i = 0; i < 25; i++) {
 				arr.push(i + parseInt(y));
 			};
-			console.log(arr);
+			//console.log(arr);
 			this.setState({
 				yearArr: arr
 			});
@@ -1882,7 +2139,7 @@ webpackJsonp([1],{
 						_react2.default.createElement(
 							'a',
 							{ onClick: this.handleClickPrevMonth, className: 'mt-btn-blue mt-btn-sm ink-reaction', href: 'javascript:;' },
-							'《'
+							_react2.default.createElement('i', { className: 'iconfont icon-left' })
 						),
 						_react2.default.createElement(
 							'a',
@@ -1894,7 +2151,7 @@ webpackJsonp([1],{
 						_react2.default.createElement(
 							'a',
 							{ onClick: this.handleClickNextMonth, className: 'mt-btn-blue mt-btn-sm ink-reaction', href: 'javascript:;' },
-							'》'
+							_react2.default.createElement('i', { className: 'iconfont icon-right' })
 						)
 					),
 					_react2.default.createElement(
@@ -1903,7 +2160,7 @@ webpackJsonp([1],{
 						_react2.default.createElement(
 							'a',
 							{ onClick: this.handleClickPrevMonth, className: 'mt-btn-blue mt-btn-sm ink-reaction', href: 'javascript:;' },
-							'《'
+							_react2.default.createElement('i', { className: 'iconfont icon-left' })
 						),
 						_react2.default.createElement(
 							'a',
@@ -1913,7 +2170,7 @@ webpackJsonp([1],{
 						_react2.default.createElement(
 							'a',
 							{ onClick: this.handleClickNextMonth, className: 'mt-btn-blue mt-btn-sm ink-reaction', href: 'javascript:;' },
-							'》'
+							_react2.default.createElement('i', { className: 'iconfont icon-right' })
 						)
 					),
 					_react2.default.createElement(
@@ -1922,7 +2179,7 @@ webpackJsonp([1],{
 						_react2.default.createElement(
 							'a',
 							{ onClick: this.handleClickPrevYear, className: 'mt-btn-blue mt-btn-sm ink-reaction', href: 'javascript:;' },
-							'《'
+							_react2.default.createElement('i', { className: 'iconfont icon-left' })
 						),
 						_react2.default.createElement(
 							'a',
@@ -1932,7 +2189,7 @@ webpackJsonp([1],{
 						_react2.default.createElement(
 							'a',
 							{ onClick: this.handleClickNextYear, className: 'mt-btn-blue mt-btn-sm ink-reaction', href: 'javascript:;' },
-							'》'
+							_react2.default.createElement('i', { className: 'iconfont icon-right' })
 						)
 					)
 				),
@@ -2027,7 +2284,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 243:
+/***/ 244:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2121,7 +2378,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 244:
+/***/ 245:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2205,7 +2462,7 @@ webpackJsonp([1],{
 					this.state.title
 				),
 				_react2.default.createElement("input", { type: "hidden", name: this.props.name, defaultValue: this.state.value }),
-				_react2.default.createElement("i", { className: "iconfont icon-xia" }),
+				_react2.default.createElement("i", { className: "iconfont icon-arrowdown" }),
 				_react2.default.createElement(
 					"ul",
 					{ className: "mt-select-box" },
@@ -2225,7 +2482,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 245:
+/***/ 246:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2240,7 +2497,7 @@ webpackJsonp([1],{
 
 	var _reactDom = __webpack_require__(158);
 
-	var _mtuiMixins = __webpack_require__(246);
+	var _mtuiMixins = __webpack_require__(247);
 
 	var _mtuiMixins2 = _interopRequireDefault(_mtuiMixins);
 
@@ -2258,6 +2515,7 @@ webpackJsonp([1],{
 		displayName: 'ModalShow',
 
 		mixins: [_mtuiMixins2.default],
+
 		//关闭弹窗
 		handleClickClose: function handleClickClose(e) {
 			$("#modalDialog_" + timestamp).css({
@@ -2281,6 +2539,7 @@ webpackJsonp([1],{
 			var titleColor = _props$modal$props.titleColor;
 			var title = _props$modal$props.title;
 			var closeColor = _props$modal$props.closeColor;
+			var drag = _props$modal$props.drag;
 
 			if (!titleColor) {
 				var titleColor = '#313A49';
@@ -2323,23 +2582,13 @@ webpackJsonp([1],{
 			), $('#MTUI_MODAL_' + timestamp)[0] //document.getElementById('MTUI_MODAL')
 			);
 
-			//显示出来
-			$("#modalDialog_" + timestamp).show();
+			//显示 - 是否拖动
+			if (drag) {
+				$("#modalDialog_" + timestamp).show().dragMt();
+			} else {
+				$("#modalDialog_" + timestamp).show();
+			}
 			$("#MTUI_BG").show();
-		},
-
-
-		//渲染完按钮后，渲染弹窗到页面
-		componentDidMount: function componentDidMount() {
-			//console.log(this.props);
-
-			// $("#MTUI").append(
-			// 		<div style={style} className="mt-modal-dialog" id={"modalDialog_"+timestamp}>
-			// 			<a style={{color:closeColor}} href="javascript:;" onClick={this.handleClickClose} className="mt-modal-close"><i className="iconfont icon-close"></i></a>
-			// 			<div style={{backgroundColor:titleColor}} className={title?"mt-dialog-title":""}>{title}</div>
-			// 			{this.props.modal}
-			// 		</div>
-			//)
 		},
 
 
@@ -2359,7 +2608,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 246:
+/***/ 247:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2406,7 +2655,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 247:
+/***/ 248:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2444,7 +2693,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 248:
+/***/ 249:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2459,7 +2708,7 @@ webpackJsonp([1],{
 
 	var _reactDom = __webpack_require__(158);
 
-	var _mtuiMixins = __webpack_require__(246);
+	var _mtuiMixins = __webpack_require__(247);
 
 	var _mtuiMixins2 = _interopRequireDefault(_mtuiMixins);
 
@@ -2624,7 +2873,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 249:
+/***/ 250:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2661,7 +2910,7 @@ webpackJsonp([1],{
 				"label",
 				{ className: "mt-checkbox" + (this.state.checked ? " mt-checkbox-active" : "") },
 				_react2.default.createElement("input", { className: "mt-checkbox-input", type: "checkbox", value: this.state.value, disabled: this.state.disabled, defaultChecked: this.state.checked, onChange: this.handleChange }),
-				_react2.default.createElement("i", { className: "iconfont icon-duigou" }),
+				_react2.default.createElement("i", { className: "iconfont icon-checkbox" }),
 				_react2.default.createElement(
 					"span",
 					null,
@@ -2681,7 +2930,384 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 250:
+/***/ 251:
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _index = __webpack_require__(238);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	//pagelist插件
+	/**
+	* 分页插件
+	* @author : Mantou
+	* @date : 2016-03-01
+	*/
+	var selectProp = null;
+	var liWid = 40;
+	var speed = 300;
+
+	var PageList = _react2.default.createClass({
+		displayName: 'PageList',
+		getInitialState: function getInitialState() {
+			return {
+				pages: null, // li page列表
+				nowpage: 1, //当前第几页
+				count: this.props.count, //总共多少条数据
+				eachPageCount: this.props.eachPageCount, //每页多少条
+				pagecount: 0, //共有多少页
+				showPage: this.props.showPage, //最多显示几个页码
+				inputVal: 1
+			};
+		},
+
+
+		//执行回调函数
+		callback: function callback() {
+			if (this.props.callback) {
+				this.props.callback(this.state.nowpage, this.state.eachPageCount);
+			} else {
+				console.log("pagelist必须设置回调函数！");
+			}
+		},
+
+
+		//页面跳转
+		gotoPage: function gotoPage(nowpage) {
+			var _state = this.state;
+			var count = _state.count;
+			var eachPageCount = _state.eachPageCount;
+
+			this.iniLiDom(nowpage, count, eachPageCount);
+		},
+
+
+		//可控组件
+		handleChangeVal: function handleChangeVal(e) {
+			var val = e.target.value;
+			if (/^[0-9]*$/.test(val) && val <= this.state.pagecount) {
+				this.setState({
+					inputVal: val
+				});
+			}
+		},
+
+
+		//跳转
+		handleClickGoto: function handleClickGoto(e) {
+			//console.log(this.state.inputVal);
+			if (this.state.inputVal != "") {
+				this.gotoPage(this.state.inputVal);
+			}
+		},
+
+
+		//点击页码
+		handleClickPage: function handleClickPage(e) {
+			this.gotoPage(e.target.text);
+		},
+
+
+		//跳转到首页
+		handleClickToFirst: function handleClickToFirst(e) {
+			this.gotoPage(1);
+		},
+
+
+		//跳转到尾页
+		handleClickToLast: function handleClickToLast(e) {
+			this.gotoPage(this.state.pagecount);
+		},
+
+
+		//上一页
+		handleClickPrev: function handleClickPrev(e) {
+			//console.log(this.state.nowpage);
+			var nowpage = this.state.nowpage;
+			if (nowpage > 1) {
+				this.gotoPage(parseInt(nowpage) - 1);
+			}
+		},
+
+
+		//下一页
+		handleClickNext: function handleClickNext(e) {
+			//console.log(this.state.nowpage);
+			var nowpage = this.state.nowpage;
+			if (nowpage < this.state.pagecount) {
+				this.gotoPage(parseInt(nowpage) + 1);
+			}
+		},
+
+
+		//获取当前中点的num数
+		getCenterNum: function getCenterNum(showPage) {
+
+			// //如果showPage是奇数
+			if (showPage % 2 == 1) {
+				//计算每次移动的偏移量
+				var num = parseInt((parseInt(showPage) + 1) / 2);
+			} else {
+				var num = parseInt(showPage) / 2;
+			}
+
+			return parseInt(num);
+		},
+
+
+		//下一段
+		handleClickNextDuan: function handleClickNextDuan(e) {
+			var $ul = $(this.refs.pagesUl);
+			if ($ul.is(':animated')) return;
+
+			var showPage = this.state.showPage;
+
+			var pix = -parseInt($ul.position().left / liWid); //偏移量
+			var num = this.getCenterNum(showPage);
+			this.runTo(pix + parseInt(showPage) + num);
+		},
+
+
+		//上一段
+		handleClickPrevDuan: function handleClickPrevDuan(e) {
+			var $ul = $(this.refs.pagesUl);
+			if ($ul.is(':animated')) return;
+
+			var showPage = this.state.showPage;
+
+			var pix = -parseInt($ul.position().left / liWid); //偏移量
+			var num = this.getCenterNum(showPage);
+			//console.log(num);
+			if (showPage % 2 == 0) {
+				this.runTo(pix - num);
+			} else {
+				this.runTo(pix - num + 1);
+			}
+		},
+
+
+		//重新渲染li标签
+		iniLiDom: function iniLiDom(nowpage, count, eachPageCount) {
+			var pagecount = Math.ceil(count / eachPageCount); //计算有多少页
+			var arr = [];
+
+			//渲染数据
+			for (var i = 0; i < pagecount; i++) {
+				if (nowpage == i + 1) {
+					arr.push(_react2.default.createElement(
+						'li',
+						{ className: 'on', key: i },
+						_react2.default.createElement(
+							'a',
+							{ className: 'ink-reaction', href: 'javascript:;' },
+							i + 1
+						)
+					));
+				} else {
+					arr.push(_react2.default.createElement(
+						'li',
+						{ onClick: this.handleClickPage, key: i },
+						_react2.default.createElement(
+							'a',
+							{ className: 'ink-reaction', href: 'javascript:;' },
+							i + 1
+						)
+					));
+				}
+			}
+
+			//设置pagecount,pages
+			this.setState({
+				pagecount: pagecount,
+				pages: arr,
+				eachPageCount: eachPageCount,
+				nowpage: nowpage
+			});
+		},
+
+
+		//页面渲染之前执行
+		componentWillMount: function componentWillMount() {
+			var _state2 = this.state;
+			var count = _state2.count;
+			var eachPageCount = _state2.eachPageCount;
+
+			//下拉选择
+
+			selectProp = {
+				width: '90px',
+				value: this.state.eachPageCount,
+				data: [{ value: 10, label: '10条/页' }, { value: 20, label: '20条/页' }, { value: 50, label: '50条/页' }],
+				onChange: function (value, label) {
+					//console.log('当前值为：', value);
+					$(this.refs.pagesUl).css({ left: 0 });
+					this.iniLiDom(1, count, value);
+				}.bind(this)
+			};
+
+			//渲染li标签
+			this.iniLiDom(this.state.nowpage, count, eachPageCount);
+		},
+
+
+		//渲染后执行
+		componentDidMount: function componentDidMount() {
+			//console.log(this.refs.pagesUl);
+			//执行回调
+			this.callback();
+		},
+
+
+		//滚动动画
+		runTo: function runTo(nowpage) {
+			var $ul = $(this.refs.pagesUl);
+			var _state3 = this.state;
+			var pagecount = _state3.pagecount;
+			var showPage = _state3.showPage;
+
+			var num = this.getCenterNum(showPage);
+			var pix = -parseInt($ul.position().left / liWid); //偏移量,当前偏移多少个
+
+			if (pagecount <= showPage) return;
+			//如果点击的是中点，保持
+			if (nowpage == pix + num) {
+				return;
+			} else if (nowpage > pix + num) {
+				//console.log("nowpage >　pix+num");
+				if (nowpage >= pagecount - num) {
+					pix = pagecount - showPage;
+				} else {
+					pix = nowpage - num;
+				}
+			} else {
+				//console.log("nowpage <　pix+num");
+				if (nowpage <= num) {
+					pix = 0;
+				} else {
+					pix = nowpage - num;
+				}
+			}
+			$ul.stop();
+			$ul.animate({
+				left: -pix * liWid
+			}, speed);
+		},
+
+
+		//每次渲染后执行
+		componentDidUpdate: function componentDidUpdate(nextProps, nextState) {
+			//执行回调
+			this.callback();
+			//滚动
+			this.runTo(this.state.nowpage);
+			//返回true 执行动画
+			return true;
+		},
+
+
+		//渲染数据
+		render: function render() {
+
+			//渲染
+			return _react2.default.createElement(
+				'div',
+				{ className: 'mt-pagelist', id: this.props.id },
+				_react2.default.createElement(
+					'div',
+					{ className: 'mt-pagelist-left' },
+					_react2.default.createElement(_index.Selected, selectProp),
+					' ',
+					_react2.default.createElement(
+						'span',
+						null,
+						'共 ',
+						this.state.pagecount,
+						' 页 / ',
+						this.state.count,
+						' 条'
+					)
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'mt-pagelist-right' },
+					_react2.default.createElement(
+						'a',
+						{ href: 'javascript:;', onClick: this.handleClickToFirst, className: 'mt-btn-grey ink-reaction mt-pagelist-first' },
+						'首页'
+					),
+					' ',
+					_react2.default.createElement(
+						'a',
+						{ href: 'javascript:;', onClick: this.handleClickPrev, className: 'mt-btn-grey ink-reaction mt-pagelist-prev' },
+						'上一页'
+					),
+					'  ',
+					this.state.showPage < this.state.pagecount ? _react2.default.createElement(
+						'a',
+						{ href: 'javascript:;', onClick: this.handleClickPrevDuan, className: 'mt-btn-grey ink-reaction mt-pagelist-btn mt-pagelist-runprev' },
+						_react2.default.createElement('i', { className: 'iconfont icon-left' })
+					) : "",
+					' ',
+					_react2.default.createElement(
+						'div',
+						{ className: 'mt-pagelist-content', style: { maxWidth: 40 * this.state.showPage } },
+						_react2.default.createElement(
+							'ul',
+							{ ref: 'pagesUl', style: { width: this.state.pagecount * 40 }, className: 'mt-pagelist-page' },
+							this.state.pages
+						)
+					),
+					' ',
+					this.state.showPage < this.state.pagecount ? _react2.default.createElement(
+						'a',
+						{ href: 'javascript:;', onClick: this.handleClickNextDuan, className: 'mt-btn-grey ink-reaction mt-pagelist-btn mt-pagelist-runnext' },
+						_react2.default.createElement('i', { className: 'iconfont icon-right' })
+					) : "",
+					' ',
+					_react2.default.createElement(
+						'a',
+						{ href: 'javascript:;', onClick: this.handleClickNext, className: 'mt-btn-grey ink-reaction mt-pagelist-next' },
+						'下一页'
+					),
+					' ',
+					_react2.default.createElement(
+						'a',
+						{ href: 'javascript:;', onClick: this.handleClickToLast, className: 'mt-btn-grey ink-reaction mt-pagelist-end' },
+						'尾页'
+					),
+					_react2.default.createElement(
+						'span',
+						{ className: 'mt-pagelist-input' },
+						'第',
+						_react2.default.createElement('input', { className: 'mt-input', value: this.state.inputVal, onChange: this.handleChangeVal, type: 'text' }),
+						'页'
+					),
+					_react2.default.createElement(
+						'a',
+						{ href: 'javascript:;', onClick: this.handleClickGoto, className: 'mt-btn-grey ink-reaction mt-pagelist-btn' },
+						'跳转'
+					)
+				)
+			);
+		}
+	});
+
+	//配置信息
+	exports.default = PageList;
+
+/***/ },
+
+/***/ 252:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2808,10 +3434,14 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 251:
+/***/ 253:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
 
 	__webpack_require__(230);
 
@@ -2827,9 +3457,16 @@ webpackJsonp([1],{
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	var a = 1;
 	var Plus = _react2.default.createClass({
 	    displayName: 'Plus',
 
+	    getInitialState: function getInitialState() {
+	        return {
+	            nowpage: 'loading....',
+	            eachPageCount: 'loading...'
+	        };
+	    },
 	    handleClickPopup: function handleClickPopup(e) {
 	        (0, _index.Popup)({
 	            title: '系统提示',
@@ -2869,7 +3506,24 @@ webpackJsonp([1],{
 	            drag: true //是否可拖动
 	        });
 	    },
+
+	    //分页回调
+	    setCallBack: function setCallBack(nowpage, eachPageCount) {
+	        console.log("当前：", nowpage, eachPageCount);
+
+	        //ajax
+	        $(this.refs.pageData).html('您选择了页码: ' + nowpage + '  当前每页有：' + eachPageCount);
+
+	        // a++;
+	        // if(a > 5) return ;
+	        // this.setState({
+	        //   nowpage : nowpage,
+	        //   eachPageCount : eachPageCount
+	        // });
+	    },
+
 	    render: function render() {
+
 	        //tabs切换的数据
 	        var tabsData = {
 	            className: 'test',
@@ -2900,7 +3554,7 @@ webpackJsonp([1],{
 	        //弹窗
 	        var modal = _react2.default.createElement(
 	            _index.Modal,
-	            { width: '400px', height: '240px', title: '弹窗标题可自定义' },
+	            { width: '400px', height: '240px', title: '弹窗标题可自定义', drag: 'true' },
 	            '这个是有头部的弹出窗。'
 	        );
 	        var modal2 = _react2.default.createElement(
@@ -2909,6 +3563,7 @@ webpackJsonp([1],{
 	            '这是一个自定义内容的弹出窗，没有头部。'
 	        );
 
+	        //分页插件调用
 	        return _react2.default.createElement(
 	            'div',
 	            { className: _Conf2.default.pageAnimate + " contents" },
@@ -2916,6 +3571,25 @@ webpackJsonp([1],{
 	                'h1',
 	                null,
 	                '插件'
+	            ),
+	            _react2.default.createElement(
+	                'div',
+	                { className: 'mt-page-content' },
+	                _react2.default.createElement(
+	                    'h3',
+	                    { className: 'mt-padding' },
+	                    'AJAX分页插件：'
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'mt-g' },
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'mt-g-8' },
+	                        _react2.default.createElement('p', { ref: 'pageData' }),
+	                        _react2.default.createElement(_index.PageList, { id: 'pageList1', count: '300', eachPageCount: '10', showPage: '6', callback: this.setCallBack })
+	                    )
+	                )
 	            ),
 	            _react2.default.createElement(
 	                'div',
@@ -2940,6 +3614,7 @@ webpackJsonp([1],{
 	                                '有头部的弹窗'
 	                            )
 	                        ),
+	                        '  ',
 	                        _react2.default.createElement(
 	                            _index.ModalShow,
 	                            { modal: modal2 },
@@ -2949,16 +3624,19 @@ webpackJsonp([1],{
 	                                '没有头部的弹窗'
 	                            )
 	                        ),
+	                        '  ',
 	                        _react2.default.createElement(
 	                            'a',
 	                            { href: 'javascript:;', onClick: this.handleClickPopup, className: 'mt-btn-yellow ink-reaction mt-modal-btn' },
 	                            'alert'
 	                        ),
+	                        '   ',
 	                        _react2.default.createElement(
 	                            'a',
 	                            { href: 'javascript:;', onClick: this.handleClickPopup2, className: 'mt-btn-red ink-reaction mt-modal-btn' },
 	                            '带回调函数的popup'
 	                        ),
+	                        '   ',
 	                        _react2.default.createElement(
 	                            'a',
 	                            { href: 'javascript:;', onClick: this.handleClickPopup3, className: 'mt-btn-blue ink-reaction mt-modal-btn' },
@@ -3030,16 +3708,16 @@ webpackJsonp([1],{
 	    }
 	});
 	//关于我们
-	module.exports = Plus;
+	exports.default = Plus;
 
 /***/ },
 
-/***/ 252:
+/***/ 254:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	__webpack_require__(253);
+	__webpack_require__(255);
 
 	var _react = __webpack_require__(1);
 
@@ -3092,14 +3770,14 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 253:
+/***/ 255:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 256:
+/***/ 258:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3110,11 +3788,11 @@ webpackJsonp([1],{
 
 	var _reactRouter = __webpack_require__(159);
 
-	var _Menu = __webpack_require__(257);
+	var _Menu = __webpack_require__(259);
 
 	var _Menu2 = _interopRequireDefault(_Menu);
 
-	var _Footer = __webpack_require__(260);
+	var _Footer = __webpack_require__(262);
 
 	var _Footer2 = _interopRequireDefault(_Footer);
 
@@ -3144,12 +3822,12 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 257:
+/***/ 259:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	__webpack_require__(258);
+	__webpack_require__(260);
 
 	var _react = __webpack_require__(1);
 
@@ -3226,14 +3904,14 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 258:
+/***/ 260:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 260:
+/***/ 262:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
