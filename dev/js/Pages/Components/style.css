@@ -11,7 +11,7 @@
 
 /*插件库*/
 .component{ margin-left:160px;} 
-.component .contents a{ margin-right: 10px;} 
+.component .contents a{} 
 .component .contents .mt-date a{ margin-right: 0;} 
 
 .animated{-webkit-animation-duration: 0.3s; animation-duration: 0.3s;}

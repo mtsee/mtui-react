@@ -44,15 +44,15 @@ webpackJsonp([1],{
 
 	var _Forms2 = _interopRequireDefault(_Forms);
 
-	var _Plus = __webpack_require__(248);
+	var _Plus = __webpack_require__(251);
 
 	var _Plus2 = _interopRequireDefault(_Plus);
 
-	var _Index7 = __webpack_require__(249);
+	var _Index7 = __webpack_require__(252);
 
 	var _Index8 = _interopRequireDefault(_Index7);
 
-	var _App = __webpack_require__(253);
+	var _App = __webpack_require__(256);
 
 	var _App2 = _interopRequireDefault(_App);
 
@@ -415,7 +415,7 @@ webpackJsonp([1],{
 	* @date : 2016-03-01
 	*/
 	var Conf = {
-	  pageAnimate: 'fadeInRightBig animated'
+	  pageAnimate: 'fadeInLeft animated'
 	};
 	//配置信息
 	module.exports = Conf;
@@ -950,9 +950,9 @@ webpackJsonp([1],{
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _MTUI = __webpack_require__(238);
+	var _index = __webpack_require__(238);
 
-	var _mtuiMixins = __webpack_require__(247);
+	var _mtuiMixins = __webpack_require__(246);
 
 	var _mtuiMixins2 = _interopRequireDefault(_mtuiMixins);
 
@@ -992,7 +992,7 @@ webpackJsonp([1],{
 	  componentDidMount: function componentDidMount() {
 	    //ajax请求数据后，重新渲染页面
 	    setTimeout(function () {
-	      console.log("重新设置了组的选项为中性~");
+	      //console.log("重新设置了组的选项为中性~");
 	      if (this.isMounted()) {
 	        this.setState({
 	          checkedVal: '中性'
@@ -1217,7 +1217,7 @@ webpackJsonp([1],{
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'mt-g-12' },
-	            _react2.default.createElement(_MTUI.Selected, selectProp)
+	            _react2.default.createElement(_index.Selected, selectProp)
 	          )
 	        )
 	      ),
@@ -1238,10 +1238,10 @@ webpackJsonp([1],{
 	            _react2.default.createElement(
 	              'div',
 	              { id: 'group-checkbox' },
-	              _react2.default.createElement(_MTUI.Checkbox, { onClick: this.handleClick, value: '1', label: '选中', checked: true }),
-	              _react2.default.createElement(_MTUI.Checkbox, { onClick: this.handleClick, value: '2', label: '未选中' }),
-	              _react2.default.createElement(_MTUI.Checkbox, { value: '3', label: '禁用选中', disabled: true, checked: true }),
-	              _react2.default.createElement(_MTUI.Checkbox, { value: '4', label: '禁用未选中', disabled: true }),
+	              _react2.default.createElement(_index.Checkbox, { onClick: this.handleClick, value: '1', label: '选中', checked: true }),
+	              _react2.default.createElement(_index.Checkbox, { onClick: this.handleClick, value: '2', label: '未选中' }),
+	              _react2.default.createElement(_index.Checkbox, { value: '3', label: '禁用选中', disabled: true, checked: true }),
+	              _react2.default.createElement(_index.Checkbox, { value: '4', label: '禁用未选中', disabled: true }),
 	              'mixins 中的 getCheckboxGroupVal() 获取checkbox值：',
 	              _react2.default.createElement(
 	                'a',
@@ -1267,12 +1267,12 @@ webpackJsonp([1],{
 	            'div',
 	            { className: 'mt-g-12' },
 	            _react2.default.createElement(
-	              _MTUI.RadioGroup,
+	              _index.RadioGroup,
 	              { radioChange: this.handleRadioChange, defaultValue: this.state.checkedVal },
-	              _react2.default.createElement(_MTUI.Radio, { name: 'sex', value: '男', label: '男' }),
-	              _react2.default.createElement(_MTUI.Radio, { name: 'sex', value: '女', label: '女' }),
-	              _react2.default.createElement(_MTUI.Radio, { name: 'sex', value: '中性', label: '中性', disabled: true }),
-	              _react2.default.createElement(_MTUI.Radio, { name: 'sex', value: '无', label: '无', disabled: true }),
+	              _react2.default.createElement(_index.Radio, { name: 'sex', value: '男', label: '男' }),
+	              _react2.default.createElement(_index.Radio, { name: 'sex', value: '女', label: '女' }),
+	              _react2.default.createElement(_index.Radio, { name: 'sex', value: '中性', label: '中性', disabled: true }),
+	              _react2.default.createElement(_index.Radio, { name: 'sex', value: '无', label: '无', disabled: true }),
 	              _react2.default.createElement(
 	                'a',
 	                { href: 'javascript:;', onClick: this.handleClickRadio },
@@ -1295,6 +1295,11 @@ webpackJsonp([1],{
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.Popup = exports.ModalShow = exports.Modal = exports.DateInput = exports.RadioGroup = exports.Radio = exports.Checkbox = exports.Selected = exports.Tabs = undefined;
+
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
@@ -1311,32 +1316,109 @@ webpackJsonp([1],{
 
 	var _Selected2 = _interopRequireDefault(_Selected);
 
-	var _Checkbox = __webpack_require__(245);
+	var _ModalShow = __webpack_require__(245);
+
+	var _ModalShow2 = _interopRequireDefault(_ModalShow);
+
+	var _Modal = __webpack_require__(247);
+
+	var _Modal2 = _interopRequireDefault(_Modal);
+
+	var _Popup = __webpack_require__(248);
+
+	var _Popup2 = _interopRequireDefault(_Popup);
+
+	var _Checkbox = __webpack_require__(249);
 
 	var _Checkbox2 = _interopRequireDefault(_Checkbox);
 
-	var _RadioGroup = __webpack_require__(246);
+	var _RadioGroup = __webpack_require__(250);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	/**
-	* MTUI
-	* @author : Mantou
-	* @date : 2016-03-01
-	*/
-
-
-	var MTUI = {
-		Tabs: _Tabs2.default, //tabs切换
-		Selected: _Selected2.default, //下拉选择框
-		Checkbox: _Checkbox2.default, //checkbox
-		Radio: _RadioGroup.Radio, //单选
-		RadioGroup: _RadioGroup.RadioGroup, //单选组合框
-		DateInput: _DateInput2.default //日期组件
-	};
-
 	//配置信息
-	module.exports = MTUI;
+	exports.Tabs = _Tabs2.default;
+	exports. //tabs切换
+	Selected = _Selected2.default;
+	exports. //下拉选择框
+	Checkbox = _Checkbox2.default;
+	exports. //checkbox
+	Radio = _RadioGroup.Radio;
+	exports. //单选
+	RadioGroup = _RadioGroup.RadioGroup;
+	exports. //单选组合框
+	DateInput = _DateInput2.default;
+	exports. //日期组件
+	Modal = _Modal2.default;
+	exports. //modal弹窗
+	ModalShow = _ModalShow2.default;
+	exports. //modal弹窗
+	Popup //提示框
+	 = _Popup2.default; /**
+	                    * MTUI
+	                    * @author : Mantou
+	                    * @date : 2016-03-01
+	                    */
+
+	//拖拽插件 by mantou
+	(function ($) {
+		$.fn.dragMt = function (setting) {
+			var defaults = {
+				//drag_callback : null//默认回调函数为空
+				down_callback: null,
+				move_callback: null,
+				up_callback: null
+			};
+			//如果setting为空，就取default的值
+			var setting = $.extend(defaults, setting);
+			this.each(function () {
+				//插件实现代码
+				var $this = $(this);
+
+				//点击事件
+				$this.on("mousedown", function (e) {
+					var ev = {
+						x_start: null,
+						y_start: null,
+						x_move: null,
+						y_move: null,
+						x_end: null,
+						y_end: null,
+						left: null,
+						top: null
+					};
+
+					ev.x_start = e.pageX;
+					ev.y_start = e.pageY;
+					ev.left = $this.position().left + $this.parent().get(0).scrollLeft;
+					ev.top = $this.position().top + $this.parent().get(0).scrollTop;
+
+					if (setting.down_callback != null) {
+						setting.down_callback(ev);
+					}
+
+					$(document).on("mousemove.dragMt", function (e) {
+						ev.x_move = e.pageX - ev.x_start + ev.left;
+						ev.y_move = e.pageY - ev.y_start + ev.top;
+						if (setting.move_callback != null) {
+							setting.move_callback(ev, e.pageX - ev.x_start + e.pageY - ev.y_start);
+						}
+						$this.css({
+							"left": ev.x_move,
+							"top": ev.y_move
+						});
+					}).on("mouseup.dragMt", function (e) {
+						ev.x_end = e.pageX;
+						ev.y_end = e.pageY;
+						if (setting.up_callback != null) {
+							setting.up_callback(ev);
+						}
+						$(document).off("mousemove.dragMt mouseup.dragMt");
+					});
+				});
+			});
+		};
+	})(jQuery);
 
 	//点击空白，收起选择框，特殊情况
 	$(document).on('click', function (e) {
@@ -2146,6 +2228,405 @@ webpackJsonp([1],{
 /***/ 245:
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(158);
+
+	var _mtuiMixins = __webpack_require__(246);
+
+	var _mtuiMixins2 = _interopRequireDefault(_mtuiMixins);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var timestamp = new Date().getTime();
+
+	//自定义Checkbox插件
+	/**
+	* 自定义内容的弹窗插件
+	* @author : Mantou
+	* @date : 2016-03-01
+	*/
+	var ModalShow = _react2.default.createClass({
+		displayName: 'ModalShow',
+
+		mixins: [_mtuiMixins2.default],
+		//关闭弹窗
+		handleClickClose: function handleClickClose(e) {
+			$("#modalDialog_" + timestamp).css({
+				"-webkit-animation-name": "bounceOutDown",
+				"animation-name": "bounceOutDown"
+			});
+			setTimeout(function () {
+				if ($(".MTUI_DIALOGS").length == 1) {
+					$("#MTUI_BG").fadeOut();
+				}
+				$('#MTUI_MODAL_' + timestamp).remove();
+			}, 500);
+		},
+
+
+		//显示弹窗
+		handleClick: function handleClick(e) {
+			var _props$modal$props = this.props.modal.props;
+			var width = _props$modal$props.width;
+			var height = _props$modal$props.height;
+			var titleColor = _props$modal$props.titleColor;
+			var title = _props$modal$props.title;
+			var closeColor = _props$modal$props.closeColor;
+
+			if (!titleColor) {
+				var titleColor = '#313A49';
+			}
+			if (!closeColor) {
+				if (title) {
+					var closeColor = '#FFFFFF';
+				} else {
+					var closeColor = '#333333';
+				}
+			}
+
+			var center = this.center(width, height);
+
+			//设置style
+			var style = {
+				width: width,
+				height: height,
+				position: 'absolute',
+				top: center.top,
+				left: center.left
+			};
+			//渲染一个弹窗，支持弹多个弹窗
+			$("#MTUI_MODAL").append('<div class="MTUI_DIALOGS" id="MTUI_MODAL_' + timestamp + '"></div>');
+
+			(0, _reactDom.render)(_react2.default.createElement(
+				'div',
+				{ style: style, className: 'mt-modal-dialog', id: "modalDialog_" + timestamp },
+				_react2.default.createElement(
+					'a',
+					{ style: { color: closeColor }, href: 'javascript:;', onClick: this.handleClickClose, className: 'mt-modal-close' },
+					_react2.default.createElement('i', { className: 'iconfont icon-close' })
+				),
+				title ? _react2.default.createElement(
+					'div',
+					{ style: { backgroundColor: titleColor }, className: title ? "mt-dialog-title" : "" },
+					title
+				) : "",
+				this.props.modal
+			), $('#MTUI_MODAL_' + timestamp)[0] //document.getElementById('MTUI_MODAL')
+			);
+
+			//显示出来
+			$("#modalDialog_" + timestamp).show();
+			$("#MTUI_BG").show();
+		},
+
+
+		//渲染完按钮后，渲染弹窗到页面
+		componentDidMount: function componentDidMount() {
+			//console.log(this.props);
+
+			// $("#MTUI").append(
+			// 		<div style={style} className="mt-modal-dialog" id={"modalDialog_"+timestamp}>
+			// 			<a style={{color:closeColor}} href="javascript:;" onClick={this.handleClickClose} className="mt-modal-close"><i className="iconfont icon-close"></i></a>
+			// 			<div style={{backgroundColor:titleColor}} className={title?"mt-dialog-title":""}>{title}</div>
+			// 			{this.props.modal}
+			// 		</div>
+			//)
+		},
+
+
+		//渲染
+		render: function render() {
+			//console.log(this.props.modal);
+			return _react2.default.createElement(
+				'span',
+				{ onClick: this.handleClick },
+				this.props.children
+			);
+		}
+	});
+
+	//配置信息
+	exports.default = ModalShow;
+
+/***/ },
+
+/***/ 246:
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var MtuiMixins = {
+		getCheckboxGroupVal: function getCheckboxGroupVal($dom) {
+			var arr = [];
+			$dom.find(".mt-checkbox-input:checked").each(function (index, el) {
+				arr.push($(this).val());
+			});
+			return arr;
+		},
+
+		//居中显示
+		center: function center(w, h) {
+			var $win = $(window);
+			var winH = $win.height();
+			var winW = $win.width();
+			if (h != 'auto') {
+				var top = winH - parseInt(h) >= 0 ? (winH - parseInt(h)) / 2 : 20;
+			} else {
+				var top = 160;
+			}
+			var left = (winW - parseInt(w)) / 2;
+			return {
+				top: top,
+				left: left
+			};
+		}
+	}; /**
+	   * MTUI_MIXINS
+	   * @author : Mantou
+	   * @date : 2016-03-01
+	   */
+
+
+	module.exports = MtuiMixins;
+
+/***/ },
+
+/***/ 247:
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	//插件
+	var Modal = _react2.default.createClass({
+		displayName: 'Modal',
+
+		render: function render() {
+			return _react2.default.createElement(
+				'span',
+				null,
+				this.props.children
+			);
+		}
+	});
+
+	//配置信息
+	/**
+	* 一个简单的日历插件
+	* @author : Mantou
+	* @date : 2016-03-01
+	*/
+	exports.default = Modal;
+
+/***/ },
+
+/***/ 248:
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(158);
+
+	var _mtuiMixins = __webpack_require__(246);
+
+	var _mtuiMixins2 = _interopRequireDefault(_mtuiMixins);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var timestamp = new Date().getTime();
+
+	//弹窗主函数
+	/**
+	* 自定义内容的弹窗插件
+	* @author : Mantou
+	* @date : 2016-03-01
+	*/
+	function Popup(setting) {
+		//console.log(setting);
+
+		var defaults = {
+			title: '系统提示',
+			text: '', //弹窗文字
+			titlebg: '#313A49', //顶部的颜色
+			btnColor: '#FFFFFF', //关闭按钮的颜色
+			time: null, //自动关闭,  如果有值，一定时间会自动关闭
+			clickback: false, //点击按钮的回调函数 return :mark
+			closeback: false, //关闭时的回调函数  return :null
+			showbtn: 0, //是否显示按钮 0,1,2；1个为确定，2为确定取消，0表示不要按钮
+			width: 300, //弹窗宽度
+			height: 'auto', //高度自动
+			top: false, //弹窗距离顶部的高度
+			drag: false //是否可拖动
+		};
+
+		//如果setting为空，就取default的值
+		var setting = $.extend(defaults, setting);
+		var timestamp = new Date().getTime();
+		var popupID = "popup-" + timestamp;
+		//渲染一个弹窗
+		var center = _mtuiMixins2.default.center(setting.width, setting.height);
+		var style = {
+			zIndex: timestamp,
+			width: setting.width,
+			height: setting.height,
+			top: setting.top ? setting.top : center.top,
+			left: center.left
+		};
+		var timeMark = false;
+
+		//关闭弹窗
+		var closePopup = function closePopup() {
+			var $popup = $("#" + popupID);
+			$popup.css({
+				"-webkit-animation-name": "bounceOutDown",
+				"animation-name": "bounceOutDown"
+			});
+			setTimeout(function () {
+				//console.log($(".MTUI_POPUPS").length);
+				if ($(".MTUI_DIALOGS").length == 1) {
+					$("#MTUI_BG").fadeOut();
+				}
+				$("#MTUI_POPUP_" + timestamp).remove();
+				if (timeMark) {
+					clearTimeout(timeMark);
+				}
+			}, 500);
+			if (setting.closeback) {
+				setting.closeback();
+			}
+		};
+
+		//关闭按钮
+		var handClickClose = function handClickClose(e) {
+			closePopup();
+		};
+
+		//确定按钮
+		var handClickYes = function handClickYes(e) {
+			closePopup();
+			if (setting.clickback) {
+				setting.clickback(true);
+			}
+		};
+
+		//取消按钮
+		var handClickNo = function handClickNo(e) {
+			var $popup = closePopup();
+			if (setting.clickback) {
+				setting.clickback(false);
+			}
+		};
+
+		//自动关闭
+		var autoClose = function autoClose() {
+			if (setting.time != null) {
+				timeMark = setTimeout(function () {
+					closePopup();
+				}, setting.time);
+			}
+		};
+
+		//加入内部DIV支持多个弹窗
+		$("#MTUI_POPUP").append('<div class="MTUI_DIALOGS" id="MTUI_POPUP_' + timestamp + '"></div>');
+
+		//渲染
+		(0, _reactDom.render)(_react2.default.createElement(
+			'div',
+			{ id: popupID, className: 'mt-popup', style: style },
+			_react2.default.createElement(
+				'h1',
+				{ style: { backgroundColor: setting.titlebg }, className: 'mt-popup-h1' },
+				setting.title
+			),
+			_react2.default.createElement(
+				'a',
+				{ style: { color: setting.btnColor }, onClick: handClickClose, href: 'javascript:;', className: 'mt-popup-btn-close' },
+				_react2.default.createElement('i', { className: 'icon-close iconfont' })
+			),
+			_react2.default.createElement(
+				'div',
+				{ className: 'mt-popup-content' },
+				setting.text == "" ? setting.text : _react2.default.createElement(
+					'p',
+					{ className: 'mt-popup-str' },
+					setting.text
+				)
+			),
+			function () {
+				if (setting.showbtn == 1) return _react2.default.createElement(
+					'a',
+					{ href: 'javascript:void(0)', onClick: handClickYes, className: 'mt-btn-blue ink-reaction' },
+					'确定'
+				);else if (setting.showbtn == 2) return _react2.default.createElement(
+					'span',
+					null,
+					_react2.default.createElement(
+						'a',
+						{ href: 'javascript:void(0)', onClick: handClickNo, className: 'mt-btn-grey ink-reaction' },
+						'取消'
+					),
+					_react2.default.createElement(
+						'a',
+						{ href: 'javascript:void(0)', onClick: handClickYes, className: 'mt-btn-blue ink-reaction' },
+						'确定'
+					)
+				);else return;
+			}()
+		), $('#MTUI_POPUP_' + timestamp)[0]);
+
+		//支持拖动
+		if (setting.drag) {
+			$("#" + popupID).dragMt();
+		}
+
+		//显示出来
+		$("#" + popupID).show();
+		$("#MTUI_BG").show();
+
+		//启用计时器
+		autoClose();
+	}
+
+	//配置信息
+	exports.default = Popup;
+
+/***/ },
+
+/***/ 249:
+/***/ function(module, exports, __webpack_require__) {
+
 	"use strict";
 
 	var _react = __webpack_require__(1);
@@ -2200,7 +2681,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 246:
+/***/ 250:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2250,7 +2731,6 @@ webpackJsonp([1],{
 					arr.push(index);
 				}
 			}.bind(this));
-			//this.state.childrens = arr;
 			return arr;
 		},
 		render: function render() {
@@ -2328,37 +2808,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 247:
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var MtuiMixins = {
-		getCheckboxGroupVal: function getCheckboxGroupVal($dom) {
-			var arr = [];
-			$dom.find(".mt-checkbox-input:checked").each(function (index, el) {
-				arr.push($(this).val());
-			});
-			return arr;
-		}
-	}; /**
-	   * MTUI_MIXINS
-	   * @author : Mantou
-	   * @date : 2016-03-01
-	   */
-
-
-	module.exports = MtuiMixins;
-
-/***/ },
-
-/***/ 248:
+/***/ 251:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2373,120 +2823,223 @@ webpackJsonp([1],{
 
 	var _Conf2 = _interopRequireDefault(_Conf);
 
-	var _MTUI = __webpack_require__(238);
+	var _index = __webpack_require__(238);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var Plus = _react2.default.createClass({
-		displayName: 'Plus',
-		render: function render() {
-			//tabs切换的数据
-			var tabsData = {
-				className: 'test',
-				defaultVal: 0,
-				data: [{ title: '小桥流水', content: _react2.default.createElement(
-						'div',
-						null,
-						'我就是随便写点什么~'
-					) }, { title: '拆菊东篱', content: _react2.default.createElement(
-						'div',
-						null,
-						'loading...'
-					) }, { title: '古道西风', content: _react2.default.createElement(
-						'div',
-						null,
-						'loading...'
-					) }, { title: '其他', content: _react2.default.createElement(
-						'div',
-						null,
-						'loading...'
-					) }],
-				callBack: function callBack(index) {
-					//切换后的回调函数
-					console.log("当前选择的tabs为：", index);
-				}
-			};
-			return _react2.default.createElement(
-				'div',
-				{ className: _Conf2.default.pageAnimate + " contents" },
-				_react2.default.createElement(
-					'h1',
-					null,
-					'插件'
-				),
-				_react2.default.createElement(
-					'div',
-					{ className: 'mt-page-content' },
-					_react2.default.createElement(
-						'h3',
-						{ className: 'mt-padding' },
-						'tab切换：'
-					),
-					_react2.default.createElement(
-						'div',
-						{ className: 'mt-g' },
-						_react2.default.createElement(
-							'div',
-							{ className: 'mt-g-12' },
-							_react2.default.createElement(_MTUI.Tabs, tabsData)
-						)
-					)
-				),
-				_react2.default.createElement(
-					'div',
-					{ className: 'mt-page-content' },
-					_react2.default.createElement(
-						'h3',
-						{ className: 'mt-padding' },
-						'日期插件：'
-					),
-					_react2.default.createElement(
-						'div',
-						{ className: 'mt-g' },
-						_react2.default.createElement(
-							'div',
-							{ className: 'mt-g-12' },
-							_react2.default.createElement(
-								'div',
-								{ className: 'mt-g-3' },
-								'没有默认值：',
-								_react2.default.createElement(_MTUI.DateInput, { defaultValue: 'null' })
-							),
-							_react2.default.createElement(
-								'div',
-								{ className: 'mt-g-3' },
-								'默认值是今天：',
-								_react2.default.createElement(_MTUI.DateInput, { defaultValue: 'now' })
-							),
-							_react2.default.createElement(
-								'div',
-								{ className: 'mt-g-3' },
-								'自定义默认值：',
-								_react2.default.createElement(_MTUI.DateInput, { year: '2015', month: '5', day: '18' })
-							),
-							_react2.default.createElement(
-								'div',
-								{ className: 'mt-g-3' },
-								'自定义提示内容：',
-								_react2.default.createElement(_MTUI.DateInput, { width: '200px', defaultValue: 'null', placeholder: '我是个任性的日期...', year: '2015', month: '3', day: '18' })
-							)
-						)
-					)
-				)
-			);
-		}
+	    displayName: 'Plus',
+
+	    handleClickPopup: function handleClickPopup(e) {
+	        (0, _index.Popup)({
+	            title: '系统提示',
+	            text: '系统提示信息！', //弹窗文字
+	            time: null, //自动关闭,  如果有值，一定时间会自动关闭
+	            width: 200, //弹窗宽度
+	            height: 'auto', //弹窗高度
+	            drag: true //是否可拖动
+	        });
+	    },
+	    handleClickPopup2: function handleClickPopup2(e) {
+	        var clickback = function clickback(mark) {
+	            console.log(mark);
+	        };
+	        var closeback = function closeback() {
+	            console.log("弹窗关闭了~");
+	        };
+	        (0, _index.Popup)({
+	            title: '系统提示222',
+	            text: '系统提示信息！', //弹窗文字
+	            time: null, //自动关闭,  如果有值，一定时间会自动关闭
+	            clickback: clickback, //点击按钮的回调函数 return :mark,$popup
+	            closeback: closeback, //关闭时的回调函数  return :$popup
+	            showbtn: 2, //是否显示按钮 0,1,2
+	            width: 300, //弹窗宽度
+	            height: 'auto', //弹窗高度
+	            drag: true //是否可拖动
+	        });
+	    },
+	    handleClickPopup3: function handleClickPopup3(e) {
+	        (0, _index.Popup)({
+	            title: '3秒后自动关闭',
+	            text: '系统提示信息！', //弹窗文字
+	            time: 3000, //自动关闭,  如果有值，一定时间会自动关闭
+	            width: 300, //弹窗宽度
+	            height: 'auto', //弹窗高度
+	            drag: true //是否可拖动
+	        });
+	    },
+	    render: function render() {
+	        //tabs切换的数据
+	        var tabsData = {
+	            className: 'test',
+	            defaultVal: 0,
+	            data: [{ title: '小桥流水', content: _react2.default.createElement(
+	                    'div',
+	                    null,
+	                    '我就是随便写点什么~'
+	                ) }, { title: '拆菊东篱', content: _react2.default.createElement(
+	                    'div',
+	                    null,
+	                    'loading...'
+	                ) }, { title: '古道西风', content: _react2.default.createElement(
+	                    'div',
+	                    null,
+	                    'loading...'
+	                ) }, { title: '其他', content: _react2.default.createElement(
+	                    'div',
+	                    null,
+	                    'loading...'
+	                ) }],
+	            callBack: function callBack(index) {
+	                //切换后的回调函数
+	                console.log("当前选择的tabs为：", index);
+	            }
+	        };
+
+	        //弹窗
+	        var modal = _react2.default.createElement(
+	            _index.Modal,
+	            { width: '400px', height: '240px', title: '弹窗标题可自定义' },
+	            '这个是有头部的弹出窗。'
+	        );
+	        var modal2 = _react2.default.createElement(
+	            _index.Modal,
+	            { width: '400px', height: '240px' },
+	            '这是一个自定义内容的弹出窗，没有头部。'
+	        );
+
+	        return _react2.default.createElement(
+	            'div',
+	            { className: _Conf2.default.pageAnimate + " contents" },
+	            _react2.default.createElement(
+	                'h1',
+	                null,
+	                '插件'
+	            ),
+	            _react2.default.createElement(
+	                'div',
+	                { className: 'mt-page-content' },
+	                _react2.default.createElement(
+	                    'h3',
+	                    { className: 'mt-padding' },
+	                    '弹窗组件:'
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'mt-g' },
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'mt-g-12' },
+	                        _react2.default.createElement(
+	                            _index.ModalShow,
+	                            { modal: modal },
+	                            _react2.default.createElement(
+	                                'a',
+	                                { href: 'javascript:;', className: 'mt-btn-green ink-reaction mt-modal-btn' },
+	                                '有头部的弹窗'
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            _index.ModalShow,
+	                            { modal: modal2 },
+	                            _react2.default.createElement(
+	                                'a',
+	                                { href: 'javascript:;', className: 'mt-btn-green ink-reaction mt-modal-btn' },
+	                                '没有头部的弹窗'
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            'a',
+	                            { href: 'javascript:;', onClick: this.handleClickPopup, className: 'mt-btn-yellow ink-reaction mt-modal-btn' },
+	                            'alert'
+	                        ),
+	                        _react2.default.createElement(
+	                            'a',
+	                            { href: 'javascript:;', onClick: this.handleClickPopup2, className: 'mt-btn-red ink-reaction mt-modal-btn' },
+	                            '带回调函数的popup'
+	                        ),
+	                        _react2.default.createElement(
+	                            'a',
+	                            { href: 'javascript:;', onClick: this.handleClickPopup3, className: 'mt-btn-blue ink-reaction mt-modal-btn' },
+	                            '3秒关闭'
+	                        )
+	                    )
+	                )
+	            ),
+	            _react2.default.createElement(
+	                'div',
+	                { className: 'mt-page-content' },
+	                _react2.default.createElement(
+	                    'h3',
+	                    { className: 'mt-padding' },
+	                    'tab切换：'
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'mt-g' },
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'mt-g-12' },
+	                        _react2.default.createElement(_index.Tabs, tabsData)
+	                    )
+	                )
+	            ),
+	            _react2.default.createElement(
+	                'div',
+	                { className: 'mt-page-content' },
+	                _react2.default.createElement(
+	                    'h3',
+	                    { className: 'mt-padding' },
+	                    '日期插件：'
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'mt-g' },
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'mt-g-12' },
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'mt-g-3' },
+	                            '没有默认值：',
+	                            _react2.default.createElement(_index.DateInput, { defaultValue: 'null' })
+	                        ),
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'mt-g-3' },
+	                            '默认值是今天：',
+	                            _react2.default.createElement(_index.DateInput, { defaultValue: 'now' })
+	                        ),
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'mt-g-3' },
+	                            '自定义默认值：',
+	                            _react2.default.createElement(_index.DateInput, { year: '2015', month: '5', day: '18' })
+	                        ),
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'mt-g-3' },
+	                            '自定义提示内容：',
+	                            _react2.default.createElement(_index.DateInput, { width: '200px', defaultValue: 'null', placeholder: '我是个任性的日期...', year: '2015', month: '3', day: '18' })
+	                        )
+	                    )
+	                )
+	            )
+	        );
+	    }
 	});
 	//关于我们
 	module.exports = Plus;
 
 /***/ },
 
-/***/ 249:
+/***/ 252:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	__webpack_require__(250);
+	__webpack_require__(253);
 
 	var _react = __webpack_require__(1);
 
@@ -2539,14 +3092,14 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 250:
+/***/ 253:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 253:
+/***/ 256:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2557,11 +3110,11 @@ webpackJsonp([1],{
 
 	var _reactRouter = __webpack_require__(159);
 
-	var _Menu = __webpack_require__(254);
+	var _Menu = __webpack_require__(257);
 
 	var _Menu2 = _interopRequireDefault(_Menu);
 
-	var _Footer = __webpack_require__(257);
+	var _Footer = __webpack_require__(260);
 
 	var _Footer2 = _interopRequireDefault(_Footer);
 
@@ -2591,12 +3144,12 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 254:
+/***/ 257:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	__webpack_require__(255);
+	__webpack_require__(258);
 
 	var _react = __webpack_require__(1);
 
@@ -2673,14 +3226,14 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 255:
+/***/ 258:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
 
-/***/ 257:
+/***/ 260:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";

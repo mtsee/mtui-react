@@ -84,7 +84,7 @@ const Froms = React.createClass({
                   <label>图标合并:</label>
                   <div className="mt-input mt-icon-input">
                     <input type="text"/>
-                    <a href="javascript:;" className="mt-iconbtn"><i className="iconfont icon-sousuo1"></i></a>
+                    <a href="javascript:;" className="mt-iconbtn"><i className="iconfont icon-search"></i></a>
                   </div>
                 
                   <br/><br/>
@@ -92,7 +92,7 @@ const Froms = React.createClass({
                   <label>block图标合并:</label>
                   <div className="mt-input-block mt-icon-input">
                     <input type="text"/>
-                    <a href="javascript:;" className="mt-iconbtn"><i className="iconfont icon-sousuo1"></i></a>
+                    <a href="javascript:;" className="mt-iconbtn"><i className="iconfont icon-search"></i></a>
                   </div>
 
                   <br/><br/>
@@ -124,21 +124,21 @@ const Froms = React.createClass({
                   <label>输入框图标合并:</label>
                   <div className="mt-input mt-icon-inputr">
                     <input type="text" className=""/>
-                    <a href="javascript:;" className="mt-iconbtn"><i className="iconfont icon-yonghu"></i></a>
+                    <a href="javascript:;" className="mt-iconbtn"><i className="iconfont icon-user"></i></a>
                   </div>
 
                   <br/><br/>
                   <label>密码框图标合并:</label>
                   <div className="mt-input mt-icon-inputr">
                     <input type="password" className=""/>
-                    <a href="javascript:;" className="mt-iconbtn"><i className="iconfont icon-mima"></i></a>
+                    <a href="javascript:;" className="mt-iconbtn"><i className="iconfont icon-password"></i></a>
                   </div>
 
                   <br/><br/>
                   <label>密码框图标合并disabled:</label>
                   <div className="mt-input mt-icon-inputr">
                     <input disabled="disabled" type="password" className=""/>
-                    <a href="javascript:;" className="mt-iconbtn"><i className="iconfont icon-mima"></i></a>
+                    <a href="javascript:;" className="mt-iconbtn"><i className="iconfont icon-password"></i></a>
                   </div>
               </div> 
           </div>
