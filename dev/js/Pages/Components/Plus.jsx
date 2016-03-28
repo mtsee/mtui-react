@@ -1,7 +1,7 @@
 import './style.css';
 import React from 'react'
 import conf from '../Conf/Conf'
-import {Tabs , DateInput, ModalShow , Modal, Popup, PageList} from '../../MTUI/index' 
+import {Tabs , DateInput, ModalShow , Modal, Popup, PageList, Loading} from '../../MTUI/index' 
 
 var a = 1;
 const Plus = React.createClass({
@@ -53,17 +53,17 @@ const Plus = React.createClass({
 
   //分页回调
   setCallBack : function(nowpage,eachPageCount){
-    console.log("当前：",nowpage,eachPageCount);
-
-      //ajax
+      console.log("当前：",nowpage,eachPageCount);
       $(this.refs.pageData).html('您选择了页码: '+nowpage+'  当前每页有：'+eachPageCount);
+  },
 
-      // a++;
-      // if(a > 5) return ;
-      // this.setState({
-      //   nowpage : nowpage,
-      //   eachPageCount : eachPageCount
-      // });
+  componentDidMount: function() {
+       Loading.start();
+       //Loading.error();
+
+       setTimeout(function(){
+          Loading.done();
+       },3000);
   },
 
   render: function() {

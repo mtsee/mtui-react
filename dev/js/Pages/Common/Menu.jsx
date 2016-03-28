@@ -16,7 +16,7 @@ const Menu = React.createClass({
               <li className="item"><Link activeClassName="active" to="/start">开始使用</Link></li>
               <li className="item"><Link activeClassName="active" to="/components">组件库</Link></li>
               <li className="item"><Link activeClassName="active" to="/help">帮助</Link></li> 
-              <li className="item"><a target="_blank" href="https://www.baidu.com">Github</a></li>
+              <li className="item"><a target="_blank" href="https://github.com/mtsee/mtui-react">Github</a></li>
             </ul>         
           </div>
         </div>

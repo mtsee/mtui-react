@@ -3890,7 +3890,7 @@ webpackJsonp([1],{
 	            { className: 'item' },
 	            _react2.default.createElement(
 	              'a',
-	              { target: '_blank', href: 'https://www.baidu.com' },
+	              { target: '_blank', href: 'https://github.com/mtsee/mtui-react' },
 	              'Github'
 	            )
 	          )
