@@ -3,6 +3,7 @@
 * @author : Mantou
 * @date : 2016-03-01
 */
+import './style.css'
 import React from 'react'
 import DateInput from './DateInput'
 import Tabs from './Tabs'
@@ -13,6 +14,7 @@ import Popup from './Popup'
 import Checkbox from './Checkbox'
 import PageList from './PageList'
 import Loading from './Loading'
+import TreeMenu from './TreeMenu'
 import {Radio ,RadioGroup} from './RadioGroup'
 
 //配置信息
@@ -27,7 +29,8 @@ export {
 	ModalShow, //modal弹窗 
 	Popup, //提示框
 	PageList, //页面列表
-    Loading //loading
+    Loading, //loading
+    TreeMenu //树形菜单
 }
 
 //拖拽插件 by mantou

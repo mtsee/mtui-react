@@ -78,7 +78,7 @@ var DateInput = React.createClass({
         return (
         	<div className="mt-input mt-date mt-icon-input">
         		<input style={{width:this.props.width}} readOnly onClick={this.handleClick} placeholder={this.props.placeholder==undefined?"日期...":this.props.placeholder} onChange={this.handleChange} type="text" value={val} />
-        		<a style={{zIndex:9}} className="mt-iconbtn"><i className="iconfont icon-gmrili"></i></a>
+        		<a style={{zIndex:9}} className="mt-iconbtn"><i className="iconfont icon-date"></i></a>
         		<DateBox changeEvent={this.handleChange} year={this.state.year} month={this.state.month} day={this.state.day}/>
         	</div>
         );

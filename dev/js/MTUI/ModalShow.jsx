@@ -48,7 +48,7 @@ const ModalShow = React.createClass({
 		var style = {
 			width:width, 
 			height:height,
-			position : 'absolute',
+			position : 'fixed',
     		top : center.top,
     		left : center.left
 		}
