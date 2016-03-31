@@ -233,7 +233,7 @@ var DateBox = React.createClass({
 		for(var i=0; i<42; i++){
 			if(i < firstDay){
 				arr.push(<li key={i}><a onClick={this.handleClickPrev} href="javascript:;" className="mt-date-prevday">{prevDays - firstDay + i + 1}</a></li>);
-			}else if(i >= firstDay && i <= days){
+			}else if(i >= firstDay && i <= (days+firstDay-1)){
 				var day = i - firstDay + 1;
 				arr.push(<li key={i}><a onClick={this.handleClickThis} href="javascript:;" className={(day==this.state.day && data.m==this.state.month && data.y==this.state.year )?'mt-date-selected':''}>{day}</a></li>);
 			}else{

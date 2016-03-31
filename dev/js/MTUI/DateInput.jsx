@@ -86,4 +86,4 @@ var DateInput = React.createClass({
 });
 
 //配置信息
-module.exports = DateInput;
+export default DateInput;
