@@ -13,8 +13,8 @@ const Tabs = React.createClass({
     }
   },
   getInitialState: function(){
-    //初始化回调
-    this.callBack(this.props.defaultVal,this.props.data[this.props.defaultVal].title);
+    //初始化回调 - 这里回调函数会出现一个BACK，回调函数只再点击切换后执行
+    //this.callBack(this.props.defaultVal,this.props.data[this.props.defaultVal].title);
     return {
       defaultVal : this.props.defaultVal
     }

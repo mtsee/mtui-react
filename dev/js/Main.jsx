@@ -1,8 +1,7 @@
 import './style.css';
 import React from 'react'
 import { render } from 'react-dom'
-import { Router, Route, Link, IndexRoute } from 'react-router' 
-import { browserHistory } from 'react-router'
+import { Router, Route, Link, IndexRoute,browserHistory} from 'react-router' 
 
 //首页
 import Index from './Pages/Index/Index';

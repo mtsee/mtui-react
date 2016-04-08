@@ -1,10 +1,9 @@
 var webpack = require('webpack');
 var HtmlwebpackPlugin = require('html-webpack-plugin');
-var JSXPath = './dev/js';
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
-
-var ROOT = 'http://localhost:3000/';
  
+var JSXPath = './dev/js';
+
 module.exports = {
     //配置服务器
     //webpack-dev-server有两种启动模式：
