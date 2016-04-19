@@ -1,0 +1,19 @@
+@charset "UTF-8";
+/* -------------CSS 格式化------------ */
+body{ overflow-x:hidden; }
+ 
+/*小图标*/
+.ico{ display: inline-block; width: 30px; height: 30px; overflow: hidden; vertical-align: middle; background: url(./img/icons.png) no-repeat;}
+.ico-basic{ background-position: 0 0;}
+.ico-yed{ background-position: 0 -30px;}
+.ico-map{ background-position: 0 -60px;}
+.ico-kpi{ background-position: 0 -90px;}
+.ico-action{ background-position: 0 -120px;}
+.ico-recruit { background-position: 0 -150px;}
+.ico-bidding{ background-position: 0 -180px;}
+.ico-property{ background-position: 0 -210px;}
+
+.mtop60{ margin-top: 60px;}
+.contents{ padding: 20px;}
+.contents h1{ margin-left: 20px;}
+.contents p{ margin: 8px 0; color: #666;}

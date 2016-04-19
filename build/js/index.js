@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "2392c897a931c6b8d7ac"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "a83ac8d3c3c563405d92"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -7988,6 +7988,10 @@
 
 	var _Index4 = _interopRequireDefault(_Index3);
 
+	var _ReduxDom = __webpack_require__(716);
+
+	var _ReduxDom2 = _interopRequireDefault(_ReduxDom);
+
 	var _Index5 = __webpack_require__(664);
 
 	var _Index6 = _interopRequireDefault(_Index5);
@@ -8046,6 +8050,9 @@
 	//开始
 
 
+	//redux案例展示
+
+
 	//组件
 
 
@@ -8093,7 +8100,8 @@
 											_react2.default.createElement(_reactRouter.Route, { path: 'forms', component: _Forms2.default }),
 											_react2.default.createElement(_reactRouter.Route, { path: 'plus', component: _Plus2.default })
 									),
-									_react2.default.createElement(_reactRouter.Route, { path: 'help', component: _Index8.default })
+									_react2.default.createElement(_reactRouter.Route, { path: 'help', component: _Index8.default }),
+									_react2.default.createElement(_reactRouter.Route, { path: 'reduxdom', component: _ReduxDom2.default })
 							)
 					),
 					 /* <DevTools />调试工具*/_react2.default.createElement(DevTools, null)
@@ -52710,11 +52718,17 @@
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
 	__webpack_require__(697);
 
 	var _react = __webpack_require__(138);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRedux = __webpack_require__(259);
 
 	var _reactRouter = __webpack_require__(269);
 
@@ -52772,6 +52786,20 @@
 	            'li',
 	            { className: 'item' },
 	            _react2.default.createElement(
+	              _reactRouter.Link,
+	              { activeClassName: 'active', to: '/reduxdom' },
+	              'Redux Dom ',
+	              this.props.tips == 0 ? "" : _react2.default.createElement(
+	                'span',
+	                { className: 'tips' },
+	                this.props.tips
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'li',
+	            { className: 'item' },
+	            _react2.default.createElement(
 	              'a',
 	              { target: '_blank', href: 'https://github.com/mtsee/mtui-react' },
 	              'Github'
@@ -52783,7 +52811,11 @@
 	  }
 	});
 	//主页
-	module.exports = Menu;
+	exports.default = (0, _reactRedux.connect)(function (state) {
+	  return {
+	    tips: state.user.tips
+	  };
+	})(Menu);
 
 	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(657); if (makeExportsHot(module, __webpack_require__(138))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Menu.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
@@ -52823,7 +52855,7 @@
 
 
 	// module
-	exports.push([module.id, "/*\r\n顶部背景色 #313a49\r\n\r\n字灰色 #b7c0ce\r\n字深灰色 #5e6a7f\r\n*/\r\n/*菜单*/ \r\n.menubox{ height: 60px; background: #313a49; position: fixed; left: 0; top: 0; right: 0; z-index: 1000;} \r\n.menubox .menu{ height: 60px; margin: 0 auto; vertical-align: middle;}\r\n.menubox .menu-logobox{ width: 120px; height: 60px; float: left; margin-left: 20px;}\r\n.menubox .menu-logo{ width: 120px; height: 60px;float: left; background: url(" + __webpack_require__(694) + ") no-repeat;}\r\n.menubox .langs,\r\n.menubox .login-register{ float: right; height: 60px; line-height: 60px;}\r\n.menubox .login-register a{ color:#b7c0ce; margin-left: 10px;}\r\n.menubox .langs{ color:#b7c0ce; margin-left: 20px;}\r\n.menubox .langs a{ color:#5e6a7f;}\r\n.menubox .langs .active{ color:#b7c0ce;}\r\n.menubox .menu-list{ float: right; margin-right: 20px;}\r\n.menubox .menu-list .item{ display: inline-block; margin: 20px 10px; position: relative;}\r\n.menubox .menu-list .item a{ color: #b7c0ce; font-size: 16px;}\r\n.menubox .menu-list .item a.active{ color: #FF6262;}\r\n.menubox .menu-list .sub-menu{ display: none;}\r\n.menubox .menu-list .item:hover .sub-menu{ display: block; position: absolute; background: #313a49; top: 0px;}", ""]);
+	exports.push([module.id, "/*\r\n顶部背景色 #313a49\r\n\r\n字灰色 #b7c0ce\r\n字深灰色 #5e6a7f\r\n*/\r\n/*菜单*/ \r\n.menubox{ height: 60px; background: #313a49; position: fixed; left: 0; top: 0; right: 0; z-index: 1000;} \r\n.menubox .menu{ height: 60px; margin: 0 auto; vertical-align: middle;}\r\n.menubox .menu-logobox{ width: 120px; height: 60px; float: left; margin-left: 20px;}\r\n.menubox .menu-logo{ width: 120px; height: 60px;float: left; background: url(" + __webpack_require__(694) + ") no-repeat;}\r\n.menubox .langs,\r\n.menubox .login-register{ float: right; height: 60px; line-height: 60px;}\r\n.menubox .login-register a{ color:#b7c0ce; margin-left: 10px;}\r\n.menubox .langs{ color:#b7c0ce; margin-left: 20px;}\r\n.menubox .langs a{ color:#5e6a7f;}\r\n.menubox .langs .active{ color:#b7c0ce;}\r\n.menubox .menu-list{ float: right; margin-right: 20px;}\r\n.menubox .menu-list .item{ display: inline-block; margin: 20px 10px; position: relative;}\r\n.menubox .menu-list .item a{ color: #b7c0ce; font-size: 16px;}\r\n.menubox .menu-list .item a.active{ color: #FF6262;}\r\n.menubox .menu-list .tips{ display: block; position: absolute; background: #FF6262; color: #fff; border-radius: 100px; width: 20px; height: 20px; text-align: center; line-height: 20px; right: -15px; top: -8px;}", ""]);
 
 	// exports
 
@@ -53985,6 +54017,173 @@
 	exports.default = LoadDom;
 
 	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(657); if (makeExportsHot(module, __webpack_require__(138))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "LoadDom.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
+
+/***/ },
+/* 716 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	__webpack_require__(717);
+
+	var _react = __webpack_require__(138);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRedux = __webpack_require__(259);
+
+	var _setMinHeight = __webpack_require__(656);
+
+	var _setMinHeight2 = _interopRequireDefault(_setMinHeight);
+
+	var _user = __webpack_require__(719);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var ReduxDom = _react2.default.createClass({
+	  displayName: 'ReduxDom',
+
+	  mixins: [_setMinHeight2.default],
+
+	  //点击
+	  handleClickRead: function handleClickRead(e) {
+	    this.props.setUserInfo({
+	      tips: 0
+	    });
+	  },
+
+
+	  //点击
+	  handleClickAdd: function handleClickAdd(e) {
+	    var tips = this.props.tips;
+	    tips++;
+	    this.props.setUserInfo({
+	      tips: tips
+	    });
+	  },
+
+
+	  //渲染
+	  render: function render() {
+	    var html = 'var a=124;';
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'start', style: { minHeight: this.state.height + "px" } },
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'contents reduxdom' },
+	        _react2.default.createElement(
+	          'h1',
+	          null,
+	          'Redux Dom'
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'tipsbox' },
+	          '当前有 ',
+	          _react2.default.createElement(
+	            'em',
+	            null,
+	            this.props.tips
+	          ),
+	          ' 条未读通知   ',
+	          _react2.default.createElement(
+	            'a',
+	            { href: 'javascript:;', className: 'mt-btn-green', onClick: this.handleClickRead },
+	            '清零'
+	          ),
+	          '  ',
+	          _react2.default.createElement(
+	            'a',
+	            { href: 'javascript:;', className: 'mt-btn-yellow', onClick: this.handleClickAdd },
+	            '添加一条'
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+	//植入redux数据
+	exports.default = (0, _reactRedux.connect)(function (state) {
+	  return {
+	    tips: state.user.tips
+	  };
+	}, { setUserInfo: _user.setUserInfo })(ReduxDom);
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(657); if (makeExportsHot(module, __webpack_require__(138))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "ReduxDom.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
+
+/***/ },
+/* 717 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(718);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(246)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(true) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept(718, function() {
+				var newContent = __webpack_require__(718);
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 718 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(244)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".reduxdom .tipsbox{ padding: 20px;}\r\n.reduxdom .tipsbox em{ font-size: 16px; font-weight: bolder; color: #FF6262;}", ""]);
+
+	// exports
+
+
+/***/ },
+/* 719 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.setUserInfo = setUserInfo;
+
+	var _constants = __webpack_require__(702);
+
+	//设置公司名称
+	function setUserInfo(data) {
+	  return {
+	    type: _constants.SET_USER_INFO,
+	    data: data
+	  };
+	}
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(657); if (makeExportsHot(module, __webpack_require__(138))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "user.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ }
