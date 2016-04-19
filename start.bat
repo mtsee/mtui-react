@@ -1,1 +1,1 @@
-cmd cd E:\MTUI
+cmd cd :\

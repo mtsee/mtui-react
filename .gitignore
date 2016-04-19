@@ -1,2 +1,3 @@
 /node_modules
-/README.md
+/build/*.hot-update.js
+/build/*.hot-update.json
