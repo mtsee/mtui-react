@@ -52,7 +52,9 @@ var codeDateInput = 'import { DateInput } from \'../../MTUI/index\'\
 #}\
 #render:\
 #\
-#<DateInput {...data}/>';
+#<DateInput {...data}/>\
+#多个日期组合：<DateInputs defaultValue="null" placeholder="选择时间段..."/>\
+#多个日期组合：<DateInputs start="2016/4/10" end="2016/5/12" placeholder="选择时间段..."/>';
 //this.iniEditer(codeDateInput,'code-DateInput'); 
 
 //分页
@@ -185,7 +187,7 @@ const Plus = React.createClass({
                case '模态弹窗': this.iniEditer(codeModalShow,'code-ModalShow'); break;
                case '提示弹框': this.iniEditer(codePopup,'code-PopupShow'); break;
                case 'Tab切换': this.iniEditer(codeTabs,'code-Tabs'); break;
-               case '日历': this.iniEditer(codePageList,'code-DateInput'); break;
+               case '日历': this.iniEditer(codeDateInput,'code-DateInput'); break;
                case '树形菜单': this.iniEditer(codeTreeMenu,'code-TreeMenu'); break;
                case '加载': this.iniEditer(codeLoading,'code-Loading'); break;
              }

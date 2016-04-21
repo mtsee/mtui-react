@@ -28,7 +28,8 @@ const DateInputDom = React.createClass({
             </div>
 
             <div className="mt-g-3">
-              多个日期组合：<DateInputs defaultValue="null" placeholder="选择时间段..."/>
+              多个日期组合：<DateInputs defaultValue="null" placeholder="选择时间段..."/> <br/><br/>
+              多个日期组合2：<DateInputs start="2016/4/10" end="2016/5/12" placeholder="选择时间段..."/>
             </div>
 
             <div className="mt-g-12">

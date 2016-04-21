@@ -8,26 +8,6 @@ import React from 'react';
 import DateBox from './DateBox'
 
 var DateInput = React.createClass({
-	//比较日期,返回最大的那个
-	compareDate : function(s_arr,e_arr){
-		var arr = [];
-
-		//如果结束大与开始，结束 = 开始
-		var start = s_arr[0] +""+ 
-					(parseInt(s_arr[1],10) < 10 ? "0"+parseInt(s_arr[1],10) : parseInt(s_arr[1],10))+
-					(parseInt(s_arr[2],10) < 10 ? "0"+parseInt(s_arr[2],10) : parseInt(s_arr[2],10));
-		var end = e_arr[0] +""+ 
-					(parseInt(e_arr[1],10) < 10 ? "0"+parseInt(e_arr[1],10) : parseInt(e_arr[1],10))+
-					(parseInt(e_arr[2],10) < 10 ? "0"+parseInt(e_arr[2],10) : parseInt(e_arr[2],10));
-
-		if(parseInt(start, 10) > parseInt(end, 10)){
-			arr = s_arr;
-		}else{
-			arr = e_arr;
-		}
-		return arr;
-	},
-
 	//初始化
 	getInitialState: function(){
 
@@ -61,6 +41,26 @@ var DateInput = React.createClass({
 			e_day : e_arr[2],
 			width : this.props.width==undefined?200:this.props.width
 		} 
+	},
+
+	//比较日期,返回最大的那个
+	compareDate : function(s_arr,e_arr){
+		var arr = [];
+
+		//如果结束大与开始，结束 = 开始
+		var start = s_arr[0] +""+ 
+					(parseInt(s_arr[1],10) < 10 ? "0"+parseInt(s_arr[1],10) : parseInt(s_arr[1],10))+
+					(parseInt(s_arr[2],10) < 10 ? "0"+parseInt(s_arr[2],10) : parseInt(s_arr[2],10));
+		var end = e_arr[0] +""+ 
+					(parseInt(e_arr[1],10) < 10 ? "0"+parseInt(e_arr[1],10) : parseInt(e_arr[1],10))+
+					(parseInt(e_arr[2],10) < 10 ? "0"+parseInt(e_arr[2],10) : parseInt(e_arr[2],10));
+
+		if(parseInt(start, 10) > parseInt(end, 10)){
+			arr = s_arr;
+		}else{
+			arr = e_arr;
+		}
+		return arr;
 	},
 
 	// //初始化参数
