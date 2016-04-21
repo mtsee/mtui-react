@@ -7,7 +7,7 @@ module.exports = {
     entry: [
         'webpack-dev-server/client?http://127.0.0.1:4000',
         'webpack/hot/only-dev-server',
-        './dev/index.jsx'
+        './dev/index_dev.jsx'
     ],
     //入口文件输出配置
     output: {

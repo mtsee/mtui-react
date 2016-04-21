@@ -1,5 +1,5 @@
 import React from 'react'
-import {DateInput} from '../../../MTUI/index'
+import {DateInput, DateInputs} from '../../../MTUI/index'
 
 // 类
 const DateInputDom = React.createClass({
@@ -25,6 +25,10 @@ const DateInputDom = React.createClass({
 
             <div className="mt-g-3">
               自定义提示内容：<DateInput width="200px" defaultValue="null" placeholder="我是个任性的日期..." year="2015" month="3" day="18"/>
+            </div>
+
+            <div className="mt-g-3">
+              多个日期组合：<DateInputs defaultValue="null" placeholder="选择时间段..."/>
             </div>
 
             <div className="mt-g-12">

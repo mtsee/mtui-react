@@ -47,7 +47,10 @@
     "webpack-require-http": "^0.1.0"
   },
   "scripts": {
-    "start": "webpack-dev-server --config webpack.config.old.js --hot --inline --port 4000"
+    "start": "webpack-dev-server --config webpack.config.old.js --hot --inline --port 4000",
+    "server": "node server.js",
+    "hot":"webpack --config webpack.config.dev.js --display-error-details --progress --colors --watch",
+    "build":"set NODE_ENV=production && webpack -p --config webpack.config.prod.js --progress --colors"
   },
   "directories": {
     "example": "example"

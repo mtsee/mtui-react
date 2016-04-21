@@ -57,7 +57,7 @@ var DateInput = React.createClass({
 		$(".mt-date-years").hide().removeClass('mt-date-animate');
 		if(e.target.value != ""){
 			//分离value
-			var arr = e.target.value.split("-");
+			var arr = e.target.value.split("/");
 			console.log(arr);
 			this.setState({
 				year : arr[0],
@@ -73,7 +73,7 @@ var DateInput = React.createClass({
     	if(this.state.defaultValue == "null"){ 
     		var val = "";
     	}else{
-    		var val = this.state.year+'-'+this.state.month+'-'+this.state.day;
+    		var val = this.state.year+'/'+this.state.month+'/'+this.state.day;
     	}
         return (
         	<div className="mt-input mt-date mt-icon-input">

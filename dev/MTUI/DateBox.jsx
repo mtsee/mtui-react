@@ -67,16 +67,30 @@ var DateBox = React.createClass({
 		} 
 	},
 
+	//hide DIV
+	hideDiv : function(){
+		if(this.props.mark == "start"){
+			return;
+		}else if(this.props.mark == "end"){
+			//$(this.refs.myDate).parent(".mt-dates").hide();
+			return;
+		}else{
+			$(this.refs.myDate).hide();
+			//...
+		}
+	},
+
 	//点击后触发
 	clickDay : function (e,mark) {
 		var obj = MtDate.addAndDelOneMonth(this.state.year, this.state.month, mark);
 		var data = {
 			day : e.target.text,
 			year : obj.y,
-			month : obj.m
+			month : obj.m,
+			mark : this.props.mark
 		}
 		this.props.changeEvent(e,data);
-		$(this.refs.myDate).hide();
+		this.hideDiv();
 	},
 
 	//点击事件
@@ -144,13 +158,13 @@ var DateBox = React.createClass({
 	//点击月
 	handleClickM: function(e) {
 
-		//根据当前的year 前 20年，后 10年 初始化数据
+		//根据当前的year 前 12年，后 12年 初始化数据
 		var y = this.state.year;
 		var arr = [];
-		for(var i=15; i > 0 ; i--){
+		for(var i=12; i > 0 ; i--){
 			arr.push(y-i);
 		};
-		for(var i=0; i < 25 ; i++){
+		for(var i=0; i < 12 ; i++){
 			arr.push(i+parseInt(y));
 		};
 		//console.log(arr);
@@ -203,16 +217,17 @@ var DateBox = React.createClass({
 		var data ={
 			year : myDate.getFullYear(),
 			month : 1+parseInt(myDate.getMonth()),
-			day : myDate.getDate()
+			day : myDate.getDate(),
+			mark : this.props.mark
 		};
 		this.props.changeEvent(e,data);
-		$(this.refs.myDate).hide();
+		this.hideDiv();
 	},
 
 	//点击清除
 	handleClickClear: function(e) {
 		this.props.changeEvent(e,undefined);
-		$(this.refs.myDate).hide();
+		this.hideDiv();
 	},
 
 	//初始化日历插件
@@ -230,12 +245,22 @@ var DateBox = React.createClass({
 		if(firstDay == 0){
 			firstDay = 7;
 		}
+
+		//渲染day
 		for(var i=0; i<42; i++){
 			if(i < firstDay){
 				arr.push(<li key={i}><a onClick={this.handleClickPrev} href="javascript:;" className="mt-date-prevday">{prevDays - firstDay + i + 1}</a></li>);
-			}else if(i >= firstDay && i <= (days+firstDay-1)){
+			}else if(i >= firstDay && i <= (days+firstDay-1)){ //中间部分
 				var day = i - firstDay + 1;
-				arr.push(<li key={i}><a onClick={this.handleClickThis} href="javascript:;" className={(day==this.state.day && data.m==this.state.month && data.y==this.state.year )?'mt-date-selected':''}>{day}</a></li>);
+				if(day < this.state.day){
+					var cName = 'mt-dates-up';
+				}else if(day == this.state.day){
+					var cName = 'mt-date-selected';
+				}else{
+					var cName = 'mt-dates-down';
+				}
+				arr.push(<li key={i}><a onClick={this.handleClickThis} href="javascript:;" className={cName}>{day}</a></li>);
+				
 			}else{
 				arr.push(<li key={i}><a onClick={this.handleClickNext} href="javascript:;" className="mt-date-nextday">{i - days}</a></li>);
 			}
@@ -254,24 +279,24 @@ var DateBox = React.createClass({
     		nextDay = MtDate.addAndDelOneMonth(this.state.year, this.state.month, 'add');
     	var arr = ['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月'];
         return (
-            <div ref="myDate" className='mt-date-main'> 
+            <div ref="myDate" className={'mt-date-main '+(this.props.cName!=undefined?this.props.cName:"")}> 
 				<div className='mt-date-title'>
-					<a onClick={this.handleClickNowDay} href="javascript:;" className="mt-btn-blue mt-btn-sm ink-reaction mt-date-nowday">今天</a>
-					<a onClick={this.handleClickClear} href="javascript:;" className="mt-btn-blue mt-btn-sm ink-reaction mt-date-clear">清除</a>
+					<a onClick={this.handleClickNowDay} href="javascript:;" className="mt-btn-blue mt-btn-sm mt-date-nowday">今天</a>
+					<a onClick={this.handleClickClear} href="javascript:;" className="mt-btn-blue mt-btn-sm mt-date-clear">{this.props.mark != undefined ? "" : "清除"}</a>
 					<div className="mt-date-yearMonth" ref="yearMonth">
-						<a onClick={this.handleClickPrevMonth} className="mt-btn-blue mt-btn-sm ink-reaction" href="javascript:;"><i className="iconfont icon-left"></i></a>
-						<a onClick={this.handleClickYandM} className="mt-btn-blue mt-btn-sm ink-reaction mt-date-ym" href="javascript:;" >{this.state.year} - {this.state.month}</a>
-						<a onClick={this.handleClickNextMonth} className="mt-btn-blue mt-btn-sm ink-reaction" href="javascript:;"><i className="iconfont icon-right"></i></a>
+						<a onClick={this.handleClickPrevMonth} className="mt-btn-blue mt-btn-sm" href="javascript:;"><i className="iconfont icon-left"></i></a>
+						<a onClick={this.handleClickYandM} className="mt-btn-blue mt-btn-sm mt-date-ym" href="javascript:;" >{this.state.year} / {this.state.month}</a>
+						<a onClick={this.handleClickNextMonth} className="mt-btn-blue mt-btn-sm" href="javascript:;"><i className="iconfont icon-right"></i></a>
 					</div>
 					<div className="mt-date-month" ref="month">
-						<a onClick={this.handleClickPrevMonth} className="mt-btn-blue mt-btn-sm ink-reaction" href="javascript:;"><i className="iconfont icon-left"></i></a>
-						<a onClick={this.handleClickM} className="mt-btn-blue mt-btn-sm ink-reaction mt-date-m" href="javascript:;" >{this.state.month}</a>
-						<a onClick={this.handleClickNextMonth} className="mt-btn-blue mt-btn-sm ink-reaction" href="javascript:;"><i className="iconfont icon-right"></i></a>
+						<a onClick={this.handleClickPrevMonth} className="mt-btn-blue mt-btn-sm" href="javascript:;"><i className="iconfont icon-left"></i></a>
+						<a onClick={this.handleClickM} className="mt-btn-blue mt-btn-sm mt-date-m" href="javascript:;" >{this.state.month}</a>
+						<a onClick={this.handleClickNextMonth} className="mt-btn-blue mt-btn-sm" href="javascript:;"><i className="iconfont icon-right"></i></a>
 					</div>
 					<div className="mt-date-year" ref="year">
-						<a onClick={this.handleClickPrevYear} className="mt-btn-blue mt-btn-sm ink-reaction" href="javascript:;"><i className="iconfont icon-left"></i></a>
-						<a onClick={this.handleClickY} className="mt-btn-blue mt-btn-sm ink-reaction mt-date-y" href="javascript:;" >{this.state.year}</a>
-						<a onClick={this.handleClickNextYear} className="mt-btn-blue mt-btn-sm ink-reaction" href="javascript:;"><i className="iconfont icon-right"></i></a>
+						<a onClick={this.handleClickPrevYear} className="mt-btn-blue mt-btn-sm" href="javascript:;"><i className="iconfont icon-left"></i></a>
+						<a onClick={this.handleClickY} className="mt-btn-blue mt-btn-sm mt-date-y" href="javascript:;" >{this.state.year}</a>
+						<a onClick={this.handleClickNextYear} className="mt-btn-blue mt-btn-sm" href="javascript:;"><i className="iconfont icon-right"></i></a>
 					</div>
 				</div> 
 				<div className="mt-date-body">
@@ -299,17 +324,6 @@ var DateBox = React.createClass({
 							}
 						</ul>
 					</div>
-					{/*<div className="mt-date-warp">
-						<div className="mt-date-item">
-							{this.initMonthDay(prevDay)}
-						</div>
-						<div className="mt-date-item">
-							{this.initMonthDay(nowDay)}
-						</div>
-						<div className="mt-date-item">
-							{this.initMonthDay(nextDay)}
-						</div>
-					</div>*/}
 				</div> 
 			</div>
         );

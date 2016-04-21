@@ -6,6 +6,7 @@
 import './style.css'
 import React from 'react'
 import DateInput from './DateInput'
+import DateInputs from './DateInputs'
 import Tabs from './Tabs'
 import Selected from './Selected'
 import ModalShow from './ModalShow'
@@ -25,6 +26,7 @@ export {
 	Radio, //单选
 	RadioGroup,//单选组合框
 	DateInput, //日期组件
+	DateInputs, //多个日期组合
 	Modal, //modal弹窗
 	ModalShow, //modal弹窗 
 	Popup, //提示框
@@ -136,6 +138,7 @@ $(document).on('click', function(e) {
 	}
 	if(!$(e.target).closest('.mt-date-main')[0]){
 		$(".mt-date-main").hide();
+		$(".mt-dates").hide();
 	}
 }).on('click', '.ink-reaction', function(e) {
 	var $this = $(this);
