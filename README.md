@@ -7,7 +7,7 @@
 
 
 ####命令说明：
-- npm install 安装插件 
+- 安装插件: 进入工程目录后运行 npm install  
 - 打包发布：start-build.bat
 
 #####普通开发模式：
