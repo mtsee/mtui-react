@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "a3a50844d00a00afe50a"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "413ff743fa794881adb4"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -50690,7 +50690,14 @@
 					day: arr[2]
 				});
 			}
-			$(e.target).siblings(".mt-date-main").show();
+			var $main = $(e.target).siblings(".mt-date-main");
+			$main.show();
+
+			//点击后隐藏
+			$(document).one("click", function () {
+				$main.hide();
+			});
+			e.stopPropagation();
 		},
 
 		//渲染
@@ -51238,8 +51245,8 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var DateInput = _react2.default.createClass({
-		displayName: 'DateInput',
+	var DateInputs = _react2.default.createClass({
+		displayName: 'DateInputs',
 
 		//初始化
 		getInitialState: function getInitialState() {
@@ -51359,7 +51366,21 @@
 					e_day: e_arr[2]
 				});
 			}
-			$(e.target).siblings('.mt-dates').show().find(".mt-date-main").show();
+			var $dates = $(e.target).siblings('.mt-dates');
+			$dates.show().find(".mt-date-main").show();
+
+			//点击后隐藏
+			$(document).off("click.DateInputs").on("click.DateInputs", function (e) {
+				e.stopPropagation();
+
+				console.log($(e.target)[0]);
+
+				if (!$(e.target).closest('.mt-date-main')[0]) {
+					$dates.hide();
+					$(this).off("click.DateInputs");
+				}
+			});
+			e.stopPropagation();
 		},
 
 		handleClickClear: function handleClickClear(e) {
@@ -51414,7 +51435,7 @@
 	* @author : Mantou
 	* @date : 2016-03-01
 	*/
-	exports.default = DateInput;
+	exports.default = DateInputs;
 
 	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(658); if (makeExportsHot(module, __webpack_require__(138))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "DateInputs.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
@@ -51540,12 +51561,6 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	//自定义的select
-	var $doc = $(document); /**
-	                        * 一个简单的日历插件
-	                        * @author : Mantou
-	                        * @date : 2016-03-01
-	                        */
-
 	var Selected = _react2.default.createClass({
 		displayName: "Selected",
 
@@ -51585,7 +51600,7 @@
 			}
 
 			//点击后隐藏
-			$doc.one("click", function () {
+			$(document).one("click", function () {
 				$box.slideUp(speed);
 			});
 
@@ -51635,6 +51650,11 @@
 	});
 
 	//配置信息
+	/**
+	* 一个简单的日历插件
+	* @author : Mantou
+	* @date : 2016-03-01
+	*/
 	module.exports = Selected;
 
 	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(658); if (makeExportsHot(module, __webpack_require__(138))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Selected.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }

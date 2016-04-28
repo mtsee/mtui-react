@@ -7,7 +7,7 @@ import './style.css';
 import React from 'react';
 import DateBox from './DateBox'
 
-var DateInput = React.createClass({
+var DateInputs = React.createClass({
 	//初始化
 	getInitialState: function(){
 
@@ -130,7 +130,22 @@ var DateInput = React.createClass({
 				e_day : e_arr[2]
 			});
 		}
-		$(e.target).siblings('.mt-dates').show().find(".mt-date-main").show();
+		var $dates = $(e.target).siblings('.mt-dates');
+		$dates.show().find(".mt-date-main").show();
+
+		//点击后隐藏
+		$(document).off("click.DateInputs").on("click.DateInputs", function(e){
+			e.stopPropagation();
+
+			console.log($(e.target)[0]);
+
+			if(!$(e.target).closest('.mt-date-main')[0]){
+				$dates.hide();
+				$(this).off("click.DateInputs");
+			}
+    	});
+    	e.stopPropagation();
+
 	},
 
 	handleClickClear: function(e){
@@ -165,4 +180,4 @@ var DateInput = React.createClass({
 });
 
 //配置信息
-export default DateInput;
+export default DateInputs;

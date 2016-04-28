@@ -65,7 +65,15 @@ var DateInput = React.createClass({
 				day : arr[2]
 			});
 		}
-		$(e.target).siblings(".mt-date-main").show();
+		var $main = $(e.target).siblings(".mt-date-main");
+		$main.show();
+
+		//点击后隐藏
+		$(document).one("click", function(){
+        	$main.hide();
+    	});
+    	e.stopPropagation();
+
 	},
 
 	//渲染
