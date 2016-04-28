@@ -6,6 +6,7 @@
 import React from 'react'
 
 //自定义的select 
+var $doc = $(document);
 const Selected = React.createClass({
 	getInitialState: function(){
 		var title = (this.props.placeholder==undefined?<span className="placeholder">请选择...</span>:<span className="placeholder">{this.props.placeholder}</span>);
@@ -25,7 +26,6 @@ const Selected = React.createClass({
   		}
   	},
 	handleClickTitle : function(e){
-		e.stopPropagation();
 		var speed = 200;
 		var $box = $(e.currentTarget).find(".mt-select-box");
 		var val = $(e.target).attr("data-val");
@@ -34,6 +34,13 @@ const Selected = React.createClass({
 		}else{
 			$box.slideUp(speed);
 		}
+
+		//点击后隐藏
+		$doc.one("click", function(){
+        	$box.slideUp(speed);
+    	});
+
+		e.stopPropagation();
 	},
 	handleClickOption : function(e){
 		//e.stopPropagation();

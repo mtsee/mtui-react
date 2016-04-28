@@ -32,6 +32,8 @@ const SelectDom = React.createClass({
         <div className="mt-g">
           <div className="mt-g-12">
             <Selected {...selectProp}/>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <Selected {...selectProp}/>
             <br/><br/>
             <div className="codes" id="code-Selected"></div>
           </div>

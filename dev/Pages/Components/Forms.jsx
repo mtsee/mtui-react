@@ -8,6 +8,7 @@ import SelectDom from './forms/SelectDom'
 import InputDom from './forms/InputDom'
 import CheckboxDom from './forms/CheckboxDom'
 import RadioDom from './forms/RadioDom'
+import SwicthDom from './forms/SwicthDom'
 
 import setCode from '../../Mixins/setCode'
 
@@ -93,6 +94,20 @@ var codeSelected = "import { Selected } from '../../MTUI/index'\
         #\
         #<Selected {...selectProp}/>#";
 
+//下拉列表
+var codeSwicth = "import { Swicth } from '../../MTUI/index'\
+        #//开关\
+        #\
+        #render:\
+        #\
+        #<Swicth checked=\"true\" id=\"abc\" disabled/>\
+        ##<Swicth checked=\"false\" />\
+        ##<Swicth checked=\"true\" />\
+        ##参数说明：\
+        # checked : 状态\
+        # id : 传入id\
+        # disabled : 不可选状态\
+        #";
 // 类
 const Froms = React.createClass({
   mixins:[setCode],
@@ -108,7 +123,8 @@ const Froms = React.createClass({
              {title : 'select', content :<SelectDom /> },      
              {title : 'checkbox', content :<CheckboxDom /> },      
              {title : 'radio', content :<RadioDom /> },      
-             {title : 'input', content :<InputDom /> }       
+             {title : 'input', content :<InputDom /> },    
+             {title : 'swicth', content :<SwicthDom /> }       
           ],       
            callBack: function(index,name){ //切换后的回调函数       
              //console.log("当前选择的tabs为：",index,name);
@@ -116,6 +132,7 @@ const Froms = React.createClass({
                case 'select': this.iniEditer(codeSelected,'code-Selected'); break;
                case 'checkbox': this.iniEditer(codeCheckbox,'code-Checkbox'); break;
                case 'radio': this.iniEditer(codeRadio,'code-Radio'); break;
+               case 'swicth': this.iniEditer(codeSwicth,'code-Swicth'); break;
              }
 
            }.bind(this)     

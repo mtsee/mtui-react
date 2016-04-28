@@ -1,4 +1,3 @@
-import './style.css';
 import React from 'react'
 import { Router, Route, IndexRoute} from 'react-router' // 路由
 //首页
@@ -28,24 +27,24 @@ const Routers = React.createClass({
     render() {
         return (
             <Router history={this.props.history}>
-		    <Route path={HOME_PATH+"/"} component={App}>
-		      <IndexRoute component={Index} />
-		      <Route path="index" component={Index}/>
-		      <Route path="start" component={Start}/>
-		      <Route path="components" component={Components}>
-		        <Route path="htmls" component={Htmls}>
-		        	<Route path="btn" component={HtmlsBtn}/>
-		        	<Route path="table" component={HtmlsTable}/>
-		        </Route>
-		        <Route path="forms" component={Forms}/>
-		        <Route path="plus" component={Plus}/>
-		      </Route>
-		      <Route path="help" component={Help}/> 
-		      <Route path="reduxdom" component={ReduxDom}/>
-		    </Route>
-		  </Router>
+			    <Route path={HOME_PATH+"/"} component={App}>
+			      <IndexRoute component={Index} />
+			      <Route path="index" component={Index}/>
+			      <Route path="start" component={Start}/>
+			      <Route path="components" component={Components}>
+			        <Route path="htmls" component={Htmls}>
+			        	<Route path="btn" component={HtmlsBtn}/>
+			        	<Route path="table" component={HtmlsTable}/>
+			        </Route>
+			        <Route path="forms" component={Forms}/>
+			        <Route path="plus" component={Plus}/>
+			      </Route>
+			      <Route path="help" component={Help}/> 
+			      <Route path="reduxdom" component={ReduxDom}/>
+			    </Route>
+		  	</Router>
         );
     }
 });
 
-module.exports = Routers;
+export default Routers;

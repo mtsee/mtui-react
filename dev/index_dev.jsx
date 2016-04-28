@@ -36,10 +36,10 @@ const history = syncHistoryWithStore(browserHistory, store)
 //路由
 render(
 	<Provider store={store}>
-	  <div> 
-	  <Routers history={history} />
-	  {/* <DevTools />调试工具*/}<DevTools />
-      </div>
-	</Provider>
-, document.getElementById('App')
+	  <div>
+	   <Routers history={history} />
+	   <DevTools />
+    </div>
+	</Provider>, 
+  document.getElementById('App')
 );

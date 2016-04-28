@@ -24,7 +24,7 @@ const history = syncHistoryWithStore(browserHistory, store)
 //路由
 render(
 	<Provider store={store}>
-	  <Routers history={history} />
-	</Provider>
-, document.getElementById('App')
+	  <Routers history={history}/>
+	</Provider>, 
+	document.getElementById('App')
 );

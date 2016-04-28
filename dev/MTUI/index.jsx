@@ -17,17 +17,8 @@ import PageList from './PageList'
 import Loading from './Loading'
 import TreeMenu from './TreeMenu'
 import Popover from './Popover'
+import Swicth from './Swicth'
 import {Radio ,RadioGroup} from './RadioGroup'
-
-//添加DOM
-if(!$("#MTUI_BG")[0]){
-	$("#App").after('\
-	<div id="MTUI_BG"></div>\
-	<div id="MTUI_LOADING"></div>\
-	<div id="MTUI_MODAL"></div>\
-	<div id="MTUI_POPOVER"></div>\
-	<div id="MTUI_POPUP"></div>');
-}
 
 //center插件 by mantou 
 ;(function($){ 
@@ -124,17 +115,8 @@ if(!$("#MTUI_BG")[0]){
 	}
 })(jQuery);
 
-//点击空白，收起选择框，特殊情况
-$(document).on('click', function(e) {
-	e.stopPropagation();
-	if(!$(e.target).closest('.mt-select')[0]){
-		$(".mt-select-box").slideUp(200);
-	}
-	if(!$(e.target).closest('.mt-date-main')[0]){
-		$(".mt-date-main").hide();
-		$(".mt-dates").hide();
-	}
-}).on('click', '.ink-reaction', function(e) {
+//波纹按钮
+$(document).on('click', '.ink-reaction', function(e) {
 	var $this = $(this);
 	//获取当前的点击点
 	var x = e.pageX - $this.offset().left;
@@ -150,7 +132,6 @@ $(document).on('click', function(e) {
 	}
 
 });
-
 
 /**
 *   重写ajax方法
@@ -197,6 +178,16 @@ $(document).on('click', function(e) {
     };  
 })(jQuery);
 
+//添加DOM
+if(!$("#MTUI_BG")[0]){
+	$("#App").after('\
+	<div id="MTUI_BG"></div>\
+	<div id="MTUI_LOADING"></div>\
+	<div id="MTUI_MODAL"></div>\
+	<div id="MTUI_POPOVER"></div>\
+	<div id="MTUI_POPUP"></div>');
+}
+
 //配置信息
 export {
 	Tabs, //tabs切换
@@ -205,6 +196,7 @@ export {
 	Radio, //单选
 	RadioGroup,//单选组合框
 	DateInput, //日期组件
+	Swicth, //Swicth 开关 
 	DateInputs, //多个日期组合 ======================================
 	Modal, //modal弹窗
 	ModalShow, //modal弹窗 
