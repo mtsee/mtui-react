@@ -10,6 +10,7 @@ const setMinHeight = {
     iniEditer: function(str,id){
       $("#"+id).html("");
       str = str.replace(/\#/g,'\n');
+      str = str.replace(/\井/g,'#');
       var editor = CodeMirror(document.getElementById(id),{  // 标识到textarea
           mode : 'javascript',  // 模式
           theme : "monokai",  // CSS样式选择

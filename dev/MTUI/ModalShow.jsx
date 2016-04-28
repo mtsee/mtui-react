@@ -78,9 +78,10 @@ const ModalShow = React.createClass({
 	//渲染
 	render(){
 		//console.log(this.props.modal);
-		return (
-			<span onClick={this.handleClick}>{this.props.children}</span>
-		);
+		var child = React.Children.only(this.props.children);
+		return React.cloneElement(child,{
+	      onClick : this.handleClick
+	    });
 	}
 });
 

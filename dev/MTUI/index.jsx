@@ -16,23 +16,17 @@ import Checkbox from './Checkbox'
 import PageList from './PageList'
 import Loading from './Loading'
 import TreeMenu from './TreeMenu'
+import Popover from './Popover'
 import {Radio ,RadioGroup} from './RadioGroup'
 
-//配置信息
-export {
-	Tabs, //tabs切换
-	Selected, //下拉选择框
-	Checkbox, //checkbox
-	Radio, //单选
-	RadioGroup,//单选组合框
-	DateInput, //日期组件
-	DateInputs, //多个日期组合
-	Modal, //modal弹窗
-	ModalShow, //modal弹窗 
-	Popup, //提示框
-	PageList, //页面列表
-    Loading, //loading
-    TreeMenu //树形菜单
+//添加DOM
+if(!$("#MTUI_BG")[0]){
+	$("#App").after('\
+	<div id="MTUI_BG"></div>\
+	<div id="MTUI_LOADING"></div>\
+	<div id="MTUI_MODAL"></div>\
+	<div id="MTUI_POPOVER"></div>\
+	<div id="MTUI_POPUP"></div>');
 }
 
 //center插件 by mantou 
@@ -156,3 +150,67 @@ $(document).on('click', function(e) {
 	}
 
 });
+
+
+/**
+*   重写ajax方法
+*/
+;(function($){  
+    //备份jquery的ajax方法  
+    var _ajax=$.ajax;  
+      
+    //重写jquery的ajax方法  
+    $.ajax=function(opt){  
+        //备份opt中error和success方法  
+        var fn = {    
+            error:function(XMLHttpRequest, textStatus, errorThrown){},
+            beforeSend:function(data, textStatus){},
+            success:function(data, textStatus){}
+        }  
+        if(opt.error){  
+            fn.error=opt.error;  
+        }  
+        if(opt.success){  
+            fn.success=opt.success;  
+        }  
+          
+        //扩展增强处理  
+        var _opt = $.extend(opt,{  
+            error:function(XMLHttpRequest, textStatus, errorThrown){  
+                //错误方法增强处理  
+                // fn.error(XMLHttpRequest, textStatus, errorThrown);
+                // var str = XMLHttpRequest.responseText;
+                // str = eval("("+str+")");
+                Loading.done();
+            },  
+            beforeSend:function(data, textStatus){
+            	Loading.start();
+            },
+            success:function(data, textStatus){  
+                //成功回调方法增强处理  
+                fn.success(data, textStatus);  
+                //成功
+                Loading.done();
+            }  
+        });  
+        _ajax(_opt);  
+    };  
+})(jQuery);
+
+//配置信息
+export {
+	Tabs, //tabs切换
+	Selected, //下拉选择框
+	Checkbox, //checkbox
+	Radio, //单选
+	RadioGroup,//单选组合框
+	DateInput, //日期组件
+	DateInputs, //多个日期组合 ======================================
+	Modal, //modal弹窗
+	ModalShow, //modal弹窗 
+	Popup, //提示框
+	PageList, //页面列表
+    Loading, //loading
+    TreeMenu, //树形菜单
+    Popover //提示框
+}

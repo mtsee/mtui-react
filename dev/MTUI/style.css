@@ -54,7 +54,8 @@ input[type=password][disabled] + .mt-iconbtn {color: #ccc!important; z-index: 11
 ::-webkit-scrollbar-thumb {border-radius: 10px; background-color: #ccc; }
 
 /*框架需要加入的 ID*/
-#MTUI_MODAL,#MTUI_POPUP,#MTUI_LOADING{position: absolute; top: 0; left: 0; height: 0; width: 0; z-index: 99999999;}
+#MTUI_MODAL,#MTUI_POPUP,#MTUI_LOADING,#MTUI_POPOVER{position: absolute; top: 0; left: 0; height: 0; width: 0; z-index: 20000;}
+#MTUI_POPOVER{z-index: auto; width: 100%;}
 #MTUI_BG {position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.3); z-index: 9999; display: none; }
 
 /*馒头UI grid 24多栏栅格 (A*n)-i=W i=4 n=24 A=4 */
@@ -557,3 +558,11 @@ input[type=password][disabled] + .mt-iconbtn {color: #ccc!important; z-index: 11
 .mt-more .mt-more-content:before {content: ""; display: inline-block; border: 10px solid transparent; border-bottom: 10px solid #ddd; position: absolute; top: -20px; left: 60px; }
 .mt-more:hover {z-index: 10000; }
 .mt-more:hover .mt-more-content {display: block; }
+
+/* popover 提示*/
+.mt-popover{ position: absolute; background: #333; color: #fff; max-width: 300px; padding: 10px;}
+.mt-popover .mt-arrow{ display: inline-block; position: absolute; width: 0; height: 0; border:8px solid transparent;}
+.mt-popover-top .mt-arrow{ bottom: -15px; left: 50%; margin-left: -8px; border-top:8px solid #333; }
+.mt-popover-left .mt-arrow{ top: 50%; right: -15px; margin-top: -8px; border-left:8px solid #333; }
+.mt-popover-down .mt-arrow{ left: 50%; top: -15px; margin-left: -8px; border-bottom:8px solid #333; }
+.mt-popover-right .mt-arrow{ top: 50%; left: -15px; margin-top: -8px; border-right:8px solid #333; }

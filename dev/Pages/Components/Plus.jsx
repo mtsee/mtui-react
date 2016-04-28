@@ -12,6 +12,7 @@ import TabDom from './plus/TabDom'
 import DateDom from './plus/DateDom'
 import TreeDom from './plus/TreeDom'
 import LoadDom from './plus/LoadDom'
+import PopoverDom from './plus/PopoverDom'
 
 //
 //树形菜单
@@ -161,6 +162,27 @@ var codeLoading = "import { Loading } from '../../MTUI/index'\
 ";
 //this.iniEditer(codeLoading,'code-Loading'); 
 
+//Loading
+var codePopover = "import { Popover } from '../../MTUI/index'\
+##\
+#let dom = <span>我是个弹窗而已~<strong>GG~</strong></span>;\
+#\
+#<Popover dom={dom} place='top' className='test' color='井5EB95E' event='click' animate='bounceIn'>\
+#   <a href=\"javascript:;\" className=\"mt-btn-blue ink-reaction\">Top 气泡</a>\
+#</Popover>\
+##\
+#参数说明：(弹窗宽度设置了最大值为300px，可以在CSS里面修改)\
+#dom : 组件内容\
+#place : 弹窗定位（left,top,right,down）\
+#event : 触发事件（click,hover,foucs）\
+#color : 弹窗的颜色，可以自定义，默认是 \井333 \
+#className : 给弹窗添加class\
+#animate : 弹窗动画（支持aniamte.css里面所有动画）\
+## 动画参考地址：https://daneden.github.io/animate.css/\
+#\
+#\
+";
+
 const Plus = React.createClass({
   mixins:[setCode],
   //初始化代码
@@ -178,7 +200,8 @@ const Plus = React.createClass({
              {title : 'Tab切换', content :<TabDom /> },      
              {title : '日历', content :<DateDom /> },      
              {title : '树形菜单', content :<TreeDom /> },      
-             {title : '加载', content :<LoadDom /> }
+             {title : '加载', content :<LoadDom /> },
+             {title : '气泡提示', content :<PopoverDom /> }
           ],       
            callBack: function(index,name){ //切换后的回调函数       
              //console.log("当前选择的tabs为：",index,name);
@@ -190,6 +213,7 @@ const Plus = React.createClass({
                case '日历': this.iniEditer(codeDateInput,'code-DateInput'); break;
                case '树形菜单': this.iniEditer(codeTreeMenu,'code-TreeMenu'); break;
                case '加载': this.iniEditer(codeLoading,'code-Loading'); break;
+               case '气泡提示': this.iniEditer(codePopover,'code-Popover'); break;
              }
 
            }.bind(this)     
