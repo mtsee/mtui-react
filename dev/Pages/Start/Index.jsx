@@ -32,10 +32,6 @@ const Start = React.createClass({
                 #  <!--<![endif]-->\
                 #</head>\
                 #<body>\
-                #  <div id="MTUI_POPUP"></div> \
-                #  <div id="MTUI_MODAL"></div>\
-                #  <div id="MTUI_LOADING"></div>\
-                #  <div id="MTUI_BG"></div>\
                 #  <div id="App"></div>\
                 #</body>\
                 #</html>';

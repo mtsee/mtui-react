@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "036aae1fe1c304ede0c5"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "bdcdad63f9df2e94502e"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -7980,49 +7980,9 @@
 
 	var _reduxDevtoolsDockMonitor2 = _interopRequireDefault(_reduxDevtoolsDockMonitor);
 
-	var _Index = __webpack_require__(652);
+	var _Routers = __webpack_require__(721);
 
-	var _Index2 = _interopRequireDefault(_Index);
-
-	var _Index3 = __webpack_require__(660);
-
-	var _Index4 = _interopRequireDefault(_Index3);
-
-	var _ReduxDom = __webpack_require__(664);
-
-	var _ReduxDom2 = _interopRequireDefault(_ReduxDom);
-
-	var _Index5 = __webpack_require__(669);
-
-	var _Index6 = _interopRequireDefault(_Index5);
-
-	var _Htmls = __webpack_require__(674);
-
-	var _Htmls2 = _interopRequireDefault(_Htmls);
-
-	var _HtmlsBtn = __webpack_require__(675);
-
-	var _HtmlsBtn2 = _interopRequireDefault(_HtmlsBtn);
-
-	var _HtmlsTable = __webpack_require__(676);
-
-	var _HtmlsTable2 = _interopRequireDefault(_HtmlsTable);
-
-	var _Forms = __webpack_require__(677);
-
-	var _Forms2 = _interopRequireDefault(_Forms);
-
-	var _Plus = __webpack_require__(701);
-
-	var _Plus2 = _interopRequireDefault(_Plus);
-
-	var _Index7 = __webpack_require__(710);
-
-	var _Index8 = _interopRequireDefault(_Index7);
-
-	var _App = __webpack_require__(714);
-
-	var _App2 = _interopRequireDefault(_App);
+	var _Routers2 = _interopRequireDefault(_Routers);
 
 	var _index = __webpack_require__(719);
 
@@ -8035,31 +7995,13 @@
 	var DevTools = (0, _reduxDevtools.createDevTools)(
 	//redux在线调试工具的快捷键控制 toggleVisibilityKey：是否显示 changePositionKey：显示位置
 	_react2.default.createElement(
-			_reduxDevtoolsDockMonitor2.default,
-			{ toggleVisibilityKey: 'ctrl-h', changePositionKey: 'ctrl-q' },
-			_react2.default.createElement(_reduxDevtoolsLogMonitor2.default, { theme: 'tomorrow', preserveScrollTop: false, bottom: '0' })
-	));
-
-	//首页
-	//路由使用redux管理
+	  _reduxDevtoolsDockMonitor2.default,
+	  { toggleVisibilityKey: 'ctrl-h', changePositionKey: 'ctrl-q' },
+	  _react2.default.createElement(_reduxDevtoolsLogMonitor2.default, { theme: 'tomorrow', preserveScrollTop: false, bottom: '0' })
+	)); //路由使用redux管理
 
 	//redux 调试工具
 	//中间键，diapatch异步实现
-
-
-	//开始
-
-
-	//redux案例展示
-
-
-	//组件
-
-
-	//帮助
-
-
-	//App为入口
 
 
 	//获取合并后的 reducer
@@ -8074,38 +8016,14 @@
 
 	//路由
 	(0, _reactDom.render)(_react2.default.createElement(
-			_reactRedux.Provider,
-			{ store: store },
-			_react2.default.createElement(
-					'div',
-					null,
-					_react2.default.createElement(
-							_reactRouter.Router,
-							{ history: history },
-							_react2.default.createElement(
-									_reactRouter.Route,
-									{ path: HOME_PATH + "/", component: _App2.default },
-									_react2.default.createElement(_reactRouter.IndexRoute, { component: _Index2.default }),
-									_react2.default.createElement(_reactRouter.Route, { path: 'index', component: _Index2.default }),
-									_react2.default.createElement(_reactRouter.Route, { path: 'start', component: _Index4.default }),
-									_react2.default.createElement(
-											_reactRouter.Route,
-											{ path: 'components', component: _Index6.default },
-											_react2.default.createElement(
-													_reactRouter.Route,
-													{ path: 'htmls', component: _Htmls2.default },
-													_react2.default.createElement(_reactRouter.Route, { path: 'btn', component: _HtmlsBtn2.default }),
-													_react2.default.createElement(_reactRouter.Route, { path: 'table', component: _HtmlsTable2.default })
-											),
-											_react2.default.createElement(_reactRouter.Route, { path: 'forms', component: _Forms2.default }),
-											_react2.default.createElement(_reactRouter.Route, { path: 'plus', component: _Plus2.default })
-									),
-									_react2.default.createElement(_reactRouter.Route, { path: 'help', component: _Index8.default }),
-									_react2.default.createElement(_reactRouter.Route, { path: 'reduxdom', component: _ReduxDom2.default })
-							)
-					),
-					 /* <DevTools />调试工具*/_react2.default.createElement(DevTools, null)
-			)
+	  _reactRedux.Provider,
+	  { store: store },
+	  _react2.default.createElement(
+	    'div',
+	    null,
+	    _react2.default.createElement(_Routers2.default, { history: history }),
+	    /* <DevTools />调试工具*/_react2.default.createElement(DevTools, null)
+	  )
 	), document.getElementById('App'));
 
 	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(657); if (makeExportsHot(module, __webpack_require__(138))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index_dev.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
@@ -47840,10 +47758,6 @@
 	                #  <!--<![endif]-->\
 	                #</head>\
 	                #<body>\
-	                #  <div id="MTUI_POPUP"></div> \
-	                #  <div id="MTUI_MODAL"></div>\
-	                #  <div id="MTUI_LOADING"></div>\
-	                #  <div id="MTUI_BG"></div>\
 	                #  <div id="App"></div>\
 	                #</body>\
 	                #</html>';
@@ -54891,6 +54805,121 @@
 	}
 
 	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(657); if (makeExportsHot(module, __webpack_require__(138))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "user.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
+
+/***/ },
+/* 721 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+
+	'use strict';
+
+	__webpack_require__(242);
+
+	var _react = __webpack_require__(138);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(269);
+
+	var _Index = __webpack_require__(652);
+
+	var _Index2 = _interopRequireDefault(_Index);
+
+	var _Index3 = __webpack_require__(660);
+
+	var _Index4 = _interopRequireDefault(_Index3);
+
+	var _ReduxDom = __webpack_require__(664);
+
+	var _ReduxDom2 = _interopRequireDefault(_ReduxDom);
+
+	var _Index5 = __webpack_require__(669);
+
+	var _Index6 = _interopRequireDefault(_Index5);
+
+	var _Htmls = __webpack_require__(674);
+
+	var _Htmls2 = _interopRequireDefault(_Htmls);
+
+	var _HtmlsBtn = __webpack_require__(675);
+
+	var _HtmlsBtn2 = _interopRequireDefault(_HtmlsBtn);
+
+	var _HtmlsTable = __webpack_require__(676);
+
+	var _HtmlsTable2 = _interopRequireDefault(_HtmlsTable);
+
+	var _Forms = __webpack_require__(677);
+
+	var _Forms2 = _interopRequireDefault(_Forms);
+
+	var _Plus = __webpack_require__(701);
+
+	var _Plus2 = _interopRequireDefault(_Plus);
+
+	var _Index7 = __webpack_require__(710);
+
+	var _Index8 = _interopRequireDefault(_Index7);
+
+	var _App = __webpack_require__(714);
+
+	var _App2 = _interopRequireDefault(_App);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	//帮助
+
+
+	//组件
+
+
+	//开始
+
+
+	var Routers = _react2.default.createClass({
+					displayName: 'Routers',
+					render: function render() {
+									return _react2.default.createElement(
+													_reactRouter.Router,
+													{ history: this.props.history },
+													_react2.default.createElement(
+																	_reactRouter.Route,
+																	{ path: HOME_PATH + "/", component: _App2.default },
+																	_react2.default.createElement(_reactRouter.IndexRoute, { component: _Index2.default }),
+																	_react2.default.createElement(_reactRouter.Route, { path: 'index', component: _Index2.default }),
+																	_react2.default.createElement(_reactRouter.Route, { path: 'start', component: _Index4.default }),
+																	_react2.default.createElement(
+																					_reactRouter.Route,
+																					{ path: 'components', component: _Index6.default },
+																					_react2.default.createElement(
+																									_reactRouter.Route,
+																									{ path: 'htmls', component: _Htmls2.default },
+																									_react2.default.createElement(_reactRouter.Route, { path: 'btn', component: _HtmlsBtn2.default }),
+																									_react2.default.createElement(_reactRouter.Route, { path: 'table', component: _HtmlsTable2.default })
+																					),
+																					_react2.default.createElement(_reactRouter.Route, { path: 'forms', component: _Forms2.default }),
+																					_react2.default.createElement(_reactRouter.Route, { path: 'plus', component: _Plus2.default })
+																	),
+																	_react2.default.createElement(_reactRouter.Route, { path: 'help', component: _Index8.default }),
+																	_react2.default.createElement(_reactRouter.Route, { path: 'reduxdom', component: _ReduxDom2.default })
+													)
+									);
+					}
+	});
+
+	//App为入口
+
+
+	//redux案例展示
+	// 路由
+	//首页
+
+
+	module.exports = Routers;
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(657); if (makeExportsHot(module, __webpack_require__(138))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Routers.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ }
