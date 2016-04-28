@@ -68,9 +68,13 @@ var DateInput = React.createClass({
 		var $main = $(e.target).siblings(".mt-date-main");
 		$main.show();
 
-		//点击后隐藏
-		$(document).one("click", function(){
-        	$main.hide();
+    	$(document).off("click.DateInput").on("click.DateInput", function(e){
+			e.stopPropagation();
+
+			if(!$(e.target).closest('.mt-date-main')[0]){
+				$main.hide();
+				$(this).off("click.DateInputs");
+			}
     	});
     	e.stopPropagation();
 

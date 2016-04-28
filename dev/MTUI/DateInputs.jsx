@@ -136,9 +136,6 @@ var DateInputs = React.createClass({
 		//点击后隐藏
 		$(document).off("click.DateInputs").on("click.DateInputs", function(e){
 			e.stopPropagation();
-
-			console.log($(e.target)[0]);
-
 			if(!$(e.target).closest('.mt-date-main')[0]){
 				$dates.hide();
 				$(this).off("click.DateInputs");
