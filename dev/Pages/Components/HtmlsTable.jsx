@@ -1,35 +1,13 @@
 import './style.css';
 import React from 'react'
 import conf from '../Conf/Conf' 
+import mtuiMixins from "../../MTUI/Mixins/mtuiMixins";
 
 const HtmlsBtn = React.createClass({
+  mixins:[mtuiMixins],
   componentDidMount() {
-
-      $("[data-limit]").each(function(index, el) {
-	        var $this = $(this);
-	        var limit = $this.attr("data-limit");
-	        var text = $this.text();
-	        if(text.length > limit){
-	            $this.attr("title",text);
-	            text = text.substr(0,limit)+"...";
-	        }else{
-	            return; 
-	        }
-	        $this.html(text);
-	    });  
- 
-      $("[data-more]").each(function(index, el) {
-	        var $this = $(this);
-	        var more = $this.attr("data-more");
-	        var text = $this.text();
-	        var wid = text.length*14+20;
-	        if(text.length > more){
-	            text = text.substr(0,more)+'<div class="mt-more"><i class="iconfont icon-gengduo"></i><div style="width:'+wid+'px;" class="animated fadeInUp mt-more-content">'+text+'</div></div>';
-	        }else{
-	            return;
-	        }
-	        $this.html(text);
-	    });
+      this.mtLimit();
+      this.mtMore();
   },
   render() {
     return (

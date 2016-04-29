@@ -1,5 +1,5 @@
 import React from 'react'
-import {Selected} from '../../../MTUI/index'
+import {Input } from '../../../MTUI/index'
 
 // 类
 const SelectDom = React.createClass({
@@ -10,80 +10,61 @@ const SelectDom = React.createClass({
           <h3 className="mt-padding">input</h3>
           <div className="mt-g">
               <div className="mt-g-4">
+
                   <label>输入框:</label>
-                  <div className="mt-input">
-                    <input type="text" placeholder="请输入用户名"/>
-                  </div>
+                  <Input placeholder='请输入用户名'/>
                  
                   <br/><br/>
                 
                   <label>block输入框:</label>
-                  <div className="mt-input-block">
-                    <input type="text" />
-                  </div>
-                
+                  <Input block/>
+                  <br/><br/>
+
+                  <label>textarea:</label>
+                  <Input type="textarea" placeholder="我是textarea" align="top"/>
+
                   <br/><br/>
 
                   <label>图标合并:</label>
-                  <div className="mt-input mt-icon-input">
-                    <input type="text"/>
-                    <a href="javascript:;" className="mt-iconbtn"><i className="iconfont icon-search"></i></a>
-                  </div>
+                  <Input icon='icon-search'/>
                 
                   <br/><br/>
 
                   <label>block图标合并:</label>
-                  <div className="mt-input-block mt-icon-input">
-                    <input type="text"/>
-                    <a href="javascript:;" className="mt-iconbtn"><i className="iconfont icon-search"></i></a>
-                  </div>
+                  <Input block icon='icon-search'/>
 
                   <br/><br/>
                   <label>圆角输入框:</label>
-                  <div className="mt-input">
-                    <input type="text" className="mt-round"/>
-                  </div>
+                  <Input round/>
 
                   <br/><br/>
                   <label>block圆角输入框:</label>
-                  <div className="mt-input-block">
-                    <input type="text" className="mt-round"/>
-                  </div>
+                  <Input round block/>
 
                   <br/><br/>
                   <label>block圆角输入框图标合并:</label>
-                  <div className="mt-input-block mt-icon-input">
-                    <input type="text" className="mt-round"/>
-                    <a href="javascript:;" className="mt-iconbtn"><i className="iconfont icon-sousuo1"></i></a>
-                  </div>
+                  <Input round icon="icon-sousuo1" block/>
               </div>
               <div className="mt-g-4">
                   <label>密码输入框:</label>
-                  <div className="mt-input">
-                    <input type="password" placeholder="请输入密码"/>
-                  </div>
+                  <Input placeholder="请输入密码" type="password"/>
 
                   <br/><br/>
                   <label>输入框图标合并:</label>
-                  <div className="mt-input mt-icon-inputr">
-                    <input type="text" className=""/>
-                    <a href="javascript:;" className="mt-iconbtn"><i className="iconfont icon-user"></i></a>
-                  </div>
+                  <Input placeholder="请输入用户" icon="icon-user" iconplace="left"/>
 
                   <br/><br/>
                   <label>密码框图标合并:</label>
-                  <div className="mt-input mt-icon-inputr">
-                    <input type="password" className=""/>
-                    <a href="javascript:;" className="mt-iconbtn"><i className="iconfont icon-password"></i></a>
-                  </div>
+                  <Input placeholder="请输入密码" icon="icon-password" iconplace="left" type="password"/>
 
                   <br/><br/>
                   <label>密码框图标合并disabled:</label>
-                  <div className="mt-input mt-icon-inputr">
-                    <input disabled="disabled" type="password" className=""/>
-                    <a href="javascript:;" className="mt-iconbtn"><i className="iconfont icon-password"></i></a>
-                  </div>
+                  <Input disabled placeholder="请输入密码" icon="icon-password" iconplace="left" type="password"/>
               </div> 
+
+              <div className="mt-g-12">
+                <div className="codes" id="code-Input"></div>
+              </div>
           </div>
         </div>
     );

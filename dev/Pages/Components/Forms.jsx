@@ -108,6 +108,22 @@ var codeSwicth = "import { Swicth } from '../../MTUI/index'\
         # id : 传入id\
         # disabled : 不可选状态\
         #";
+
+//下拉列表
+var codeInput = "import { Input } from '../../MTUI/index'\
+##input text 和 password, textarea 可配置参数\
+#类型: type :  text 或 password, textarea //默认是 text\
+#事件：onClick , onChange , onFocus, onBlur\
+#样式：width，height ,block, round, align:top/middle/bottom //默认无block，无round,width:160px; align为对齐方式控制vertical-align属性\
+#图标组合: icon，iconplace:'left'或'right' //默认是right, icon采用www.iconfont.cn 字体图标\
+#placeholder: 默认提示\
+#className: 类名 //默认无\
+#id: ID //默认无\
+#disabled：默认无\
+##eg:\
+#<Input disabled placeholder=\"请输入密码\" icon=\"icon-user\" iconplace=\"left\" icon=\"icon-password\" iconplace=\"left\" type=\"password\"/>\
+#<Input type=\"textarea\" placeholder=\"我是textarea\"/>";
+
 // 类
 const Froms = React.createClass({
   mixins:[setCode],
@@ -133,6 +149,7 @@ const Froms = React.createClass({
                case 'checkbox': this.iniEditer(codeCheckbox,'code-Checkbox'); break;
                case 'radio': this.iniEditer(codeRadio,'code-Radio'); break;
                case 'swicth': this.iniEditer(codeSwicth,'code-Swicth'); break;
+               case 'input': this.iniEditer(codeInput,'code-Input'); break;
              }
 
            }.bind(this)     

@@ -5,6 +5,7 @@
 */
 import './style.css'
 import React from 'react'
+import Input from './Input'
 import DateInput from './DateInput'
 import DateInputs from './DateInputs'
 import Tabs from './Tabs'
@@ -15,9 +16,11 @@ import Popup from './Popup'
 import Checkbox from './Checkbox'
 import PageList from './PageList'
 import Loading from './Loading'
+import LoadingBox from './LoadingBox'
 import TreeMenu from './TreeMenu'
 import Popover from './Popover'
 import Swicth from './Swicth'
+import SliderActive from './SliderActive'
 import {Radio ,RadioGroup} from './RadioGroup'
 
 //center插件 by mantou 
@@ -192,17 +195,20 @@ if(!$("#MTUI_BG")[0]){
 export {
 	Tabs, //tabs切换
 	Selected, //下拉选择框
+	Input, //输入框
 	Checkbox, //checkbox
 	Radio, //单选
 	RadioGroup,//单选组合框
 	DateInput, //日期组件
 	Swicth, //Swicth 开关 
+	SliderActive, //SliderActive 
 	DateInputs, //多个日期组合 ======================================
 	Modal, //modal弹窗
 	ModalShow, //modal弹窗 
 	Popup, //提示框
 	PageList, //页面列表
     Loading, //loading
+    LoadingBox, //LoadingBox
     TreeMenu, //树形菜单
     Popover //提示框
 }

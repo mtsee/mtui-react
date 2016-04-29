@@ -12,6 +12,7 @@ import ReduxDom   from './Pages/ReduxDom/ReduxDom';
 //组件
 import Components from './Pages/Components/Index';
 import Htmls      from './Pages/Components/Htmls';
+import Icons      from './Pages/Components/Icons';
 import HtmlsBtn   from './Pages/Components/HtmlsBtn';
 import HtmlsTable from './Pages/Components/HtmlsTable';
 import Forms      from './Pages/Components/Forms';
@@ -38,6 +39,7 @@ const Routers = React.createClass({
 			        </Route>
 			        <Route path="forms" component={Forms}/>
 			        <Route path="plus" component={Plus}/>
+			        <Route path="icons" component={Icons}/>
 			      </Route>
 			      <Route path="help" component={Help}/> 
 			      <Route path="reduxdom" component={ReduxDom}/>

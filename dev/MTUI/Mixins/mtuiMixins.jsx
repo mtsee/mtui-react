@@ -29,6 +29,38 @@ var MtuiMixins = {
 			top : top,
 			left : left
 		}
+	},
+
+	//实例化 limit 属性
+	mtLimit(){
+		$("[data-limit]").each(function(index, el) {
+	        var $this = $(this);
+	        var limit = $this.attr("data-limit");
+	        var text = $this.text();
+	        if(text.length > limit){
+	            $this.attr("title",text);
+	            text = text.substr(0,limit)+"...";
+	        }else{
+	            return; 
+	        }
+	        $this.html(text);
+	    });  
+	},
+
+	//实例化more
+	mtMore(){
+		$("[data-more]").each(function(index, el) {
+	        var $this = $(this);
+	        var more = $this.attr("data-more");
+	        var text = $this.text();
+	        var wid = text.length*14+20;
+	        if(text.length > more){
+	            text = text.substr(0,more)+'<div class="mt-more">...<div style="width:'+wid+'px;" class="animated fadeInUp mt-more-content">'+text+'</div></div>';
+	        }else{
+	            return;
+	        }
+	        $this.html(text);
+	    });
 	}
 }
 

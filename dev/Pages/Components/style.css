@@ -35,3 +35,7 @@
 
 
 .btnslist a{ margin-right: 10px;}
+
+.admin-icons li{ display: inline-block; width: 100px; height: 80px; margin: 10px; text-align: center;}
+.admin-icons li .iconfont{ font-size: 24px;}
+.admin-icons li p{ font-size: 12px;}

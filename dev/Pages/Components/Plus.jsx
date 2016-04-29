@@ -13,6 +13,7 @@ import DateDom from './plus/DateDom'
 import TreeDom from './plus/TreeDom'
 import LoadDom from './plus/LoadDom'
 import PopoverDom from './plus/PopoverDom'
+import SliderDom from './plus/SliderDom'
 
 //
 //树形菜单
@@ -157,10 +158,10 @@ var codeTabs = 'import { Tabs } from \'../../MTUI/index\'\
 //this.iniEditer(codeTabs,'code-Tabs');   
 
 //Loading
-var codeLoading = "import { Loading } from '../../MTUI/index'\
+var codeLoading = "import { Loading , LoadingBox} from '../../MTUI/index'\
 # Loading.start() //加载开始\
 # Loading.done() //加载完成\
-# Loading.error() //加载错误\
+### 占位loading（宽度默认是100%，高度默认是100px；高度可以自己调节） ## <LoadingBox height=\"100px\"/>\
 ";
 //this.iniEditer(codeLoading,'code-Loading'); 
 
@@ -203,7 +204,8 @@ const Plus = React.createClass({
              {title : '日历', content :<DateDom /> },      
              {title : '树形菜单', content :<TreeDom /> },      
              {title : '加载', content :<LoadDom /> },
-             {title : '气泡提示', content :<PopoverDom /> }
+             {title : '气泡提示', content :<PopoverDom /> },
+             {title : '进度条', content :<SliderDom /> }
           ],       
            callBack: function(index,name){ //切换后的回调函数       
              //console.log("当前选择的tabs为：",index,name);

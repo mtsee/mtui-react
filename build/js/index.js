@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "a0bb380bd941a89e8214"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "f176dc74df4a9fe26a6d"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -47484,6 +47484,10 @@
 
 	var _Htmls2 = _interopRequireDefault(_Htmls);
 
+	var _Icons = __webpack_require__(725);
+
+	var _Icons2 = _interopRequireDefault(_Icons);
+
 	var _HtmlsBtn = __webpack_require__(676);
 
 	var _HtmlsBtn2 = _interopRequireDefault(_HtmlsBtn);
@@ -47513,10 +47517,9 @@
 	//帮助
 
 
-	//组件
-
-
-	//开始
+	//redux案例展示
+	// 路由
+	//首页
 
 
 	var Routers = _react2.default.createClass({
@@ -47541,7 +47544,8 @@
 																									_react2.default.createElement(_reactRouter.Route, { path: 'table', component: _HtmlsTable2.default })
 																					),
 																					_react2.default.createElement(_reactRouter.Route, { path: 'forms', component: _Forms2.default }),
-																					_react2.default.createElement(_reactRouter.Route, { path: 'plus', component: _Plus2.default })
+																					_react2.default.createElement(_reactRouter.Route, { path: 'plus', component: _Plus2.default }),
+																					_react2.default.createElement(_reactRouter.Route, { path: 'icons', component: _Icons2.default })
 																	),
 																	_react2.default.createElement(_reactRouter.Route, { path: 'help', component: _Index8.default }),
 																	_react2.default.createElement(_reactRouter.Route, { path: 'reduxdom', component: _ReduxDom2.default })
@@ -47553,9 +47557,10 @@
 	//App为入口
 
 
-	//redux案例展示
-	// 路由
-	//首页
+	//组件
+
+
+	//开始
 
 
 	exports.default = Routers;
@@ -48313,7 +48318,7 @@
 
 
 	// module
-	exports.push([module.id, "/*侧面菜单*/\r\n.leftmenu{ position: fixed; z-index: 1000; width:160px; top: 60px; left: 0; bottom: 0; background: #313A49; box-shadow:3px 0 8px rgba(39, 55, 71, 0.3);}\r\n.leftmenu .menu{ padding: 0;}\r\n.leftmenu .sub-menu{ padding: 0; margin-left: 10px;}\r\n.leftmenu li{ line-height: 40px; text-indent: 20px;}\r\n.leftmenu li a{ color: #fff; display: block;}\r\n.leftmenu li .active{ background: #FF6262;}\r\n.leftmenu li .sub-menu li{ line-height: 30px; margin: 5px;}\r\n.leftmenu li .sub-menu a{ color: #999; border-left:4px solid #313A49;}\r\n.leftmenu li .sub-menu .active{ background: #313A49; border-left:4px solid #999;} \r\n\r\n/*插件库*/\r\n.component{ margin-left:160px;} \r\n.component .contents a{} \r\n.component .contents .mt-date a{ margin-right: 0;} \r\n\r\n.animated{-webkit-animation-duration: 0.3s; animation-duration: 0.3s;}\r\n\r\n.app .mt-tabs{ padding: 20px;}\r\n.app .mt-tabs .mt-tabs-content { border: none;}\r\n.app .mt-tabs .mt-tabs-header .mt-tabs-active{ border: none; border-bottom: 3px solid #313A49;}\r\n.app .mytabs{ padding: 10px; color: #fff; }\r\n.app .mytas-c1{ background: #0e90d2}\r\n.app .mytas-c2{ background: #ff9f22}\r\n.app .mytas-c3{ background: #fb4e47}\r\n.app .mytas-c4{ background: #5eb95e}\r\n\r\n.admin-tabs .mt-tabs .mt-tabs-header {position: relative; bottom: -1px; }\r\n.admin-tabs .mt-tabs .mt-tabs-header li {float: left; padding: 5px 20px; }\r\n.admin-tabs .mt-tabs .mt-tabs-header li a {color: #999; }\r\n.admin-tabs .mt-tabs .mt-tabs-header .mt-tabs-active {border: 1px solid #e4eaec; border-bottom: none; background: #fff; }\r\n.admin-tabs .mt-tabs .mt-tabs-header .mt-tabs-active a {color: #333; }\r\n.admin-tabs .mt-tabs .mt-tabs-header:after {content: \"\"; display: block; height: 0; clear: both; visibility: hidden; }\r\n.admin-tabs .mt-tabs .mt-tabs-content {border: 1px solid #e4eaec; overflow: hidden; background: #fff; }\r\n\r\n\r\n.btnslist a{ margin-right: 10px;}", ""]);
+	exports.push([module.id, "/*侧面菜单*/\r\n.leftmenu{ position: fixed; z-index: 1000; width:160px; top: 60px; left: 0; bottom: 0; background: #313A49; box-shadow:3px 0 8px rgba(39, 55, 71, 0.3);}\r\n.leftmenu .menu{ padding: 0;}\r\n.leftmenu .sub-menu{ padding: 0; margin-left: 10px;}\r\n.leftmenu li{ line-height: 40px; text-indent: 20px;}\r\n.leftmenu li a{ color: #fff; display: block;}\r\n.leftmenu li .active{ background: #FF6262;}\r\n.leftmenu li .sub-menu li{ line-height: 30px; margin: 5px;}\r\n.leftmenu li .sub-menu a{ color: #999; border-left:4px solid #313A49;}\r\n.leftmenu li .sub-menu .active{ background: #313A49; border-left:4px solid #999;} \r\n\r\n/*插件库*/\r\n.component{ margin-left:160px;} \r\n.component .contents a{} \r\n.component .contents .mt-date a{ margin-right: 0;} \r\n\r\n.animated{-webkit-animation-duration: 0.3s; animation-duration: 0.3s;}\r\n\r\n.app .mt-tabs{ padding: 20px;}\r\n.app .mt-tabs .mt-tabs-content { border: none;}\r\n.app .mt-tabs .mt-tabs-header .mt-tabs-active{ border: none; border-bottom: 3px solid #313A49;}\r\n.app .mytabs{ padding: 10px; color: #fff; }\r\n.app .mytas-c1{ background: #0e90d2}\r\n.app .mytas-c2{ background: #ff9f22}\r\n.app .mytas-c3{ background: #fb4e47}\r\n.app .mytas-c4{ background: #5eb95e}\r\n\r\n.admin-tabs .mt-tabs .mt-tabs-header {position: relative; bottom: -1px; }\r\n.admin-tabs .mt-tabs .mt-tabs-header li {float: left; padding: 5px 20px; }\r\n.admin-tabs .mt-tabs .mt-tabs-header li a {color: #999; }\r\n.admin-tabs .mt-tabs .mt-tabs-header .mt-tabs-active {border: 1px solid #e4eaec; border-bottom: none; background: #fff; }\r\n.admin-tabs .mt-tabs .mt-tabs-header .mt-tabs-active a {color: #333; }\r\n.admin-tabs .mt-tabs .mt-tabs-header:after {content: \"\"; display: block; height: 0; clear: both; visibility: hidden; }\r\n.admin-tabs .mt-tabs .mt-tabs-content {border: 1px solid #e4eaec; overflow: hidden; background: #fff; }\r\n\r\n\r\n.btnslist a{ margin-right: 10px;}\r\n\r\n.admin-icons li{ display: inline-block; width: 100px; height: 80px; margin: 10px; text-align: center;}\r\n.admin-icons li .iconfont{ font-size: 24px;}\r\n.admin-icons li p{ font-size: 12px;}", ""]);
 
 	// exports
 
@@ -48370,6 +48375,15 @@
 	            _reactRouter.Link,
 	            { activeClassName: 'active', to: '/components/plus' },
 	            '插件库'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'li',
+	          null,
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { activeClassName: 'active', to: '/components/icons' },
+	            'Icons'
 	          )
 	        )
 	      )
@@ -48912,37 +48926,19 @@
 
 	var _Conf2 = _interopRequireDefault(_Conf);
 
+	var _mtuiMixins = __webpack_require__(689);
+
+	var _mtuiMixins2 = _interopRequireDefault(_mtuiMixins);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var HtmlsBtn = _react2.default.createClass({
 	    displayName: 'HtmlsBtn',
+
+	    mixins: [_mtuiMixins2.default],
 	    componentDidMount: function componentDidMount() {
-
-	        $("[data-limit]").each(function (index, el) {
-	            var $this = $(this);
-	            var limit = $this.attr("data-limit");
-	            var text = $this.text();
-	            if (text.length > limit) {
-	                $this.attr("title", text);
-	                text = text.substr(0, limit) + "...";
-	            } else {
-	                return;
-	            }
-	            $this.html(text);
-	        });
-
-	        $("[data-more]").each(function (index, el) {
-	            var $this = $(this);
-	            var more = $this.attr("data-more");
-	            var text = $this.text();
-	            var wid = text.length * 14 + 20;
-	            if (text.length > more) {
-	                text = text.substr(0, more) + '<div class="mt-more"><i class="iconfont icon-gengduo"></i><div style="width:' + wid + 'px;" class="animated fadeInUp mt-more-content">' + text + '</div></div>';
-	            } else {
-	                return;
-	            }
-	            $this.html(text);
-	        });
+	        this.mtLimit();
+	        this.mtMore();
 	    },
 	    render: function render() {
 	        return _react2.default.createElement(
@@ -50224,6 +50220,22 @@
 	        # id : 传入id\
 	        # disabled : 不可选状态\
 	        #";
+
+	//下拉列表
+	var codeInput = "import { Input } from '../../MTUI/index'\
+	##input text 和 password, textarea 可配置参数\
+	#类型: type :  text 或 password, textarea //默认是 text\
+	#事件：onClick , onChange , onFocus, onBlur\
+	#样式：width，height ,block, round, align:top/middle/bottom //默认无block，无round,width:160px; align为对齐方式控制vertical-align属性\
+	#图标组合: icon，iconplace:'left'或'right' //默认是right, icon采用www.iconfont.cn 字体图标\
+	#placeholder: 默认提示\
+	#className: 类名 //默认无\
+	#id: ID //默认无\
+	#disabled：默认无\
+	##eg:\
+	#<Input disabled placeholder=\"请输入密码\" icon=\"icon-user\" iconplace=\"left\" icon=\"icon-password\" iconplace=\"left\" type=\"password\"/>\
+	#<Input type=\"textarea\" placeholder=\"我是textarea\"/>";
+
 	// 类
 	var Froms = _react2.default.createClass({
 	  displayName: 'Froms',
@@ -50250,6 +50262,8 @@
 	            this.iniEditer(codeRadio, 'code-Radio');break;
 	          case 'swicth':
 	            this.iniEditer(codeSwicth, 'code-Swicth');break;
+	          case 'input':
+	            this.iniEditer(codeInput, 'code-Input');break;
 	        }
 	      }.bind(this)
 	    };
@@ -50287,13 +50301,17 @@
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
-	exports.Popover = exports.TreeMenu = exports.Loading = exports.PageList = exports.Popup = exports.ModalShow = exports.Modal = exports.DateInputs = exports.Swicth = exports.DateInput = exports.RadioGroup = exports.Radio = exports.Checkbox = exports.Selected = exports.Tabs = undefined;
+	exports.Popover = exports.TreeMenu = exports.LoadingBox = exports.Loading = exports.PageList = exports.Popup = exports.ModalShow = exports.Modal = exports.DateInputs = exports.SliderActive = exports.Swicth = exports.DateInput = exports.RadioGroup = exports.Radio = exports.Checkbox = exports.Input = exports.Selected = exports.Tabs = undefined;
 
 	__webpack_require__(680);
 
 	var _react = __webpack_require__(138);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _Input = __webpack_require__(727);
+
+	var _Input2 = _interopRequireDefault(_Input);
 
 	var _DateInput = __webpack_require__(683);
 
@@ -50335,6 +50353,10 @@
 
 	var _Loading2 = _interopRequireDefault(_Loading);
 
+	var _LoadingBox = __webpack_require__(724);
+
+	var _LoadingBox2 = _interopRequireDefault(_LoadingBox);
+
 	var _TreeMenu = __webpack_require__(695);
 
 	var _TreeMenu2 = _interopRequireDefault(_TreeMenu);
@@ -50347,16 +50369,15 @@
 
 	var _Swicth2 = _interopRequireDefault(_Swicth);
 
+	var _SliderActive = __webpack_require__(729);
+
+	var _SliderActive2 = _interopRequireDefault(_SliderActive);
+
 	var _RadioGroup = __webpack_require__(698);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	//center插件 by mantou
-	/**
-	* MTUI
-	* @author : Mantou
-	* @date : 2016-03-01
-	*/
 	(function ($) {
 		$.fn.centerMt = function (setting) {
 			var defaults = {
@@ -50391,6 +50412,11 @@
 	})(jQuery);
 
 	//拖拽插件 by mantou
+	/**
+	* MTUI
+	* @author : Mantou
+	* @date : 2016-03-01
+	*/
 	;(function ($) {
 		$.fn.dragMt = function (setting) {
 			var defaults = {
@@ -50530,6 +50556,8 @@
 	exports. //tabs切换
 	Selected = _Selected2.default;
 	exports. //下拉选择框
+	Input = _Input2.default;
+	exports. //输入框
 	Checkbox = _Checkbox2.default;
 	exports. //checkbox
 	Radio = _RadioGroup.Radio;
@@ -50540,6 +50568,8 @@
 	exports. //日期组件
 	Swicth = _Swicth2.default;
 	exports. //Swicth 开关
+	SliderActive = _SliderActive2.default;
+	exports. //SliderActive
 	DateInputs = _DateInputs2.default;
 	exports. //多个日期组合 ======================================
 	Modal = _Modal2.default;
@@ -50552,6 +50582,8 @@
 	exports. //页面列表
 	Loading = _Loading2.default;
 	exports. //loading
+	LoadingBox = _LoadingBox2.default;
+	exports. //LoadingBox
 	TreeMenu = _TreeMenu2.default;
 	exports. //树形菜单
 	Popover //提示框
@@ -50595,7 +50627,7 @@
 
 
 	// module
-	exports.push([module.id, "/*格式化，UI*/\r\n/* ---------------CSS 格式化------------------------ */\r\n\r\n*:not(input,textarea) {margin: 0; padding: 0; outline: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-box-sizing: border-box; -webkit-touch-callout: inherit; -webkit-user-select: auto; outline: none; }\r\nhtml {height: 100%; font-size: 100%; -webkit-text-size-adjust: 100%; }\r\nbody {margin: 0; padding: 0; width: 100%; height: 100%; font-family:\"Microsoft YaHei\"; -webkit-touch-callout: inherit ; -webkit-user-select: auto ; font-size: 14px; position: relative; word-break: break-all; float: left; }\r\ni, em {font-style: normal; } \r\na {-webkit-tap-highlight-color: rgba(0, 0, 0, 0.35); text-decoration: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); color: #4a89dc; }\r\nimg {-ms-interpolation-mode: bicubic; vertical-align: middle; border: none; }\r\ntable {border-collapse: collapse; border-spacing: 0; }\r\nth, td, caption {vertical-align: middle; }\r\ntextarea {resize: none; }\r\ninput, button, select, textarea {outline: none; border-radius: 0; font-family: inherit; font-size: inherit; }\r\nbutton {border: none; cursor: pointer; } \r\np, ul, ol, li {list-style: none; margin: 0; padding: 0; }\r\naddress, caption, cite, code, dfn, em, th, var {font-weight: normal; font-style: normal; }\r\nstrong {font-weight: bold; }\r\nh1, h2, h3, h4, h5, h6 {font-weight: normal; margin: 0; padding: 0; }\r\nlabel {padding-right: 10px; }\r\n\r\n.iconfont {padding: 0; margin: 0; line-height: normal;}\r\n \r\n/*清除浮动*/\r\n.clear {clear: both; display: block; font-size: 0; height: 0; line-height: 0; width: 100%; }\r\n.clearfix:after {content: \"\"; display: block; height: 0; clear: both; visibility: hidden; }\r\n/**\r\n * Fix the flawed CSS box model - Yes, IE6's box model is better\r\n * Browser support: IE8+\r\n * via: http://paulirish.com/2012/box-sizing-border-box-ftw/\r\n */\r\n*, *:before, *:after {-moz-box-sizing: border-box; box-sizing: border-box; }\r\n/* normalize.css v3.0.2 | git.io/normalize */\r\n/* Set <html> and <body> to inherit the height of the viewport */\r\nhtml, body {min-height: 100%; }\r\n/**\r\n * 1. Prevent iOS text size adjust after orientation change, without disabling\r\n *    user zoom.\r\n *    https://developer.mozilla.org/en-US/docs/Web/CSS/text-size-adjust\r\n */\r\nhtml {-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }\r\nh1 {font-size: 1.5em; } \r\nh2 {font-size: 1.25em; }\r\n\r\ninput[type=text][disabled],\r\ninput[type=password][disabled] {background: #f3f3f3!important; color: #ccc!important; }\r\ninput[type=text][disabled] + .mt-iconbtn,\r\ninput[type=password][disabled] + .mt-iconbtn {color: #ccc!important; z-index: 11; }\r\n\r\n/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/\r\n::-webkit-scrollbar {width: 8px; height: 8px; background-color: #F5F5F5; }\r\n/*定义滚动条轨道 内阴影+圆角*/\r\n::-webkit-scrollbar-track {-webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.1); border-radius: 10px; background-color: #F5F5F5; }\r\n/*定义滑块 内阴影+圆角*/\r\n::-webkit-scrollbar-thumb {border-radius: 10px; background-color: #ccc; }\r\n\r\n/*框架需要加入的 ID*/\r\n#MTUI_MODAL,#MTUI_POPUP,#MTUI_LOADING,#MTUI_POPOVER{position: absolute; top: 0; left: 0; height: 0; width: 0; z-index: 20000;}\r\n#MTUI_POPOVER{z-index: auto; width: 100%;}\r\n#MTUI_BG {position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.3); z-index: 9999; display: none; }\r\n\r\n/*馒头UI grid 24多栏栅格 (A*n)-i=W i=4 n=24 A=4 */\r\n.mt-g {position: relative; }\r\n.mt-g:after {content: \"\"; display: block; clear: both; height: 0; visibility: hidden; }\r\n.mt-g .mt-g-1 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-1:first-child {margin-left: 0; }\r\n.mt-g .mt-g-1{ width: 8.33333%; }\r\n.mt-g .mt-g-offset-1,\r\n.mt-g .mt-g-offset-1:first-child {margin-left: 8.33333%; }\r\n.mt-g .mt-g-2 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-2:first-child {margin-left: 0; }\r\n.mt-g .mt-g-2{ width: 16.66666%; }\r\n.mt-g .mt-g-offset-2,\r\n.mt-g .mt-g-offset-2:first-child {margin-left: 16.66666%; }\r\n.mt-g .mt-g-3 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-3:first-child {margin-left: 0; }\r\n.mt-g .mt-g-3{ width: 24.99999%; }\r\n.mt-g .mt-g-offset-3,\r\n.mt-g .mt-g-offset-3:first-child {margin-left: 24.99999%; }\r\n.mt-g .mt-g-4 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-4:first-child {margin-left: 0; } \r\n.mt-g .mt-g-4{ width: 33.33332%; }\r\n.mt-g .mt-g-offset-4,\r\n.mt-g .mt-g-offset-4:first-child {margin-left: 33.33332%; }\r\n.mt-g .mt-g-5 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-5:first-child {margin-left: 0; }\r\n.mt-g .mt-g-5{ width: 41.66665%; }\r\n.mt-g .mt-g-offset-5,\r\n.mt-g .mt-g-offset-5:first-child {margin-left: 41.66665%; }\r\n.mt-g .mt-g-6 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-6:first-child {margin-left: 0; }\r\n.mt-g .mt-g-6{ width: 49.99998%; }\r\n.mt-g .mt-g-offset-6,\r\n.mt-g .mt-g-offset-6:first-child {margin-left: 49.99998%; }\r\n.mt-g .mt-g-7 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-7:first-child {margin-left: 0; }\r\n.mt-g .mt-g-7{ width: 58.33331%; }\r\n.mt-g .mt-g-offset-7,\r\n.mt-g .mt-g-offset-7:first-child {margin-left: 58.33331%; }\r\n.mt-g .mt-g-8 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-8:first-child {margin-left: 0; }\r\n.mt-g .mt-g-8{ width: 66.66664%; }\r\n.mt-g .mt-g-offset-8,\r\n.mt-g .mt-g-offset-8:first-child {margin-left: 66.66664%; }\r\n.mt-g .mt-g-9 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-9:first-child {margin-left: 0; }\r\n.mt-g .mt-g-9{ width: 74.99997%; }\r\n.mt-g .mt-g-offset-9,\r\n.mt-g .mt-g-offset-9:first-child {margin-left: 74.99997%; }\r\n.mt-g .mt-g-10 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-10:first-child {margin-left: 0; }\r\n.mt-g .mt-g-10{ width: 83.3333%; }\r\n.mt-g .mt-g-offset-10,\r\n.mt-g .mt-g-offset-10:first-child {margin-left: 83.3333%; }\r\n.mt-g .mt-g-11 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-11:first-child {margin-left: 0; }\r\n.mt-g .mt-g-11{ width: 91.66663%; }\r\n.mt-g .mt-g-offset-11,\r\n.mt-g .mt-g-offset-11:first-child {margin-left: 91.66663%; }\r\n.mt-g .mt-g-12 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-12:first-child {margin-left: 0; }\r\n.mt-g .mt-g-12{ width: 99.99996%; }\r\n.mt-g .mt-g-offset-12,\r\n.mt-g .mt-g-offset-12:first-child {margin-left: 99.99996%; }\r\n\r\n/*居中*/\r\n.mt-g-center {text-align: center; }\r\n.mt-g-center .mt-g-1,\r\n.mt-g-center .mt-g-2,\r\n.mt-g-center .mt-g-3,\r\n.mt-g-center .mt-g-4,\r\n.mt-g-center .mt-g-5,\r\n.mt-g-center .mt-g-6,\r\n.mt-g-center .mt-g-7,\r\n.mt-g-center .mt-g-8,\r\n.mt-g-center .mt-g-9,\r\n.mt-g-center .mt-g-10,\r\n.mt-g-center .mt-g-11,\r\n.mt-g-center .mt-g-12 {float: none; display: inline-block; text-align: left; }\r\n\r\n/*馒头UI 插件样式 */\r\n.mt-padding {padding: 20px; }\r\n.mt-margin {margin: 20px; }\r\n\r\n/*404*/\r\n.mt-404 {height: 400px; width: 500px; position: absolute; left: 50%; top: 50%; text-align: center; color: #fff; margin: -200px 0 0 -250px; }\r\n.mt-404 h1 {font-size: 25px; font-weight: bolder; }\r\n\r\n/*表格头部*/\r\n.mt-form-header {height: 50px; position: fixed; top: 50px; left: 90px; right: 0; background: #fff; z-index: 999; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; padding-left: 15px; padding-top: 10px; }\r\n.mt-form-header-block {height: 50px; padding-top: 10px; }\r\n\r\n/*x分栏*/\r\n.mt-content-2x,\r\n.mt-content-1x {padding: 20px; }\r\n.mt-content-2x:after,\r\n.mt-content-1x:after {content: \"\"; display: block; height: 0; clear: both; visibility: hidden; }\r\n.mt-content-2x .mt-content-x,\r\n.mt-content-1x .mt-content-x {padding: 20px; width: 49%; margin-left: 2%; background: #fff; float: left; }\r\n.mt-content-2x .mt-content-x:first-child,\r\n.mt-content-1x .mt-content-x:first-child {margin-left: 0; }\r\n.mt-content-1x {padding: 10px 20px 20px 20px; background: #fff; margin: 20px; }\r\n\r\n/*面包屑导航*/\r\n.mt-breadcrumb {padding: 20px; font-size: 14px; }\r\n.mt-breadcrumb ul, \r\n.mt-breadcrumb li {display: inline-block; }\r\n.mt-breadcrumb ul a,\r\n.mt-breadcrumb li a {color: #666; }\r\n.mt-breadcrumb ul {margin-left: 10px; }\r\n.mt-breadcrumb li a:before {content: \"/\"; color: #999; margin: 0 8px; display: inline-block; }\r\n.mt-breadcrumb li:first-child a:before {display: none; }\r\n\r\n/*主要内容区域*/\r\n.mt-main-content {margin: 50px 0 0 90px; }\r\n.mt-main-content:before {content: \"\"; display: block; height: 1px; }\r\n\r\n/*内容区域*/\r\n.mt-page-content {margin: 10px 20px; background: #fff; padding-bottom: 50px; }\r\n\r\n/*表单*/\r\n.mt-input,\r\n.mt-input-block {display: inline-block; position: relative; background: #fff; border-radius: 2px; vertical-align: middle; }\r\n.mt-input input[type=text],\r\n.mt-input-block input[type=text],\r\n.mt-input input[type=password],\r\n.mt-input-block input[type=password] {height: 28px; padding: 6px 13px; font-size: 14px; border-radius: 2px; border: 1px solid #e4eaec; transition: 0.6s; display: inline-block; position: relative; z-index: 10; background: none; width: 100%; }\r\n.mt-input input[type=text]:focus,\r\n.mt-input-block input[type=text]:focus,\r\n.mt-input input[type=password]:focus,\r\n.mt-input-block input[type=password]:focus {border: 1px solid #62a8ea; }\r\n.mt-input input[type=text].mt-round,\r\n.mt-input-block input[type=text].mt-round,\r\n.mt-input input[type=password].mt-round,\r\n.mt-input-block input[type=password].mt-round {border-radius: 1000px; }\r\n.mt-input .mt-iconbtn,\r\n.mt-input-block .mt-iconbtn {display: inline-block; position: absolute; height: 24px; right: 2px; top: 50%; margin-top: -12px; line-height: 26px; width: 28px; text-align: center; color: #999; overflow: hidden; z-index: 11; }\r\n.mt-input .mt-iconbtn:hover,\r\n.mt-input-block .mt-iconbtn:hover {color: #62a8ea; cursor: default; }\r\n.mt-input-block {display: block; }\r\n.mt-input-block input[type=text],\r\n.mt-input-block input[type=password] {display: block; width: 100%; }\r\n.mt-icon-input input[type=text],\r\n.mt-icon-input input[type=password] {padding-right: 28px; }\r\n.mt-icon-inputr input[type=text],\r\n.mt-icon-inputr input[type=password] {padding-left: 28px; }\r\n.mt-icon-inputr .mt-iconbtn {left: 2px; }\r\n\r\n/*表单之 mt-textarea*/\r\n.mt-textarea {display: inline-block; position: relative; background: #fff; border-radius: 2px; vertical-align: middle; }\r\n.mt-textarea textarea {padding: 6px 13px; font-size: 14px; border-radius: 2px; border: 1px solid #e4eaec; transition: 0.6s; }\r\n.mt-textarea textarea:focus {border: 1px solid #62a8ea; }\r\n\r\n/*表单之 checkbox*/\r\n.mt-checkbox {display: inline-block; vertical-align: middle; position: relative; cursor: pointer; color: #666; }\r\n.mt-checkbox .icon-checkbox {vertical-align: middle; display: inline-block; width: 16px; height: 16px; background: #fff; border: 1px solid #62a8ea; border-radius: 2px; color: #fff; overflow: hidden; margin-right: 5px; font-size: 12px; }\r\n.mt-checkbox .icon-checkbox:before {transition: 0.3s; transform: scale(0); }\r\n.mt-checkbox input[type=checkbox] {width: 0; height: 0; position: absolute; opacity: 0; }\r\n.mt-checkbox input[type=checkbox][disabled] + i {border: 1px solid #ccc; background: #f3f3f3; color: #f3f3f3; cursor: default; }\r\n.mt-checkbox input[type=checkbox][disabled] + i + span {color: #ccc; cursor: default; }\r\n.mt-checkbox-active .icon-checkbox {color: #62a8ea; }\r\n.mt-checkbox-active .icon-checkbox:before {transform: scale(1); }\r\n.mt-checkbox-active input[type=checkbox][disabled] + i {border: 1px solid #ccc; background: #fff; color: #ccc; }\r\n\r\n/*表单之 radio*/\r\n.mt-radio {display: inline-block; vertical-align: middle; position: relative; cursor: pointer; }\r\n.mt-radio-group{display: inline-block; }\r\n.mt-radio .icon-radio {vertical-align: middle; display: inline-block; width: 18px; height: 18px; background: #fff; border: 1px solid #62a8ea; border-radius: 50%; color: #fff; overflow: hidden; margin-right: 5px; font-size: 12px; line-height: 18px; text-align: center; }\r\n.mt-radio .icon-radio:before {transition: 0.3s; transform: scale(0); }\r\n.mt-radio input[type=radio] {width: 0; height: 0; position: absolute; opacity: 0; }\r\n.mt-radio input[type=radio][disabled] + i {border: 1px solid #ccc; background: #f3f3f3; color: #f3f3f3; cursor: default; }\r\n.mt-radio input[type=radio][disabled] + i + span {color: #ccc; cursor: default; }\r\n.mt-radio-active .icon-radio {color: #62a8ea; }\r\n.mt-radio-active .icon-radio:before {transform: scale(1); }\r\n.mt-radio-active input[type=radio][disabled] + i {border: 1px solid #ccc; color: #ccc; }\r\n\r\n/*表单之 select*/\r\n.mt-select {display: inline-block; position: relative; cursor: pointer; height: 28px; line-height: 28px; padding: 0 13px; padding-right: 30px; font-size: 14px; border-radius: 2px; border: 1px solid #e4eaec; background-color: #fff; vertical-align: middle; z-index: 10; }\r\n.mt-select .mt-select-title {height: 28px; line-height: 26px; overflow: hidden; }\r\n.mt-select .mt-select-title .placeholder{color: #b7c1cf; }\r\n.mt-select .iconfont {position: absolute; right: 5px; top: 5px; color: #c4c4c4; }\r\n.mt-select .icon-xia:before {content: \"\\E602\"; }\r\n.mt-select .mt-select-box {position: absolute; left: -1px; right: -1px; top: 100%; background: #fff; padding: 5px; border: 1px solid #e4eaec; box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05); overflow: auto; max-height: 260px; display: none; }\r\n.mt-select .mt-select-box .option {position: relative; padding: 0 4px; transition: 0.3s; height: 28px; overflow: hidden; }\r\n.mt-select .mt-select-box .option:hover {background: #62a8ea; color: #fff; }\r\n.mt-select .mt-select-box .mt-select-add {position: relative; }\r\n.mt-select .mt-select-box .mt-select-add .mt-add-select-val {text-indent: 5px; width: 100%; border: 1px solid #e4eaec; transition: 0.6s; }\r\n.mt-select .mt-select-box .mt-select-add .mt-add-select-val:focus {border: 1px solid #62a8ea; }\r\n.mt-select .mt-select-box .mt-select-add .mt-add-select-btn {position: absolute; color: #fff; background: #62a8ea; right: 0; top: 4px; height: 20px; width: 20px; line-height: 17px; text-align: center; transition: 0.3s; }\r\n.mt-select .mt-select-box .mt-select-add .mt-add-select-btn:hover {background: #4a89dc; }\r\n.mt-selected .icon-xia:before {content: \"\\E601\"; }\r\n.mt-select-disabled {background-color: #f3f3f3; color: #ccc; cursor: default; }\r\n.mt-select-disabled .icon-xia {color: #ccc; }\r\n\r\n/*表单之 日历*/\r\n.mt-date input[type=text] {width: 120px; }\r\n\r\n/*表单之 滑动杆*/\r\n.mt-slider {display: block; height: 8px; background: #e4eaec; border-radius: 100px; margin-right: 100px; position: relative; }\r\n.mt-slider .mt-slider-val {position: absolute; right: -80px; top: -6px; border: 1px solid #e4eaec; width: 60px; height: 20px; padding: 2px 5px; border-radius: 2px; font-size: 12px; transition: 0.3s; text-align: center; }\r\n.mt-slider .mt-slider-val:focus {border: 1px solid #62a8ea; }\r\n.mt-slider .mt-slider-btn {width: 16px; height: 16px; border-radius: 100px; position: absolute; background: #62a8ea; top: -4px; right: -10px; cursor: pointer; z-index: 100; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5); }\r\n.mt-slider .mt-slider-bar {position: absolute; height: 100%; width: 0; border-radius: 100px; background: #62a8ea; top: 0; left: 0; }\r\n.mt-slider-red .mt-slider-btn {background: #FB4E47; }\r\n.mt-slider-red .mt-slider-bar {background: #FB4E47; }\r\n.mt-slider-green .mt-slider-btn {background: #5EB95E; }\r\n.mt-slider-green .mt-slider-bar {background: #5EB95E; }\r\n\r\n/*表单之进度条*/\r\n@-webkit-keyframes slider-bar-stripes {\r\n  from {background-position: 36px 0; }\r\n  to {background-position: 0 0; }\r\n}\r\n@keyframes slider-bar-stripes {\r\n  from {background-position: 36px 0; }\r\n  to {background-position: 0 0; }\r\n}\r\n\r\n/* slider bar */\r\n.mt-slider-active {display: block; height: 8px; background: #e4eaec; border-radius: 100px; }\r\n.mt-slider-active-bar {float: left; width: 0; height: 100%; font-size: 1.2rem; line-height: 2rem; border-radius: 100px; color: #fff; text-align: center; background-color: #0e90d2; box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15); transition: 10px .6s ease; background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent); background-size: 36px 36px; -webkit-animation: slider-bar-stripes 2s linear infinite; animation: slider-bar-stripes 2s linear infinite; }\r\n.mt-slider-active-green .mt-slider-active-bar {background-color: #5EB95E; }\r\n.mt-slider-active-red .mt-slider-active-bar {background-color: #FB4E47; }\r\n\r\n/*表单之 switch选择*/\r\n.mt-switch {display: inline-block; vertical-align: middle; width: 60px; height: 30px; line-height: 26px; border-radius: 100px; background: #f3f3f3; border: 1px solid #e4eaec; box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2); position: relative; cursor: pointer; text-align: center; transition: 0.3s; }\r\n.mt-switch .mt-switch-btn {transition: 0.4s;transform:translateX(0); display: inline-block; position: absolute; left: 1px; top: 1px; background: #fff; width: 26px; height: 26px; z-index: 100; overflow: hidden; border-radius: 100px; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.6); text-indent: 0;}\r\n.mt-switch .mt-switch-info { transition:0.5s; transform:scale(1); font-size: 12px; display: block; height: 100%; background: #5EB95E; border-radius: 100px; position: relative; -moz-user-select: none; -khtml-user-select: none; user-select: none; }\r\n.mt-switch-off .mt-switch-info{background: #fff; transform:scale(0);}\r\n.mt-switch-off .mt-switch-btn {background: #fff; transform:translateX(31px);}\r\n.mt-switch[disabled] {background: #ccc; }\r\n.mt-switch[disabled] .mt-switch-btn {background: #ddd; }\r\n.mt-switch[disabled] .mt-switch-info {background: #ccc; }\r\n/*\r\n.mt-switch-btn:after{ display: inline-block; content: \"\"; position: absolute; width: 6px; height: 10px; top: 50%; left: 50%; margin: -5px 0 0 -3px; border-right: 1px solid #ccc; border-left: 1px solid #ccc;}\r\n*/\r\n\r\n/*按钮*/\r\n.mt-btn-grey,\r\n.mt-btn-red,\r\n.mt-btn-yellow,\r\n.mt-btn-green,\r\n.mt-btn-blue,\r\n.mt-btn-round-grey,\r\n.mt-btn-round-red,\r\n.mt-btn-round-yellow,\r\n.mt-btn-round-green,\r\n.mt-btn-round-blue {text-align: center; display: inline-block; padding: 5px 16px; background: #e6e6e6; color: #fff; transition: 0.3s; border-radius: 2px; vertical-align: middle; }\r\n.mt-btn-grey:active,\r\n.mt-btn-red:active,\r\n.mt-btn-yellow:active,\r\n.mt-btn-green:active,\r\n.mt-btn-blue:active,\r\n.mt-btn-round-grey:active,\r\n.mt-btn-round-red:active,\r\n.mt-btn-round-yellow:active,\r\n.mt-btn-round-green:active,\r\n.mt-btn-round-blue:active {box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3); }\r\n.mt-btn-round-grey,\r\n.mt-btn-round-red,\r\n.mt-btn-round-yellow,\r\n.mt-btn-round-green,\r\n.mt-btn-round-blue {border-radius: 100px; }\r\n.mt-btn-grey,\r\n.mt-btn-round-grey {color: #666; }\r\n.mt-btn-grey:hover,\r\n.mt-btn-round-grey:hover {background: #d4d4d4; }\r\n.mt-btn-red,\r\n.mt-btn-round-red {background: #FB4E47; }\r\n.mt-btn-red:hover,\r\n.mt-btn-round-red:hover {background: #ec4a44; }\r\n.mt-btn-yellow,\r\n.mt-btn-round-yellow {background: #ff9f22; }\r\n.mt-btn-yellow:hover,\r\n.mt-btn-round-yellow:hover {background: #F37B1D; }\r\n.mt-btn-blue,\r\n.mt-btn-round-blue {background: #0e90d2; }\r\n.mt-btn-blue:hover,\r\n.mt-btn-round-blue:hover {background: #0d86c4; }\r\n.mt-btn-green,\r\n.mt-btn-round-green {background: #5EB95E; }\r\n.mt-btn-green:hover,\r\n.mt-btn-round-green:hover {background: #57ac57; }\r\n.mt-btn-block {display: block; }\r\n\r\n/*字体按钮*/\r\n.mt-text-fs12 {font-size: 12px; }\r\n.mt-text-fs14 {font-size: 14px; }\r\n.mt-text-fs16 {font-size: 16px; }\r\n.mt-text-fs18 {font-size: 18px; }\r\n.mt-btn-text-grey {color: #ccc; }\r\n.mt-btn-text-grey:hover {color: #999; }\r\n.mt-btn-text-red {color: #FB4E47; }\r\n.mt-btn-text-red:hover {color: #ec4a44; }\r\n.mt-btn-text-yellow {color: #ff9f22; }\r\n.mt-btn-text-yellow:hover {color: #F37B1D; }\r\n.mt-btn-text-blue {color: #0e90d2; }\r\n.mt-btn-text-blue:hover {color: #0d86c4; }\r\n.mt-btn-text-green {color: #5EB95E; }\r\n.mt-btn-text-green:hover {color: #57ac57; }\r\n\r\n/*按钮点击后触发的效果*/\r\n.ink-reaction {position: relative; overflow: hidden; }\r\n.ink-reaction .ink {position: absolute; width: 200px; height: 200px; margin-left: -100px; margin-top: -100px; background-color: rgba(255, 255, 255, 0.3); border-radius: 50%; z-index: 1; pointer-events: none; opacity: 0; -webkit-animation: ripple-animation 1.5s; animation: ripple-animation 1.5s; }\r\n.ink-reaction .ink.inverse {background-color: rgba(12, 12, 12, 0.5); }\r\n@-webkit-keyframes ripple-animation {\r\n  from {-webkit-transform: scale(0); transform: scale(0); opacity: 1; }\r\n  to {-webkit-transform: scale(1, 1); transform: scale(1, 1); opacity: 0; }\r\n}\r\n@keyframes ripple-animation {\r\n  from {-webkit-transform: scale(0); transform: scale(0); opacity: 1; }\r\n  to {-webkit-transform: scale(1, 1); transform: scale(1, 1); opacity: 0; }\r\n}\r\n\r\n/*按钮尺寸*/\r\n.mt-btn-xl {padding: 10px 20px; font-size: 18px; }\r\n.mt-btn-xl .iconfont {font-size: 18px; }\r\n.mt-btn-lg {padding: 8px 16px; font-size: 16px; }\r\n.mt-btn-lg .iconfont {font-size: 16px; }\r\n.mt-btn-sm {padding: 5px 8px; font-size: 12px; } \r\n.mt-btn-sm .iconfont {font-size: 12px; } \r\n.mt-btn-xs {padding: 2px 6px; font-size: 12px; }\r\n.mt-btn-xs .iconfont {font-size: 12px; }\r\n\r\n/*table 样式*/\r\n.mt-table {width: 100%; margin: 10px 0; }\r\n.mt-table th {text-align: left; padding: 10px 8px; border-bottom: 2px solid #E8EAEA; color: #666; font-weight: bolder; }\r\n.mt-table td {padding: 10px 8px; border-bottom: 1px solid #E8EAEA; font-size: 14px; color: #333; }\r\n.mt-table-border {border-top: 1px solid #E8EAEA; border-left: 1px solid #E8EAEA; border-right: 1px solid #E8EAEA; }\r\n.mt-table-bordered {border-top: 1px solid #E8EAEA; border-left: 1px solid #E8EAEA; border-right: 1px solid #E8EAEA; }\r\n.mt-table-bordered td,\r\n.mt-table-bordered th {border-left: 1px solid #E8EAEA; }\r\n.mt-table-striped tr:nth-child(even) {background: #f9f9f9; }\r\n.mt-table-center {text-align: center; }\r\n.mt-table-center th {text-align: center; }\r\n.mt-table-hover tr + tr:hover {background: #e6e6e6; }\r\n\r\n/*折叠面板*/\r\n.mt-panel-group {border-top: 1px solid #ddd; }\r\n.mt-panel-group .mt-panel-header,\r\n.mt-panel-group .mt-panel-header-one {background: #f5f5f5; border: 1px solid #ddd; border-top: 0; padding: 5px 10px; cursor: pointer; }\r\n.mt-panel-group .mt-panel-content {background: #fff; border: 1px solid #ddd; border-top: 0; padding: 5px 10px; display: none; }\r\n.mt-panel-group .mt-panel-active .mt-panel-content,\r\n.mt-panel-group .mt-panel-active .mt-panel-header-one {display: block; }\r\n\r\n/*下拉列表*/\r\n.mt-dropdown {display: inline-block; position: relative; }\r\n.mt-dropdown .mt-dropdown-content {padding: 10px; background: #fff; border: 1px solid #E8EAEA; border-radius: 2px; min-width: 160px; position: absolute; top: 100%; box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05); -webkit-animation-duration: 0.5s; animation-duration: 0.5s; z-index: 100; display: none; }\r\n.mt-dropdown .mt-dropdown-content li {padding: 5px 0; font-size: 14px; color: #999; }\r\n.mt-dropdown-active .mt-dropdown-content {display: block; }\r\n.mt-dropdown-active .mt-dropdown-toggle .icon-xia:before,\r\n.mt-dropdown-active .mt-dropdown-toggle-hover .icon-xia:before {content: \"\\E601\"; }\r\n\r\n/*模态弹窗*/\r\n.mt-modal-dialog {box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); position: fixed; background: #fff; display: none; -webkit-animation-name: bounceInDown; animation-name: bounceInDown; -webkit-animation-duration: 1s; animation-duration: 1s; -webkit-animation-fill-mode: both; animation-fill-mode: both; z-index: 10000; }\r\n.mt-modal-dialog .mt-modal-close {position: absolute; top: 10px; right: 10px; color: #333; transition: 0.3s; z-index: 100; }\r\n.mt-modal-dialog .mt-modal-close:hover {transform: rotate(180deg); } \r\n.mt-modal-dialog .mt-dialog-title {height: 40px; line-height: 40px; text-align: center; color: #fff; background: #4a89dc; position: relative; }\r\n.mt-modal-dialog .mt-dialog-title .mt-modal-close {top: 0; color: #fff; }\r\n.mt-modal-dialog .mt-dialog-content {padding: 10px; }\r\n\r\n/*popup*/\r\n.mt-popup {position: fixed; background: #fff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); text-align: center; -webkit-animation-name: bounceInDown; animation-name: bounceInDown; -webkit-animation-duration: 1s; animation-duration: 1s; -webkit-animation-fill-mode: both; animation-fill-mode: both; z-index: 1000; }\r\n.mt-popup .mt-btn-grey, .mt-popup .mt-btn-blue {margin: 0 10px 20px 10px; }\r\n.mt-popup .mt-popup-h1 {height: 35px; line-height: 35px; font-size: 16px; color: #fff; text-align: center; background: #0e90d2; }\r\n.mt-popup .mt-popup-h2 {color: #333; font-size: 14px; text-align: center; padding: 10px 0; }\r\n.mt-popup .mt-popup-content {margin: 10px; }\r\n.mt-popup .mt-popup-str {color: #333333; padding: 10px 0; font-size: 14px; }\r\n.mt-popup .mt-popup-ico {display: inline-block; width: 30px; height: 30px; }\r\n.mt-popup .mt-popup-btn-close {position: absolute; top: 5px; right: 10px; color: #fff; transition:0.3s; }\r\n.mt-popup .mt-popup-btn-close:hover {top: 7px; transform: rotate(180deg); }\r\n.mt-popup .mt-popup-btn-close .iconfont {font-size: 12px; }\r\n\r\n/*插件之 mt-tabs*/\r\n.mt-tabs {position: relative; }\r\n.mt-tabs .mt-tabs-header {position: relative; bottom: -1px; z-index: 100;}\r\n.mt-tabs .mt-tabs-header li {float: left; padding: 5px 20px; }\r\n.mt-tabs .mt-tabs-header li a {color: #999; }\r\n.mt-tabs .mt-tabs-header .mt-tabs-active {border: 1px solid #e4eaec; border-bottom: none; background: #fff; }\r\n.mt-tabs .mt-tabs-header .mt-tabs-active a {color: #333; }\r\n.mt-tabs .mt-tabs-header:after {content: \"\"; display: block; height: 0; clear: both; visibility: hidden; }\r\n.mt-tabs .mt-tabs-content {border: 1px solid #e4eaec; overflow: hidden; position: relative; background: #fff; }\r\n.mt-tabs .mt-tabs-wrap {position: relative; left: 0; top: 0; }\r\n.mt-tabs .mt-tabs-wrap:after {content: \"\"; display: block; height: 0; clear: both; visibility: hidden; }\r\n.mt-tabs .mt-tabs-item { float: left; width: 100%; z-index:100; display: none; position: absolute; top: 0; left: 0; }\r\n.mt-tabs .mt-tabs-content .mt-tabs-active { display: block; z-index:101; position: relative; }\r\n\r\n/*mt-tabs 无动画*/\r\n.mt-tabs .mt-tabs-animate .mt-tabs-item{transition:transform 0.5s; display: block; transform: translateX(-100%);}\r\n.mt-tabs .mt-tabs-animate .mt-tabs-active{ display: block; transform: translateX(0);}\r\n.mt-tabs .mt-tabs-animate .mt-tabs-active~.mt-tabs-item{transform: translateX(100%);}\r\n\r\n/*插件之图片预加载*/\r\n[data-mt-imgload] {background-image: url(" + __webpack_require__(682) + "); background-repeat: no-repeat; background-position: center; }\r\n\r\n/*插件之mt-tips*/\r\n.mt-tips {position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 2px; padding: 5px; color: #fff; font-size: 14px; z-index: 10000; }\r\n\r\n/*插件之分页*/\r\n.mt-pagelist {width: 100%; margin-top: 40px; margin-bottom: 40px; vertical-align: center; }\r\n.mt-pagelist .mt-pagelist-left {line-height: 28px; float: left; }\r\n.mt-pagelist .mt-pagelist-left .mt-select {width: 100px; }\r\n.mt-pagelist .mt-pagelist-left .mt-select-title {width: 60px; }\r\n.mt-pagelist .mt-pagelist-content {display: inline-block; max-width: 280px; vertical-align: middle; height: 28px; overflow: hidden; position: relative; }\r\n.mt-pagelist .mt-pagelist-right {float: right; }\r\n.mt-pagelist .mt-pagelist-page {height: 28px; display: inline-block; position: relative; left: 0; margin-top: 1px; }\r\n.mt-pagelist .mt-pagelist-page li {float: left; margin: 0 5px; background: #fff; }\r\n.mt-pagelist .mt-pagelist-page li a {display: inline-block; border: 1px solid #dddddd; border-radius: 2px; font-size: 14px; width: 30px; height: 26px; line-height: 24px; color: #333; text-align: center; transition: 0.3s; }\r\n.mt-pagelist .mt-pagelist-page li a:hover {color: #fff; background-color: #0393dc; border: 1px solid #0393dc; }\r\n.mt-pagelist .mt-pagelist-page .on a {color: #fff; background-color: #0393dc; cursor: default; border: 1px solid #0393dc; }\r\n.mt-pagelist .mt-pagelist-input {margin: 0 12px; }\r\n.mt-pagelist .mt-pagelist-input .mt-input {border: 1px solid #dddddd; height: 26px; width: 40px; margin: 0 2px; text-align: center; background: #fff; }\r\n.mt-pagelist .mt-pagelist-prev,\r\n.mt-pagelist .mt-pagelist-next,\r\n.mt-pagelist .mt-pagelist-btn,\r\n.mt-pagelist .mt-pagelist-end,\r\n.mt-pagelist .mt-pagelist-first {border: 1px solid #dddddd; border-radius: 2px; font-size: 14px; color: #333; padding: 4px 10px; background: #fff; vertical-align: middle; }\r\n.mt-pagelist .mt-pagelist-prev:hover,\r\n.mt-pagelist .mt-pagelist-next:hover,\r\n.mt-pagelist .mt-pagelist-btn:hover,\r\n.mt-pagelist .mt-pagelist-end:hover,\r\n.mt-pagelist .mt-pagelist-first:hover {color: #fff; background-color: #0393dc; border: 1px solid #0393dc; }\r\n.mt-pagelist .mt-pagelist-runprev,\r\n.mt-pagelist .mt-pagelist-runnext {border: 1px solid #fff; padding: 4px; }\r\n\r\n/*日历组件*/\r\n.mt-date-main{ width: 240px; height: 250px; overflow: hidden; background: #f3f3f3; display: none; position: absolute; z-index: 9999; box-shadow: 0 2px 4px rgba(150, 162, 186, 0.5);}\r\n.mt-date-title{ height: 30px; line-height: 25px; background: #333; color: #fff; text-align: center;} \r\n.mt-date-title .mt-btn-blue{ background: #333;} \r\n.mt-date-title a{ margin: 0 5px; padding: 2px 5px;line-height: normal; font-size: 16px;}\r\n.mt-date-title .mt-date-nowday,\r\n.mt-date-title .mt-date-clear{ position: absolute; top: 8px; font-size: 12px; z-index: 20;}\r\n.mt-date-title .mt-date-nowday{ left: 0; top: 5px;}\r\n.mt-date-title .mt-date-clear{ right: 0; top: 5px;}\r\n.mt-date-month,.mt-date-year{ display: none;}\r\n.mt-date-ym,\r\n.mt-date-y,\r\n.mt-date-m{ display: inline-block; width: 100px; position: relative; top: 0px;}\r\n.mt-date-week{ height: 25px; line-height: 25px; text-align: center; font-weight: bolder;}\r\n.mt-date-week li{ display: inline-block; width:14.28%;}\r\n.mt-date-warp{ height: 240px; width: 900px; background: #ccc;}\r\n.mt-date-item{ height: 100%; width: 240px; float: left;}\r\n.mt-date-day li{ float: left; text-align: center; width: 14.28%; height: 32px; line-height: 32px;}\r\n.mt-date-day li a{ color: #666; display: inline-block; width: 100%; height: 100%; transition:0.3s;}\r\n.mt-date-day li a:hover{ background: #ccc;}\r\n.mt-date-day li .mt-date-prevday,\r\n.mt-date-day li .mt-date-nextday{ color: #ccc;} \r\n.mt-date-day li .mt-date-selected{background: #40c583; color:#fff;}\r\n.mt-date-years,\r\n.mt-date-months{ width: 100%; height: 220px; position: absolute; bottom: 0; z-index: 100; background: #fff; opacity: 0; transform: scale(5); display: none; transition:0.3s;}\r\n.mt-date-animate{display:block; opacity: 1; transform: scale(1);}\r\n.mt-date-months li{line-height: 64px; font-size: 14px; cursor: pointer; float: left; border-radius: 0; background: #fff; color: #333; width: 25%; height: 25%; text-align: center; }\r\n.mt-date-months li:hover{ color: #000; background: #ccc;}\r\n.mt-date-months .mt-active{ color: #000; background: #e9e9e9;}\r\n.mt-date-years li{ cursor: pointer; float: left; background: #fff; line-height: normal; color: #333; width: 50px; height: 28px; margin:4px 5px;}\r\n.mt-date-years .mt-active{ color: #000; background: #e9e9e9;}\r\n.mt-date-years li:hover{ color: #000; background: #ccc;}\r\n.mt-date-main .mt-btn-blue{ box-shadow: none;}\r\n.mt-dates{ position: absolute; display: none; box-shadow: 0 2px 4px rgba(150, 162, 186, 0.5); width: 490px; height: 290px; background: #f3f3f3; z-index: 9999;}\r\n.mt-dates .mt-date-main{box-shadow:none;}\r\n.mt-dates .mt-date-main+.mt-date-main{ left: 250px;}\r\n.mt-dates:after{ content: \"\"; display: inline-block; position: absolute; height: 30px; background: #333; width: 100%; left: 0; top: 0;}\r\n.mt-dates:before{ content: \"\"; display: inline-block; position: absolute; left: 245px; top: 40px; height: 200px; background: #e6e6e6; width: 1px; }\r\n.mt-dates .mt-dates-text{ position: absolute;}\r\n.mt-dates-bottom{ position: absolute; bottom: 0; left: 0; width: 100%; border-top: 1px solid #e6e6e6; height: 40px; padding: 8px; text-align: right;}\r\n.mt-dates-bottom a{ margin-left: 20px!important;}\r\n/*\r\n.mt-dates-start .mt-dates-down,\r\n.mt-dates-end .mt-dates-up{ background: #e4e4e4;}\r\n*/\r\n\r\n/* loading... */\r\n.mt-loading {pointer-events: none; }\r\n.mt-loading .mt-bar {background: #29d; position: fixed; top: 0; left: 0; width: 100%; height: 2px; transform: translate3d(-100%, 0px, 0px); transition: all 200ms ease;}\r\n.mt-loading .mt-spinner {display: block; position: fixed; top: 8px; right: 8px;} \r\n.mt-loading .mt-spinner-icon {width: 18px; height: 18px; box-sizing: border-box; border: solid 2px transparent; border-top-color: #29d; border-left-color: #29d; border-radius: 50%;\r\n  -webkit-animation: rotateInfinite 400ms linear infinite;\r\n          animation: rotateInfinite 400ms linear infinite;\r\n}\r\n/*循环旋转*/\r\n@-webkit-keyframes rotateInfinite {\r\n  0%   { -webkit-transform: rotate(0deg); }\r\n  100% { -webkit-transform: rotate(360deg); }\r\n}\r\n@keyframes rotateInfinite {\r\n  0%   { transform: rotate(0deg); }\r\n  100% { transform: rotate(360deg); }\r\n}\r\n\r\n/*二级菜单*/\r\n.mt-treemenu{ display: inline-block;}\r\n.mt-treemenu-box{ padding-left: 20px;}\r\n.mt-treemenu-title{ position: relative; cursor: pointer;}\r\n.mt-treemenu-title .iconfont{ transition:0.3s; position: absolute; left: -15px; top: 3px; font-size: 12px;}\r\n.mt-treemenu .mt-treemenu-box .mt-treemenu-box{ display: none;} \r\n.mt-treemenu-active .iconfont{ /*content: \"\\e60e\";*/ transform:rotate(90deg); -webkit-transform:rotate(90deg);}\r\n\r\n/*more tips*/\r\n.mt-more {height: 20px; display: inline-block; position: relative; vertical-align: middle; margin-left: 5px; }\r\n.mt-more .iconfont {color: #999; cursor: pointer; }\r\n.mt-more .mt-more-content {font-size: 14px; position: absolute; min-width: 120px; max-width: 300px; top: 30px; left: -60px; background: #fff; border: 1px solid #ddd; box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05); padding: 10px; border-radius: 4px; display: none; color: #999; }\r\n.mt-more .mt-more-content:before {content: \"\"; display: inline-block; border: 10px solid transparent; border-bottom: 10px solid #ddd; position: absolute; top: -20px; left: 60px; }\r\n.mt-more:hover {z-index: 10000; }\r\n.mt-more:hover .mt-more-content {display: block; }\r\n\r\n/* popover 提示*/\r\n.mt-popover{ position: absolute; background: #333; color: #fff; max-width: 300px; padding: 10px;}\r\n.mt-popover .mt-arrow{ display: inline-block; position: absolute; width: 0; height: 0; border:8px solid transparent;}\r\n.mt-popover-top .mt-arrow{ bottom: -15px; left: 50%; margin-left: -8px; border-top:8px solid #333; }\r\n.mt-popover-left .mt-arrow{ top: 50%; right: -15px; margin-top: -8px; border-left:8px solid #333; }\r\n.mt-popover-down .mt-arrow{ left: 50%; top: -15px; margin-left: -8px; border-bottom:8px solid #333; }\r\n.mt-popover-right .mt-arrow{ top: 50%; left: -15px; margin-top: -8px; border-right:8px solid #333; }", ""]);
+	exports.push([module.id, "/*格式化，UI*/\r\n/* ---------------CSS 格式化------------------------ */\r\n\r\n*:not(input,textarea) {margin: 0; padding: 0; outline: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-box-sizing: border-box; -webkit-touch-callout: inherit; -webkit-user-select: auto; outline: none; }\r\nhtml {height: 100%; font-size: 100%; -webkit-text-size-adjust: 100%; }\r\nbody {margin: 0; padding: 0; width: 100%; height: 100%; font-family:\"Microsoft YaHei\"; -webkit-touch-callout: inherit ; -webkit-user-select: auto ; font-size: 14px; position: relative; word-break: break-all; float: left; }\r\ni, em {font-style: normal; } \r\na {-webkit-tap-highlight-color: rgba(0, 0, 0, 0.35); text-decoration: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); color: #4a89dc; }\r\nimg {-ms-interpolation-mode: bicubic; vertical-align: middle; border: none; }\r\ntable {border-collapse: collapse; border-spacing: 0; }\r\nth, td, caption {vertical-align: middle; }\r\ntextarea {resize: none; }\r\ninput, button, select, textarea {outline: none; border-radius: 0; font-family: inherit; font-size: inherit; }\r\nbutton {border: none; cursor: pointer; } \r\np, ul, ol, li {list-style: none; margin: 0; padding: 0; }\r\naddress, caption, cite, code, dfn, em, th, var {font-weight: normal; font-style: normal; }\r\nstrong {font-weight: bold; }\r\nh1, h2, h3, h4, h5, h6 {font-weight: normal; margin: 0; padding: 0; }\r\nlabel {padding-right: 10px; }\r\n\r\n.iconfont {padding: 0; margin: 0; line-height: normal;}\r\n \r\n/*清除浮动*/\r\n.clear {clear: both; display: block; font-size: 0; height: 0; line-height: 0; width: 100%; }\r\n.clearfix:after {content: \"\"; display: block; height: 0; clear: both; visibility: hidden; }\r\n/**\r\n * Fix the flawed CSS box model - Yes, IE6's box model is better\r\n * Browser support: IE8+\r\n * via: http://paulirish.com/2012/box-sizing-border-box-ftw/\r\n */\r\n*, *:before, *:after {-moz-box-sizing: border-box; box-sizing: border-box; }\r\n/* normalize.css v3.0.2 | git.io/normalize */\r\n/* Set <html> and <body> to inherit the height of the viewport */\r\nhtml, body {min-height: 100%; }\r\n/**\r\n * 1. Prevent iOS text size adjust after orientation change, without disabling\r\n *    user zoom.\r\n *    https://developer.mozilla.org/en-US/docs/Web/CSS/text-size-adjust\r\n */\r\nhtml {-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }\r\nh1 {font-size: 1.5em; } \r\nh2 {font-size: 1.25em; }\r\n\r\ninput[type=text][disabled],\r\ninput[type=password][disabled] {background: #f3f3f3!important; color: #ccc!important; }\r\ninput[type=text][disabled] + .mt-iconbtn,\r\ninput[type=password][disabled] + .mt-iconbtn {color: #ccc!important; z-index: 11; }\r\n\r\n/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/\r\n::-webkit-scrollbar {width: 8px; height: 8px; background-color: #F5F5F5; }\r\n/*定义滚动条轨道 内阴影+圆角*/\r\n::-webkit-scrollbar-track {-webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.1); border-radius: 10px; background-color: #F5F5F5; }\r\n/*定义滑块 内阴影+圆角*/\r\n::-webkit-scrollbar-thumb {border-radius: 10px; background-color: #ccc; }\r\n\r\n/*框架需要加入的 ID*/\r\n#MTUI_MODAL,#MTUI_POPUP,#MTUI_LOADING,#MTUI_POPOVER{position: absolute; top: 0; left: 0; height: 0; width: 0; z-index: 20000;}\r\n#MTUI_POPOVER{z-index: auto; width: 100%;}\r\n#MTUI_BG {position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.3); z-index: 9999; display: none; }\r\n\r\n/*馒头UI grid 24多栏栅格 (A*n)-i=W i=4 n=24 A=4 */\r\n.mt-g {position: relative; }\r\n.mt-g:after {content: \"\"; display: block; clear: both; height: 0; visibility: hidden; }\r\n.mt-g .mt-g-1 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-1:first-child {margin-left: 0; }\r\n.mt-g .mt-g-1{ width: 8.33333%; }\r\n.mt-g .mt-g-offset-1,\r\n.mt-g .mt-g-offset-1:first-child {margin-left: 8.33333%; }\r\n.mt-g .mt-g-2 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-2:first-child {margin-left: 0; }\r\n.mt-g .mt-g-2{ width: 16.66666%; }\r\n.mt-g .mt-g-offset-2,\r\n.mt-g .mt-g-offset-2:first-child {margin-left: 16.66666%; }\r\n.mt-g .mt-g-3 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-3:first-child {margin-left: 0; }\r\n.mt-g .mt-g-3{ width: 24.99999%; }\r\n.mt-g .mt-g-offset-3,\r\n.mt-g .mt-g-offset-3:first-child {margin-left: 24.99999%; }\r\n.mt-g .mt-g-4 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-4:first-child {margin-left: 0; } \r\n.mt-g .mt-g-4{ width: 33.33332%; }\r\n.mt-g .mt-g-offset-4,\r\n.mt-g .mt-g-offset-4:first-child {margin-left: 33.33332%; }\r\n.mt-g .mt-g-5 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-5:first-child {margin-left: 0; }\r\n.mt-g .mt-g-5{ width: 41.66665%; }\r\n.mt-g .mt-g-offset-5,\r\n.mt-g .mt-g-offset-5:first-child {margin-left: 41.66665%; }\r\n.mt-g .mt-g-6 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-6:first-child {margin-left: 0; }\r\n.mt-g .mt-g-6{ width: 49.99998%; }\r\n.mt-g .mt-g-offset-6,\r\n.mt-g .mt-g-offset-6:first-child {margin-left: 49.99998%; }\r\n.mt-g .mt-g-7 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-7:first-child {margin-left: 0; }\r\n.mt-g .mt-g-7{ width: 58.33331%; }\r\n.mt-g .mt-g-offset-7,\r\n.mt-g .mt-g-offset-7:first-child {margin-left: 58.33331%; }\r\n.mt-g .mt-g-8 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-8:first-child {margin-left: 0; }\r\n.mt-g .mt-g-8{ width: 66.66664%; }\r\n.mt-g .mt-g-offset-8,\r\n.mt-g .mt-g-offset-8:first-child {margin-left: 66.66664%; }\r\n.mt-g .mt-g-9 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-9:first-child {margin-left: 0; }\r\n.mt-g .mt-g-9{ width: 74.99997%; }\r\n.mt-g .mt-g-offset-9,\r\n.mt-g .mt-g-offset-9:first-child {margin-left: 74.99997%; }\r\n.mt-g .mt-g-10 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-10:first-child {margin-left: 0; }\r\n.mt-g .mt-g-10{ width: 83.3333%; }\r\n.mt-g .mt-g-offset-10,\r\n.mt-g .mt-g-offset-10:first-child {margin-left: 83.3333%; }\r\n.mt-g .mt-g-11 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-11:first-child {margin-left: 0; }\r\n.mt-g .mt-g-11{ width: 91.66663%; }\r\n.mt-g .mt-g-offset-11,\r\n.mt-g .mt-g-offset-11:first-child {margin-left: 91.66663%; }\r\n.mt-g .mt-g-12 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-12:first-child {margin-left: 0; }\r\n.mt-g .mt-g-12{ width: 99.99996%; }\r\n.mt-g .mt-g-offset-12,\r\n.mt-g .mt-g-offset-12:first-child {margin-left: 99.99996%; }\r\n\r\n/*居中*/\r\n.mt-g-center {text-align: center; }\r\n.mt-g-center .mt-g-1,\r\n.mt-g-center .mt-g-2,\r\n.mt-g-center .mt-g-3,\r\n.mt-g-center .mt-g-4,\r\n.mt-g-center .mt-g-5,\r\n.mt-g-center .mt-g-6,\r\n.mt-g-center .mt-g-7,\r\n.mt-g-center .mt-g-8,\r\n.mt-g-center .mt-g-9,\r\n.mt-g-center .mt-g-10,\r\n.mt-g-center .mt-g-11,\r\n.mt-g-center .mt-g-12 {float: none; display: inline-block; text-align: left; }\r\n\r\n/*馒头UI 插件样式 */\r\n.mt-padding {padding: 20px; }\r\n.mt-margin {margin: 20px; }\r\n\r\n/*404*/\r\n.mt-404 {height: 400px; width: 500px; position: absolute; left: 50%; top: 50%; text-align: center; color: #fff; margin: -200px 0 0 -250px; }\r\n.mt-404 h1 {font-size: 25px; font-weight: bolder; }\r\n\r\n/*表格头部*/\r\n.mt-form-header {height: 50px; position: fixed; top: 50px; left: 90px; right: 0; background: #fff; z-index: 999; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; padding-left: 15px; padding-top: 10px; }\r\n.mt-form-header-block {height: 50px; padding-top: 10px; }\r\n\r\n/*x分栏*/\r\n.mt-content-2x,\r\n.mt-content-1x {padding: 20px; }\r\n.mt-content-2x:after,\r\n.mt-content-1x:after {content: \"\"; display: block; height: 0; clear: both; visibility: hidden; }\r\n.mt-content-2x .mt-content-x,\r\n.mt-content-1x .mt-content-x {padding: 20px; width: 49%; margin-left: 2%; background: #fff; float: left; }\r\n.mt-content-2x .mt-content-x:first-child,\r\n.mt-content-1x .mt-content-x:first-child {margin-left: 0; }\r\n.mt-content-1x {padding: 10px 20px 20px 20px; background: #fff; margin: 20px; }\r\n\r\n/*面包屑导航*/\r\n.mt-breadcrumb {padding: 20px; font-size: 14px; }\r\n.mt-breadcrumb ul, \r\n.mt-breadcrumb li {display: inline-block; }\r\n.mt-breadcrumb ul a,\r\n.mt-breadcrumb li a {color: #666; }\r\n.mt-breadcrumb ul {margin-left: 10px; }\r\n.mt-breadcrumb li a:before {content: \"/\"; color: #999; margin: 0 8px; display: inline-block; }\r\n.mt-breadcrumb li:first-child a:before {display: none; }\r\n\r\n/*主要内容区域*/\r\n.mt-main-content {margin: 50px 0 0 90px; }\r\n.mt-main-content:before {content: \"\"; display: block; height: 1px; }\r\n\r\n/*内容区域*/\r\n.mt-page-content {margin: 10px 20px; background: #fff; padding-bottom: 50px; }\r\n\r\n/*表单*/\r\n.mt-input,\r\n.mt-input-block {display: inline-block; position: relative; background: #fff; border-radius: 2px; vertical-align: middle; }\r\n.mt-input input[type=text],\r\n.mt-input-block input[type=text],\r\n.mt-input input[type=password],\r\n.mt-input-block input[type=password] {height: 28px; padding: 0 10px; font-size: 14px; border-radius: 2px; border: 1px solid #e4eaec; transition: 0.6s; display: inline-block; position: relative; z-index: 10; background: none; width: 100%; }\r\n.mt-input input[type=text]:focus,\r\n.mt-input-block input[type=text]:focus,\r\n.mt-input input[type=password]:focus,\r\n.mt-input-block input[type=password]:focus {border: 1px solid #62a8ea; }\r\n.mt-input input[type=text].mt-round,\r\n.mt-input-block input[type=text].mt-round,\r\n.mt-input input[type=password].mt-round,\r\n.mt-input-block input[type=password].mt-round {border-radius: 1000px; }\r\n.mt-input .mt-iconbtn,\r\n.mt-input-block .mt-iconbtn {display: inline-block; position: absolute; height: 24px; right: 2px; top: 50%; margin-top: -12px; line-height: 26px; width: 28px; text-align: center; color: #999; overflow: hidden; z-index: 11; }\r\n.mt-input .mt-iconbtn:hover,\r\n.mt-input-block .mt-iconbtn:hover {color: #62a8ea; cursor: default; }\r\n.mt-input-block {display: block; }\r\n.mt-input-block input[type=text],\r\n.mt-input-block input[type=password] {display: block; width: 100%; }\r\n.mt-icon-input input[type=text],\r\n.mt-icon-input input[type=password] {padding-right: 28px; }\r\n.mt-icon-inputr input[type=text],\r\n.mt-icon-inputr input[type=password] {padding-left: 28px; }\r\n.mt-icon-inputr .mt-iconbtn {left: 2px; }\r\n.mt-icon-inputr .mt-iconbtn:hover{cursor: pointer;}\r\n\r\n/*表单之 mt-textarea*/\r\n.mt-textarea {display: inline-block; position: relative; background: #fff; border-radius: 2px; vertical-align: middle; }\r\n.mt-textarea textarea {padding: 6px 13px; font-size: 14px; border-radius: 2px; border: 1px solid #e4eaec; transition: 0.6s; }\r\n.mt-textarea textarea:focus {border: 1px solid #62a8ea; }\r\n\r\n/*表单之 checkbox*/\r\n.mt-checkbox {display: inline-block; vertical-align: middle; position: relative; cursor: pointer; color: #666; }\r\n.mt-checkbox .icon-checkbox {vertical-align: middle; display: inline-block; width: 16px; height: 16px; background: #fff; border: 1px solid #62a8ea; border-radius: 2px; color: #fff; overflow: hidden; margin-right: 5px; font-size: 12px; }\r\n.mt-checkbox .icon-checkbox:before {transition: 0.3s; transform: scale(0); }\r\n.mt-checkbox input[type=checkbox] {width: 0; height: 0; position: absolute; opacity: 0; }\r\n.mt-checkbox input[type=checkbox][disabled] + i {border: 1px solid #ccc; background: #f3f3f3; color: #f3f3f3; cursor: default; }\r\n.mt-checkbox input[type=checkbox][disabled] + i + span {color: #ccc; cursor: default; }\r\n.mt-checkbox-active .icon-checkbox {color: #62a8ea; }\r\n.mt-checkbox-active .icon-checkbox:before {transform: scale(1); }\r\n.mt-checkbox-active input[type=checkbox][disabled] + i {border: 1px solid #ccc; background: #fff; color: #ccc; }\r\n\r\n/*表单之 radio*/\r\n.mt-radio {display: inline-block; vertical-align: middle; position: relative; cursor: pointer; }\r\n.mt-radio-group{display: inline-block; }\r\n.mt-radio .icon-radio {vertical-align: middle; display: inline-block; width: 18px; height: 18px; background: #fff; border: 1px solid #62a8ea; border-radius: 50%; color: #fff; overflow: hidden; margin-right: 5px; font-size: 12px; line-height: 18px; text-align: center; }\r\n.mt-radio .icon-radio:before {transition: 0.3s; transform: scale(0); }\r\n.mt-radio input[type=radio] {width: 0; height: 0; position: absolute; opacity: 0; }\r\n.mt-radio input[type=radio][disabled] + i {border: 1px solid #ccc; background: #f3f3f3; color: #f3f3f3; cursor: default; }\r\n.mt-radio input[type=radio][disabled] + i + span {color: #ccc; cursor: default; }\r\n.mt-radio-active .icon-radio {color: #62a8ea; }\r\n.mt-radio-active .icon-radio:before {transform: scale(1); }\r\n.mt-radio-active input[type=radio][disabled] + i {border: 1px solid #ccc; color: #ccc; }\r\n\r\n/*表单之 select*/\r\n.mt-select {display: inline-block; position: relative; cursor: pointer; height: 28px; line-height: 28px; padding: 0 13px; padding-right: 30px; font-size: 14px; border-radius: 2px; border: 1px solid #e4eaec; background-color: #fff; vertical-align: middle; z-index: 10; }\r\n.mt-select .mt-select-title {height: 28px; line-height: 26px; overflow: hidden; }\r\n.mt-select .mt-select-title .placeholder{color: #b7c1cf; }\r\n.mt-select .iconfont {position: absolute; right: 5px; top: 5px; color: #c4c4c4; }\r\n.mt-select .icon-xia:before {content: \"\\E602\"; }\r\n.mt-select .mt-select-box {position: absolute; left: -1px; right: -1px; top: 100%; background: #fff; padding: 5px; border: 1px solid #e4eaec; box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05); overflow: auto; max-height: 260px; display: none; }\r\n.mt-select .mt-select-box .option {position: relative; padding: 0 4px; transition: 0.3s; height: 28px; overflow: hidden; }\r\n.mt-select .mt-select-box .option:hover {background: #62a8ea; color: #fff; }\r\n.mt-select .mt-select-box .mt-select-add {position: relative; }\r\n.mt-select .mt-select-box .mt-select-add .mt-add-select-val {text-indent: 5px; width: 100%; border: 1px solid #e4eaec; transition: 0.6s; }\r\n.mt-select .mt-select-box .mt-select-add .mt-add-select-val:focus {border: 1px solid #62a8ea; }\r\n.mt-select .mt-select-box .mt-select-add .mt-add-select-btn {position: absolute; color: #fff; background: #62a8ea; right: 0; top: 4px; height: 20px; width: 20px; line-height: 17px; text-align: center; transition: 0.3s; }\r\n.mt-select .mt-select-box .mt-select-add .mt-add-select-btn:hover {background: #4a89dc; }\r\n.mt-selected .icon-xia:before {content: \"\\E601\"; }\r\n.mt-select-disabled {background-color: #f3f3f3; color: #ccc; cursor: default; }\r\n.mt-select-disabled .icon-xia {color: #ccc; }\r\n\r\n/*表单之 日历*/\r\n.mt-date input[type=text] {width: 120px; }\r\n\r\n/*表单之 滑动杆*/\r\n.mt-slider {display: block; height: 8px; background: #e4eaec; border-radius: 100px; margin-right: 100px; position: relative; }\r\n.mt-slider .mt-slider-val {position: absolute; right: -80px; top: -6px; border: 1px solid #e4eaec; width: 60px; height: 20px; padding: 2px 5px; border-radius: 2px; font-size: 12px; transition: 0.3s; text-align: center; }\r\n.mt-slider .mt-slider-val:focus {border: 1px solid #62a8ea; }\r\n.mt-slider .mt-slider-btn {width: 16px; height: 16px; border-radius: 100px; position: absolute; background: #62a8ea; top: -4px; right: -10px; cursor: pointer; z-index: 100; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5); }\r\n.mt-slider .mt-slider-bar {position: absolute; height: 100%; width: 0; border-radius: 100px; background: #62a8ea; top: 0; left: 0; }\r\n.mt-slider-red .mt-slider-btn {background: #FB4E47; }\r\n.mt-slider-red .mt-slider-bar {background: #FB4E47; }\r\n.mt-slider-green .mt-slider-btn {background: #5EB95E; }\r\n.mt-slider-green .mt-slider-bar {background: #5EB95E; }\r\n\r\n/*表单之进度条*/\r\n@-webkit-keyframes slider-bar-stripes {\r\n  from {background-position: 36px 0; }\r\n  to {background-position: 0 0; }\r\n}\r\n@keyframes slider-bar-stripes {\r\n  from {background-position: 36px 0; }\r\n  to {background-position: 0 0; }\r\n}\r\n\r\n/* slider bar */\r\n.mt-slider-active {display: block; height: 8px; background: #e4eaec; border-radius: 100px; }\r\n.mt-slider-active-bar {float: left; width: 0; height: 100%; font-size: 1.2rem; line-height: 2rem; border-radius: 100px; color: #fff; text-align: center; background-color: #0e90d2; box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15); transition: 10px .6s ease; background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent); background-size: 36px 36px; -webkit-animation: slider-bar-stripes 2s linear infinite; animation: slider-bar-stripes 2s linear infinite; }\r\n.mt-slider-active-green .mt-slider-active-bar {background-color: #5EB95E; }\r\n.mt-slider-active-red .mt-slider-active-bar {background-color: #FB4E47; }\r\n\r\n/*表单之 switch选择*/\r\n.mt-switch {display: inline-block; vertical-align: middle; width: 60px; height: 30px; line-height: 26px; border-radius: 100px; background: #f3f3f3; border: 1px solid #e4eaec; box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2); position: relative; cursor: pointer; text-align: center; transition: 0.3s; }\r\n.mt-switch .mt-switch-btn {transition: 0.4s;transform:translateX(0); display: inline-block; position: absolute; left: 1px; top: 1px; background: #fff; width: 26px; height: 26px; z-index: 100; overflow: hidden; border-radius: 100px; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.6); text-indent: 0;}\r\n.mt-switch .mt-switch-info { transition:0.5s; transform:scale(1); font-size: 12px; display: block; height: 100%; background: #5EB95E; border-radius: 100px; position: relative; -moz-user-select: none; -khtml-user-select: none; user-select: none; }\r\n.mt-switch-off .mt-switch-info{background: #fff; transform:scale(0);}\r\n.mt-switch-off .mt-switch-btn {background: #fff; transform:translateX(31px);}\r\n.mt-switch[disabled] {background: #ccc; }\r\n.mt-switch[disabled] .mt-switch-btn {background: #ddd; }\r\n.mt-switch[disabled] .mt-switch-info {background: #ccc; }\r\n/*\r\n.mt-switch-btn:after{ display: inline-block; content: \"\"; position: absolute; width: 6px; height: 10px; top: 50%; left: 50%; margin: -5px 0 0 -3px; border-right: 1px solid #ccc; border-left: 1px solid #ccc;}\r\n*/\r\n\r\n/*按钮*/\r\n.mt-btn-grey,\r\n.mt-btn-red,\r\n.mt-btn-yellow,\r\n.mt-btn-green,\r\n.mt-btn-blue,\r\n.mt-btn-round-grey,\r\n.mt-btn-round-red,\r\n.mt-btn-round-yellow,\r\n.mt-btn-round-green,\r\n.mt-btn-round-blue {text-align: center; display: inline-block; padding: 5px 16px; background: #e6e6e6; color: #fff; transition: 0.3s; border-radius: 2px; vertical-align: middle; }\r\n.mt-btn-grey:active,\r\n.mt-btn-red:active,\r\n.mt-btn-yellow:active,\r\n.mt-btn-green:active,\r\n.mt-btn-blue:active,\r\n.mt-btn-round-grey:active,\r\n.mt-btn-round-red:active,\r\n.mt-btn-round-yellow:active,\r\n.mt-btn-round-green:active,\r\n.mt-btn-round-blue:active {box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3); }\r\n.mt-btn-round-grey,\r\n.mt-btn-round-red,\r\n.mt-btn-round-yellow,\r\n.mt-btn-round-green,\r\n.mt-btn-round-blue {border-radius: 100px; }\r\n.mt-btn-grey,\r\n.mt-btn-round-grey {color: #666; }\r\n.mt-btn-grey:hover,\r\n.mt-btn-round-grey:hover {background: #d4d4d4; }\r\n.mt-btn-red,\r\n.mt-btn-round-red {background: #FB4E47; }\r\n.mt-btn-red:hover,\r\n.mt-btn-round-red:hover {background: #ec4a44; }\r\n.mt-btn-yellow,\r\n.mt-btn-round-yellow {background: #ff9f22; }\r\n.mt-btn-yellow:hover,\r\n.mt-btn-round-yellow:hover {background: #F37B1D; }\r\n.mt-btn-blue,\r\n.mt-btn-round-blue {background: #0e90d2; }\r\n.mt-btn-blue:hover,\r\n.mt-btn-round-blue:hover {background: #0d86c4; }\r\n.mt-btn-green,\r\n.mt-btn-round-green {background: #5EB95E; }\r\n.mt-btn-green:hover,\r\n.mt-btn-round-green:hover {background: #57ac57; }\r\n.mt-btn-block {display: block; }\r\n\r\n/*字体按钮*/\r\n.mt-text-fs12 {font-size: 12px; }\r\n.mt-text-fs14 {font-size: 14px; }\r\n.mt-text-fs16 {font-size: 16px; }\r\n.mt-text-fs18 {font-size: 18px; }\r\n.mt-btn-text-grey {color: #ccc; }\r\n.mt-btn-text-grey:hover {color: #999; }\r\n.mt-btn-text-red {color: #FB4E47; }\r\n.mt-btn-text-red:hover {color: #ec4a44; }\r\n.mt-btn-text-yellow {color: #ff9f22; }\r\n.mt-btn-text-yellow:hover {color: #F37B1D; }\r\n.mt-btn-text-blue {color: #0e90d2; }\r\n.mt-btn-text-blue:hover {color: #0d86c4; }\r\n.mt-btn-text-green {color: #5EB95E; }\r\n.mt-btn-text-green:hover {color: #57ac57; }\r\n\r\n/*按钮点击后触发的效果*/\r\n.ink-reaction {position: relative; overflow: hidden; }\r\n.ink-reaction .ink {position: absolute; width: 200px; height: 200px; margin-left: -100px; margin-top: -100px; background-color: rgba(255, 255, 255, 0.3); border-radius: 50%; z-index: 1; pointer-events: none; opacity: 0; -webkit-animation: ripple-animation 1.5s; animation: ripple-animation 1.5s; }\r\n.ink-reaction .ink.inverse {background-color: rgba(12, 12, 12, 0.5); }\r\n@-webkit-keyframes ripple-animation {\r\n  from {-webkit-transform: scale(0); transform: scale(0); opacity: 1; }\r\n  to {-webkit-transform: scale(1, 1); transform: scale(1, 1); opacity: 0; }\r\n}\r\n@keyframes ripple-animation {\r\n  from {-webkit-transform: scale(0); transform: scale(0); opacity: 1; }\r\n  to {-webkit-transform: scale(1, 1); transform: scale(1, 1); opacity: 0; }\r\n}\r\n\r\n/*按钮尺寸*/\r\n.mt-btn-xl {padding: 10px 20px; font-size: 18px; }\r\n.mt-btn-xl .iconfont {font-size: 18px; }\r\n.mt-btn-lg {padding: 8px 16px; font-size: 16px; }\r\n.mt-btn-lg .iconfont {font-size: 16px; }\r\n.mt-btn-sm {padding: 5px 8px; font-size: 12px; } \r\n.mt-btn-sm .iconfont {font-size: 12px; } \r\n.mt-btn-xs {padding: 2px 6px; font-size: 12px; }\r\n.mt-btn-xs .iconfont {font-size: 12px; }\r\n\r\n/*table 样式*/\r\n.mt-table {width: 100%; margin: 10px 0; }\r\n.mt-table th {text-align: left; padding: 10px 8px; border-bottom: 2px solid #E8EAEA; color: #666; font-weight: bolder; }\r\n.mt-table td {padding: 10px 8px; border-bottom: 1px solid #E8EAEA; font-size: 14px; color: #333; }\r\n.mt-table-border {border-top: 1px solid #E8EAEA; border-left: 1px solid #E8EAEA; border-right: 1px solid #E8EAEA; }\r\n.mt-table-bordered {border-top: 1px solid #E8EAEA; border-left: 1px solid #E8EAEA; border-right: 1px solid #E8EAEA; }\r\n.mt-table-bordered td,\r\n.mt-table-bordered th {border-left: 1px solid #E8EAEA; }\r\n.mt-table-striped tr:nth-child(even) {background: #f9f9f9; }\r\n.mt-table-center {text-align: center; }\r\n.mt-table-center th {text-align: center; }\r\n.mt-table-hover tr + tr:hover {background: #e6e6e6; }\r\n\r\n/*折叠面板*/\r\n.mt-panel-group {border-top: 1px solid #ddd; }\r\n.mt-panel-group .mt-panel-header,\r\n.mt-panel-group .mt-panel-header-one {background: #f5f5f5; border: 1px solid #ddd; border-top: 0; padding: 5px 10px; cursor: pointer; }\r\n.mt-panel-group .mt-panel-content {background: #fff; border: 1px solid #ddd; border-top: 0; padding: 5px 10px; display: none; }\r\n.mt-panel-group .mt-panel-active .mt-panel-content,\r\n.mt-panel-group .mt-panel-active .mt-panel-header-one {display: block; }\r\n\r\n/*下拉列表*/\r\n.mt-dropdown {display: inline-block; position: relative; }\r\n.mt-dropdown .mt-dropdown-content {padding: 10px; background: #fff; border: 1px solid #E8EAEA; border-radius: 2px; min-width: 160px; position: absolute; top: 100%; box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05); -webkit-animation-duration: 0.5s; animation-duration: 0.5s; z-index: 100; display: none; }\r\n.mt-dropdown .mt-dropdown-content li {padding: 5px 0; font-size: 14px; color: #999; }\r\n.mt-dropdown-active .mt-dropdown-content {display: block; }\r\n.mt-dropdown-active .mt-dropdown-toggle .icon-xia:before,\r\n.mt-dropdown-active .mt-dropdown-toggle-hover .icon-xia:before {content: \"\\E601\"; }\r\n\r\n/*模态弹窗*/\r\n.mt-modal-dialog {box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); position: fixed; background: #fff; display: none; -webkit-animation-name: bounceInDown; animation-name: bounceInDown; -webkit-animation-duration: 1s; animation-duration: 1s; -webkit-animation-fill-mode: both; animation-fill-mode: both; z-index: 10000; }\r\n.mt-modal-dialog .mt-modal-close {position: absolute; top: 10px; right: 10px; color: #333; transition: 0.3s; z-index: 100; }\r\n.mt-modal-dialog .mt-modal-close:hover {transform: rotate(180deg); } \r\n.mt-modal-dialog .mt-dialog-title {height: 40px; line-height: 40px; text-align: center; color: #fff; background: #4a89dc; position: relative; }\r\n.mt-modal-dialog .mt-dialog-title .mt-modal-close {top: 0; color: #fff; }\r\n.mt-modal-dialog .mt-dialog-content {padding: 10px; }\r\n\r\n/*popup*/\r\n.mt-popup {position: fixed; background: #fff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); text-align: center; -webkit-animation-name: bounceInDown; animation-name: bounceInDown; -webkit-animation-duration: 1s; animation-duration: 1s; -webkit-animation-fill-mode: both; animation-fill-mode: both; z-index: 1000; }\r\n.mt-popup .mt-btn-grey, .mt-popup .mt-btn-blue {margin: 0 10px 20px 10px; }\r\n.mt-popup .mt-popup-h1 {height: 35px; line-height: 35px; font-size: 16px; color: #fff; text-align: center; background: #0e90d2; }\r\n.mt-popup .mt-popup-h2 {color: #333; font-size: 14px; text-align: center; padding: 10px 0; }\r\n.mt-popup .mt-popup-content {margin: 10px; }\r\n.mt-popup .mt-popup-str {color: #333333; padding: 10px 0; font-size: 14px; }\r\n.mt-popup .mt-popup-ico {display: inline-block; width: 30px; height: 30px; }\r\n.mt-popup .mt-popup-btn-close {position: absolute; top: 5px; right: 10px; color: #fff; transition:0.3s; }\r\n.mt-popup .mt-popup-btn-close:hover {top: 7px; transform: rotate(180deg); }\r\n.mt-popup .mt-popup-btn-close .iconfont {font-size: 12px; }\r\n\r\n/*插件之 mt-tabs*/\r\n.mt-tabs {position: relative; }\r\n.mt-tabs .mt-tabs-header {position: relative; bottom: -1px; z-index: 100;}\r\n.mt-tabs .mt-tabs-header li {float: left; padding: 5px 20px; }\r\n.mt-tabs .mt-tabs-header li a {color: #999; }\r\n.mt-tabs .mt-tabs-header .mt-tabs-active {border: 1px solid #e4eaec; border-bottom: none; background: #fff; }\r\n.mt-tabs .mt-tabs-header .mt-tabs-active a {color: #333; }\r\n.mt-tabs .mt-tabs-header:after {content: \"\"; display: block; height: 0; clear: both; visibility: hidden; }\r\n.mt-tabs .mt-tabs-content {border: 1px solid #e4eaec; overflow: hidden; position: relative; background: #fff; }\r\n.mt-tabs .mt-tabs-wrap {position: relative; left: 0; top: 0; }\r\n.mt-tabs .mt-tabs-wrap:after {content: \"\"; display: block; height: 0; clear: both; visibility: hidden; }\r\n.mt-tabs .mt-tabs-item { float: left; width: 100%; z-index:100; display: none; position: absolute; top: 0; left: 0; }\r\n.mt-tabs .mt-tabs-content .mt-tabs-active { display: block; z-index:101; position: relative; }\r\n\r\n/*mt-tabs 无动画*/\r\n.mt-tabs .mt-tabs-animate .mt-tabs-item{transition:transform 0.5s; display: block; transform: translateX(-100%);}\r\n.mt-tabs .mt-tabs-animate .mt-tabs-active{ display: block; transform: translateX(0);}\r\n.mt-tabs .mt-tabs-animate .mt-tabs-active~.mt-tabs-item{transform: translateX(100%);}\r\n\r\n/*插件之图片预加载*/\r\n[data-mt-imgload] {background-image: url(" + __webpack_require__(682) + "); background-repeat: no-repeat; background-position: center; }\r\n\r\n/*插件之mt-tips*/\r\n.mt-tips {position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 2px; padding: 5px; color: #fff; font-size: 14px; z-index: 10000; }\r\n\r\n/*插件之分页*/\r\n.mt-pagelist {width: 100%; margin-top: 40px; margin-bottom: 40px; vertical-align: center; }\r\n.mt-pagelist .mt-pagelist-left {line-height: 28px; float: left; }\r\n.mt-pagelist .mt-pagelist-left .mt-select {width: 100px; }\r\n.mt-pagelist .mt-pagelist-left .mt-select-title {width: 60px; }\r\n.mt-pagelist .mt-pagelist-content {display: inline-block; max-width: 280px; vertical-align: middle; height: 28px; overflow: hidden; position: relative; }\r\n.mt-pagelist .mt-pagelist-right {float: right; }\r\n.mt-pagelist .mt-pagelist-page {height: 28px; display: inline-block; position: relative; left: 0; margin-top: 1px; }\r\n.mt-pagelist .mt-pagelist-page li {float: left; margin: 0 5px; background: #fff; }\r\n.mt-pagelist .mt-pagelist-page li a {display: inline-block; border: 1px solid #dddddd; border-radius: 2px; font-size: 14px; width: 30px; height: 26px; line-height: 24px; color: #333; text-align: center; transition: 0.3s; }\r\n.mt-pagelist .mt-pagelist-page li a:hover {color: #fff; background-color: #0393dc; border: 1px solid #0393dc; }\r\n.mt-pagelist .mt-pagelist-page .on a {color: #fff; background-color: #0393dc; cursor: default; border: 1px solid #0393dc; }\r\n.mt-pagelist .mt-pagelist-input {margin: 0 12px; }\r\n.mt-pagelist .mt-pagelist-input .mt-input {border: 1px solid #dddddd; height: 26px; width: 40px; margin: 0 2px; text-align: center; background: #fff; }\r\n.mt-pagelist .mt-pagelist-prev,\r\n.mt-pagelist .mt-pagelist-next,\r\n.mt-pagelist .mt-pagelist-btn,\r\n.mt-pagelist .mt-pagelist-end,\r\n.mt-pagelist .mt-pagelist-first {border: 1px solid #dddddd; border-radius: 2px; font-size: 14px; color: #333; padding: 4px 10px; background: #fff; vertical-align: middle; }\r\n.mt-pagelist .mt-pagelist-prev:hover,\r\n.mt-pagelist .mt-pagelist-next:hover,\r\n.mt-pagelist .mt-pagelist-btn:hover,\r\n.mt-pagelist .mt-pagelist-end:hover,\r\n.mt-pagelist .mt-pagelist-first:hover {color: #fff; background-color: #0393dc; border: 1px solid #0393dc; }\r\n.mt-pagelist .mt-pagelist-runprev,\r\n.mt-pagelist .mt-pagelist-runnext {border: 1px solid #fff; padding: 4px; }\r\n\r\n/*日历组件*/\r\n.mt-date-main{ width: 240px; height: 250px; overflow: hidden; background: #f3f3f3; display: none; position: absolute; z-index: 9999; box-shadow: 0 2px 4px rgba(150, 162, 186, 0.5);}\r\n.mt-date-title{ height: 30px; line-height: 25px; background: #333; color: #fff; text-align: center;} \r\n.mt-date-title .mt-btn-blue{ background: #333;} \r\n.mt-date-title a{ margin: 0 5px; padding: 2px 5px;line-height: normal; font-size: 16px;}\r\n.mt-date-title .mt-date-nowday,\r\n.mt-date-title .mt-date-clear{ position: absolute; top: 8px; font-size: 12px; z-index: 20;}\r\n.mt-date-title .mt-date-nowday{ left: 0; top: 5px;}\r\n.mt-date-title .mt-date-clear{ right: 0; top: 5px;}\r\n.mt-date-month,.mt-date-year{ display: none;}\r\n.mt-date-ym,\r\n.mt-date-y,\r\n.mt-date-m{ display: inline-block; width: 100px; position: relative; top: 0px;}\r\n.mt-date-week{ height: 25px; line-height: 25px; text-align: center; font-weight: bolder;}\r\n.mt-date-week li{ display: inline-block; width:14.28%;}\r\n.mt-date-warp{ height: 240px; width: 900px; background: #ccc;}\r\n.mt-date-item{ height: 100%; width: 240px; float: left;}\r\n.mt-date-day li{ float: left; text-align: center; width: 14.28%; height: 32px; line-height: 32px;}\r\n.mt-date-day li a{ color: #666; display: inline-block; width: 100%; height: 100%; transition:0.3s;}\r\n.mt-date-day li a:hover{ background: #ccc;}\r\n.mt-date-day li .mt-date-prevday,\r\n.mt-date-day li .mt-date-nextday{ color: #ccc;} \r\n.mt-date-day li .mt-date-selected{background: #40c583; color:#fff;}\r\n.mt-date-years,\r\n.mt-date-months{ width: 100%; height: 220px; position: absolute; bottom: 0; z-index: 100; background: #fff; opacity: 0; transform: scale(5); display: none; transition:0.3s;}\r\n.mt-date-animate{display:block; opacity: 1; transform: scale(1);}\r\n.mt-date-months li{line-height: 64px; font-size: 14px; cursor: pointer; float: left; border-radius: 0; background: #fff; color: #333; width: 25%; height: 25%; text-align: center; }\r\n.mt-date-months li:hover{ color: #000; background: #ccc;}\r\n.mt-date-months .mt-active{ color: #000; background: #e9e9e9;}\r\n.mt-date-years li{ cursor: pointer; float: left; background: #fff; line-height: normal; color: #333; width: 50px; height: 28px; margin:4px 5px;}\r\n.mt-date-years .mt-active{ color: #000; background: #e9e9e9;}\r\n.mt-date-years li:hover{ color: #000; background: #ccc;}\r\n.mt-date-main .mt-btn-blue{ box-shadow: none;}\r\n.mt-dates{ position: absolute; display: none; box-shadow: 0 2px 4px rgba(150, 162, 186, 0.5); width: 490px; height: 290px; background: #f3f3f3; z-index: 9999;}\r\n.mt-dates .mt-date-main{box-shadow:none;}\r\n.mt-dates .mt-date-main+.mt-date-main{ left: 250px;}\r\n.mt-dates:after{ content: \"\"; display: inline-block; position: absolute; height: 30px; background: #333; width: 100%; left: 0; top: 0;}\r\n.mt-dates:before{ content: \"\"; display: inline-block; position: absolute; left: 245px; top: 40px; height: 200px; background: #e6e6e6; width: 1px; }\r\n.mt-dates .mt-dates-text{ position: absolute;}\r\n.mt-dates-bottom{ position: absolute; bottom: 0; left: 0; width: 100%; border-top: 1px solid #e6e6e6; height: 40px; padding: 8px; text-align: right;}\r\n.mt-dates-bottom a{ margin-left: 20px!important;}\r\n/*\r\n.mt-dates-start .mt-dates-down,\r\n.mt-dates-end .mt-dates-up{ background: #e4e4e4;}\r\n*/\r\n/*二级菜单*/\r\n.mt-treemenu{ display: inline-block;}\r\n.mt-treemenu-box{ padding-left: 20px;}\r\n.mt-treemenu-title{ position: relative; cursor: pointer;}\r\n.mt-treemenu-title .iconfont{ transition:0.3s; position: absolute; left: -15px; top: 3px; font-size: 12px;}\r\n.mt-treemenu .mt-treemenu-box .mt-treemenu-box{ display: none;} \r\n.mt-treemenu-active .iconfont{ /*content: \"\\e60e\";*/ transform:rotate(90deg); -webkit-transform:rotate(90deg);}\r\n\r\n/*more tips*/\r\n.mt-more {height: 20px; display: inline-block; position: relative; vertical-align: middle; margin-left: 5px; }\r\n.mt-more .iconfont {color: #999; cursor: pointer; }\r\n.mt-more .mt-more-content {font-size: 14px; position: absolute; min-width: 120px; max-width: 300px; top: 30px; left: -60px; background: #fff; border: 1px solid #ddd; box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05); padding: 10px; border-radius: 4px; display: none; color: #999; }\r\n.mt-more .mt-more-content:before {content: \"\"; display: inline-block; border: 10px solid transparent; border-bottom: 10px solid #ddd; position: absolute; top: -20px; left: 60px; }\r\n.mt-more:hover {z-index: 10000; }\r\n.mt-more:hover .mt-more-content {display: block; }\r\n\r\n/* popover 提示*/\r\n.mt-popover{ position: absolute; background: #333; color: #fff; max-width: 300px; padding: 10px;}\r\n.mt-popover .mt-arrow{ display: inline-block; position: absolute; width: 0; height: 0; border:8px solid transparent;}\r\n.mt-popover-top .mt-arrow{ bottom: -15px; left: 50%; margin-left: -8px; border-top:8px solid #333; }\r\n.mt-popover-left .mt-arrow{ top: 50%; right: -15px; margin-top: -8px; border-left:8px solid #333; }\r\n.mt-popover-down .mt-arrow{ left: 50%; top: -15px; margin-left: -8px; border-bottom:8px solid #333; }\r\n.mt-popover-right .mt-arrow{ top: 50%; left: -15px; margin-top: -8px; border-right:8px solid #333; }\r\n\r\n/* loading... */\r\n.mt-loading {pointer-events: none; }\r\n.mt-loading .mt-bar {background: #29d; position: fixed; top: 0; left: 0; width: 100%; height: 2px; transform: translate3d(-100%, 0px, 0px); transition: all 200ms ease;}\r\n.mt-loading .mt-spinner {display: block; position: fixed; top: 8px; right: 8px;} \r\n.mt-loading .mt-spinner-icon {width: 18px; height: 18px; box-sizing: border-box; border: solid 2px transparent; border-top-color: #29d; border-left-color: #29d; border-radius: 50%;\r\n  -webkit-animation: rotateInfinite 400ms linear infinite;\r\n          animation: rotateInfinite 400ms linear infinite;\r\n}\r\n\r\n/*占位loading*/\r\n.mt-loading-box{ position: relative;  height: 100px;}\r\n.mt-loading-cricle{ display: inline-block; text-align: center; line-height: 130px; width: 60px; height: 60px; margin: -40px 0 0 -30px; position: absolute; left: 50%; top: 50%; opacity: 0.2;}\r\n.mt-loading-cricle:before, \r\n.mt-loading-cricle:after{content: \"\"; position: absolute; top: 50%; left: 50%; display: inline-block; border-radius: 1000px; border:3px solid #000; }\r\n.mt-loading-cricle:before{-webkit-animation: rotateInfinite 500ms linear infinite; width: 40px; height: 40px; margin: -20px 0 0 -20px; border-top-color:transparent; border-bottom-color:transparent;}\r\n.mt-loading-cricle:after{-webkit-animation: rotateInfiniteN 400ms linear infinite;width: 20px; height: 20px;  margin:-10px 0 0 -10px; border-left-color:transparent; border-right-color:transparent;}\r\n\r\n/*循环旋转*/ \r\n@-webkit-keyframes rotateInfinite {\r\n  0%   { -webkit-transform: rotate(0deg); }\r\n  100% { -webkit-transform: rotate(360deg); }\r\n}\r\n@-webkit-keyframes rotateInfiniteN {\r\n  0%   { -webkit-transform: rotate(360deg); }\r\n  100% { -webkit-transform: rotate(0deg); }\r\n}", ""]);
 
 	// exports
 
@@ -51829,6 +51861,40 @@
 				top: top,
 				left: left
 			};
+		},
+
+
+		//实例化 limit 属性
+		mtLimit: function mtLimit() {
+			$("[data-limit]").each(function (index, el) {
+				var $this = $(this);
+				var limit = $this.attr("data-limit");
+				var text = $this.text();
+				if (text.length > limit) {
+					$this.attr("title", text);
+					text = text.substr(0, limit) + "...";
+				} else {
+					return;
+				}
+				$this.html(text);
+			});
+		},
+
+
+		//实例化more
+		mtMore: function mtMore() {
+			$("[data-more]").each(function (index, el) {
+				var $this = $(this);
+				var more = $this.attr("data-more");
+				var text = $this.text();
+				var wid = text.length * 14 + 20;
+				if (text.length > more) {
+					text = text.substr(0, more) + '<div class="mt-more">...<div style="width:' + wid + 'px;" class="animated fadeInUp mt-more-content">' + text + '</div></div>';
+				} else {
+					return;
+				}
+				$this.html(text);
+			});
 		}
 	}; /**
 	   * MTUI_MIXINS
@@ -53179,7 +53245,7 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	                  value: true
 	});
 
 	var _react = __webpack_require__(138);
@@ -53192,190 +53258,129 @@
 
 	// 类
 	var SelectDom = _react2.default.createClass({
-	  displayName: 'SelectDom',
+	                  displayName: 'SelectDom',
 
-	  render: function render() {
+	                  render: function render() {
 
-	    return _react2.default.createElement(
-	      'div',
-	      { className: 'mt-page-content' },
-	      _react2.default.createElement(
-	        'h3',
-	        { className: 'mt-padding' },
-	        'input'
-	      ),
-	      _react2.default.createElement(
-	        'div',
-	        { className: 'mt-g' },
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'mt-g-4' },
-	          _react2.default.createElement(
-	            'label',
-	            null,
-	            '输入框:'
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'mt-input' },
-	            _react2.default.createElement('input', { type: 'text', placeholder: '请输入用户名' })
-	          ),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement(
-	            'label',
-	            null,
-	            'block输入框:'
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'mt-input-block' },
-	            _react2.default.createElement('input', { type: 'text' })
-	          ),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement(
-	            'label',
-	            null,
-	            '图标合并:'
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'mt-input mt-icon-input' },
-	            _react2.default.createElement('input', { type: 'text' }),
-	            _react2.default.createElement(
-	              'a',
-	              { href: 'javascript:;', className: 'mt-iconbtn' },
-	              _react2.default.createElement('i', { className: 'iconfont icon-search' })
-	            )
-	          ),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement(
-	            'label',
-	            null,
-	            'block图标合并:'
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'mt-input-block mt-icon-input' },
-	            _react2.default.createElement('input', { type: 'text' }),
-	            _react2.default.createElement(
-	              'a',
-	              { href: 'javascript:;', className: 'mt-iconbtn' },
-	              _react2.default.createElement('i', { className: 'iconfont icon-search' })
-	            )
-	          ),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement(
-	            'label',
-	            null,
-	            '圆角输入框:'
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'mt-input' },
-	            _react2.default.createElement('input', { type: 'text', className: 'mt-round' })
-	          ),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement(
-	            'label',
-	            null,
-	            'block圆角输入框:'
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'mt-input-block' },
-	            _react2.default.createElement('input', { type: 'text', className: 'mt-round' })
-	          ),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement(
-	            'label',
-	            null,
-	            'block圆角输入框图标合并:'
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'mt-input-block mt-icon-input' },
-	            _react2.default.createElement('input', { type: 'text', className: 'mt-round' }),
-	            _react2.default.createElement(
-	              'a',
-	              { href: 'javascript:;', className: 'mt-iconbtn' },
-	              _react2.default.createElement('i', { className: 'iconfont icon-sousuo1' })
-	            )
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'mt-g-4' },
-	          _react2.default.createElement(
-	            'label',
-	            null,
-	            '密码输入框:'
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'mt-input' },
-	            _react2.default.createElement('input', { type: 'password', placeholder: '请输入密码' })
-	          ),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement(
-	            'label',
-	            null,
-	            '输入框图标合并:'
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'mt-input mt-icon-inputr' },
-	            _react2.default.createElement('input', { type: 'text', className: '' }),
-	            _react2.default.createElement(
-	              'a',
-	              { href: 'javascript:;', className: 'mt-iconbtn' },
-	              _react2.default.createElement('i', { className: 'iconfont icon-user' })
-	            )
-	          ),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement(
-	            'label',
-	            null,
-	            '密码框图标合并:'
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'mt-input mt-icon-inputr' },
-	            _react2.default.createElement('input', { type: 'password', className: '' }),
-	            _react2.default.createElement(
-	              'a',
-	              { href: 'javascript:;', className: 'mt-iconbtn' },
-	              _react2.default.createElement('i', { className: 'iconfont icon-password' })
-	            )
-	          ),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement('br', null),
-	          _react2.default.createElement(
-	            'label',
-	            null,
-	            '密码框图标合并disabled:'
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'mt-input mt-icon-inputr' },
-	            _react2.default.createElement('input', { disabled: 'disabled', type: 'password', className: '' }),
-	            _react2.default.createElement(
-	              'a',
-	              { href: 'javascript:;', className: 'mt-iconbtn' },
-	              _react2.default.createElement('i', { className: 'iconfont icon-password' })
-	            )
-	          )
-	        )
-	      )
-	    );
-	  }
+	                                    return _react2.default.createElement(
+	                                                      'div',
+	                                                      { className: 'mt-page-content' },
+	                                                      _react2.default.createElement(
+	                                                                        'h3',
+	                                                                        { className: 'mt-padding' },
+	                                                                        'input'
+	                                                      ),
+	                                                      _react2.default.createElement(
+	                                                                        'div',
+	                                                                        { className: 'mt-g' },
+	                                                                        _react2.default.createElement(
+	                                                                                          'div',
+	                                                                                          { className: 'mt-g-4' },
+	                                                                                          _react2.default.createElement(
+	                                                                                                            'label',
+	                                                                                                            null,
+	                                                                                                            '输入框:'
+	                                                                                          ),
+	                                                                                          _react2.default.createElement(_index.Input, { placeholder: '请输入用户名' }),
+	                                                                                          _react2.default.createElement('br', null),
+	                                                                                          _react2.default.createElement('br', null),
+	                                                                                          _react2.default.createElement(
+	                                                                                                            'label',
+	                                                                                                            null,
+	                                                                                                            'block输入框:'
+	                                                                                          ),
+	                                                                                          _react2.default.createElement(_index.Input, { block: true }),
+	                                                                                          _react2.default.createElement('br', null),
+	                                                                                          _react2.default.createElement('br', null),
+	                                                                                          _react2.default.createElement(
+	                                                                                                            'label',
+	                                                                                                            null,
+	                                                                                                            'textarea:'
+	                                                                                          ),
+	                                                                                          _react2.default.createElement(_index.Input, { type: 'textarea', placeholder: '我是textarea', align: 'top' }),
+	                                                                                          _react2.default.createElement('br', null),
+	                                                                                          _react2.default.createElement('br', null),
+	                                                                                          _react2.default.createElement(
+	                                                                                                            'label',
+	                                                                                                            null,
+	                                                                                                            '图标合并:'
+	                                                                                          ),
+	                                                                                          _react2.default.createElement(_index.Input, { icon: 'icon-search' }),
+	                                                                                          _react2.default.createElement('br', null),
+	                                                                                          _react2.default.createElement('br', null),
+	                                                                                          _react2.default.createElement(
+	                                                                                                            'label',
+	                                                                                                            null,
+	                                                                                                            'block图标合并:'
+	                                                                                          ),
+	                                                                                          _react2.default.createElement(_index.Input, { block: true, icon: 'icon-search' }),
+	                                                                                          _react2.default.createElement('br', null),
+	                                                                                          _react2.default.createElement('br', null),
+	                                                                                          _react2.default.createElement(
+	                                                                                                            'label',
+	                                                                                                            null,
+	                                                                                                            '圆角输入框:'
+	                                                                                          ),
+	                                                                                          _react2.default.createElement(_index.Input, { round: true }),
+	                                                                                          _react2.default.createElement('br', null),
+	                                                                                          _react2.default.createElement('br', null),
+	                                                                                          _react2.default.createElement(
+	                                                                                                            'label',
+	                                                                                                            null,
+	                                                                                                            'block圆角输入框:'
+	                                                                                          ),
+	                                                                                          _react2.default.createElement(_index.Input, { round: true, block: true }),
+	                                                                                          _react2.default.createElement('br', null),
+	                                                                                          _react2.default.createElement('br', null),
+	                                                                                          _react2.default.createElement(
+	                                                                                                            'label',
+	                                                                                                            null,
+	                                                                                                            'block圆角输入框图标合并:'
+	                                                                                          ),
+	                                                                                          _react2.default.createElement(_index.Input, { round: true, icon: 'icon-sousuo1', block: true })
+	                                                                        ),
+	                                                                        _react2.default.createElement(
+	                                                                                          'div',
+	                                                                                          { className: 'mt-g-4' },
+	                                                                                          _react2.default.createElement(
+	                                                                                                            'label',
+	                                                                                                            null,
+	                                                                                                            '密码输入框:'
+	                                                                                          ),
+	                                                                                          _react2.default.createElement(_index.Input, { placeholder: '请输入密码', type: 'password' }),
+	                                                                                          _react2.default.createElement('br', null),
+	                                                                                          _react2.default.createElement('br', null),
+	                                                                                          _react2.default.createElement(
+	                                                                                                            'label',
+	                                                                                                            null,
+	                                                                                                            '输入框图标合并:'
+	                                                                                          ),
+	                                                                                          _react2.default.createElement(_index.Input, { placeholder: '请输入用户', icon: 'icon-user', iconplace: 'left' }),
+	                                                                                          _react2.default.createElement('br', null),
+	                                                                                          _react2.default.createElement('br', null),
+	                                                                                          _react2.default.createElement(
+	                                                                                                            'label',
+	                                                                                                            null,
+	                                                                                                            '密码框图标合并:'
+	                                                                                          ),
+	                                                                                          _react2.default.createElement(_index.Input, { placeholder: '请输入密码', icon: 'icon-password', iconplace: 'left', type: 'password' }),
+	                                                                                          _react2.default.createElement('br', null),
+	                                                                                          _react2.default.createElement('br', null),
+	                                                                                          _react2.default.createElement(
+	                                                                                                            'label',
+	                                                                                                            null,
+	                                                                                                            '密码框图标合并disabled:'
+	                                                                                          ),
+	                                                                                          _react2.default.createElement(_index.Input, { disabled: true, placeholder: '请输入密码', icon: 'icon-password', iconplace: 'left', type: 'password' })
+	                                                                        ),
+	                                                                        _react2.default.createElement(
+	                                                                                          'div',
+	                                                                                          { className: 'mt-g-12' },
+	                                                                                          _react2.default.createElement('div', { className: 'codes', id: 'code-Input' })
+	                                                                        )
+	                                                      )
+	                                    );
+	                  }
 	});
 	//帮助中心
 	exports.default = SelectDom;
@@ -53675,13 +53680,14 @@
 
 	var _PopoverDom2 = _interopRequireDefault(_PopoverDom);
 
+	var _SliderDom = __webpack_require__(728);
+
+	var _SliderDom2 = _interopRequireDefault(_SliderDom);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	//
 	//树形菜单
-
-
-	// 下拉选择模块
 	var codeTreeMenu = "import { TreeMenu } from '../../MTUI/index'\
 	#var treeData = {\
 	#            data:[\
@@ -53708,6 +53714,9 @@
 	#<TreeMenu {...treeData}/>#";
 
 	//日历
+
+
+	// 下拉选择模块
 	var codeDateInput = 'import { DateInput } from \'../../MTUI/index\'\
 	#var data = {\
 	#  width : \'200px\', //日历输入框宽度，默认是120px\
@@ -53823,10 +53832,10 @@
 	//this.iniEditer(codeTabs,'code-Tabs');  
 
 	//Loading
-	var codeLoading = "import { Loading } from '../../MTUI/index'\
+	var codeLoading = "import { Loading , LoadingBox} from '../../MTUI/index'\
 	# Loading.start() //加载开始\
 	# Loading.done() //加载完成\
-	# Loading.error() //加载错误\
+	### 占位loading（宽度默认是100%，高度默认是100px；高度可以自己调节） ## <LoadingBox height=\"100px\"/>\
 	";
 	//this.iniEditer(codeLoading,'code-Loading');
 
@@ -53863,7 +53872,7 @@
 	    var tabsData = {
 	      className: 'test',
 	      defaultVal: 0,
-	      data: [{ title: '分页', content: _react2.default.createElement(_PageListDom2.default, null) }, { title: '模态弹窗', content: _react2.default.createElement(_ModalShowDom2.default, null) }, { title: '提示弹框', content: _react2.default.createElement(_PopupDom2.default, null) }, { title: 'Tab切换', content: _react2.default.createElement(_TabDom2.default, null) }, { title: '日历', content: _react2.default.createElement(_DateDom2.default, null) }, { title: '树形菜单', content: _react2.default.createElement(_TreeDom2.default, null) }, { title: '加载', content: _react2.default.createElement(_LoadDom2.default, null) }, { title: '气泡提示', content: _react2.default.createElement(_PopoverDom2.default, null) }],
+	      data: [{ title: '分页', content: _react2.default.createElement(_PageListDom2.default, null) }, { title: '模态弹窗', content: _react2.default.createElement(_ModalShowDom2.default, null) }, { title: '提示弹框', content: _react2.default.createElement(_PopupDom2.default, null) }, { title: 'Tab切换', content: _react2.default.createElement(_TabDom2.default, null) }, { title: '日历', content: _react2.default.createElement(_DateDom2.default, null) }, { title: '树形菜单', content: _react2.default.createElement(_TreeDom2.default, null) }, { title: '加载', content: _react2.default.createElement(_LoadDom2.default, null) }, { title: '气泡提示', content: _react2.default.createElement(_PopoverDom2.default, null) }, { title: '进度条', content: _react2.default.createElement(_SliderDom2.default, null) }],
 	      callBack: function (index, name) {
 	        //切换后的回调函数      
 	        //console.log("当前选择的tabs为：",index,name);
@@ -54472,13 +54481,14 @@
 	            'done'
 	          ),
 	          '  ',
+	          _react2.default.createElement('br', null),
+	          _react2.default.createElement('br', null),
 	          _react2.default.createElement(
-	            'a',
-	            { href: 'javascript:;', onClick: function onClick() {
-	                _index.Loading.error();
-	              }, className: 'mt-btn-red ink-reaction mt-modal-btn' },
-	            'error'
+	            'h3',
+	            null,
+	            '占位loading'
 	          ),
+	          _react2.default.createElement(_index.LoadingBox, { height: '100px' }),
 	          _react2.default.createElement('br', null),
 	          _react2.default.createElement('br', null),
 	          _react2.default.createElement('div', { id: 'code-Loading' })
@@ -55097,6 +55107,656 @@
 	}
 
 	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(658); if (makeExportsHot(module, __webpack_require__(138))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "user.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
+
+/***/ },
+/* 724 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(138);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(247);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	/**
+	* 自定义内容的弹窗插件
+	* @author : Mantou
+	* @date : 2016-03-01
+	*/
+
+
+	var LoadingBox = _react2.default.createClass({
+	    displayName: 'LoadingBox',
+	    render: function render() {
+	        var style = {
+	            height: this.props.height
+	        };
+	        return _react2.default.createElement(
+	            'div',
+	            { className: 'mt-loading-box', style: style },
+	            _react2.default.createElement(
+	                'div',
+	                { className: 'mt-loading-cricle' },
+	                'Loading'
+	            )
+	        );
+	    }
+	});
+
+	//配置信息
+	exports.default = LoadingBox;
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(658); if (makeExportsHot(module, __webpack_require__(138))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "LoadingBox.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
+
+/***/ },
+/* 725 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+
+	'use strict';
+
+	__webpack_require__(671);
+
+	var _react = __webpack_require__(138);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _Conf = __webpack_require__(674);
+
+	var _Conf2 = _interopRequireDefault(_Conf);
+
+	var _reactRouter = __webpack_require__(269);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Icons = _react2.default.createClass({
+			displayName: 'Icons',
+			render: function render() {
+					if (this.props.children) {
+							return _react2.default.createElement(
+									'div',
+									{ className: _Conf2.default.pageAnimate + " contents" },
+									this.props.children
+							);
+					} else {
+							return _react2.default.createElement(
+									'div',
+									{ className: _Conf2.default.pageAnimate + " contents" },
+									_react2.default.createElement(
+											'h1',
+											null,
+											'icons 小图标'
+									),
+									_react2.default.createElement(
+											'div',
+											{ className: 'mt-page-content' },
+											_react2.default.createElement(
+													'h3',
+													{ className: 'mt-padding' },
+													'icons 采用阿里的字体图标 www.iconfont.cn'
+											),
+											_react2.default.createElement(
+													'div',
+													{ className: 'mt-g' },
+													_react2.default.createElement(
+															'div',
+															{ className: 'mt-g-12' },
+															_react2.default.createElement(
+																	'ul',
+																	{ className: 'admin-icons' },
+																	_react2.default.createElement(
+																			'li',
+																			null,
+																			' ',
+																			_react2.default.createElement('i', { className: 'iconfont icon-save' }),
+																			' ',
+																			_react2.default.createElement(
+																					'p',
+																					null,
+																					'icon-save'
+																			),
+																			' '
+																	),
+																	_react2.default.createElement(
+																			'li',
+																			null,
+																			' ',
+																			_react2.default.createElement('i', { className: 'iconfont icon-share' }),
+																			' ',
+																			_react2.default.createElement(
+																					'p',
+																					null,
+																					'icon-share'
+																			),
+																			' '
+																	),
+																	_react2.default.createElement(
+																			'li',
+																			null,
+																			' ',
+																			_react2.default.createElement('i', { className: 'iconfont icon-down' }),
+																			' ',
+																			_react2.default.createElement(
+																					'p',
+																					null,
+																					'icon-down'
+																			),
+																			' '
+																	),
+																	_react2.default.createElement(
+																			'li',
+																			null,
+																			' ',
+																			_react2.default.createElement('i', { className: 'iconfont icon-info' }),
+																			' ',
+																			_react2.default.createElement(
+																					'p',
+																					null,
+																					'icon-info'
+																			),
+																			' '
+																	),
+																	_react2.default.createElement(
+																			'li',
+																			null,
+																			' ',
+																			_react2.default.createElement('i', { className: 'iconfont icon-checkbox' }),
+																			' ',
+																			_react2.default.createElement(
+																					'p',
+																					null,
+																					'icon-checkbox'
+																			),
+																			' '
+																	),
+																	_react2.default.createElement(
+																			'li',
+																			null,
+																			' ',
+																			_react2.default.createElement('i', { className: 'iconfont icon-arrowup' }),
+																			' ',
+																			_react2.default.createElement(
+																					'p',
+																					null,
+																					'icon-arrowup'
+																			),
+																			' '
+																	),
+																	_react2.default.createElement(
+																			'li',
+																			null,
+																			' ',
+																			_react2.default.createElement('i', { className: 'iconfont icon-arrowdown' }),
+																			' ',
+																			_react2.default.createElement(
+																					'p',
+																					null,
+																					'icon-arrowdown'
+																			),
+																			' '
+																	),
+																	_react2.default.createElement(
+																			'li',
+																			null,
+																			' ',
+																			_react2.default.createElement('i', { className: 'iconfont icon-close' }),
+																			' ',
+																			_react2.default.createElement(
+																					'p',
+																					null,
+																					'icon-close'
+																			),
+																			' '
+																	),
+																	_react2.default.createElement(
+																			'li',
+																			null,
+																			' ',
+																			_react2.default.createElement('i', { className: 'iconfont icon-radio' }),
+																			' ',
+																			_react2.default.createElement(
+																					'p',
+																					null,
+																					'icon-radio'
+																			),
+																			' '
+																	),
+																	_react2.default.createElement(
+																			'li',
+																			null,
+																			' ',
+																			_react2.default.createElement('i', { className: 'iconfont icon-menu' }),
+																			' ',
+																			_react2.default.createElement(
+																					'p',
+																					null,
+																					'icon-menu'
+																			),
+																			' '
+																	),
+																	_react2.default.createElement(
+																			'li',
+																			null,
+																			' ',
+																			_react2.default.createElement('i', { className: 'iconfont icon-left' }),
+																			' ',
+																			_react2.default.createElement(
+																					'p',
+																					null,
+																					'icon-left'
+																			),
+																			' '
+																	),
+																	_react2.default.createElement(
+																			'li',
+																			null,
+																			' ',
+																			_react2.default.createElement('i', { className: 'iconfont icon-right' }),
+																			' ',
+																			_react2.default.createElement(
+																					'p',
+																					null,
+																					'icon-right'
+																			),
+																			' '
+																	),
+																	_react2.default.createElement(
+																			'li',
+																			null,
+																			' ',
+																			_react2.default.createElement('i', { className: 'iconfont icon-top' }),
+																			' ',
+																			_react2.default.createElement(
+																					'p',
+																					null,
+																					'icon-top'
+																			),
+																			' '
+																	),
+																	_react2.default.createElement(
+																			'li',
+																			null,
+																			' ',
+																			_react2.default.createElement('i', { className: 'iconfont icon-bottom' }),
+																			' ',
+																			_react2.default.createElement(
+																					'p',
+																					null,
+																					'icon-bottom'
+																			),
+																			' '
+																	),
+																	_react2.default.createElement(
+																			'li',
+																			null,
+																			' ',
+																			_react2.default.createElement('i', { className: 'iconfont icon-date' }),
+																			' ',
+																			_react2.default.createElement(
+																					'p',
+																					null,
+																					'icon-date'
+																			),
+																			' '
+																	),
+																	_react2.default.createElement(
+																			'li',
+																			null,
+																			' ',
+																			_react2.default.createElement('i', { className: 'iconfont icon-search' }),
+																			' ',
+																			_react2.default.createElement(
+																					'p',
+																					null,
+																					'icon-search'
+																			),
+																			' '
+																	),
+																	_react2.default.createElement(
+																			'li',
+																			null,
+																			' ',
+																			_react2.default.createElement('i', { className: 'iconfont icon-password' }),
+																			' ',
+																			_react2.default.createElement(
+																					'p',
+																					null,
+																					'icon-password'
+																			),
+																			' '
+																	),
+																	_react2.default.createElement(
+																			'li',
+																			null,
+																			' ',
+																			_react2.default.createElement('i', { className: 'iconfont icon-user' }),
+																			' ',
+																			_react2.default.createElement(
+																					'p',
+																					null,
+																					'icon-user'
+																			),
+																			' '
+																	),
+																	_react2.default.createElement(
+																			'li',
+																			null,
+																			' ',
+																			_react2.default.createElement('i', { className: 'iconfont icon-file' }),
+																			' ',
+																			_react2.default.createElement(
+																					'p',
+																					null,
+																					'icon-file'
+																			),
+																			' '
+																	),
+																	_react2.default.createElement(
+																			'li',
+																			null,
+																			' ',
+																			_react2.default.createElement('i', { className: 'iconfont icon-mail' }),
+																			' ',
+																			_react2.default.createElement(
+																					'p',
+																					null,
+																					'icon-mail'
+																			),
+																			' '
+																	),
+																	_react2.default.createElement(
+																			'li',
+																			null,
+																			' ',
+																			_react2.default.createElement('i', { className: 'iconfont icon-photo' }),
+																			' ',
+																			_react2.default.createElement(
+																					'p',
+																					null,
+																					'icon-photo'
+																			),
+																			' '
+																	)
+															)
+													)
+											)
+									)
+							);
+					}
+			}
+	});
+	//联系信息
+	module.exports = Icons;
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(658); if (makeExportsHot(module, __webpack_require__(138))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Icons.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
+
+/***/ },
+/* 726 */,
+/* 727 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(138);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(247);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	//onChange , onFocus, onBlur
+	/**
+	* 自定义内容的弹窗插件
+	* @author : Mantou
+	* @date : 2016-03-01
+	*/
+	var Input = _react2.default.createClass({
+	    displayName: 'Input',
+	    getDefaultProps: function getDefaultProps() {
+	        return {
+	            type: "text",
+	            onClick: false,
+	            onChange: false,
+	            onFocus: false,
+	            onBlur: false,
+	            width: false,
+	            height: false,
+	            placeholder: false,
+	            value: false,
+	            defaultValue: false,
+	            block: false,
+	            round: false,
+	            icon: false,
+	            iconplace: false,
+	            className: false,
+	            id: false,
+	            disabled: false,
+	            align: false
+	        };
+	    },
+	    handleClick: function handleClick(e) {
+	        this.props.onClick(e);
+	    },
+	    handleFocus: function handleFocus(e) {
+	        this.props.onFocus(e);
+	    },
+	    handleBlur: function handleBlur(e) {
+	        this.props.onBlur(e);
+	    },
+	    handleChange: function handleChange(e) {
+	        this.props.onChange(e);
+	    },
+	    render: function render() {
+	        var props = {};
+	        props['type'] = this.props.type;
+	        if (this.props.onClick) {
+	            props['onClick'] = this.props.onClick;
+	        }
+	        if (this.props.onChange) {
+	            props['onChange'] = this.props.onChange;
+	        }
+	        if (this.props.onFocus) {
+	            props['onFocus'] = this.props.onFocus;
+	        }
+	        if (this.props.width || this.props.height) {
+	            props['style'] = {
+	                width: this.props.width,
+	                height: this.props.height
+
+	            };
+	        }
+	        if (this.props.placeholder) {
+	            props['placeholder'] = this.props.placeholder;
+	        }
+	        if (this.props.value) {
+	            props['value'] = this.props.value;
+	        }
+	        if (this.props.defaultValue) {
+	            props['defaultValue'] = this.props.defaultValue;
+	        }
+	        if (this.props.id) {
+	            props['id'] = this.props.id;
+	        }
+	        if (this.props.round) {
+	            props['className'] = 'mt-round';
+	        }
+	        if (this.props.disabled) {
+	            props['disabled'] = 'disabled';
+	        }
+
+	        //对齐方式
+	        var outDivStyle = {};
+	        if (this.props.align) {
+	            outDivStyle['verticalAlign'] = this.props.align;
+	        }
+
+	        //如果是textarea
+	        if (this.props.type == 'textarea') {
+	            var diyName = this.props.className ? this.props.className + ' ' : '';
+	            return _react2.default.createElement(
+	                'div',
+	                { style: outDivStyle, className: diyName + "mt-textarea" },
+	                _react2.default.createElement('textarea', props)
+	            );
+	        }
+
+	        //如果是input 或者 password
+	        var diyName = this.props.className ? this.props.className + ' ' : '';
+	        var iconNamePlace = this.props.icon ? " mt-icon-input" + (this.props.iconplace == 'left' ? 'r' : '') : "";
+	        var blockName = this.props.block ? ' mt-input-block' : '';
+	        var cName = diyName + "mt-input" + blockName + iconNamePlace;
+	        return _react2.default.createElement(
+	            'div',
+	            { style: outDivStyle, className: cName },
+	            _react2.default.createElement('input', props),
+	            this.props.icon ? _react2.default.createElement(
+	                'a',
+	                { href: 'javascript:;', className: 'mt-iconbtn' },
+	                _react2.default.createElement('i', { className: "iconfont " + this.props.icon })
+	            ) : ""
+	        );
+	    }
+	});
+
+	//配置信息
+	exports.default = Input;
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(658); if (makeExportsHot(module, __webpack_require__(138))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Input.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
+
+/***/ },
+/* 728 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(138);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _index = __webpack_require__(679);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	// 类
+	var TreeDom = _react2.default.createClass({
+	  displayName: 'TreeDom',
+
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'mt-page-content' },
+	      _react2.default.createElement(
+	        'h3',
+	        { className: 'mt-padding' },
+	        '树形列表：'
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'mt-g' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'mt-g-12' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'mt-g-4' },
+	            _react2.default.createElement(
+	              'label',
+	              null,
+	              '进度条：'
+	            ),
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(_index.SliderActive, { value: '0.2', width: '300', color: 'green' }),
+	            _react2.default.createElement('br', null),
+	            ' ',
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(_index.SliderActive, { value: '0.7', width: '300', color: 'red' }),
+	            _react2.default.createElement('br', null),
+	            ' ',
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(_index.SliderActive, { value: '0.5', width: '300' })
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+	//帮助中心
+	exports.default = TreeDom;
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(658); if (makeExportsHot(module, __webpack_require__(138))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "SliderDom.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
+
+/***/ },
+/* 729 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(138);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(247);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	/**
+	* 自定义内容的弹窗插件
+	* @author : Mantou
+	* @date : 2016-03-01
+	*/
+
+
+	var SliderActive = _react2.default.createClass({
+	    displayName: 'SliderActive',
+	    render: function render() {
+	        return _react2.default.createElement(
+	            'div',
+	            { ref: 'slider', style: { width: this.props.width }, className: "mt-slider-active mt-slider-active" + (this.props.color != undefined ? '-' + this.props.color : '') },
+	            _react2.default.createElement('div', { className: 'mt-slider-active-bar', style: { width: this.props.width * this.props.value } })
+	        );
+	    }
+	});
+
+	//配置信息
+	exports.default = SliderActive;
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(658); if (makeExportsHot(module, __webpack_require__(138))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "SliderActive.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ }

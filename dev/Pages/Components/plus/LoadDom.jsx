@@ -1,5 +1,5 @@
 import React from 'react'
-import {Loading} from '../../../MTUI/index'
+import {Loading , LoadingBox} from '../../../MTUI/index'
 
 // 类
 const LoadDom = React.createClass({
@@ -14,7 +14,12 @@ const LoadDom = React.createClass({
             &nbsp;&nbsp;
             <a href="javascript:;" onClick={function(){ Loading.done() }} className="mt-btn-green ink-reaction mt-modal-btn">done</a>
             &nbsp;&nbsp;
-            <a href="javascript:;" onClick={function(){ Loading.error() }} className="mt-btn-red ink-reaction mt-modal-btn">error</a>
+
+            <br/><br/>
+            <h3>占位loading</h3>
+
+            <LoadingBox height="100px"/>
+
             <br/><br/><div id="code-Loading"></div>
 
           </div> 
