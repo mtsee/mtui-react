@@ -282,14 +282,17 @@ input[type=password][disabled] + .mt-iconbtn {color: #ccc!important; z-index: 11
 .mt-slider-active-red .mt-slider-active-bar {background-color: #FB4E47; }
 
 /*表单之 switch选择*/
-.mt-switch {display: inline-block; vertical-align: middle; width: 60px; height: 30px; line-height: 26px; border-radius: 100px; background: #f3f3f3; border: 1px solid #e4eaec; box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.2); position: relative; cursor: pointer; text-align: center; transition: 0.3s; }
+.mt-switch {display: inline-block; vertical-align: middle; width: 60px; height: 30px; line-height: 26px; border-radius: 100px; background: #f3f3f3; border: 1px solid #e4eaec; box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2); position: relative; cursor: pointer; text-align: center; transition: 0.3s; }
 .mt-switch .mt-switch-btn {transition: 0.4s;transform:translateX(0); display: inline-block; position: absolute; left: 1px; top: 1px; background: #fff; width: 26px; height: 26px; z-index: 100; overflow: hidden; border-radius: 100px; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.6); text-indent: 0;}
-.mt-switch .mt-switch-info { transition:0.6s; transform:scale(1); font-size: 12px; display: block; height: 100%; background: #5EB95E; border-radius: 100px; position: relative; -moz-user-select: none; -khtml-user-select: none; user-select: none; }
+.mt-switch .mt-switch-info { transition:0.5s; transform:scale(1); font-size: 12px; display: block; height: 100%; background: #5EB95E; border-radius: 100px; position: relative; -moz-user-select: none; -khtml-user-select: none; user-select: none; }
 .mt-switch-off .mt-switch-info{background: #fff; transform:scale(0);}
 .mt-switch-off .mt-switch-btn {background: #fff; transform:translateX(31px);}
 .mt-switch[disabled] {background: #ccc; }
 .mt-switch[disabled] .mt-switch-btn {background: #ddd; }
 .mt-switch[disabled] .mt-switch-info {background: #ccc; }
+/*
+.mt-switch-btn:after{ display: inline-block; content: ""; position: absolute; width: 6px; height: 10px; top: 50%; left: 50%; margin: -5px 0 0 -3px; border-right: 1px solid #ccc; border-left: 1px solid #ccc;}
+*/
 
 /*按钮*/
 .mt-btn-grey,
@@ -429,17 +432,22 @@ input[type=password][disabled] + .mt-iconbtn {color: #ccc!important; z-index: 11
 
 /*插件之 mt-tabs*/
 .mt-tabs {position: relative; }
-.mt-tabs .mt-tabs-header {position: relative; bottom: -1px; }
+.mt-tabs .mt-tabs-header {position: relative; bottom: -1px; z-index: 100;}
 .mt-tabs .mt-tabs-header li {float: left; padding: 5px 20px; }
 .mt-tabs .mt-tabs-header li a {color: #999; }
 .mt-tabs .mt-tabs-header .mt-tabs-active {border: 1px solid #e4eaec; border-bottom: none; background: #fff; }
 .mt-tabs .mt-tabs-header .mt-tabs-active a {color: #333; }
 .mt-tabs .mt-tabs-header:after {content: ""; display: block; height: 0; clear: both; visibility: hidden; }
-.mt-tabs .mt-tabs-content {border: 1px solid #e4eaec; overflow: hidden; background: #fff; }
+.mt-tabs .mt-tabs-content {border: 1px solid #e4eaec; overflow: hidden; position: relative; background: #fff; }
 .mt-tabs .mt-tabs-wrap {position: relative; left: 0; top: 0; }
 .mt-tabs .mt-tabs-wrap:after {content: ""; display: block; height: 0; clear: both; visibility: hidden; }
-.mt-tabs .mt-tabs-item {padding: 10px; display: none; }
-.mt-tabs .mt-tabs-content .mt-tabs-active {padding: 10px; display: block; }
+.mt-tabs .mt-tabs-item { float: left; width: 100%; z-index:100; display: none; position: absolute; top: 0; left: 0; }
+.mt-tabs .mt-tabs-content .mt-tabs-active { display: block; z-index:101; position: relative; }
+
+/*mt-tabs 无动画*/
+.mt-tabs .mt-tabs-animate .mt-tabs-item{transition:transform 0.5s; display: block; transform: translateX(-100%);}
+.mt-tabs .mt-tabs-animate .mt-tabs-active{ display: block; transform: translateX(0);}
+.mt-tabs .mt-tabs-animate .mt-tabs-active~.mt-tabs-item{transform: translateX(100%);}
 
 /*插件之图片预加载*/
 [data-mt-imgload] {background-image: url(img/loading.gif); background-repeat: no-repeat; background-position: center; }

@@ -47,16 +47,26 @@ const Tabs = React.createClass({
   return arr;
   },
   render: function() {
+    var animate = ' mt-tabs-animate';
+    if(!this.props.animate){
+      animate="";
+    }
+    
     return (
       <div className={"mt-tabs "+this.props.className}>
           <ul className="mt-tabs-header">
             {this.tabsHead()}
           </ul>
-          <div className="mt-tabs-content">
+          <div className={"mt-tabs-content"+animate}>
+            {this.tabBody()}
+          </div>
+        {/*
+        <div className="mt-tabs-content">
             <div className="mt-tabs-wrap">
               {this.tabBody()}
             </div>
           </div>
+        */}
         </div>
     );
   }

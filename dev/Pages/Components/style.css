@@ -19,5 +19,19 @@
 .app .mt-tabs{ padding: 20px;}
 .app .mt-tabs .mt-tabs-content { border: none;}
 .app .mt-tabs .mt-tabs-header .mt-tabs-active{ border: none; border-bottom: 3px solid #313A49;}
+.app .mytabs{ padding: 10px; color: #fff; }
+.app .mytas-c1{ background: #0e90d2}
+.app .mytas-c2{ background: #ff9f22}
+.app .mytas-c3{ background: #fb4e47}
+.app .mytas-c4{ background: #5eb95e}
+
+.admin-tabs .mt-tabs .mt-tabs-header {position: relative; bottom: -1px; }
+.admin-tabs .mt-tabs .mt-tabs-header li {float: left; padding: 5px 20px; }
+.admin-tabs .mt-tabs .mt-tabs-header li a {color: #999; }
+.admin-tabs .mt-tabs .mt-tabs-header .mt-tabs-active {border: 1px solid #e4eaec; border-bottom: none; background: #fff; }
+.admin-tabs .mt-tabs .mt-tabs-header .mt-tabs-active a {color: #333; }
+.admin-tabs .mt-tabs .mt-tabs-header:after {content: ""; display: block; height: 0; clear: both; visibility: hidden; }
+.admin-tabs .mt-tabs .mt-tabs-content {border: 1px solid #e4eaec; overflow: hidden; background: #fff; }
+
 
 .btnslist a{ margin-right: 10px;}

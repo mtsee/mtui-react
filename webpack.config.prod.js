@@ -14,7 +14,7 @@ module.exports = {
     //入口文件输出配置
     output: {
         path: path.join(__dirname, 'build'),//'build',
-        filename: '/js/[name].js'
+        filename: '/js/[hash:8].[name].js'
     },
     resolve: { 
         extensions: ['', '.js', '.jsx', '.scss', '.css','.less'] //require 的时候，可以不用写文件类型
@@ -41,7 +41,7 @@ module.exports = {
     //插件项
     plugins: [//将外部的包导出成一个公用的文件比如 jquery，react, react-dom 等
         //extractLESS,extractCSS,extractSASS,
-        new webpack.optimize.CommonsChunkPlugin('common','/js/common.js'),
+        new webpack.optimize.CommonsChunkPlugin('common','/js/[hash:8].common.js'),
         new HtmlwebpackPlugin({
             title: 'BBD',
             template:'./dev/index.html', //html模板路径
