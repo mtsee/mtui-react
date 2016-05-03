@@ -13,7 +13,7 @@
 #####HOT开发模式(推荐)：
 - 第一步启动服务器：npm server (start-server.bat)
 - 第二步进入热开发：npm hot (start-dev-hot.bat)
-- 
+
 #####普通开发模式：
 - 页面刷新模式 npm start（start-dev-old.bat） 
 
