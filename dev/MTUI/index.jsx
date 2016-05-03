@@ -22,6 +22,7 @@ import Popover from './Popover'
 import Swicth from './Swicth'
 import SliderActive from './SliderActive'
 import {Radio ,RadioGroup} from './RadioGroup'
+import validate from './Validate'
 
 //center插件 by mantou 
 ;(function($){ 
@@ -210,5 +211,6 @@ export {
     Loading, //loading
     LoadingBox, //LoadingBox
     TreeMenu, //树形菜单
-    Popover //提示框
+    Popover, //提示框
+    validate //表单验证
 }

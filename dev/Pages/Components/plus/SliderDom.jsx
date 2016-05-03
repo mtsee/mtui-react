@@ -23,6 +23,11 @@ const TreeDom = React.createClass({
 
               </div>
 
+              <br/><br/>
+              <div className="mt-g-12">
+              <div id="code-Slider"></div>
+              </div>
+
             </div> 
           </div>
         </div>

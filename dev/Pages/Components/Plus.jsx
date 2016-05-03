@@ -14,6 +14,7 @@ import TreeDom from './plus/TreeDom'
 import LoadDom from './plus/LoadDom'
 import PopoverDom from './plus/PopoverDom'
 import SliderDom from './plus/SliderDom'
+import ValidateDom from './plus/ValidateDom'
 
 //
 //树形菜单
@@ -40,7 +41,7 @@ var codeTreeMenu = "import { TreeMenu } from '../../MTUI/index'\
 #\
 #render:\
 #\
-#<TreeMenu {...treeData}/>#";
+#<TreeMenu {...treeData}/>#"; 
 
 //日历
 var codeDateInput = 'import { DateInput } from \'../../MTUI/index\'\
@@ -186,6 +187,41 @@ var codePopover = "import { Popover } from '../../MTUI/index'\
 #\
 ";
 
+var codeValidate = "import { validate } from '../../MTUI/index'\
+##\
+##说明：#data['xx'] xx可以使用正则表达式。\
+#Event:\
+#handleSubmit(e){\
+#  //获取焦点，再失去焦点\
+#  $(this.refs.formbox).find('input').trigger('focus').trigger('blur');\
+#}\
+#\
+#DOM:\
+#var v1 = {data : {}};\
+#v1.data[validate.notempty] = '不能为空！';\
+#v1.data[validate.email] = '请输入正确的邮箱！';\
+#\
+#var v2 = {data : {}};\
+#v2.data[validate.notempty] = '不能为空！';\
+v2.data[validate.mobile] = '请输入正确的手机号码！';\
+#\
+#<div ref='formbox'>\
+#  <Input type='text' placeholder='邮箱' validate={v1}/>\
+#  <br/><br/>\
+#  <Input type='text' placeholder='电话' validate={v2}/>\
+#  <br/><br/>\
+#  <a className='mt-btn-green' onClick={this.handleSubmit}>提交</a>\
+#</div>\
+\
+";
+
+var codeSlider = "import { SliderActive } from '../../MTUI/index'\
+##<SliderActive value=\"0.2\" width=\"300\" color=\"green\"/>\
+##<SliderActive value=\"0.7\" width=\"300\" color=\"red\"/>\
+##<SliderActive value=\"0.5\" width=\"300\"/>\
+#\
+";
+
 const Plus = React.createClass({
   mixins:[setCode],
   //初始化代码
@@ -205,7 +241,8 @@ const Plus = React.createClass({
              {title : '树形菜单', content :<TreeDom /> },      
              {title : '加载', content :<LoadDom /> },
              {title : '气泡提示', content :<PopoverDom /> },
-             {title : '进度条', content :<SliderDom /> }
+             {title : '进度条', content :<SliderDom /> },
+             {title : '表单验证', content :<ValidateDom /> }  
           ],       
            callBack: function(index,name){ //切换后的回调函数       
              //console.log("当前选择的tabs为：",index,name);
@@ -218,6 +255,8 @@ const Plus = React.createClass({
                case '树形菜单': this.iniEditer(codeTreeMenu,'code-TreeMenu'); break;
                case '加载': this.iniEditer(codeLoading,'code-Loading'); break;
                case '气泡提示': this.iniEditer(codePopover,'code-Popover'); break;
+               case '进度条': this.iniEditer(codeSlider,'code-Slider'); break;
+               case '表单验证': this.iniEditer(codeValidate,'code-Validate'); break;
              }
 
            }.bind(this)     
