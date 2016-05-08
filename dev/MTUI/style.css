@@ -53,6 +53,8 @@ input[type=password][disabled] + .mt-iconbtn {color: #ccc!important; z-index: 11
 /*定义滑块 内阴影+圆角*/
 ::-webkit-scrollbar-thumb {border-radius: 10px; background-color: #ccc; }
 
+.html-body-overflow {overflow-x:hidden; overflow-y:hidden; }
+
 /*框架需要加入的 ID*/
 #MTUI_MODAL,#MTUI_POPUP,#MTUI_LOADING,#MTUI_POPOVER{position: absolute; top: 0; left: 0; height: 0; width: 0; z-index: 20000;}
 #MTUI_POPOVER{z-index: auto; width: 100%;}
@@ -463,7 +465,7 @@ input[type=password][disabled] + .mt-iconbtn {color: #ccc!important; z-index: 11
 .mt-pagelist .mt-pagelist-left .mt-select-title {width: 60px; }
 .mt-pagelist .mt-pagelist-content {display: inline-block; max-width: 280px; vertical-align: middle; height: 28px; overflow: hidden; position: relative; }
 .mt-pagelist .mt-pagelist-right {float: right; }
-.mt-pagelist .mt-pagelist-page {height: 28px; display: inline-block; position: relative; left: 0; margin-top: 1px; }
+.mt-pagelist .mt-pagelist-page {height: 28px; display: inline-block; position: relative; left: 0; margin-top: 1px; transition:transform 0.5s;}
 .mt-pagelist .mt-pagelist-page li {float: left; margin: 0 5px; background: #fff; }
 .mt-pagelist .mt-pagelist-page li a {display: inline-block; border: 1px solid #dddddd; border-radius: 2px; font-size: 14px; width: 30px; height: 26px; line-height: 24px; color: #333; text-align: center; transition: 0.3s; }
 .mt-pagelist .mt-pagelist-page li a:hover {color: #fff; background-color: #0393dc; border: 1px solid #0393dc; }

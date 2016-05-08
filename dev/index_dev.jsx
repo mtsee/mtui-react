@@ -38,7 +38,7 @@ render(
 	<Provider store={store}>
 	  <div>
 	   <Routers history={history} />
-	   <DevTools />
+	   {/*<DevTools />*/}
     </div>
 	</Provider>, 
   document.getElementById('App')

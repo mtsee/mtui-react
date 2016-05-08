@@ -4,15 +4,27 @@ import {PageList} from '../../../MTUI/index'
 const PageListDom = React.createClass({
   getInitialState: function() {
       return {
-          nowpage : 'loading....',
-          eachPageCount : 'loading...',
-          loading: 'Loading...'
+          count : 0,
+          reData : null
       };
   },
   //分页回调
   setCallBack : function(nowpage,eachPageCount){
-      console.log("当前：",nowpage,eachPageCount);
-      $(this.refs.pageData).html('您选择了页码: '+nowpage+'  当前每页有：'+eachPageCount);
+      console.log("请求服务器数据，传递参数：当前页码：",nowpage,'每页条数：',eachPageCount);
+
+      this.setState({
+          reData : 'loading...'
+      });
+
+      //模拟ajax请求
+      setTimeout(function(){
+        var count = 300;
+        this.setState({
+          count : count,
+          reData : <div>当前页码：{nowpage},每页条数：{eachPageCount}，服务器返回总条数：{count}</div>
+        });
+
+      }.bind(this),1000);
   },
   render: function() { 
 
@@ -22,12 +34,15 @@ const PageListDom = React.createClass({
         <div className="mt-g">
           <div className="mt-g-8">
               {/*
+              id 分页插件的id，选填
               count 表示有多少条数据
+              nowpage 默认显示多少页
               eachPageCount 每页显示多少条 10/20/50
+              showPage 当前显示多少按钮
             */}
-            <p ref="pageData"></p>
-
-            <PageList id="pageList1" count="300" eachPageCount="10" showPage="6" callback={this.setCallBack}/> 
+            <p ref="">当前总数：{this.state.count}</p>
+            <div> {this.state.reData}</div>
+            <PageList id="pageList1" count={this.state.count} showPage="7" callback={this.setCallBack}/> 
 
           </div>
 

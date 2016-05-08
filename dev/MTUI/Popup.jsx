@@ -59,6 +59,7 @@ function Popup(setting){
 			if(timeMark){
 				clearTimeout(timeMark);
 			}
+			$(document.body).removeClass('html-body-overflow');
 		},500);
 		if(setting.closeback){
 			setting.closeback();
@@ -130,6 +131,7 @@ function Popup(setting){
 	//显示出来
 	$("#"+popupID).show();
 	$("#MTUI_BG").show();
+	$(document.body).addClass('html-body-overflow');
 
 	//启用计时器
 	autoClose();

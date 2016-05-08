@@ -24,6 +24,7 @@ const ModalShow = React.createClass({
 				$("#MTUI_BG").fadeOut();
 			}
 			$('#MTUI_MODAL_'+timestamp).remove();
+			$(document.body).removeClass('html-body-overflow');
 		},500);
 	},
 
@@ -49,7 +50,7 @@ const ModalShow = React.createClass({
 			width:width, 
 			height:height,
 			position : 'fixed',
-    		top : center.top,
+    		top : 160,
     		left : center.left
 		}
 		//渲染一个弹窗，支持弹多个弹窗
@@ -73,6 +74,7 @@ const ModalShow = React.createClass({
 			$("#modalDialog_"+timestamp).show();
 		}
 		$("#MTUI_BG").show();
+		$(document.body).addClass('html-body-overflow');
 	},
 
 	//渲染
