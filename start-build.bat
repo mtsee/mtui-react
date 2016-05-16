@@ -1,1 +1,0 @@
-set NODE_ENV=production && webpack -p --config webpack.config.prod.js --progress --colors
