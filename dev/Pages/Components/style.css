@@ -1,0 +1,41 @@
+/*侧面菜单*/
+.leftmenu{ position: fixed; z-index: 1000; width:160px; top: 60px; left: 0; bottom: 0; background: #313A49; box-shadow:3px 0 8px rgba(39, 55, 71, 0.3);}
+.leftmenu .menu{ padding: 0;}
+.leftmenu .sub-menu{ padding: 0; margin-left: 10px;}
+.leftmenu li{ line-height: 40px; text-indent: 20px;}
+.leftmenu li a{ color: #fff; display: block;}
+.leftmenu li .active{ background: #FF6262;}
+.leftmenu li .sub-menu li{ line-height: 30px; margin: 5px;}
+.leftmenu li .sub-menu a{ color: #999; border-left:4px solid #313A49;}
+.leftmenu li .sub-menu .active{ background: #313A49; border-left:4px solid #999;} 
+
+/*插件库*/
+.component{ margin-left:160px;} 
+.component .contents a{} 
+.component .contents .mt-date a{ margin-right: 0;} 
+
+.animated{-webkit-animation-duration: 0.3s; animation-duration: 0.3s;}
+
+.app .mt-tabs{ padding: 20px;}
+.app .mt-tabs .mt-tabs-content { border: none;}
+.app .mt-tabs .mt-tabs-header .mt-tabs-active{ border: none; border-bottom: 3px solid #313A49;}
+.app .mytabs{ padding: 10px; color: #fff; }
+.app .mytas-c1{ background: #0e90d2}
+.app .mytas-c2{ background: #ff9f22}
+.app .mytas-c3{ background: #fb4e47}
+.app .mytas-c4{ background: #5eb95e}
+
+.admin-tabs .mt-tabs .mt-tabs-header {position: relative; bottom: -1px; }
+.admin-tabs .mt-tabs .mt-tabs-header li {float: left; padding: 5px 20px; }
+.admin-tabs .mt-tabs .mt-tabs-header li a {color: #999; }
+.admin-tabs .mt-tabs .mt-tabs-header .mt-tabs-active {border: 1px solid #e4eaec; border-bottom: none; background: #fff; }
+.admin-tabs .mt-tabs .mt-tabs-header .mt-tabs-active a {color: #333; }
+.admin-tabs .mt-tabs .mt-tabs-header:after {content: ""; display: block; height: 0; clear: both; visibility: hidden; }
+.admin-tabs .mt-tabs .mt-tabs-content {border: 1px solid #e4eaec; overflow: hidden; background: #fff; }
+
+
+.btnslist a{ margin-right: 10px;}
+
+.admin-icons li{ display: inline-block; width: 100px; height: 80px; margin: 10px; text-align: center;}
+.admin-icons li .iconfont{ font-size: 24px;}
+.admin-icons li p{ font-size: 12px;}

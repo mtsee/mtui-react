@@ -1,0 +1,22 @@
+/*
+顶部背景色 #313a49
+
+字灰色 #b7c0ce
+字深灰色 #5e6a7f
+*/
+/*菜单*/ 
+.menubox{ height: 60px; background: #313a49; position: fixed; left: 0; top: 0; right: 0; z-index: 1000;} 
+.menubox .menu{ height: 60px; margin: 0 auto; vertical-align: middle;}
+.menubox .menu-logobox{ width: 120px; height: 60px; float: left; margin-left: 20px;}
+.menubox .menu-logo{ width: 120px; height: 60px;float: left; background: url(../../img/logo.png) no-repeat;}
+.menubox .langs,
+.menubox .login-register{ float: right; height: 60px; line-height: 60px;}
+.menubox .login-register a{ color:#b7c0ce; margin-left: 10px;}
+.menubox .langs{ color:#b7c0ce; margin-left: 20px;}
+.menubox .langs a{ color:#5e6a7f;}
+.menubox .langs .active{ color:#b7c0ce;}
+.menubox .menu-list{ float: right; margin-right: 20px;}
+.menubox .menu-list .item{ display: inline-block; margin: 20px 10px; position: relative;}
+.menubox .menu-list .item a{ color: #b7c0ce; font-size: 16px;}
+.menubox .menu-list .item a.active{ color: #FF6262;}
+.menubox .menu-list .tips{ display: block; position: absolute; background: #FF6262; color: #fff; border-radius: 100px; width: 20px; height: 20px; text-align: center; line-height: 20px; right: -15px; top: -8px;}
