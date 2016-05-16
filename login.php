@@ -5,9 +5,9 @@
     <title>普惠法治智能平台</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="renderer" content="webkit">
-    <link rel="stylesheet" href="./css/animate.min.css">
-    <link rel="stylesheet" href="./css/mtui.css">
-    <link rel="stylesheet" href="./css/com.css">
+    <link rel="stylesheet" href="./assets/css/animate.min.css">
+    <link rel="stylesheet" href="./assets/css/mtui.css">
+    <link rel="stylesheet" href="./assets/css/com.css">
 </head>
 <body>
 <div class="login-wrap">
@@ -20,10 +20,10 @@
             <div class="mg-s">
                 <input type="password" class="ipt ipt-block" placeholder="请输入密码"/>
             </div>
-            <div class="mg-s">
+<!--             <div class="mg-s">
                 <input type="text" class="ipt ipt-m" placeholder="请输入验证码"/>
                 <img src="../ui/img/captcha.jpg" class="captcha"/>
-            </div>
+            </div> -->
             <div class="mg-l">
                 <button type="submit" class="btn btn-block">登 录</button>
             </div>
