@@ -1,0 +1,57 @@
+{
+  "code": 200,
+  "data": [
+    {
+      "key": "分类一",
+      "group": true
+    },
+    {
+      "key": "北欧知识城",
+      "type": "aaa"
+    },
+    {
+      "key": "中海城南官邸",
+      "type": "aaa0"
+    },
+    {
+      "key": "华润凤凰城",
+      "type": "aaa1"
+    },
+    {
+      "key": "东山国际新城鉴山",
+      "type": "aaa2"
+    },
+    {
+      "key": "分类二",
+      "group": true
+    },
+    {
+      "key": "蓝光锦绣城",
+      "type": "aaa3"
+    },
+    {
+      "key": "华宇天府花城",
+      "type": "aaa4"
+    },
+    {
+      "key": "高家庄赞城",
+      "type": "aaa5"
+    },
+    {
+      "key": "分类三",
+      "group": true
+    },
+    {
+      "key": "和信孔雀城",
+      "type": "aaa6"
+    },
+    {
+      "key": "摩玛新城",
+      "type": "aaa7"
+    },
+    {
+      "key": "比华利国际城",
+      "type": "aaa8"
+    }
+  ]
+}

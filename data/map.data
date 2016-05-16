@@ -1,0 +1,43 @@
+{
+  "code": 200,
+  "data": [
+    {
+      "name": "北京",
+      "value": 9,
+      "sort": 3
+    },
+    {
+      "name": "天津",
+      "value": 12
+    },
+    {
+      "name": "上海",
+      "value": 12
+    },
+    {
+      "name": "重庆",
+      "value": 12
+    },
+    {
+      "name": "河北",
+      "value": 14
+    },
+    {
+      "name": "河南",
+      "value": 15
+    },
+    {
+      "name": "云南",
+      "value": 16
+    },
+    {
+      "name": "辽宁",
+      "value": 18
+    },
+    {
+      "name": "四川",
+      "value": 279,
+      "sort": "1"
+    }
+  ]
+}
