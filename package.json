@@ -1,0 +1,13 @@
+{
+  "name": "puhuifazhi",
+  "version": "0.0.1",
+  "description": "puhuifazhi",
+  "keywords": [
+    "ui"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^4.0.0"
+  }
+}
