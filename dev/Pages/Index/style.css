@@ -1,0 +1,23 @@
+/*首页的CSS*/
+.index{} 
+.index-head{ text-align: center; padding:0 0 30px 0; font-size: 32px; color: #fff;}
+.index-tags{ text-align: center; color: #fff; margin-bottom: 20px;} 
+.index-tags span{ margin: 0 10px; display: inline-block; padding: 2px 6px; border-radius: 2px; position: relative;}
+.index-tags .active{ background:#525965; }
+.index-tags .active:after{ content: ""; display: inline-block; width:0; position: absolute; top: 22px; left: 40%; height:0; border-left:5px solid transparent; border-right:5px solid transparent; border-top:5px solid #525965;}
+.index-search{ width: 850px; height: 64px; margin: 0 auto; position: relative; z-index: 100;}
+.index-search .mt-select{ width: 130px; height: 60px; float: right; font-size: 16px; border:  1px solid #fff;; border-left: 1px solid #e4eaec;}
+.index-search .mt-select .iconfont{ right: 10px; top: 20px;} 
+.index-search .mt-select .mt-select-title{ margin-top: 16px; margin-left: 10px;} 
+.index-search-inner{width: 670px; height: 60px; background:#fff; display: inline-block; float: left;}
+.index-search-input{ width: 538px; height: 60px; border: none; text-indent: 15px;}
+.index-search .search-btn{ width: 170px; font-size: 16px; padding:19px 0; margin-top: -1px; border-bottom:2px solid #1d6bae; border-radius: 0; background: #3079c2; float: right;}
+.index-recommend{ padding-top: 40px; position: relative;}
+.index-recommend-title{ color: #fe4c53; position: absolute; top: 45px;}
+.index-recommend ul{ margin-left: 70px; line-height: 30px;}
+.index-recommend ul a{ color: #b7c0ce;}
+.index-box{ min-height: 283px; width: 850px; position: absolute; left: 50%; top:50%; margin-top: -140px; margin-left: -425px;}
+ 
+.index .logoMax{ width: 300px; height: 144px; margin: 0 auto; background: url(../../img/logo2.png) no-repeat;} 
+ 
+.footer{ text-align: center; padding:20px 0; color: #b7c0ce;}

@@ -1,0 +1,36 @@
+/*我的报告页面*/
+/*report 菜单*/
+.report-menubox{ position: fixed; height: 60px; left: 100px; top: 0; right:0; background: #273747; z-index: 2000;}
+.searchboxsub{ float: left; margin: 10px;}
+.searchboxsub .item{ width: 300px; height: 40px; background: #2c3e50; display: inline-block; vertical-align: middle;}
+.searchboxsub .key{ float: left; border: none; height: 40px; width: 250px; background: none; text-indent: 10px;}
+.searchboxsub .searchbtn{ line-height: 40px; width: 50px; display: inline-block; float: left; text-align: center;}
+.searchboxsub .search-option{ margin: 0 15px;}
+.searchboxsub a{color: #96a2ba;}
+.report-menubox .menu{ float: right; margin-right: 20px; }
+.report-menubox .menu .item{display: inline-block; padding: 20px 10px; position: relative; z-index: 1;}
+.report-menubox .sub-menu{ box-shadow:0 2px 4px rgba(150, 162, 186, 0.5);display: block;  top: 60px; left: 0px; width: 120px; height: 190px; background: #fff; position: absolute; z-index: 10;}
+.report-menubox .sub-menu li{ height:30px; line-height: 30px; text-align: center; margin: 0 10px; border-bottom:1px dashed #dfe7f2;}
+.report-menubox .sub-menu .links{ color: #273747;}
+.myreport-leftmenu{ box-shadow:3px 0 8px rgba(39, 55, 71, 0.3);}
+.myreport-leftmenu .links .ico{ margin:15px 35px 8px 35px;}
+
+/*myreport*/
+.myreport-menubox .menu{ width: 98%;}
+.myreport-subhead{ position: fixed; height: 60px; line-height: 60px; background: #fff; top: 60px; left: 100px; right: 0; z-index: 1000;}
+.myreport-subhead h1{ font-size: 16px; margin-left: 20px; display: inline-block;}
+.myreport-subhead .infos{ color: #4a89dc; display: inline-block; margin-left: 50px;}
+.myreport-subbody{ padding-top: 60px; margin: 0 20px;}
+.myreport-subbody .mt-tabs-header li{ background: none; font-size: 14px;}
+.myreport-subbody .mt-tabs-header .mt-tabs-active{ border:none; border-bottom: 6px solid #333;}
+.myreport-subbody .mt-tabs .mt-tabs-header li a{ padding: 10px 5px;}
+
+.myreport-type{ width: 100px; position: fixed; top: 60px; bottom: 0; background: #273747; color: #fff;} 
+.myreport-list{ margin-left: 100px;}
+
+.myreport-sub{ margin: 60px 0 0 100px;}
+.myreport-sub .myreport-leftmenu{ width: 100px; position: fixed; z-index: 1100; top: 0; left: 0; bottom: 0; background: #273747; color: #fff;}
+.myreport-sub .logo{ width: 100px; height: 90px; background: url(../../img/logo.png);}
+
+.myreport-leftmenu .links{ display: inline-block; height: 90px; width: 100%; text-align: center; color: #96a2ba;}
+.myreport-leftmenu .active{ height: 90px; text-align: center; background: #32465a; }
