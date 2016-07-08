@@ -34,17 +34,17 @@ const Tabs = React.createClass({
   },
   tabsHead : function(){
     var arr = [];
-  this.props.data.map(function(index, elem) {
-    arr.push(<li onClick={this.handleClick} data-name={index.title} className={elem==this.state.defaultVal?'mt-tabs-active':''} key={elem}><a href="javascript: void(0)">{index.title}</a></li>);
-  }.bind(this))
-  return arr;
+    this.props.children.map(function(elem,index) {
+      arr.push(<li onClick={this.handleClick} data-name={elem.props.title} className={index==this.state.defaultVal?'mt-tabs-active':''} key={index}><a href="javascript: void(0)">{elem.props.title}</a></li>);
+    }.bind(this))
+    return arr;
   },
   tabBody : function(){
     var arr = [];
-  this.props.data.map(function(index, elem) {
-    arr.push(<div className={elem==this.state.defaultVal?'mt-tabs-item mt-tabs-active':'mt-tabs-item'} key={elem}>{index.content}</div>);
-  }.bind(this))
-  return arr;
+    this.props.children.map(function(elem,index) {
+      arr.push(<div className={index==this.state.defaultVal?'mt-tabs-item mt-tabs-active':'mt-tabs-item'} key={index}>{elem}</div>);
+    }.bind(this))
+    return arr;
   },
   render: function() {
     var animate = ' mt-tabs-animate';
@@ -60,13 +60,6 @@ const Tabs = React.createClass({
           <div className={"mt-tabs-content"+animate}>
             {this.tabBody()}
           </div>
-        {/*
-        <div className="mt-tabs-content">
-            <div className="mt-tabs-wrap">
-              {this.tabBody()}
-            </div>
-          </div>
-        */}
         </div>
     );
   }

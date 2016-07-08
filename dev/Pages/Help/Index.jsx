@@ -5,14 +5,6 @@ import setMinHeight from '../../Mixins/setMinHeight'
 const Help = React.createClass({
   mixins:[setMinHeight],
   componentDidMount: function() {
-    // if(this.isMounted()){
-    //   // $(function(){
-    //   //   CodeMirror.fromTextArea($("#myTextarea")[0], {
-    //   //    lineNumbers: true,
-    //   //    mode:  "text/javascript"
-    //   //   });
-    //   // }) 
-    // }
   },
   render: function() {
     var html = 'var a=124;'

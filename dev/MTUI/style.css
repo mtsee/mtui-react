@@ -584,3 +584,9 @@ input[type=password][disabled] + .mt-iconbtn {color: #ccc!important; z-index: 11
 .mt-input-error input{ border-color:#FF6262!important;}
 .mt-validate-error{ position: absolute; top: 50%; margin-top: -10px; padding: 2px 5px; background: #FF6262;  color: #fff; border-radius: 3px; left: 100%; margin-left: 5px; word-break:keep-all; white-space:nowrap; font-size: 12px;}
 .mt-validate-error:after{ content: ""; display: inline-block; width: 0; height: 0; border:5px solid transparent; border-right:5px solid #FF6262; position: absolute; left: -10px; top: 50%; margin-top: -4.5px;}
+
+/*文件上传*/
+.mt-upload{ position: relative; cursor: pointer; overflow: hidden; display: inline-block;}
+.mt-upload input[type=file]{ position: absolute; height: 100%; width: 100%; top:0; left: 0; opacity: 0; cursor: pointer; z-index: 200;}
+.mt-upload-progress{ position: absolute; height: 100%; width: 0; left: 0; top: 0; background: #ccc; transition:1s;}
+.mt-upload-text{ position: relative; z-index: 100;}

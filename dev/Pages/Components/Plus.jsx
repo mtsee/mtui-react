@@ -15,6 +15,7 @@ import LoadDom from './plus/LoadDom'
 import PopoverDom from './plus/PopoverDom'
 import SliderDom from './plus/SliderDom'
 import ValidateDom from './plus/ValidateDom'
+import UploadDom from './plus/UploadDom'
 
 //
 //树形菜单
@@ -183,12 +184,6 @@ var codeTabs = 'import { Tabs } from \'../../MTUI/index\'\
  #   className : \'test\',\
  #   defaultVal : 0,\
  #   animate : true, //是否支持动画效果？\
- #   data : [\
- #       {title : \'小桥流水\', content :<div>我就是随便写点什么~</div> },\
- #       {title : \'拆菊东篱\', content :<div>loading...</div> },\
- #       {title : \'古道西风\', content :<div>loading...</div> },\
- #       {title : \'其他\', content :<div>loading...</div> }\
- #    ],\
  #     callBack: function(index,title){ //切换后的回调函数\
  #       console.log("当前选择的tabs为：",index);\
  #       console.log("当前选择的title为：",title);\
@@ -196,7 +191,12 @@ var codeTabs = 'import { Tabs } from \'../../MTUI/index\'\
  # }\
  #\
  #render:\
- #<Tabs {...tabsData}/>\
+ #<Tabs {...tabsData}>\
+ #    <div title="小桥流水" className=\'mytabs mytas-c1\'>我就是随便写点什么</div>\
+ #    <div title="拆菊东篱" className=\'mytabs mytas-c2\'>拆菊东篱loading...</div>\
+ #    <div title="古道西风" className=\'mytabs mytas-c2\'>古道西风loading...</div>\
+ #    <div title="其他" className=\'mytabs mytas-c2\'>其他loading...</div>\
+ #</Tabs>\
 ';
 //this.iniEditer(codeTabs,'code-Tabs');   
 
@@ -273,35 +273,23 @@ const Plus = React.createClass({
   render: function() {
     var tabsData = {       
          className : 'test',       
-         defaultVal : 0,       
-         data : [      
-             {title : '分页', content :<PageListDom /> },      
-             {title : '模态弹窗', content :<ModalShowDom /> },      
-             {title : '提示弹框', content :<PopupDom /> },      
-             {title : 'Tab切换', content :<TabDom /> },      
-             {title : '日历', content :<DateDom /> },      
-             {title : '树形菜单', content :<TreeDom /> },      
-             {title : '加载', content :<LoadDom /> },
-             {title : '气泡提示', content :<PopoverDom /> },
-             {title : '进度条', content :<SliderDom /> },
-             {title : '表单验证', content :<ValidateDom /> }  
-          ],       
-           callBack: function(index,name){ //切换后的回调函数       
-             //console.log("当前选择的tabs为：",index,name);
-             switch(name) {
-               case '分页': this.iniEditer(codePageList,'code-PageList'); break;
-               case '模态弹窗': this.iniEditer(codeModalShow,'code-ModalShow'); break;
-               case '提示弹框': this.iniEditer(codePopup,'code-PopupShow'); break;
-               case 'Tab切换': this.iniEditer(codeTabs,'code-Tabs'); break;
-               case '日历': this.iniEditer(codeDateInput,'code-DateInput'); break;
-               case '树形菜单': this.iniEditer(codeTreeMenu,'code-TreeMenu'); break;
-               case '加载': this.iniEditer(codeLoading,'code-Loading'); break;
-               case '气泡提示': this.iniEditer(codePopover,'code-Popover'); break;
-               case '进度条': this.iniEditer(codeSlider,'code-Slider'); break;
-               case '表单验证': this.iniEditer(codeValidate,'code-Validate'); break;
-             }
+         defaultVal : 0,            
+         callBack: function(index,name){ //切换后的回调函数       
+           //console.log("当前选择的tabs为：",index,name);
+           switch(name) {
+             case '分页': this.iniEditer(codePageList,'code-PageList'); break;
+             case '模态弹窗': this.iniEditer(codeModalShow,'code-ModalShow'); break;
+             case '提示弹框': this.iniEditer(codePopup,'code-PopupShow'); break;
+             case 'Tab切换': this.iniEditer(codeTabs,'code-Tabs'); break;
+             case '日历': this.iniEditer(codeDateInput,'code-DateInput'); break;
+             case '树形菜单': this.iniEditer(codeTreeMenu,'code-TreeMenu'); break;
+             case '加载': this.iniEditer(codeLoading,'code-Loading'); break;
+             case '气泡提示': this.iniEditer(codePopover,'code-Popover'); break;
+             case '进度条': this.iniEditer(codeSlider,'code-Slider'); break;
+             case '表单验证': this.iniEditer(codeValidate,'code-Validate'); break;
+           }
 
-           }.bind(this)     
+         }.bind(this)     
      }
 
     //分页插件调用
@@ -311,7 +299,19 @@ const Plus = React.createClass({
     		<h1>插件</h1>
 
         <div className="mt-page-content">
-          <Tabs {...tabsData}/>
+          <Tabs {...tabsData}>
+              <PageListDom title="分页"/>
+              <ModalShowDom title="模态弹窗"/>
+              <PopupDom title="提示弹框"/>
+              <TabDom title="Tab切换"/>
+              <DateDom title="日历"/>
+              <TreeDom title="树形菜单"/>
+              <LoadDom title="加载"/>
+              <PopoverDom title="气泡提示"/>
+              <SliderDom title="进度条"/>
+              <ValidateDom title="表单验证"/>
+              <UploadDom title="文件上传"/>
+          </Tabs>
         </div>
 
     	</div>

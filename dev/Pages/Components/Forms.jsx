@@ -132,27 +132,20 @@ const Froms = React.createClass({
   },
   render: function() { 
 
-    var tabsData = {       
+    var tabsData = {
          className : 'test',       
-         defaultVal : 0,       
-         data : [      
-             {title : 'select', content :<SelectDom /> },      
-             {title : 'checkbox', content :<CheckboxDom /> },      
-             {title : 'radio', content :<RadioDom /> },      
-             {title : 'input', content :<InputDom /> },    
-             {title : 'swicth', content :<SwicthDom /> }       
-          ],       
-           callBack: function(index,name){ //切换后的回调函数       
-             //console.log("当前选择的tabs为：",index,name);
-             switch(name) {
-               case 'select': this.iniEditer(codeSelected,'code-Selected'); break;
-               case 'checkbox': this.iniEditer(codeCheckbox,'code-Checkbox'); break;
-               case 'radio': this.iniEditer(codeRadio,'code-Radio'); break;
-               case 'swicth': this.iniEditer(codeSwicth,'code-Swicth'); break;
-               case 'input': this.iniEditer(codeInput,'code-Input'); break;
-             }
+         defaultVal : 0,           
+         callBack: function(index,name){ //切换后的回调函数       
+           //console.log("当前选择的tabs为：",index,name);
+           switch(name) {
+             case 'select': this.iniEditer(codeSelected,'code-Selected'); break;
+             case 'checkbox': this.iniEditer(codeCheckbox,'code-Checkbox'); break;
+             case 'radio': this.iniEditer(codeRadio,'code-Radio'); break;
+             case 'swicth': this.iniEditer(codeSwicth,'code-Swicth'); break;
+             case 'input': this.iniEditer(codeInput,'code-Input'); break;
+           }
 
-           }.bind(this)     
+         }.bind(this)     
      }
 
     return (
@@ -160,7 +153,13 @@ const Froms = React.createClass({
     		<h1 className="m-h1">自定义表单 </h1>
 
         <div className="mt-page-content">
-          <Tabs {...tabsData}/>
+          <Tabs {...tabsData}>
+              <SelectDom title="select"/>
+              <CheckboxDom title="checkbox"/>
+              <RadioDom title="radio"/>
+              <InputDom title="input"/>
+              <SwicthDom title="swicth"/>
+          </Tabs>
         </div>
 
     	</div>

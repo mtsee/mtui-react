@@ -23,6 +23,7 @@ import Swicth from './Swicth'
 import SliderActive from './SliderActive'
 import {Radio ,RadioGroup} from './RadioGroup'
 import validate from './Validate'
+import Upload from './Upload'
 
 //center插件 by mantou 
 ;(function($){ 
@@ -212,5 +213,6 @@ export {
     LoadingBox, //LoadingBox
     TreeMenu, //树形菜单
     Popover, //提示框
-    validate //表单验证
+    validate, //表单验证
+    Upload //文件上传
 }
