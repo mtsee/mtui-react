@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "b584018851c6d5e74ea8"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "8d14d12a486178c1aeda"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -50736,7 +50736,7 @@
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
-	exports.Upload = exports.validate = exports.Popover = exports.TreeMenu = exports.LoadingBox = exports.Loading = exports.PageList = exports.Popup = exports.ModalShow = exports.Modal = exports.DateInputs = exports.SliderActive = exports.Swicth = exports.DateInput = exports.RadioGroup = exports.Radio = exports.Checkbox = exports.Input = exports.Selected = exports.Tabs = undefined;
+	exports.validate = exports.Popover = exports.TreeMenu = exports.LoadingBox = exports.Loading = exports.PageList = exports.Popup = exports.ModalShow = exports.Modal = exports.DateInputs = exports.SliderActive = exports.Swicth = exports.DateInput = exports.RadioGroup = exports.Radio = exports.Checkbox = exports.Input = exports.Selected = exports.Tabs = undefined;
 
 	__webpack_require__(682);
 
@@ -50814,13 +50814,16 @@
 
 	var _Validate2 = _interopRequireDefault(_Validate);
 
-	var _Upload = __webpack_require__(704);
-
-	var _Upload2 = _interopRequireDefault(_Upload);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	//import Upload from './Upload'
+
 	//center插件 by mantou
+	/**
+	* MTUI
+	* @author : Mantou
+	* @date : 2016-03-01
+	*/
 	(function ($) {
 		$.fn.centerMt = function (setting) {
 			var defaults = {
@@ -50855,11 +50858,6 @@
 	})(jQuery);
 
 	//拖拽插件 by mantou
-	/**
-	* MTUI
-	* @author : Mantou
-	* @date : 2016-03-01
-	*/
 	;(function ($) {
 		$.fn.dragMt = function (setting) {
 			var defaults = {
@@ -51031,10 +51029,9 @@
 	exports. //树形菜单
 	Popover = _Popover2.default;
 	exports. //提示框
-	validate = _Validate2.default;
-	exports. //表单验证
-	Upload //文件上传
-	 = _Upload2.default;
+	validate //表单验证
+	//Upload //文件上传
+	 = _Validate2.default;
 
 	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(658); if (makeExportsHot(module, __webpack_require__(138))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
@@ -53851,178 +53848,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 704 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _react = __webpack_require__(138);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	//插件
-	var xhr = new XMLHttpRequest(); /**
-	                                * HTML5 上传 XHR
-	                                * @author : Mantou
-	                                * @date : 2016-03-01
-	                                */
-
-	var Upload = _react2.default.createClass({
-	    displayName: 'Upload',
-	    getInitialState: function getInitialState() {
-	        return {
-	            style: {}
-	        };
-	    },
-
-
-	    //监听选择文件信息
-	    fileSelected: function fileSelected() {
-	        //HTML5文件API操作
-	        var file = document.getElementById('fileName').files[0];
-	        if (file) {
-	            var fileSize = 0;
-	            if (file.size > 1024 * 1024) fileSize = (Math.round(file.size * 100 / (1024 * 1024)) / 100).toString() + 'MB';else fileSize = (Math.round(file.size * 100 / 1024) / 100).toString() + 'KB';
-
-	            console.log(file, fileSize);
-	            // document.getElementById('fileName').innerHTML = 'Name: ' + file.name;
-	            // document.getElementById('fileSize').innerHTML = 'Size: ' + fileSize;
-	            // document.getElementById('fileType').innerHTML = 'Type: ' + file.type;
-	        }
-
-	        //选择文件后，自动上传
-	        this.uploadFile();
-	    },
-
-
-	    //上传文件
-	    uploadFile: function uploadFile() {
-
-	        this.setState({
-	            style: {
-	                width: 0
-	            }
-	        });
-
-	        var fd = new FormData();
-	        //关联表单数据,可以是自定义参数
-	        fd.append("fileName", document.getElementById('fileName').files[0]);
-
-	        //表单值
-	        fd.append("name", 'ssssssssss');
-	        fd.append("test", 'dddddddddd');
-
-	        //抬头
-	        xhr.overrideMimeType("application/octet-stream"); //文件流
-
-	        //监听事件
-	        xhr.upload.addEventListener("progress", this.uploadProgress, false);
-	        //xhr.addEventListener("load", this.uploadComplete, false);
-	        xhr.addEventListener("loadend", this.uploadEnd, false); //无论成功，失败，都会执行
-	        xhr.addEventListener("error", this.uploadFailed, false);
-	        xhr.addEventListener("abort", this.uploadCanceled, false);
-	        //发送文件和表单自定义参数
-	        xhr.open("POST", "/upload/");
-	        xhr.send(fd);
-	    },
-
-
-	    //上传进度
-	    uploadProgress: function uploadProgress(evt) {
-	        if (evt.lengthComputable) {
-	            var percentComplete = Math.round(evt.loaded * 100 / evt.total);
-	            $(this.refs.text).html(percentComplete.toString() + '%');
-	            this.setState({
-	                style: {
-	                    width: percentComplete.toString() + '%'
-	                }
-	            });
-	        } else {
-	            $(this.refs.text).html('unable to compute');
-	        }
-	    },
-
-
-	    //上传成功
-	    // uploadComplete(evt) {
-	    //     //服务断接收完文件返回的结果
-	    //     alert(evt.target.responseText);
-	    //     //$(this.refs.text).html('上传完成');
-	    // },
-
-	    //上传操作完成
-	    uploadEnd: function uploadEnd(evt) {
-	        return;
-	        console.log(xhr);
-	        if (xhr.readyState == 4) {
-	            //上传完成
-	            if (xhr.status == 404) {
-	                this.setState({
-	                    style: {
-	                        transition: '0s',
-	                        width: '100%',
-	                        text: '上传失败'
-	                    }
-	                });
-	                $(this.refs.text).html('error');
-	                console.log(xhr.responseText);
-	            } else if (xhr.status == 200) {
-	                $(this.refs.text).html('上传成功');
-	            }
-	        }
-	    },
-
-
-	    //取消上传
-	    cancleUploadFile: function cancleUploadFile() {
-	        xhr.abort();
-	    },
-
-
-	    //上传失败
-	    uploadFailed: function uploadFailed(evt) {
-	        //alert("上传失败");
-	        $(this.refs.text).html('上传失败');
-	    },
-
-
-	    //取消上传
-	    uploadCanceled: function uploadCanceled(evt) {
-	        alert("您取消了本次上传.");
-	    },
-	    render: function render() {
-	        var styles = {
-	            width: this.props.width
-	        };
-	        return _react2.default.createElement(
-	            'div',
-	            { className: 'mt-btn-round-green mt-upload', style: styles, ref: 'uploadBox' },
-	            _react2.default.createElement(
-	                'span',
-	                { className: 'mt-upload-text', ref: 'text' },
-	                '文件上传'
-	            ),
-	            _react2.default.createElement('div', { style: this.state.style, className: 'mt-upload-progress', ref: 'progress' }),
-	            _react2.default.createElement('input', { type: 'file', name: 'fileName', multiple: 'multiple', id: 'fileName', onChange: this.fileSelected })
-	        );
-	    }
-	});
-
-	//配置信息
-	exports.default = Upload;
-
-	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(658); if (makeExportsHot(module, __webpack_require__(138))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Upload.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
-
-/***/ },
+/* 704 */,
 /* 705 */
 /***/ function(module, exports, __webpack_require__) {
 
