@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "073c8230b8782a6f0f4b"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "b584018851c6d5e74ea8"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -689,7 +689,7 @@
 		}
 	}
 
-	/* WEBPACK VAR INJECTION */}.call(exports, "?http://127.0.0.1:4000"))
+	/* WEBPACK VAR INJECTION */}.call(exports, "?http://127.0.0.1:3000"))
 
 /***/ },
 /* 2 */
@@ -52429,6 +52429,10 @@
 			}
 			$("#MTUI_BG").show();
 			$(document.body).addClass('html-body-overflow');
+
+			if (this.props.callBack != undefined) {
+				this.props.callBack();
+			}
 		},
 
 
@@ -52682,7 +52686,7 @@
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
 
-	"use strict";
+	'use strict';
 
 	var _react = __webpack_require__(138);
 
@@ -52692,11 +52696,11 @@
 
 	//自定义Checkbox插件
 	var Checkbox = _react2.default.createClass({
-		displayName: "Checkbox",
+		displayName: 'Checkbox',
 
 		getInitialState: function getInitialState() {
 			return {
-				checked: this.props.checked == undefined ? false : true,
+				checked: this.props.checked == undefined || this.props.checked == 'false' ? false : true,
 				value: this.props.value,
 				label: this.props.label == undefined ? "选项名称" : this.props.label,
 				disabled: this.props.disabled == undefined ? false : true
@@ -52713,12 +52717,12 @@
 		},
 		render: function render() {
 			return _react2.default.createElement(
-				"label",
+				'label',
 				{ className: "mt-checkbox" + (this.state.checked ? " mt-checkbox-active" : "") },
-				_react2.default.createElement("input", { className: "mt-checkbox-input", type: "checkbox", value: this.state.value, disabled: this.state.disabled, defaultChecked: this.state.checked, onChange: this.handleChange }),
-				_react2.default.createElement("i", { className: "iconfont icon-checkbox" }),
+				_react2.default.createElement('input', { className: 'mt-checkbox-input', type: 'checkbox', value: this.state.value, disabled: this.state.disabled, defaultChecked: this.state.checked, onChange: this.handleChange }),
+				_react2.default.createElement('i', { className: 'iconfont icon-checkbox' }),
 				_react2.default.createElement(
-					"span",
+					'span',
 					null,
 					this.state.label
 				)
@@ -52765,7 +52769,6 @@
 	*/
 	var liWid = 40;
 	var speed = 300;
-	var selectProp = null;
 	var eachPageCount = null;
 	var nowpage = null;
 	var showPage = null;
@@ -52983,8 +52986,13 @@
 		//第一次渲染后执行
 		componentDidMount: function componentDidMount() {
 			this.callback();
+		},
 
-			selectProp = {
+
+		//渲染数据
+		render: function render() {
+
+			var selectProp = {
 				width: '90px',
 				value: eachPageCount,
 				data: [{ value: 10, label: '10条/页' }, { value: 20, label: '20条/页' }, { value: 50, label: '50条/页' }],
@@ -52994,11 +53002,7 @@
 					this.gotoPage(1);
 				}.bind(this)
 			};
-		},
 
-
-		//渲染数据
-		render: function render() {
 			if (this.props.count == 0) {
 				return _react2.default.createElement(
 					'div',
@@ -53569,6 +53573,7 @@
 		},
 		handleClick: function handleClick(e) {
 			if (this.props.disabled != undefined) {
+				console.log('must set att disabled');
 				return;
 			}
 
@@ -53752,10 +53757,10 @@
 				disabled: this.state.disabled,
 				onChange: this.handleRadioChange
 			};
-			if (this.state.checked) {
-				radioData['checked'] = true;
-			} else {
+			if (this.state.checked == 'false') {
 				delete radioData.checked;
+			} else {
+				radioData['checked'] = true;
 			}
 			return _react2.default.createElement(
 				'label',
@@ -53916,7 +53921,7 @@
 	        fd.append("test", 'dddddddddd');
 
 	        //抬头
-	        //xhr.overrideMimeType("application/octet-stream");
+	        xhr.overrideMimeType("application/octet-stream"); //文件流
 
 	        //监听事件
 	        xhr.upload.addEventListener("progress", this.uploadProgress, false);
@@ -54006,7 +54011,7 @@
 	                '文件上传'
 	            ),
 	            _react2.default.createElement('div', { style: this.state.style, className: 'mt-upload-progress', ref: 'progress' }),
-	            _react2.default.createElement('input', { type: 'file', name: 'fileName', id: 'fileName', onChange: this.fileSelected })
+	            _react2.default.createElement('input', { type: 'file', name: 'fileName', multiple: 'multiple', id: 'fileName', onChange: this.fileSelected })
 	        );
 	    }
 	});

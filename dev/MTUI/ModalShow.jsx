@@ -75,6 +75,10 @@ const ModalShow = React.createClass({
 		}
 		$("#MTUI_BG").show();
 		$(document.body).addClass('html-body-overflow');
+
+		if(this.props.callBack != undefined){
+			this.props.callBack();
+		}
 	},
 
 	//渲染

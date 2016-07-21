@@ -14,6 +14,7 @@ const Swicth = React.createClass({
 	},
 	handleClick(e){
 		if(this.props.disabled != undefined){
+			console.log('must set att disabled');
 			return;
 		}
 

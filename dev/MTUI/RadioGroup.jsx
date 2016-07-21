@@ -82,10 +82,10 @@ const Radio = React.createClass({
     		disabled : this.state.disabled,
     		onChange : this.handleRadioChange
     	}
-    	if(this.state.checked){
-    		radioData['checked'] = true;
-    	}else{
+    	if(this.state.checked == 'false'){
     		delete radioData.checked;
+    	}else{
+    		radioData['checked'] = true;
     	}
         return ( 
             <label className={"mt-radio"+(this.state.checked?" mt-radio-active":"")}>  

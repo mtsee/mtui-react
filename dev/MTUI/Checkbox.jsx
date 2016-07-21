@@ -9,7 +9,7 @@ import React from 'react'
 const Checkbox = React.createClass({
 	getInitialState : function(){
 		return {
-			checked : this.props.checked==undefined?false:true,
+			checked : (this.props.checked==undefined||this.props.checked=='false')?false:true,
 			value : this.props.value,
 			label : this.props.label==undefined?"选项名称":this.props.label,
 			disabled : this.props.disabled==undefined?false:true

@@ -9,7 +9,6 @@ import {Selected} from './index'
 //pagelist插件
 var liWid = 40;
 var speed = 300; 
-var selectProp = null;
 var eachPageCount = null;
 var nowpage = null;
 var showPage = null;
@@ -194,8 +193,12 @@ const PageList = React.createClass({
 	//第一次渲染后执行
 	componentDidMount() {
 	    this.callback();
+	},
 
-	    selectProp = {
+	//渲染数据
+	render(){
+
+		var selectProp = {
 	        width : '90px',
 	        value : eachPageCount,
 	        data : [
@@ -209,10 +212,7 @@ const PageList = React.createClass({
 		        this.gotoPage(1);
 	        }.bind(this)
 	     }
-	},
 
-	//渲染数据
-	render(){
 		if(this.props.count == 0){
 			return <div className="mt-pagelist">loading...</div>
 		}else{

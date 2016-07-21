@@ -5,7 +5,7 @@ var HtmlwebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     //页面入口文件配置
     entry: [
-        'webpack-dev-server/client?http://127.0.0.1:4000',
+        'webpack-dev-server/client?http://127.0.0.1:3000',
         'webpack/hot/only-dev-server',
         './dev/index_dev.jsx'
     ],
