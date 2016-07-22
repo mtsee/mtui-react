@@ -1,5 +1,5 @@
 import React from 'react'
-import {Upload} from '../../../MTUI/index'
+import {} from '../../../MTUI/index'
 
 // 类
 const UploadDom = React.createClass({
@@ -14,7 +14,7 @@ const UploadDom = React.createClass({
                 data[] 菜单数据
                 callback 点击后的回调函数
               */}
-              <Upload width="200px"/>
+              {/*<Upload width="200px"/>*/}
               <br/><br/><div id="code-TreeMenu"></div>
 
             </div> 

@@ -8,9 +8,10 @@ import { render } from 'react-dom'
 
 const LoadingBox = React.createClass({
     render() {
-    	var style = {
-    		height : this.props.height
-    	};
+        var style = {
+            height : this.props.height,
+            display: this.props.show?'block':'none'
+        };
         return (
             <div className="mt-loading-box" style={style}>
               <div className="mt-loading-cricle">Loading</div>
@@ -18,6 +19,10 @@ const LoadingBox = React.createClass({
         );
     }
 });
+
+LoadingBox.defaultProps = {
+    show : true
+}
 
 //配置信息
 export default LoadingBox;

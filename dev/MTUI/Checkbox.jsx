@@ -17,17 +17,23 @@ const Checkbox = React.createClass({
 	},
 	handleChange : function(e){
 		//console.log(e.target.checked);
-		if(this.props.onClick != undefined){
-			this.props.onClick(e);
-		}
 		this.setState({
 			checked : e.target.checked
 		});
+
+		if(this.props.onChange != undefined){
+			this.props.onChange(e);
+		}
+	},
+	handleClick: function(e){
+		if(this.props.onClick != undefined){
+			this.props.onClick(e);
+		}
 	},
 	render : function(){
 		return (
-			<label className={"mt-checkbox"+(this.state.checked?" mt-checkbox-active":"")}>
-				<input className="mt-checkbox-input" type="checkbox" value={this.state.value} disabled={this.state.disabled} defaultChecked={this.state.checked} onChange={this.handleChange}/>
+			<label id={this.props.id} className={"mt-checkbox"+(this.state.checked?" mt-checkbox-active":"")+(this.props.className==undefined?'':' '+this.props.className)}>
+				<input onClick={this.handleClick} className="mt-checkbox-input" type="checkbox" checked={this.state.checked} value={this.state.value} disabled={this.state.disabled} defaultChecked={this.state.checked} onChange={this.handleChange}/>
 				<i className="iconfont icon-checkbox"></i>
 				<span>{this.state.label}</span>
 			</label>

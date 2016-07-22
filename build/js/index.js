@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "8d14d12a486178c1aeda"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "3113feb6707b993da2bf"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -7984,7 +7984,7 @@
 
 	var _Routers2 = _interopRequireDefault(_Routers);
 
-	var _index = __webpack_require__(731);
+	var _index = __webpack_require__(730);
 
 	var _index2 = _interopRequireDefault(_index);
 
@@ -47499,15 +47499,15 @@
 
 	var _Forms2 = _interopRequireDefault(_Forms);
 
-	var _Plus = __webpack_require__(710);
+	var _Plus = __webpack_require__(709);
 
 	var _Plus2 = _interopRequireDefault(_Plus);
 
-	var _Index7 = __webpack_require__(722);
+	var _Index7 = __webpack_require__(721);
 
 	var _Index8 = _interopRequireDefault(_Index7);
 
-	var _App = __webpack_require__(726);
+	var _App = __webpack_require__(725);
 
 	var _App2 = _interopRequireDefault(_App);
 
@@ -50523,23 +50523,23 @@
 
 	var _index = __webpack_require__(681);
 
-	var _SelectDom = __webpack_require__(705);
+	var _SelectDom = __webpack_require__(704);
 
 	var _SelectDom2 = _interopRequireDefault(_SelectDom);
 
-	var _InputDom = __webpack_require__(706);
+	var _InputDom = __webpack_require__(705);
 
 	var _InputDom2 = _interopRequireDefault(_InputDom);
 
-	var _CheckboxDom = __webpack_require__(707);
+	var _CheckboxDom = __webpack_require__(706);
 
 	var _CheckboxDom2 = _interopRequireDefault(_CheckboxDom);
 
-	var _RadioDom = __webpack_require__(708);
+	var _RadioDom = __webpack_require__(707);
 
 	var _RadioDom2 = _interopRequireDefault(_RadioDom);
 
-	var _SwicthDom = __webpack_require__(709);
+	var _SwicthDom = __webpack_require__(708);
 
 	var _SwicthDom2 = _interopRequireDefault(_SwicthDom);
 
@@ -52705,18 +52705,24 @@
 		},
 		handleChange: function handleChange(e) {
 			//console.log(e.target.checked);
-			if (this.props.onClick != undefined) {
-				this.props.onClick(e);
-			}
 			this.setState({
 				checked: e.target.checked
 			});
+
+			if (this.props.onChange != undefined) {
+				this.props.onChange(e);
+			}
+		},
+		handleClick: function handleClick(e) {
+			if (this.props.onClick != undefined) {
+				this.props.onClick(e);
+			}
 		},
 		render: function render() {
 			return _react2.default.createElement(
 				'label',
-				{ className: "mt-checkbox" + (this.state.checked ? " mt-checkbox-active" : "") },
-				_react2.default.createElement('input', { className: 'mt-checkbox-input', type: 'checkbox', value: this.state.value, disabled: this.state.disabled, defaultChecked: this.state.checked, onChange: this.handleChange }),
+				{ id: this.props.id, className: "mt-checkbox" + (this.state.checked ? " mt-checkbox-active" : "") + (this.props.className == undefined ? '' : ' ' + this.props.className) },
+				_react2.default.createElement('input', { onClick: this.handleClick, className: 'mt-checkbox-input', type: 'checkbox', checked: this.state.checked, value: this.state.value, disabled: this.state.disabled, defaultChecked: this.state.checked, onChange: this.handleChange }),
 				_react2.default.createElement('i', { className: 'iconfont icon-checkbox' }),
 				_react2.default.createElement(
 					'span',
@@ -53848,8 +53854,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 704 */,
-/* 705 */
+/* 704 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -53920,7 +53925,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 706 */
+/* 705 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -54072,7 +54077,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 707 */
+/* 706 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -54150,7 +54155,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 708 */
+/* 707 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -54245,7 +54250,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 709 */
+/* 708 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -54304,7 +54309,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 710 */
+/* 709 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -54331,47 +54336,47 @@
 
 	var _index = __webpack_require__(681);
 
-	var _PageListDom = __webpack_require__(711);
+	var _PageListDom = __webpack_require__(710);
 
 	var _PageListDom2 = _interopRequireDefault(_PageListDom);
 
-	var _ModalShowDom = __webpack_require__(712);
+	var _ModalShowDom = __webpack_require__(711);
 
 	var _ModalShowDom2 = _interopRequireDefault(_ModalShowDom);
 
-	var _PopupDom = __webpack_require__(713);
+	var _PopupDom = __webpack_require__(712);
 
 	var _PopupDom2 = _interopRequireDefault(_PopupDom);
 
-	var _TabDom = __webpack_require__(714);
+	var _TabDom = __webpack_require__(713);
 
 	var _TabDom2 = _interopRequireDefault(_TabDom);
 
-	var _DateDom = __webpack_require__(715);
+	var _DateDom = __webpack_require__(714);
 
 	var _DateDom2 = _interopRequireDefault(_DateDom);
 
-	var _TreeDom = __webpack_require__(716);
+	var _TreeDom = __webpack_require__(715);
 
 	var _TreeDom2 = _interopRequireDefault(_TreeDom);
 
-	var _LoadDom = __webpack_require__(717);
+	var _LoadDom = __webpack_require__(716);
 
 	var _LoadDom2 = _interopRequireDefault(_LoadDom);
 
-	var _PopoverDom = __webpack_require__(718);
+	var _PopoverDom = __webpack_require__(717);
 
 	var _PopoverDom2 = _interopRequireDefault(_PopoverDom);
 
-	var _SliderDom = __webpack_require__(719);
+	var _SliderDom = __webpack_require__(718);
 
 	var _SliderDom2 = _interopRequireDefault(_SliderDom);
 
-	var _ValidateDom = __webpack_require__(720);
+	var _ValidateDom = __webpack_require__(719);
 
 	var _ValidateDom2 = _interopRequireDefault(_ValidateDom);
 
-	var _UploadDom = __webpack_require__(721);
+	var _UploadDom = __webpack_require__(720);
 
 	var _UploadDom2 = _interopRequireDefault(_UploadDom);
 
@@ -54705,7 +54710,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 711 */
+/* 710 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -54806,7 +54811,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 712 */
+/* 711 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -54892,7 +54897,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 713 */
+/* 712 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -55001,7 +55006,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 714 */
+/* 713 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -55088,7 +55093,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 715 */
+/* 714 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -55179,7 +55184,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 716 */
+/* 715 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -55247,7 +55252,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 717 */
+/* 716 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -55325,7 +55330,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 718 */
+/* 717 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -55507,7 +55512,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 719 */
+/* 718 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -55584,7 +55589,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 720 */
+/* 719 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -55663,7 +55668,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 721 */
+/* 720 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -55678,7 +55683,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _index = __webpack_require__(681);
+	__webpack_require__(681);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -55702,7 +55707,6 @@
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'mt-g-12' },
-	          _react2.default.createElement(_index.Upload, { width: '200px' }),
 	          _react2.default.createElement('br', null),
 	          _react2.default.createElement('br', null),
 	          _react2.default.createElement('div', { id: 'code-TreeMenu' })
@@ -55718,14 +55722,14 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 722 */
+/* 721 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
 
 	'use strict';
 
-	__webpack_require__(723);
+	__webpack_require__(722);
 
 	var _react = __webpack_require__(138);
 
@@ -55771,13 +55775,13 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 723 */
+/* 722 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(724);
+	var content = __webpack_require__(723);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(246)(content, {});
@@ -55786,8 +55790,8 @@
 	if(true) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept(724, function() {
-				var newContent = __webpack_require__(724);
+			module.hot.accept(723, function() {
+				var newContent = __webpack_require__(723);
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -55797,7 +55801,7 @@
 	}
 
 /***/ },
-/* 724 */
+/* 723 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(244)();
@@ -55805,19 +55809,19 @@
 
 
 	// module
-	exports.push([module.id, "/*我的报告页面*/\r\n/*report 菜单*/\r\n.report-menubox{ position: fixed; height: 60px; left: 100px; top: 0; right:0; background: #273747; z-index: 2000;}\r\n.searchboxsub{ float: left; margin: 10px;}\r\n.searchboxsub .item{ width: 300px; height: 40px; background: #2c3e50; display: inline-block; vertical-align: middle;}\r\n.searchboxsub .key{ float: left; border: none; height: 40px; width: 250px; background: none; text-indent: 10px;}\r\n.searchboxsub .searchbtn{ line-height: 40px; width: 50px; display: inline-block; float: left; text-align: center;}\r\n.searchboxsub .search-option{ margin: 0 15px;}\r\n.searchboxsub a{color: #96a2ba;}\r\n.report-menubox .menu{ float: right; margin-right: 20px; }\r\n.report-menubox .menu .item{display: inline-block; padding: 20px 10px; position: relative; z-index: 1;}\r\n.report-menubox .sub-menu{ box-shadow:0 2px 4px rgba(150, 162, 186, 0.5);display: block;  top: 60px; left: 0px; width: 120px; height: 190px; background: #fff; position: absolute; z-index: 10;}\r\n.report-menubox .sub-menu li{ height:30px; line-height: 30px; text-align: center; margin: 0 10px; border-bottom:1px dashed #dfe7f2;}\r\n.report-menubox .sub-menu .links{ color: #273747;}\r\n.myreport-leftmenu{ box-shadow:3px 0 8px rgba(39, 55, 71, 0.3);}\r\n.myreport-leftmenu .links .ico{ margin:15px 35px 8px 35px;}\r\n\r\n/*myreport*/\r\n.myreport-menubox .menu{ width: 98%;}\r\n.myreport-subhead{ position: fixed; height: 60px; line-height: 60px; background: #fff; top: 60px; left: 100px; right: 0; z-index: 1000;}\r\n.myreport-subhead h1{ font-size: 16px; margin-left: 20px; display: inline-block;}\r\n.myreport-subhead .infos{ color: #4a89dc; display: inline-block; margin-left: 50px;}\r\n.myreport-subbody{ padding-top: 60px; margin: 0 20px;}\r\n.myreport-subbody .mt-tabs-header li{ background: none; font-size: 14px;}\r\n.myreport-subbody .mt-tabs-header .mt-tabs-active{ border:none; border-bottom: 6px solid #333;}\r\n.myreport-subbody .mt-tabs .mt-tabs-header li a{ padding: 10px 5px;}\r\n\r\n.myreport-type{ width: 100px; position: fixed; top: 60px; bottom: 0; background: #273747; color: #fff;} \r\n.myreport-list{ margin-left: 100px;}\r\n\r\n.myreport-sub{ margin: 60px 0 0 100px;}\r\n.myreport-sub .myreport-leftmenu{ width: 100px; position: fixed; z-index: 1100; top: 0; left: 0; bottom: 0; background: #273747; color: #fff;}\r\n.myreport-sub .logo{ width: 100px; height: 90px; background: url(" + __webpack_require__(725) + ");}\r\n\r\n.myreport-leftmenu .links{ display: inline-block; height: 90px; width: 100%; text-align: center; color: #96a2ba;}\r\n.myreport-leftmenu .active{ height: 90px; text-align: center; background: #32465a; }", ""]);
+	exports.push([module.id, "/*我的报告页面*/\r\n/*report 菜单*/\r\n.report-menubox{ position: fixed; height: 60px; left: 100px; top: 0; right:0; background: #273747; z-index: 2000;}\r\n.searchboxsub{ float: left; margin: 10px;}\r\n.searchboxsub .item{ width: 300px; height: 40px; background: #2c3e50; display: inline-block; vertical-align: middle;}\r\n.searchboxsub .key{ float: left; border: none; height: 40px; width: 250px; background: none; text-indent: 10px;}\r\n.searchboxsub .searchbtn{ line-height: 40px; width: 50px; display: inline-block; float: left; text-align: center;}\r\n.searchboxsub .search-option{ margin: 0 15px;}\r\n.searchboxsub a{color: #96a2ba;}\r\n.report-menubox .menu{ float: right; margin-right: 20px; }\r\n.report-menubox .menu .item{display: inline-block; padding: 20px 10px; position: relative; z-index: 1;}\r\n.report-menubox .sub-menu{ box-shadow:0 2px 4px rgba(150, 162, 186, 0.5);display: block;  top: 60px; left: 0px; width: 120px; height: 190px; background: #fff; position: absolute; z-index: 10;}\r\n.report-menubox .sub-menu li{ height:30px; line-height: 30px; text-align: center; margin: 0 10px; border-bottom:1px dashed #dfe7f2;}\r\n.report-menubox .sub-menu .links{ color: #273747;}\r\n.myreport-leftmenu{ box-shadow:3px 0 8px rgba(39, 55, 71, 0.3);}\r\n.myreport-leftmenu .links .ico{ margin:15px 35px 8px 35px;}\r\n\r\n/*myreport*/\r\n.myreport-menubox .menu{ width: 98%;}\r\n.myreport-subhead{ position: fixed; height: 60px; line-height: 60px; background: #fff; top: 60px; left: 100px; right: 0; z-index: 1000;}\r\n.myreport-subhead h1{ font-size: 16px; margin-left: 20px; display: inline-block;}\r\n.myreport-subhead .infos{ color: #4a89dc; display: inline-block; margin-left: 50px;}\r\n.myreport-subbody{ padding-top: 60px; margin: 0 20px;}\r\n.myreport-subbody .mt-tabs-header li{ background: none; font-size: 14px;}\r\n.myreport-subbody .mt-tabs-header .mt-tabs-active{ border:none; border-bottom: 6px solid #333;}\r\n.myreport-subbody .mt-tabs .mt-tabs-header li a{ padding: 10px 5px;}\r\n\r\n.myreport-type{ width: 100px; position: fixed; top: 60px; bottom: 0; background: #273747; color: #fff;} \r\n.myreport-list{ margin-left: 100px;}\r\n\r\n.myreport-sub{ margin: 60px 0 0 100px;}\r\n.myreport-sub .myreport-leftmenu{ width: 100px; position: fixed; z-index: 1100; top: 0; left: 0; bottom: 0; background: #273747; color: #fff;}\r\n.myreport-sub .logo{ width: 100px; height: 90px; background: url(" + __webpack_require__(724) + ");}\r\n\r\n.myreport-leftmenu .links{ display: inline-block; height: 90px; width: 100%; text-align: center; color: #96a2ba;}\r\n.myreport-leftmenu .active{ height: 90px; text-align: center; background: #32465a; }", ""]);
 
 	// exports
 
 
 /***/ },
-/* 725 */
+/* 724 */
 /***/ function(module, exports) {
 
 	module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAA8CAIAAAAiz+n/AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjkyODdCQkMwRUM0QzExRTVCMDJDRUNGODgwMTFBNDVBIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjkyODdCQkMxRUM0QzExRTVCMDJDRUNGODgwMTFBNDVBIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6OTI4N0JCQkVFQzRDMTFFNUIwMkNFQ0Y4ODAxMUE0NUEiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6OTI4N0JCQkZFQzRDMTFFNUIwMkNFQ0Y4ODAxMUE0NUEiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4yitrHAAAHHElEQVR42uybbWwURRjH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"
 
 /***/ },
-/* 726 */
+/* 725 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -55830,11 +55834,11 @@
 
 	var _reactRouter = __webpack_require__(269);
 
-	var _Menu = __webpack_require__(727);
+	var _Menu = __webpack_require__(726);
 
 	var _Menu2 = _interopRequireDefault(_Menu);
 
-	var _Footer = __webpack_require__(730);
+	var _Footer = __webpack_require__(729);
 
 	var _Footer2 = _interopRequireDefault(_Footer);
 
@@ -55866,7 +55870,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 727 */
+/* 726 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -55877,7 +55881,7 @@
 	  value: true
 	});
 
-	__webpack_require__(728);
+	__webpack_require__(727);
 
 	var _react = __webpack_require__(138);
 
@@ -55977,13 +55981,13 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 728 */
+/* 727 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(729);
+	var content = __webpack_require__(728);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(246)(content, {});
@@ -55992,8 +55996,8 @@
 	if(true) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept(729, function() {
-				var newContent = __webpack_require__(729);
+			module.hot.accept(728, function() {
+				var newContent = __webpack_require__(728);
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -56003,7 +56007,7 @@
 	}
 
 /***/ },
-/* 729 */
+/* 728 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(244)();
@@ -56011,13 +56015,13 @@
 
 
 	// module
-	exports.push([module.id, "/*\r\n顶部背景色 #313a49\r\n\r\n字灰色 #b7c0ce\r\n字深灰色 #5e6a7f\r\n*/\r\n/*菜单*/ \r\n.menubox{ height: 60px; background: #313a49; position: fixed; left: 0; top: 0; right: 0; z-index: 1000;} \r\n.menubox .menu{ height: 60px; margin: 0 auto; vertical-align: middle;}\r\n.menubox .menu-logobox{ width: 120px; height: 60px; float: left; margin-left: 20px;}\r\n.menubox .menu-logo{ width: 120px; height: 60px;float: left; background: url(" + __webpack_require__(725) + ") no-repeat;}\r\n.menubox .langs,\r\n.menubox .login-register{ float: right; height: 60px; line-height: 60px;}\r\n.menubox .login-register a{ color:#b7c0ce; margin-left: 10px;}\r\n.menubox .langs{ color:#b7c0ce; margin-left: 20px;}\r\n.menubox .langs a{ color:#5e6a7f;}\r\n.menubox .langs .active{ color:#b7c0ce;}\r\n.menubox .menu-list{ float: right; margin-right: 20px;}\r\n.menubox .menu-list .item{ display: inline-block; margin: 20px 10px; position: relative;}\r\n.menubox .menu-list .item a{ color: #b7c0ce; font-size: 16px;}\r\n.menubox .menu-list .item a.active{ color: #FF6262;}\r\n.menubox .menu-list .tips{ display: block; position: absolute; background: #FF6262; color: #fff; border-radius: 100px; width: 20px; height: 20px; text-align: center; line-height: 20px; right: -15px; top: -8px;}", ""]);
+	exports.push([module.id, "/*\r\n顶部背景色 #313a49\r\n\r\n字灰色 #b7c0ce\r\n字深灰色 #5e6a7f\r\n*/\r\n/*菜单*/ \r\n.menubox{ height: 60px; background: #313a49; position: fixed; left: 0; top: 0; right: 0; z-index: 1000;} \r\n.menubox .menu{ height: 60px; margin: 0 auto; vertical-align: middle;}\r\n.menubox .menu-logobox{ width: 120px; height: 60px; float: left; margin-left: 20px;}\r\n.menubox .menu-logo{ width: 120px; height: 60px;float: left; background: url(" + __webpack_require__(724) + ") no-repeat;}\r\n.menubox .langs,\r\n.menubox .login-register{ float: right; height: 60px; line-height: 60px;}\r\n.menubox .login-register a{ color:#b7c0ce; margin-left: 10px;}\r\n.menubox .langs{ color:#b7c0ce; margin-left: 20px;}\r\n.menubox .langs a{ color:#5e6a7f;}\r\n.menubox .langs .active{ color:#b7c0ce;}\r\n.menubox .menu-list{ float: right; margin-right: 20px;}\r\n.menubox .menu-list .item{ display: inline-block; margin: 20px 10px; position: relative;}\r\n.menubox .menu-list .item a{ color: #b7c0ce; font-size: 16px;}\r\n.menubox .menu-list .item a.active{ color: #FF6262;}\r\n.menubox .menu-list .tips{ display: block; position: absolute; background: #FF6262; color: #fff; border-radius: 100px; width: 20px; height: 20px; text-align: center; line-height: 20px; right: -15px; top: -8px;}", ""]);
 
 	// exports
 
 
 /***/ },
-/* 730 */
+/* 729 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -56052,7 +56056,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 731 */
+/* 730 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -56067,7 +56071,7 @@
 
 	var _reactRouterRedux = __webpack_require__(326);
 
-	var _user = __webpack_require__(732);
+	var _user = __webpack_require__(731);
 
 	var _user2 = _interopRequireDefault(_user);
 
@@ -56088,7 +56092,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 732 */
+/* 731 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
