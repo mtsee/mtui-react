@@ -101,10 +101,11 @@ var codePageList = 'import { PageList } from \'../../MTUI/index\'\
 #              nowpage 默认显示多少页\
 #              eachPageCount 每页显示多少条 10/20/50\
 #              showPage 当前显示多少按钮\
+#              set 控制显示不显示的
 #            */}\
 #            <p ref="">当前总数：{this.state.count}</p>\
 #            <div> {this.state.reData}</div>\
-#            <PageList id="pageList1" count={this.state.count} showPage="7" callback={this.setCallBack}/> \
+#            <PageList set={{jump:false,nextAndPrev:false,firstAndEnd:false,total:true,maxpage:false}} id="pageList1" count={this.state.count} showPage="7" callback={this.setCallBack}/> \
 #\
 #          </div>\
 #\

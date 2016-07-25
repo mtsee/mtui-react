@@ -31,6 +31,11 @@ const ModalShow = React.createClass({
 	//显示弹窗
 	handleClick(e){
 
+		//触发绑定的click的click
+		if(this.props.onClick != undefined){
+			this.props.onClick(e);
+		}
+
 		var {width,height,titleColor,title,closeColor,drag} = this.props.modal.props;
 		if(!titleColor){
 			var titleColor = '#313A49';
@@ -83,7 +88,6 @@ const ModalShow = React.createClass({
 
 	//渲染
 	render(){
-		//console.log(this.props.modal);
 		var child = React.Children.only(this.props.children);
 		return React.cloneElement(child,{
 	      onClick : this.handleClick

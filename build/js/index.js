@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "3113feb6707b993da2bf"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "589e63031fd2aaa39ed7"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -52369,6 +52369,12 @@
 
 		//显示弹窗
 		handleClick: function handleClick(e) {
+
+			//触发绑定的click的click
+			if (this.props.onClick != undefined) {
+				this.props.onClick(e);
+			}
+
 			var _props$modal$props = this.props.modal.props;
 			var width = _props$modal$props.width;
 			var height = _props$modal$props.height;
@@ -52435,7 +52441,6 @@
 
 		//渲染
 		render: function render() {
-			//console.log(this.props.modal);
 			var child = _react2.default.Children.only(this.props.children);
 			return _react2.default.cloneElement(child, {
 				onClick: this.handleClick
@@ -52695,20 +52700,7 @@
 	var Checkbox = _react2.default.createClass({
 		displayName: 'Checkbox',
 
-		getInitialState: function getInitialState() {
-			return {
-				checked: this.props.checked == undefined || this.props.checked == 'false' ? false : true,
-				value: this.props.value,
-				label: this.props.label == undefined ? "选项名称" : this.props.label,
-				disabled: this.props.disabled == undefined ? false : true
-			};
-		},
 		handleChange: function handleChange(e) {
-			//console.log(e.target.checked);
-			this.setState({
-				checked: e.target.checked
-			});
-
 			if (this.props.onChange != undefined) {
 				this.props.onChange(e);
 			}
@@ -52719,15 +52711,18 @@
 			}
 		},
 		render: function render() {
+			var checked = this.props.checked == undefined || this.props.checked == 'false' || this.props.checked == false ? false : true;
+			var label = this.props.label == undefined ? "选项名称" : this.props.label;
+			var disabled = this.props.disabled == undefined ? false : true;
 			return _react2.default.createElement(
 				'label',
-				{ id: this.props.id, className: "mt-checkbox" + (this.state.checked ? " mt-checkbox-active" : "") + (this.props.className == undefined ? '' : ' ' + this.props.className) },
-				_react2.default.createElement('input', { onClick: this.handleClick, className: 'mt-checkbox-input', type: 'checkbox', checked: this.state.checked, value: this.state.value, disabled: this.state.disabled, defaultChecked: this.state.checked, onChange: this.handleChange }),
+				{ id: this.props.id, className: "mt-checkbox" + (checked ? " mt-checkbox-active" : "") + (this.props.className == undefined ? '' : ' ' + this.props.className) },
+				_react2.default.createElement('input', { onClick: this.handleClick, className: 'mt-checkbox-input', type: 'checkbox', checked: checked, value: this.props.value, disabled: disabled, onChange: this.handleChange }),
 				_react2.default.createElement('i', { className: 'iconfont icon-checkbox' }),
 				_react2.default.createElement(
 					'span',
 					null,
-					this.state.label
+					label
 				)
 			);
 		}
@@ -53007,11 +53002,7 @@
 			};
 
 			if (this.props.count == 0) {
-				return _react2.default.createElement(
-					'div',
-					{ className: 'mt-pagelist' },
-					'loading...'
-				);
+				return _react2.default.createElement('div', { className: 'mt-pagelist' });
 			} else {
 				return _react2.default.createElement(
 					'div',
@@ -53019,11 +53010,15 @@
 					_react2.default.createElement(
 						'div',
 						{ className: 'mt-pagelist-left' },
-						_react2.default.createElement(_index.Selected, selectProp),
-						' ',
 						_react2.default.createElement(
 							'span',
-							null,
+							{ style: { display: this.props.maxpage ? 'inline-block' : 'none' } },
+							_react2.default.createElement(_index.Selected, selectProp),
+							' '
+						),
+						_react2.default.createElement(
+							'span',
+							{ style: { display: this.props.total ? 'inline-block' : 'none' } },
 							'共 ',
 							this.state.pagecount,
 							' 页 / ',
@@ -53036,13 +53031,13 @@
 						{ className: 'mt-pagelist-right' },
 						_react2.default.createElement(
 							'a',
-							{ href: 'javascript:;', onClick: this.handleClickToFirst, className: 'mt-btn-grey ink-reaction mt-pagelist-first' },
+							{ style: { display: this.props.firstAndEnd ? 'inline-block' : 'none' }, href: 'javascript:;', onClick: this.handleClickToFirst, className: 'mt-btn-grey ink-reaction mt-pagelist-first' },
 							'首页'
 						),
 						' ',
 						_react2.default.createElement(
 							'a',
-							{ href: 'javascript:;', onClick: this.handleClickPrev, className: 'mt-btn-grey ink-reaction mt-pagelist-prev' },
+							{ style: { display: this.props.nextAndPrev ? 'inline-block' : 'none' }, href: 'javascript:;', onClick: this.handleClickPrev, className: 'mt-btn-grey ink-reaction mt-pagelist-prev' },
 							'上一页'
 						),
 						'  ',
@@ -53070,25 +53065,25 @@
 						' ',
 						_react2.default.createElement(
 							'a',
-							{ href: 'javascript:;', onClick: this.handleClickNext, className: 'mt-btn-grey ink-reaction mt-pagelist-next' },
+							{ style: { display: this.props.nextAndPrev ? 'inline-block' : 'none' }, href: 'javascript:;', onClick: this.handleClickNext, className: 'mt-btn-grey ink-reaction mt-pagelist-next' },
 							'下一页'
 						),
 						' ',
 						_react2.default.createElement(
 							'a',
-							{ href: 'javascript:;', onClick: this.handleClickToLast, className: 'mt-btn-grey ink-reaction mt-pagelist-end' },
+							{ style: { display: this.props.firstAndEnd ? 'inline-block' : 'none' }, href: 'javascript:;', onClick: this.handleClickToLast, className: 'mt-btn-grey ink-reaction mt-pagelist-end' },
 							'尾页'
 						),
 						_react2.default.createElement(
 							'span',
-							{ className: 'mt-pagelist-input' },
+							{ style: { display: this.props.jump ? 'inline-block' : 'none' }, className: 'mt-pagelist-input' },
 							'第',
 							_react2.default.createElement('input', { className: 'mt-input', value: this.state.inputVal, onChange: this.handleChangeVal, type: 'text' }),
 							'页'
 						),
 						_react2.default.createElement(
 							'a',
-							{ href: 'javascript:;', onClick: this.handleClickGoto, className: 'mt-btn-grey ink-reaction mt-pagelist-btn' },
+							{ style: { display: this.props.jump ? 'inline-block' : 'none' }, href: 'javascript:;', onClick: this.handleClickGoto, className: 'mt-btn-grey ink-reaction mt-pagelist-btn' },
 							'跳转'
 						)
 					)
@@ -53231,7 +53226,8 @@
 	    displayName: 'LoadingBox',
 	    render: function render() {
 	        var style = {
-	            height: this.props.height
+	            height: this.props.height,
+	            display: this.props.show ? 'block' : 'none'
 	        };
 	        return _react2.default.createElement(
 	            'div',
@@ -53244,6 +53240,10 @@
 	        );
 	    }
 	});
+
+	LoadingBox.defaultProps = {
+	    show: true
+	};
 
 	//配置信息
 	exports.default = LoadingBox;
@@ -54472,7 +54472,7 @@
 	#            */}\
 	#            <p ref="">当前总数：{this.state.count}</p>\
 	#            <div> {this.state.reData}</div>\
-	#            <PageList id="pageList1" count={this.state.count} showPage="7" callback={this.setCallBack}/> \
+	#            <PageList set={{jump:false,nextAndPrev:false,firstAndEnd:false,total:true,maxpage:false}} id="pageList1" count={this.state.count} showPage="7" callback={this.setCallBack}/> \
 	#\
 	#          </div>\
 	#\
