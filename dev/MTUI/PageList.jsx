@@ -219,29 +219,37 @@ const PageList = React.createClass({
 			return (
 				<div className="mt-pagelist" id={this.props.id==undefined?'':this.props.id}>
 					<div className="mt-pagelist-left">
-						<span style={{display:this.props.maxpage?'inline-block':'none'}}><Selected {...selectProp}/>&nbsp;</span>
-		                <span style={{display:this.props.total?'inline-block':'none'}}>共 {this.state.pagecount} 页 / {this.props.count} 条</span>
+						<span style={{display:this.props.selectShow?'inline-block':'none'}}><Selected {...selectProp}/>&nbsp;</span>
+		                <span style={{display:this.props.totalShow?'inline-block':'none'}}>共 {this.state.pagecount} 页 / {this.props.count} 条</span>
 		            </div>
 		            <div className="mt-pagelist-right">
-		                <a style={{display:this.props.firstAndEnd?'inline-block':'none'}} href="javascript:;" onClick={this.handleClickToFirst} className="mt-btn-grey ink-reaction mt-pagelist-first">首页</a>&nbsp;
-		                <a style={{display:this.props.nextAndPrev?'inline-block':'none'}} href="javascript:;" onClick={this.handleClickPrev} className="mt-btn-grey ink-reaction mt-pagelist-prev">上一页</a> &nbsp;
+		                <a style={{display:this.props.firstAndEndShow?'inline-block':'none'}} href="javascript:;" onClick={this.handleClickToFirst} className="mt-btn-grey ink-reaction mt-pagelist-first">首页</a>&nbsp;
+		                <a style={{display:this.props.nextAndPrevShow?'inline-block':'none'}} href="javascript:;" onClick={this.handleClickPrev} className="mt-btn-grey ink-reaction mt-pagelist-prev">上一页</a> &nbsp;
 		                {showPage<this.state.pagecount?<a href="javascript:;" onClick={this.handleClickPrevDuan} className="mt-btn-grey ink-reaction mt-pagelist-btn mt-pagelist-runprev"><i className="iconfont icon-left"></i></a>:""}&nbsp;
 		                <div className="mt-pagelist-content" style={{maxWidth:40*showPage}}>
 		                    <ul ref="pagesUl" style={{width:this.state.pagecount*40,transform:'translateX(0)'}} className="mt-pagelist-page">{this.state.pages}</ul>
 		                </div>&nbsp;
 		                {showPage<this.state.pagecount?<a href="javascript:;" onClick={this.handleClickNextDuan} className="mt-btn-grey ink-reaction mt-pagelist-btn mt-pagelist-runnext"><i className="iconfont icon-right"></i></a>:""}&nbsp;
-		                <a style={{display:this.props.nextAndPrev?'inline-block':'none'}} href="javascript:;" onClick={this.handleClickNext} className="mt-btn-grey ink-reaction mt-pagelist-next">下一页</a>&nbsp;
-		                <a style={{display:this.props.firstAndEnd?'inline-block':'none'}} href="javascript:;" onClick={this.handleClickToLast} className="mt-btn-grey ink-reaction mt-pagelist-end">尾页</a> 
-		                <span style={{display:this.props.jump?'inline-block':'none'}} className="mt-pagelist-input">
+		                <a style={{display:this.props.nextAndPrevShow?'inline-block':'none'}} href="javascript:;" onClick={this.handleClickNext} className="mt-btn-grey ink-reaction mt-pagelist-next">下一页</a>&nbsp;
+		                <a style={{display:this.props.firstAndEndShow?'inline-block':'none'}} href="javascript:;" onClick={this.handleClickToLast} className="mt-btn-grey ink-reaction mt-pagelist-end">尾页</a> 
+		                <span style={{display:this.props.jumpShow?'inline-block':'none'}} className="mt-pagelist-input">
 		                    第<input className="mt-input" value={this.state.inputVal} onChange={this.handleChangeVal} type="text"/>页
 		                </span>
-		                <a style={{display:this.props.jump?'inline-block':'none'}} href="javascript:;" onClick={this.handleClickGoto} className="mt-btn-grey ink-reaction mt-pagelist-btn">跳转</a>
+		                <a style={{display:this.props.jumpShow?'inline-block':'none'}} href="javascript:;" onClick={this.handleClickGoto} className="mt-btn-grey ink-reaction mt-pagelist-btn">跳转</a>
 		            </div>
 	            </div> 
 			);
 		}
 	}
 });
+
+PageList.defaultProps = {
+	jumpShow:true,
+	nextAndPrevShow:true,
+	firstAndEndShow:true,
+	totalShow:true,
+	selectShow:true
+}
 
 //配置信息
 export default PageList;

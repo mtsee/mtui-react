@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "589e63031fd2aaa39ed7"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "26a17fc3c752907345ea"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -53012,13 +53012,13 @@
 						{ className: 'mt-pagelist-left' },
 						_react2.default.createElement(
 							'span',
-							{ style: { display: this.props.maxpage ? 'inline-block' : 'none' } },
+							{ style: { display: this.props.selectShow ? 'inline-block' : 'none' } },
 							_react2.default.createElement(_index.Selected, selectProp),
 							' '
 						),
 						_react2.default.createElement(
 							'span',
-							{ style: { display: this.props.total ? 'inline-block' : 'none' } },
+							{ style: { display: this.props.totalShow ? 'inline-block' : 'none' } },
 							'共 ',
 							this.state.pagecount,
 							' 页 / ',
@@ -53031,13 +53031,13 @@
 						{ className: 'mt-pagelist-right' },
 						_react2.default.createElement(
 							'a',
-							{ style: { display: this.props.firstAndEnd ? 'inline-block' : 'none' }, href: 'javascript:;', onClick: this.handleClickToFirst, className: 'mt-btn-grey ink-reaction mt-pagelist-first' },
+							{ style: { display: this.props.firstAndEndShow ? 'inline-block' : 'none' }, href: 'javascript:;', onClick: this.handleClickToFirst, className: 'mt-btn-grey ink-reaction mt-pagelist-first' },
 							'首页'
 						),
 						' ',
 						_react2.default.createElement(
 							'a',
-							{ style: { display: this.props.nextAndPrev ? 'inline-block' : 'none' }, href: 'javascript:;', onClick: this.handleClickPrev, className: 'mt-btn-grey ink-reaction mt-pagelist-prev' },
+							{ style: { display: this.props.nextAndPrevShow ? 'inline-block' : 'none' }, href: 'javascript:;', onClick: this.handleClickPrev, className: 'mt-btn-grey ink-reaction mt-pagelist-prev' },
 							'上一页'
 						),
 						'  ',
@@ -53065,25 +53065,25 @@
 						' ',
 						_react2.default.createElement(
 							'a',
-							{ style: { display: this.props.nextAndPrev ? 'inline-block' : 'none' }, href: 'javascript:;', onClick: this.handleClickNext, className: 'mt-btn-grey ink-reaction mt-pagelist-next' },
+							{ style: { display: this.props.nextAndPrevShow ? 'inline-block' : 'none' }, href: 'javascript:;', onClick: this.handleClickNext, className: 'mt-btn-grey ink-reaction mt-pagelist-next' },
 							'下一页'
 						),
 						' ',
 						_react2.default.createElement(
 							'a',
-							{ style: { display: this.props.firstAndEnd ? 'inline-block' : 'none' }, href: 'javascript:;', onClick: this.handleClickToLast, className: 'mt-btn-grey ink-reaction mt-pagelist-end' },
+							{ style: { display: this.props.firstAndEndShow ? 'inline-block' : 'none' }, href: 'javascript:;', onClick: this.handleClickToLast, className: 'mt-btn-grey ink-reaction mt-pagelist-end' },
 							'尾页'
 						),
 						_react2.default.createElement(
 							'span',
-							{ style: { display: this.props.jump ? 'inline-block' : 'none' }, className: 'mt-pagelist-input' },
+							{ style: { display: this.props.jumpShow ? 'inline-block' : 'none' }, className: 'mt-pagelist-input' },
 							'第',
 							_react2.default.createElement('input', { className: 'mt-input', value: this.state.inputVal, onChange: this.handleChangeVal, type: 'text' }),
 							'页'
 						),
 						_react2.default.createElement(
 							'a',
-							{ style: { display: this.props.jump ? 'inline-block' : 'none' }, href: 'javascript:;', onClick: this.handleClickGoto, className: 'mt-btn-grey ink-reaction mt-pagelist-btn' },
+							{ style: { display: this.props.jumpShow ? 'inline-block' : 'none' }, href: 'javascript:;', onClick: this.handleClickGoto, className: 'mt-btn-grey ink-reaction mt-pagelist-btn' },
 							'跳转'
 						)
 					)
@@ -53091,6 +53091,14 @@
 			}
 		}
 	});
+
+	PageList.defaultProps = {
+		jumpShow: true,
+		nextAndPrevShow: true,
+		firstAndEndShow: true,
+		totalShow: true,
+		selectShow: true
+	};
 
 	//配置信息
 	exports.default = PageList;
@@ -54469,10 +54477,15 @@
 	#              nowpage 默认显示多少页\
 	#              eachPageCount 每页显示多少条 10/20/50\
 	#              showPage 当前显示多少按钮\
+	#              set 控制显示不显示的 jumpShow(跳转):true,\
+	#                                   nextAndPrevShow（上一页，下一页按钮）:true,\
+	#                                   firstAndEndShow（开始结束按钮）:true,\
+	#                                   totalShow（统计）:true,\
+	#                                   selectShow（下拉选择）:true\
 	#            */}\
 	#            <p ref="">当前总数：{this.state.count}</p>\
 	#            <div> {this.state.reData}</div>\
-	#            <PageList set={{jump:false,nextAndPrev:false,firstAndEnd:false,total:true,maxpage:false}} id="pageList1" count={this.state.count} showPage="7" callback={this.setCallBack}/> \
+	#            <PageList id="pageList1" count={this.state.count} showPage="7" callback={this.setCallBack}/> \
 	#\
 	#          </div>\
 	#\
@@ -54790,10 +54803,9 @@
 	          _react2.default.createElement(
 	            'div',
 	            null,
-	            ' ',
 	            this.state.reData
 	          ),
-	          _react2.default.createElement(_index.PageList, { id: 'pageList1', count: this.state.count, showPage: '7', callback: this.setCallBack })
+	          _react2.default.createElement(_index.PageList, { jumpShow: false, id: 'pageList1', count: this.state.count, showPage: '7', callback: this.setCallBack })
 	        ),
 	        _react2.default.createElement(
 	          'div',

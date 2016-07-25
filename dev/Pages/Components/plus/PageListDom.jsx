@@ -41,8 +41,8 @@ const PageListDom = React.createClass({
               showPage 当前显示多少按钮
             */}
             <p ref="">当前总数：{this.state.count}</p>
-            <div> {this.state.reData}</div>
-            <PageList id="pageList1" count={this.state.count} showPage="7" callback={this.setCallBack}/> 
+            <div>{this.state.reData}</div>
+            <PageList jumpShow={false} id="pageList1" count={this.state.count} showPage="7" callback={this.setCallBack}/> 
 
           </div>
 
