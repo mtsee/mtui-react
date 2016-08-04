@@ -441,7 +441,8 @@ input[type=password][disabled] + .mt-iconbtn {color: #ccc!important; z-index: 11
 .mt-tabs .mt-tabs-header .mt-tabs-active {border: 1px solid #e4eaec; border-bottom: none; background: #fff; }
 .mt-tabs .mt-tabs-header .mt-tabs-active a {color: #333; }
 .mt-tabs .mt-tabs-header:after {content: ""; display: block; height: 0; clear: both; visibility: hidden; }
-.mt-tabs .mt-tabs-content {border: 1px solid #e4eaec; overflow: hidden; position: relative; background: #fff; }
+.mt-tabs .mt-tabs-content {border: 1px solid #e4eaec; position: relative; overflow: hidden; background: #fff; }
+.mt-tabs .mt-tabs-content:after {content: "" ; display: block; height: 0; clear: both; visibility: hidden; }
 .mt-tabs .mt-tabs-wrap {position: relative; left: 0; top: 0; }
 .mt-tabs .mt-tabs-wrap:after {content: ""; display: block; height: 0; clear: both; visibility: hidden; }
 .mt-tabs .mt-tabs-item { float: left; width: 100%; z-index:100; display: none; position: absolute; top: 0; left: 0; }
@@ -522,7 +523,7 @@ input[type=password][disabled] + .mt-iconbtn {color: #ccc!important; z-index: 11
 .mt-dates .mt-date-main+.mt-date-main{ left: 250px;}
 .mt-dates:before{ content: ""; display: inline-block; position: absolute; left: 245px; top: 0px; height: 250px; background: #e6e6e6; width: 1px; }
 .mt-dates .mt-dates-text{ position: absolute;}
-.mt-dates-bottom{ position: absolute; bottom: 0; left: 0; width: 100%; border-top: 1px solid #e6e6e6; height: 40px; text-align: right;}
+.mt-dates-bottom{ position: absolute; bottom: 0; z-index: 10000; left: 0; width: 100%; border-top: 1px solid #e6e6e6; height: 40px; text-align: right;}
 .mt-dates-bottom a{ display: inline-block; margin-right: 10px!important; background: #F3F3F3; color: #333; border:1px solid #EAEAEA; margin-top: 5px; padding: 5px 15px;}
 .mt-dates .yesdate{}
 .mt-dates .cleardate{}

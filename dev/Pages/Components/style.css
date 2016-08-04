@@ -31,7 +31,7 @@
 .admin-tabs .mt-tabs .mt-tabs-header .mt-tabs-active {border: 1px solid #e4eaec; border-bottom: none; background: #fff; }
 .admin-tabs .mt-tabs .mt-tabs-header .mt-tabs-active a {color: #333; }
 .admin-tabs .mt-tabs .mt-tabs-header:after {content: ""; display: block; height: 0; clear: both; visibility: hidden; }
-.admin-tabs .mt-tabs .mt-tabs-content {border: 1px solid #e4eaec; overflow: hidden; background: #fff; }
+.admin-tabs .mt-tabs .mt-tabs-content {border: 1px solid #e4eaec; background: #fff; }
 
 
 .btnslist a{ margin-right: 10px;}

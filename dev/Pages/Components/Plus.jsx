@@ -318,7 +318,7 @@ const Plus = React.createClass({
     	<div className={conf.pageAnimate+" contents"}>
     		<h1>插件</h1>
 
-        <div className="mt-page-content">
+        <div className="mt-page-content clearfix">
           <Tabs {...tabsData}>
               <PageListDom title="分页"/>
               <ModalShowDom title="模态弹窗"/>

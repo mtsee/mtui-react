@@ -43,7 +43,7 @@ const Icons = React.createClass({
 			    		</div>
 			    		<div className="mt-g-12">
 			    		Language 国际化组件位子：MTUI/language<br/><br/>
-			    		对外暴露3个方法：Language, LanguageData , LangProvider<br/><br/><br/>
+			    		对外暴露4个方法：Language, languageData , langProvider , setLanguage<br/><br/><br/>
 			    		langProvider：需要做国际化处理的模块 eg: 
 			    		<p>{"import {LangProvider} from './MTUI/language/Language';"}</p>
 			    		<p>{"langProvider('zh_CN')"}</p>
