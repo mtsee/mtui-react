@@ -19,7 +19,7 @@
 
 tips:热开发模式和自动刷新模式二选一。
 
-浏览器输入：localhost:4000
+浏览器输入：localhost:3000
 
 ####目录结构：
 - mtui-react
