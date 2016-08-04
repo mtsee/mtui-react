@@ -71,7 +71,7 @@ var DateBox = React.createClass({
 
 	//hide DIV
 	hideDiv : function(){
-		console.log('hideDiv')
+		//console.log('hideDiv')
 		if(this.props.dataMark == "start" || this.props.dataMark == "end"){
 			return;
 		}else{
@@ -81,7 +81,7 @@ var DateBox = React.createClass({
 
 	//点击后触发
 	clickDay : function (e,mark) {
-		console.log('clickDay')
+		//console.log('clickDay')
 		var obj = MtDate.addAndDelOneMonth(this.state.year, this.state.month, mark);
 		var data = {
 			day : e.target.text,
@@ -94,23 +94,23 @@ var DateBox = React.createClass({
 
 	//点击事件
 	handleClickPrev : function(e){
-		console.log('handleClickPrev')
+		//console.log('handleClickPrev')
 		//console.log("点击上个月的：",e.target.text);
 		this.clickDay(e,'del');
 	},
 	handleClickThis : function(e){
-		console.log('handleClickThis')
+		//console.log('handleClickThis')
 		//console.log("点击这个月的：",e.target.text);
 		this.clickDay(e,'null');
 	},
 	handleClickNext : function(e){
-		console.log('handleClickNext')
+		//console.log('handleClickNext')
 		//console.log("点击下个月的：",e.target.text);
 		this.clickDay(e,'add');
 	},
 	//点击上一年,点击下一年
 	handleClickPrevYear : function(e) {
-		console.log('handleClickPrevYear')
+		//console.log('handleClickPrevYear')
 		var year = this.state.year-1;
 		this.setState({
 			year : year
@@ -119,7 +119,7 @@ var DateBox = React.createClass({
 		this.resetYear();
 	},
 	handleClickNextYear : function(e) {
-		console.log('handleClickNextYear')
+		//console.log('handleClickNextYear')
 		var year = parseInt(this.state.year)+1
 		this.setState({
 			year : year
@@ -129,7 +129,7 @@ var DateBox = React.createClass({
 	},
 	//点击上个月，点击下个月
 	handleClickPrevMonth : function(e) {
-		console.log('handleClickPrevMonth')
+		//console.log('handleClickPrevMonth')
 		var obj = MtDate.addAndDelOneMonth(this.state.year, this.state.month, 'del');
 		this.setState({
 			month : obj.m,
@@ -142,7 +142,7 @@ var DateBox = React.createClass({
 		this.propsChangeEvent(e,data);
 	},
 	handleClickNextMonth : function(e) {
-		console.log('handleClickNextMonth')
+		//console.log('handleClickNextMonth')
 		var obj = MtDate.addAndDelOneMonth(this.state.year, this.state.month, 'add');
 		this.setState({
 			month : obj.m,
@@ -156,7 +156,7 @@ var DateBox = React.createClass({
 	},
 	//点击年月的 title
 	handleClickYandM: function(e) {
-		console.log('handleClickYandM');
+		//console.log('handleClickYandM');
 		this.setState({
 			dataShow:{ 
 				year:false,
@@ -183,7 +183,7 @@ var DateBox = React.createClass({
 
 	//点击月
 	handleClickM: function(e) {
-		console.log('handleClickM');
+		//console.log('handleClickM');
 		this.resetYear();
 		this.setState({
 			dataShow:{
@@ -195,25 +195,28 @@ var DateBox = React.createClass({
 	},
 
 	propsChangeEvent: function(e,data){
+		if(data == null){
+			var newData = null;
+		}else{
+			var newData = {
+				year:this.state.year,
+				month:this.state.month,
+				day:this.state.day
+			}
 
-		var newData = {
-			year:this.state.year,
-			month:this.state.month,
-			day:this.state.day
-		}
+			if(data.year != undefined){
+				newData.year = data.year
+			}
+			if(data.month != undefined){
+				newData.month = data.month
+			}
+			if(data.day != undefined){
+				newData.day = data.day
+			}
 
-		if(data.year != undefined){
-			newData.year = data.year
-		}
-		if(data.month != undefined){
-			newData.month = data.month
-		}
-		if(data.day != undefined){
-			newData.day = data.day
-		}
-
-		if(data == undefined){
-			newData = undefined
+			if(data == undefined){
+				newData = undefined
+			}
 		}
 
 		this.props.changeEvent(e,newData,this.props.dataMark);
@@ -221,7 +224,7 @@ var DateBox = React.createClass({
 
 	//选择月份
 	handleClickMonth : function(e) {
-		console.log('handleClickMonth');
+		//console.log('handleClickMonth');
 		if(this.state.selectMark == 'ym'){
 			this.setState({
 				month : $(e.target).data("val")
@@ -241,7 +244,7 @@ var DateBox = React.createClass({
 	},
 	//选择年份
 	handleClickYear : function(e) {
-		console.log('handleClickYear');
+		//console.log('handleClickYear');
 		//只选择年
 		var year = $(e.target).text();
 		if(this.state.selectMark == 'y'){
@@ -262,7 +265,7 @@ var DateBox = React.createClass({
 	},
 	//日历更新后
 	componentWillReceiveProps: function(nextProps) {
-		console.log('componentWillReceiveProps');
+		//console.log('componentWillReceiveProps');
 		//this.resetYear();
 		this.setState({
 			year : nextProps.year,
@@ -273,7 +276,7 @@ var DateBox = React.createClass({
 
 	//点击今天
 	handleClickNowDay: function(e) {
-		console.log('handleClickNowDay')
+		//console.log('handleClickNowDay')
 		//获取当前时间
 		var myDate = new Date();
 		var data ={
@@ -287,8 +290,8 @@ var DateBox = React.createClass({
 
 	//点击清除
 	handleClickClear: function(e) {
-		console.log('handleClickClear')
-		this.propsChangeEvent(e,undefined);
+		//console.log('handleClickClear')
+		this.propsChangeEvent(e,null);
 		this.hideDiv();
 	},
 
@@ -336,7 +339,7 @@ var DateBox = React.createClass({
 
 	//这里开始决定渲染哪些
 	componentWillMount: function() {
-		console.log('componentWillMount')
+		//console.log('componentWillMount')
 
 		//可选择 年，月
 		if(!this.props.formatShow.day && this.props.formatShow.month && this.props.formatShow.year){ 

@@ -92,7 +92,7 @@ var DateInput = React.createClass({
 	
 	//选择时间后
 	handleChange(e , obj, dataMark){
-		console.log( obj, dataMark);
+		//console.log( obj, dataMark);
 		//console.log(arr)
 		var setCommon = function() {
 			this.setState({
@@ -157,12 +157,13 @@ var DateInput = React.createClass({
 			this.setState({
 				inputShow: true
 			})
-			$(document).one("click.DateInputs", function(e){
+			$(document).on("click.DateInputs", function(e){
 				e.stopPropagation();
 				if(!$(e.target).closest('.mt-date-main')[0]){
 					this.setState({
 						inputShow: false
 					})
+					$(document).off("click.DateInputs")
 				}
     		}.bind(this));
 		}

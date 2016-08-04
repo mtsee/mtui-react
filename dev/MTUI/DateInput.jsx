@@ -36,7 +36,7 @@ var DateInput = React.createClass({
 	//选择日历后，设置input ,将该函数传递到子对象
 	handleChange: function(e, obj){
 		//console.log(e);
-		console.log(obj);
+		console.log("==>",obj);
 		if(obj != undefined){
 			this.setState({
 				day : obj.day,
@@ -103,10 +103,11 @@ var DateInput = React.createClass({
 		}
 
 		$main.show();
-		$(document).one("click.DateInput", function(e){
+		$(document).on("click.DateInput", function(e){
 			e.stopPropagation();
 			if(!$(e.target).closest('.mt-date-main')[0]){
 				$main.hide();
+				$(this).off("click.DateInput")
 			}
     	});
 		
