@@ -13,6 +13,7 @@ import ReduxDom   from './Pages/ReduxDom/ReduxDom';
 import Components from './Pages/Components/Index';
 import Htmls      from './Pages/Components/Htmls';
 import Icons      from './Pages/Components/Icons';
+import Language      from './Pages/Components/Language';
 import HtmlsBtn   from './Pages/Components/HtmlsBtn';
 import HtmlsTable from './Pages/Components/HtmlsTable';
 import Forms      from './Pages/Components/Forms';
@@ -40,6 +41,7 @@ const Routers = React.createClass({
 			        <Route path="forms" component={Forms}/>
 			        <Route path="plus" component={Plus}/>
 			        <Route path="icons" component={Icons}/>
+			        <Route path="language" component={Language}/>
 			      </Route>
 			      <Route path="help" component={Help}/> 
 			      <Route path="reduxdom" component={ReduxDom}/>

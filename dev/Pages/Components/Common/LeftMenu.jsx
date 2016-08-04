@@ -19,6 +19,7 @@ const LeftMenu = React.createClass({
               <li><Link activeClassName="active" to="/components/forms">表单组件</Link></li>
               <li><Link activeClassName="active" to="/components/plus">插件库</Link></li>
               <li><Link activeClassName="active" to="/components/icons">Icons</Link></li>
+              <li><Link activeClassName="active" to="/components/language">国际化</Link></li>
           </ul>
     	</div>
     );

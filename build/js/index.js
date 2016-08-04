@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "26a17fc3c752907345ea"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "26e0ef1f21452f46fceb"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -7984,7 +7984,7 @@
 
 	var _Routers2 = _interopRequireDefault(_Routers);
 
-	var _index = __webpack_require__(730);
+	var _index = __webpack_require__(732);
 
 	var _index2 = _interopRequireDefault(_index);
 
@@ -47487,27 +47487,31 @@
 
 	var _Icons2 = _interopRequireDefault(_Icons);
 
-	var _HtmlsBtn = __webpack_require__(677);
+	var _Language = __webpack_require__(677);
+
+	var _Language2 = _interopRequireDefault(_Language);
+
+	var _HtmlsBtn = __webpack_require__(678);
 
 	var _HtmlsBtn2 = _interopRequireDefault(_HtmlsBtn);
 
-	var _HtmlsTable = __webpack_require__(678);
+	var _HtmlsTable = __webpack_require__(679);
 
 	var _HtmlsTable2 = _interopRequireDefault(_HtmlsTable);
 
-	var _Forms = __webpack_require__(680);
+	var _Forms = __webpack_require__(681);
 
 	var _Forms2 = _interopRequireDefault(_Forms);
 
-	var _Plus = __webpack_require__(709);
+	var _Plus = __webpack_require__(711);
 
 	var _Plus2 = _interopRequireDefault(_Plus);
 
-	var _Index7 = __webpack_require__(721);
+	var _Index7 = __webpack_require__(723);
 
 	var _Index8 = _interopRequireDefault(_Index7);
 
-	var _App = __webpack_require__(725);
+	var _App = __webpack_require__(727);
 
 	var _App2 = _interopRequireDefault(_App);
 
@@ -47516,9 +47520,10 @@
 	//帮助
 
 
-	//redux案例展示
-	// 路由
-	//首页
+	//组件
+
+
+	//开始
 
 
 	var Routers = _react2.default.createClass({
@@ -47544,7 +47549,8 @@
 																					),
 																					_react2.default.createElement(_reactRouter.Route, { path: 'forms', component: _Forms2.default }),
 																					_react2.default.createElement(_reactRouter.Route, { path: 'plus', component: _Plus2.default }),
-																					_react2.default.createElement(_reactRouter.Route, { path: 'icons', component: _Icons2.default })
+																					_react2.default.createElement(_reactRouter.Route, { path: 'icons', component: _Icons2.default }),
+																					_react2.default.createElement(_reactRouter.Route, { path: 'language', component: _Language2.default })
 																	),
 																	_react2.default.createElement(_reactRouter.Route, { path: 'help', component: _Index8.default }),
 																	_react2.default.createElement(_reactRouter.Route, { path: 'reduxdom', component: _ReduxDom2.default })
@@ -47556,10 +47562,9 @@
 	//App为入口
 
 
-	//组件
-
-
-	//开始
+	//redux案例展示
+	// 路由
+	//首页
 
 
 	exports.default = Routers;
@@ -48384,6 +48389,15 @@
 	            { activeClassName: 'active', to: '/components/icons' },
 	            'Icons'
 	          )
+	        ),
+	        _react2.default.createElement(
+	          'li',
+	          null,
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { activeClassName: 'active', to: '/components/language' },
+	            '国际化'
+	          )
 	        )
 	      )
 	    );
@@ -48857,6 +48871,185 @@
 
 	var _Conf2 = _interopRequireDefault(_Conf);
 
+	var _reactRouter = __webpack_require__(269);
+
+	var _Language = __webpack_require__(734);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Icons = _react2.default.createClass({
+				displayName: 'Icons',
+				componentWillMount: function componentWillMount() {
+							(0, _Language.langProvider)('en_US');
+				},
+				changeLanguage: function changeLanguage(str, e) {
+							(0, _Language.setLanguage)(str);
+				},
+				render: function render() {
+							if (this.props.children) {
+										return _react2.default.createElement(
+													'div',
+													{ className: _Conf2.default.pageAnimate + " contents" },
+													this.props.children
+										);
+							} else {
+										return _react2.default.createElement(
+													'div',
+													{ className: _Conf2.default.pageAnimate + " contents" },
+													_react2.default.createElement(
+																'h1',
+																null,
+																'国际化解决方案'
+													),
+													_react2.default.createElement(
+																'div',
+																{ className: 'mt-page-content' },
+																_react2.default.createElement(
+																			'h3',
+																			{ className: 'mt-padding' },
+																			'国际化支持多语言'
+																),
+																_react2.default.createElement(
+																			'div',
+																			{ className: 'mt-g' },
+																			_react2.default.createElement(
+																						'div',
+																						{ className: 'mt-g-12' },
+																						_react2.default.createElement(
+																									'a',
+																									{ href: 'javascript:;', onClick: this.changeLanguage.bind(this, 'en_US') },
+																									'EN'
+																						),
+																						' /',
+																						_react2.default.createElement(
+																									'a',
+																									{ href: 'javascript:;', onClick: this.changeLanguage.bind(this, 'zh_CN') },
+																									' 中文'
+																						),
+																						' ',
+																						_react2.default.createElement('br', null),
+																						_react2.default.createElement('br', null),
+																						_react2.default.createElement('br', null),
+																						_react2.default.createElement('br', null),
+																						_react2.default.createElement(
+																									'div',
+																									{ title: (0, _Language.languageData)({
+																															id: 'name',
+																															tips: '我的名字叫：{name}，年龄：{age}',
+																															value: {
+																																		name: "馒头",
+																																		age: 26
+																															}
+																												}) },
+																									_react2.default.createElement(_Language.Language, { id: 'name', tips: '我的名字叫：{name}，年龄：{age} ok~', value: { name: "馒头", age: 26 } })
+																						)
+																			),
+																			_react2.default.createElement(
+																						'div',
+																						{ className: 'mt-g-12' },
+																						'Language 国际化组件位子：MTUI/language',
+																						_react2.default.createElement('br', null),
+																						_react2.default.createElement('br', null),
+																						'对外暴露3个方法：Language, LanguageData , LangProvider',
+																						_react2.default.createElement('br', null),
+																						_react2.default.createElement('br', null),
+																						_react2.default.createElement('br', null),
+																						'langProvider：需要做国际化处理的模块 eg:',
+																						_react2.default.createElement(
+																									'p',
+																									null,
+																									"import {LangProvider} from './MTUI/language/Language';"
+																						),
+																						_react2.default.createElement(
+																									'p',
+																									null,
+																									"langProvider('zh_CN')"
+																						),
+																						_react2.default.createElement(
+																									'p',
+																									null,
+																									'在模块最初始位子调用一次即可，设置默认语言'
+																						),
+																						_react2.default.createElement('br', null),
+																						_react2.default.createElement('br', null),
+																						'Language：翻译标签 id:对应 MTUI/language/zh_CN.jsx（MTUI/language/en_US.jsx） 里面的键值；tips：备注说明；value：动态的值',
+																						_react2.default.createElement(
+																									'p',
+																									null,
+																									"import {Language} from './MTUI/language/Language';"
+																						),
+																						_react2.default.createElement(
+																									'p',
+																									null,
+																									'<Language id="name" tips="我的名字叫：{name}，年龄：{age}" value={name:"馒头",age:26}/>'
+																						),
+																						_react2.default.createElement(
+																									'p',
+																									null,
+																									"设置了value后可在对应的翻译文件里面使用{xx}来填写变量"
+																						),
+																						_react2.default.createElement('br', null),
+																						_react2.default.createElement('br', null),
+																						'languageData：js代码里面用到的翻译标签 id:对应 MTUI/language/zh_CN.jsx（MTUI/language/en_US.jsx） 里面的键值；tips：备注说明；value：动态的值',
+																						_react2.default.createElement(
+																									'p',
+																									null,
+																									"import {LanguageData} from './MTUI/language/Language';"
+																						),
+																						_react2.default.createElement(
+																									'p',
+																									null,
+																									"LanguageData：js代码里面用到的翻译标签({id:'indexSearchInfo',tips:'请输入要查询的公司名称',value:{name:'馒头',age:26}})"
+																						),
+																						_react2.default.createElement(
+																									'p',
+																									null,
+																									"设置了value后可在对应的翻译文件里面使用{xx}来填写变量"
+																						),
+																						_react2.default.createElement('br', null),
+																						_react2.default.createElement('br', null),
+																						'setLanguage：重置页面语言 str：\'en_US\' or \'zh_CN\'',
+																						_react2.default.createElement(
+																									'p',
+																									null,
+																									"import {setLanguage} from './MTUI/language/Language';"
+																						),
+																						_react2.default.createElement(
+																									'p',
+																									null,
+																									"在点击按钮之后，交互切换语言"
+																						)
+																			)
+																)
+													)
+										);
+							}
+				}
+	});
+	//联系信息
+	module.exports = Icons;
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(658); if (makeExportsHot(module, __webpack_require__(138))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Language.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
+
+/***/ },
+/* 678 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+
+	'use strict';
+
+	__webpack_require__(671);
+
+	var _react = __webpack_require__(138);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _Conf = __webpack_require__(674);
+
+	var _Conf2 = _interopRequireDefault(_Conf);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var HtmlsBtn = _react2.default.createClass({
@@ -49252,7 +49445,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 678 */
+/* 679 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -49269,7 +49462,7 @@
 
 	var _Conf2 = _interopRequireDefault(_Conf);
 
-	var _mtuiMixins = __webpack_require__(679);
+	var _mtuiMixins = __webpack_require__(680);
 
 	var _mtuiMixins2 = _interopRequireDefault(_mtuiMixins);
 
@@ -50419,7 +50612,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 679 */
+/* 680 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -50504,7 +50697,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 680 */
+/* 681 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -50521,25 +50714,25 @@
 
 	var _Conf2 = _interopRequireDefault(_Conf);
 
-	var _index = __webpack_require__(681);
+	var _index = __webpack_require__(682);
 
-	var _SelectDom = __webpack_require__(704);
+	var _SelectDom = __webpack_require__(706);
 
 	var _SelectDom2 = _interopRequireDefault(_SelectDom);
 
-	var _InputDom = __webpack_require__(705);
+	var _InputDom = __webpack_require__(707);
 
 	var _InputDom2 = _interopRequireDefault(_InputDom);
 
-	var _CheckboxDom = __webpack_require__(706);
+	var _CheckboxDom = __webpack_require__(708);
 
 	var _CheckboxDom2 = _interopRequireDefault(_CheckboxDom);
 
-	var _RadioDom = __webpack_require__(707);
+	var _RadioDom = __webpack_require__(709);
 
 	var _RadioDom2 = _interopRequireDefault(_RadioDom);
 
-	var _SwicthDom = __webpack_require__(708);
+	var _SwicthDom = __webpack_require__(710);
 
 	var _SwicthDom2 = _interopRequireDefault(_SwicthDom);
 
@@ -50726,7 +50919,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 681 */
+/* 682 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -50738,79 +50931,79 @@
 	});
 	exports.validate = exports.Popover = exports.TreeMenu = exports.LoadingBox = exports.Loading = exports.PageList = exports.Popup = exports.ModalShow = exports.Modal = exports.DateInputs = exports.SliderActive = exports.Swicth = exports.DateInput = exports.RadioGroup = exports.Radio = exports.Checkbox = exports.Input = exports.Selected = exports.Tabs = undefined;
 
-	__webpack_require__(682);
+	__webpack_require__(683);
 
 	var _react = __webpack_require__(138);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Input = __webpack_require__(685);
+	var _Input = __webpack_require__(686);
 
 	var _Input2 = _interopRequireDefault(_Input);
 
-	var _DateInput = __webpack_require__(686);
+	var _DateInput = __webpack_require__(687);
 
 	var _DateInput2 = _interopRequireDefault(_DateInput);
 
-	var _DateInputs = __webpack_require__(688);
+	var _DateInputs = __webpack_require__(690);
 
 	var _DateInputs2 = _interopRequireDefault(_DateInputs);
 
-	var _Tabs = __webpack_require__(689);
+	var _Tabs = __webpack_require__(691);
 
 	var _Tabs2 = _interopRequireDefault(_Tabs);
 
-	var _Selected = __webpack_require__(690);
+	var _Selected = __webpack_require__(692);
 
 	var _Selected2 = _interopRequireDefault(_Selected);
 
-	var _ModalShow = __webpack_require__(691);
+	var _ModalShow = __webpack_require__(693);
 
 	var _ModalShow2 = _interopRequireDefault(_ModalShow);
 
-	var _Modal = __webpack_require__(692);
+	var _Modal = __webpack_require__(694);
 
 	var _Modal2 = _interopRequireDefault(_Modal);
 
-	var _Popup = __webpack_require__(693);
+	var _Popup = __webpack_require__(695);
 
 	var _Popup2 = _interopRequireDefault(_Popup);
 
-	var _Checkbox = __webpack_require__(694);
+	var _Checkbox = __webpack_require__(696);
 
 	var _Checkbox2 = _interopRequireDefault(_Checkbox);
 
-	var _PageList = __webpack_require__(695);
+	var _PageList = __webpack_require__(697);
 
 	var _PageList2 = _interopRequireDefault(_PageList);
 
-	var _Loading = __webpack_require__(696);
+	var _Loading = __webpack_require__(698);
 
 	var _Loading2 = _interopRequireDefault(_Loading);
 
-	var _LoadingBox = __webpack_require__(697);
+	var _LoadingBox = __webpack_require__(699);
 
 	var _LoadingBox2 = _interopRequireDefault(_LoadingBox);
 
-	var _TreeMenu = __webpack_require__(698);
+	var _TreeMenu = __webpack_require__(700);
 
 	var _TreeMenu2 = _interopRequireDefault(_TreeMenu);
 
-	var _Popover = __webpack_require__(699);
+	var _Popover = __webpack_require__(701);
 
 	var _Popover2 = _interopRequireDefault(_Popover);
 
-	var _Swicth = __webpack_require__(700);
+	var _Swicth = __webpack_require__(702);
 
 	var _Swicth2 = _interopRequireDefault(_Swicth);
 
-	var _SliderActive = __webpack_require__(701);
+	var _SliderActive = __webpack_require__(703);
 
 	var _SliderActive2 = _interopRequireDefault(_SliderActive);
 
-	var _RadioGroup = __webpack_require__(702);
+	var _RadioGroup = __webpack_require__(704);
 
-	var _Validate = __webpack_require__(703);
+	var _Validate = __webpack_require__(705);
 
 	var _Validate2 = _interopRequireDefault(_Validate);
 
@@ -51037,13 +51230,13 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 682 */
+/* 683 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(683);
+	var content = __webpack_require__(684);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(246)(content, {});
@@ -51052,8 +51245,8 @@
 	if(true) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept(683, function() {
-				var newContent = __webpack_require__(683);
+			module.hot.accept(684, function() {
+				var newContent = __webpack_require__(684);
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -51063,7 +51256,7 @@
 	}
 
 /***/ },
-/* 683 */
+/* 684 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(244)();
@@ -51071,19 +51264,19 @@
 
 
 	// module
-	exports.push([module.id, "/*格式化，UI*/\r\n/* ---------------CSS 格式化------------------------ */\r\n\r\n*:not(input,textarea) {margin: 0; padding: 0; outline: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-box-sizing: border-box; -webkit-touch-callout: inherit; -webkit-user-select: auto; outline: none; }\r\nhtml {height: 100%; font-size: 100%; -webkit-text-size-adjust: 100%; }\r\nbody {margin: 0; padding: 0; width: 100%; height: 100%; font-family:\"Microsoft YaHei\"; -webkit-touch-callout: inherit ; -webkit-user-select: auto ; font-size: 14px; position: relative; word-break: break-all; float: left; }\r\ni, em {font-style: normal; } \r\na {-webkit-tap-highlight-color: rgba(0, 0, 0, 0.35); text-decoration: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); color: #4a89dc; }\r\nimg {-ms-interpolation-mode: bicubic; vertical-align: middle; border: none; }\r\ntable {border-collapse: collapse; border-spacing: 0; }\r\nth, td, caption {vertical-align: middle; }\r\ntextarea {resize: none; }\r\ninput, button, select, textarea {outline: none; border-radius: 0; font-family: inherit; font-size: inherit; }\r\nbutton {border: none; cursor: pointer; } \r\np, ul, ol, li {list-style: none; margin: 0; padding: 0; }\r\naddress, caption, cite, code, dfn, em, th, var {font-weight: normal; font-style: normal; }\r\nstrong {font-weight: bold; }\r\nh1, h2, h3, h4, h5, h6 {font-weight: normal; margin: 0; padding: 0; }\r\nlabel {padding-right: 10px; }\r\n\r\n.iconfont {padding: 0; margin: 0; line-height: normal;}\r\n \r\n/*清除浮动*/\r\n.clear {clear: both; display: block; font-size: 0; height: 0; line-height: 0; width: 100%; }\r\n.clearfix:after {content: \"\"; display: block; height: 0; clear: both; visibility: hidden; }\r\n/**\r\n * Fix the flawed CSS box model - Yes, IE6's box model is better\r\n * Browser support: IE8+\r\n * via: http://paulirish.com/2012/box-sizing-border-box-ftw/\r\n */\r\n*, *:before, *:after {-moz-box-sizing: border-box; box-sizing: border-box; }\r\n/* normalize.css v3.0.2 | git.io/normalize */\r\n/* Set <html> and <body> to inherit the height of the viewport */\r\nhtml, body {min-height: 100%; }\r\n/**\r\n * 1. Prevent iOS text size adjust after orientation change, without disabling\r\n *    user zoom.\r\n *    https://developer.mozilla.org/en-US/docs/Web/CSS/text-size-adjust\r\n */\r\nhtml {-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }\r\nh1 {font-size: 1.5em; } \r\nh2 {font-size: 1.25em; }\r\n\r\ninput[type=text][disabled],\r\ninput[type=password][disabled] {background: #f3f3f3!important; color: #ccc!important; }\r\ninput[type=text][disabled] + .mt-iconbtn,\r\ninput[type=password][disabled] + .mt-iconbtn {color: #ccc!important; z-index: 11; }\r\n\r\n/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/\r\n::-webkit-scrollbar {width: 8px; height: 8px; background-color: #F5F5F5; }\r\n/*定义滚动条轨道 内阴影+圆角*/\r\n::-webkit-scrollbar-track {-webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.1); border-radius: 10px; background-color: #F5F5F5; }\r\n/*定义滑块 内阴影+圆角*/\r\n::-webkit-scrollbar-thumb {border-radius: 10px; background-color: #ccc; }\r\n\r\n.html-body-overflow {overflow-x:hidden; overflow-y:hidden; }\r\n\r\n/*框架需要加入的 ID*/\r\n#MTUI_MODAL,#MTUI_POPUP,#MTUI_LOADING,#MTUI_POPOVER{position: absolute; top: 0; left: 0; height: 0; width: 0; z-index: 20000;}\r\n#MTUI_POPOVER{z-index: auto; width: 100%;}\r\n#MTUI_BG {position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.3); z-index: 9999; display: none; }\r\n\r\n/*馒头UI grid 24多栏栅格 (A*n)-i=W i=4 n=24 A=4 */\r\n.mt-g {position: relative; }\r\n.mt-g:after {content: \"\"; display: block; clear: both; height: 0; visibility: hidden; }\r\n.mt-g .mt-g-1 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-1:first-child {margin-left: 0; }\r\n.mt-g .mt-g-1{ width: 8.33333%; }\r\n.mt-g .mt-g-offset-1,\r\n.mt-g .mt-g-offset-1:first-child {margin-left: 8.33333%; }\r\n.mt-g .mt-g-2 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-2:first-child {margin-left: 0; }\r\n.mt-g .mt-g-2{ width: 16.66666%; }\r\n.mt-g .mt-g-offset-2,\r\n.mt-g .mt-g-offset-2:first-child {margin-left: 16.66666%; }\r\n.mt-g .mt-g-3 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-3:first-child {margin-left: 0; }\r\n.mt-g .mt-g-3{ width: 24.99999%; }\r\n.mt-g .mt-g-offset-3,\r\n.mt-g .mt-g-offset-3:first-child {margin-left: 24.99999%; }\r\n.mt-g .mt-g-4 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-4:first-child {margin-left: 0; } \r\n.mt-g .mt-g-4{ width: 33.33332%; }\r\n.mt-g .mt-g-offset-4,\r\n.mt-g .mt-g-offset-4:first-child {margin-left: 33.33332%; }\r\n.mt-g .mt-g-5 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-5:first-child {margin-left: 0; }\r\n.mt-g .mt-g-5{ width: 41.66665%; }\r\n.mt-g .mt-g-offset-5,\r\n.mt-g .mt-g-offset-5:first-child {margin-left: 41.66665%; }\r\n.mt-g .mt-g-6 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-6:first-child {margin-left: 0; }\r\n.mt-g .mt-g-6{ width: 49.99998%; }\r\n.mt-g .mt-g-offset-6,\r\n.mt-g .mt-g-offset-6:first-child {margin-left: 49.99998%; }\r\n.mt-g .mt-g-7 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-7:first-child {margin-left: 0; }\r\n.mt-g .mt-g-7{ width: 58.33331%; }\r\n.mt-g .mt-g-offset-7,\r\n.mt-g .mt-g-offset-7:first-child {margin-left: 58.33331%; }\r\n.mt-g .mt-g-8 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-8:first-child {margin-left: 0; }\r\n.mt-g .mt-g-8{ width: 66.66664%; }\r\n.mt-g .mt-g-offset-8,\r\n.mt-g .mt-g-offset-8:first-child {margin-left: 66.66664%; }\r\n.mt-g .mt-g-9 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-9:first-child {margin-left: 0; }\r\n.mt-g .mt-g-9{ width: 74.99997%; }\r\n.mt-g .mt-g-offset-9,\r\n.mt-g .mt-g-offset-9:first-child {margin-left: 74.99997%; }\r\n.mt-g .mt-g-10 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-10:first-child {margin-left: 0; }\r\n.mt-g .mt-g-10{ width: 83.3333%; }\r\n.mt-g .mt-g-offset-10,\r\n.mt-g .mt-g-offset-10:first-child {margin-left: 83.3333%; }\r\n.mt-g .mt-g-11 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-11:first-child {margin-left: 0; }\r\n.mt-g .mt-g-11{ width: 91.66663%; }\r\n.mt-g .mt-g-offset-11,\r\n.mt-g .mt-g-offset-11:first-child {margin-left: 91.66663%; }\r\n.mt-g .mt-g-12 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-12:first-child {margin-left: 0; }\r\n.mt-g .mt-g-12{ width: 99.99996%; }\r\n.mt-g .mt-g-offset-12,\r\n.mt-g .mt-g-offset-12:first-child {margin-left: 99.99996%; }\r\n\r\n/*居中*/\r\n.mt-g-center {text-align: center; }\r\n.mt-g-center .mt-g-1,\r\n.mt-g-center .mt-g-2,\r\n.mt-g-center .mt-g-3,\r\n.mt-g-center .mt-g-4,\r\n.mt-g-center .mt-g-5,\r\n.mt-g-center .mt-g-6,\r\n.mt-g-center .mt-g-7,\r\n.mt-g-center .mt-g-8,\r\n.mt-g-center .mt-g-9,\r\n.mt-g-center .mt-g-10,\r\n.mt-g-center .mt-g-11,\r\n.mt-g-center .mt-g-12 {float: none; display: inline-block; text-align: left; }\r\n\r\n/*馒头UI 插件样式 */\r\n.mt-padding {padding: 20px; }\r\n.mt-margin {margin: 20px; }\r\n\r\n/*404*/\r\n.mt-404 {height: 400px; width: 500px; position: absolute; left: 50%; top: 50%; text-align: center; color: #fff; margin: -200px 0 0 -250px; }\r\n.mt-404 h1 {font-size: 25px; font-weight: bolder; }\r\n\r\n/*表格头部*/\r\n.mt-form-header {height: 50px; position: fixed; top: 50px; left: 90px; right: 0; background: #fff; z-index: 999; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; padding-left: 15px; padding-top: 10px; }\r\n.mt-form-header-block {height: 50px; padding-top: 10px; }\r\n\r\n/*x分栏*/\r\n.mt-content-2x,\r\n.mt-content-1x {padding: 20px; }\r\n.mt-content-2x:after,\r\n.mt-content-1x:after {content: \"\"; display: block; height: 0; clear: both; visibility: hidden; }\r\n.mt-content-2x .mt-content-x,\r\n.mt-content-1x .mt-content-x {padding: 20px; width: 49%; margin-left: 2%; background: #fff; float: left; }\r\n.mt-content-2x .mt-content-x:first-child,\r\n.mt-content-1x .mt-content-x:first-child {margin-left: 0; }\r\n.mt-content-1x {padding: 10px 20px 20px 20px; background: #fff; margin: 20px; }\r\n\r\n/*面包屑导航*/\r\n.mt-breadcrumb {padding: 20px; font-size: 14px; }\r\n.mt-breadcrumb ul, \r\n.mt-breadcrumb li {display: inline-block; }\r\n.mt-breadcrumb ul a,\r\n.mt-breadcrumb li a {color: #666; }\r\n.mt-breadcrumb ul {margin-left: 10px; }\r\n.mt-breadcrumb li a:before {content: \"/\"; color: #999; margin: 0 8px; display: inline-block; }\r\n.mt-breadcrumb li:first-child a:before {display: none; }\r\n\r\n/*主要内容区域*/\r\n.mt-main-content {margin: 50px 0 0 90px; }\r\n.mt-main-content:before {content: \"\"; display: block; height: 1px; }\r\n\r\n/*内容区域*/\r\n.mt-page-content {margin: 10px 20px; background: #fff; padding-bottom: 50px; }\r\n\r\n/*表单*/\r\n.mt-input,\r\n.mt-input-block {display: inline-block; position: relative; background: #fff; border-radius: 2px; vertical-align: middle; }\r\n.mt-input input[type=text],\r\n.mt-input-block input[type=text],\r\n.mt-input input[type=password],\r\n.mt-input-block input[type=password] {height: 28px; padding: 0 10px; font-size: 14px; border-radius: 2px; border: 1px solid #e4eaec; transition: 0.6s; display: inline-block; position: relative; z-index: 10; background: none; width: 100%; }\r\n.mt-input input[type=text]:focus,\r\n.mt-input-block input[type=text]:focus,\r\n.mt-input input[type=password]:focus,\r\n.mt-input-block input[type=password]:focus {border: 1px solid #62a8ea; }\r\n.mt-input input[type=text].mt-round,\r\n.mt-input-block input[type=text].mt-round,\r\n.mt-input input[type=password].mt-round,\r\n.mt-input-block input[type=password].mt-round {border-radius: 1000px; }\r\n.mt-input .mt-iconbtn,\r\n.mt-input-block .mt-iconbtn {display: inline-block; position: absolute; height: 24px; right: 2px; top: 50%; margin-top: -12px; line-height: 26px; width: 28px; text-align: center; color: #999; overflow: hidden; z-index: 11; }\r\n.mt-input .mt-iconbtn:hover,\r\n.mt-input-block .mt-iconbtn:hover {color: #62a8ea; cursor: default; }\r\n.mt-input-block {display: block; }\r\n.mt-input-block input[type=text],\r\n.mt-input-block input[type=password] {display: block; width: 100%; }\r\n.mt-icon-input input[type=text],\r\n.mt-icon-input input[type=password] {padding-right: 28px; }\r\n.mt-icon-inputr input[type=text],\r\n.mt-icon-inputr input[type=password] {padding-left: 28px; }\r\n.mt-icon-inputr .mt-iconbtn {left: 2px; }\r\n.mt-icon-inputr .mt-iconbtn:hover{cursor: pointer;}\r\n\r\n/*表单之 mt-textarea*/\r\n.mt-textarea {display: inline-block; position: relative; background: #fff; border-radius: 2px; vertical-align: middle; }\r\n.mt-textarea textarea {padding: 6px 13px; font-size: 14px; border-radius: 2px; border: 1px solid #e4eaec; transition: 0.6s; }\r\n.mt-textarea textarea:focus {border: 1px solid #62a8ea; }\r\n\r\n/*表单之 checkbox*/\r\n.mt-checkbox {display: inline-block; vertical-align: middle; position: relative; cursor: pointer; color: #666; }\r\n.mt-checkbox .icon-checkbox {vertical-align: middle; display: inline-block; width: 16px; height: 16px; background: #fff; border: 1px solid #62a8ea; border-radius: 2px; color: #fff; overflow: hidden; margin-right: 5px; font-size: 12px; }\r\n.mt-checkbox .icon-checkbox:before {transition: 0.3s; transform: scale(0); }\r\n.mt-checkbox input[type=checkbox] {width: 0; height: 0; position: absolute; opacity: 0; }\r\n.mt-checkbox input[type=checkbox][disabled] + i {border: 1px solid #ccc; background: #f3f3f3; color: #f3f3f3; cursor: default; }\r\n.mt-checkbox input[type=checkbox][disabled] + i + span {color: #ccc; cursor: default; }\r\n.mt-checkbox-active .icon-checkbox {color: #62a8ea; }\r\n.mt-checkbox-active .icon-checkbox:before {transform: scale(1); }\r\n.mt-checkbox-active input[type=checkbox][disabled] + i {border: 1px solid #ccc; background: #fff; color: #ccc; }\r\n\r\n/*表单之 radio*/\r\n.mt-radio {display: inline-block; vertical-align: middle; position: relative; cursor: pointer; }\r\n.mt-radio-group{display: inline-block; }\r\n.mt-radio .icon-radio {vertical-align: middle; display: inline-block; width: 18px; height: 18px; background: #fff; border: 1px solid #62a8ea; border-radius: 50%; color: #fff; overflow: hidden; margin-right: 5px; font-size: 12px; line-height: 18px; text-align: center; }\r\n.mt-radio .icon-radio:before {transition: 0.3s; transform: scale(0); }\r\n.mt-radio input[type=radio] {width: 0; height: 0; position: absolute; opacity: 0; }\r\n.mt-radio input[type=radio][disabled] + i {border: 1px solid #ccc; background: #f3f3f3; color: #f3f3f3; cursor: default; }\r\n.mt-radio input[type=radio][disabled] + i + span {color: #ccc; cursor: default; }\r\n.mt-radio-active .icon-radio {color: #62a8ea; }\r\n.mt-radio-active .icon-radio:before {transform: scale(1); }\r\n.mt-radio-active input[type=radio][disabled] + i {border: 1px solid #ccc; color: #ccc; }\r\n\r\n/*表单之 select*/\r\n.mt-select {display: inline-block; position: relative; cursor: pointer; height: 28px; line-height: 28px; padding: 0 13px; padding-right: 30px; font-size: 14px; border-radius: 2px; border: 1px solid #e4eaec; background-color: #fff; vertical-align: middle; z-index: 10; }\r\n.mt-select .mt-select-title {height: 28px; line-height: 26px; overflow: hidden; }\r\n.mt-select .mt-select-title .placeholder{color: #b7c1cf; }\r\n.mt-select .iconfont {position: absolute; right: 5px; top: 5px; color: #c4c4c4; }\r\n.mt-select .icon-xia:before {content: \"\\E602\"; }\r\n.mt-select .mt-select-box {position: absolute; left: -1px; right: -1px; top: 100%; background: #fff; padding: 5px; border: 1px solid #e4eaec; box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05); overflow: auto; max-height: 260px; display: none; }\r\n.mt-select .mt-select-box .option {position: relative; padding: 0 4px; transition: 0.3s; height: 28px; overflow: hidden; }\r\n.mt-select .mt-select-box .option:hover {background: #62a8ea; color: #fff; }\r\n.mt-select .mt-select-box .mt-select-add {position: relative; }\r\n.mt-select .mt-select-box .mt-select-add .mt-add-select-val {text-indent: 5px; width: 100%; border: 1px solid #e4eaec; transition: 0.6s; }\r\n.mt-select .mt-select-box .mt-select-add .mt-add-select-val:focus {border: 1px solid #62a8ea; }\r\n.mt-select .mt-select-box .mt-select-add .mt-add-select-btn {position: absolute; color: #fff; background: #62a8ea; right: 0; top: 4px; height: 20px; width: 20px; line-height: 17px; text-align: center; transition: 0.3s; }\r\n.mt-select .mt-select-box .mt-select-add .mt-add-select-btn:hover {background: #4a89dc; }\r\n.mt-selected .icon-xia:before {content: \"\\E601\"; }\r\n.mt-select-disabled {background-color: #f3f3f3; color: #ccc; cursor: default; }\r\n.mt-select-disabled .icon-xia {color: #ccc; }\r\n\r\n/*表单之 日历*/\r\n.mt-date input[type=text] {width: 120px; }\r\n\r\n/*表单之 滑动杆*/\r\n.mt-slider {display: block; height: 8px; background: #e4eaec; border-radius: 100px; margin-right: 100px; position: relative; }\r\n.mt-slider .mt-slider-val {position: absolute; right: -80px; top: -6px; border: 1px solid #e4eaec; width: 60px; height: 20px; padding: 2px 5px; border-radius: 2px; font-size: 12px; transition: 0.3s; text-align: center; }\r\n.mt-slider .mt-slider-val:focus {border: 1px solid #62a8ea; }\r\n.mt-slider .mt-slider-btn {width: 16px; height: 16px; border-radius: 100px; position: absolute; background: #62a8ea; top: -4px; right: -10px; cursor: pointer; z-index: 100; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5); }\r\n.mt-slider .mt-slider-bar {position: absolute; height: 100%; width: 0; border-radius: 100px; background: #62a8ea; top: 0; left: 0; }\r\n.mt-slider-red .mt-slider-btn {background: #FB4E47; }\r\n.mt-slider-red .mt-slider-bar {background: #FB4E47; }\r\n.mt-slider-green .mt-slider-btn {background: #5EB95E; }\r\n.mt-slider-green .mt-slider-bar {background: #5EB95E; }\r\n\r\n/*表单之进度条*/\r\n@-webkit-keyframes slider-bar-stripes {\r\n  from {background-position: 36px 0; }\r\n  to {background-position: 0 0; }\r\n}\r\n@keyframes slider-bar-stripes {\r\n  from {background-position: 36px 0; }\r\n  to {background-position: 0 0; }\r\n}\r\n\r\n/* slider bar */\r\n.mt-slider-active {display: block; height: 8px; background: #e4eaec; border-radius: 100px; }\r\n.mt-slider-active-bar {float: left; width: 0; height: 100%; font-size: 1.2rem; line-height: 2rem; border-radius: 100px; color: #fff; text-align: center; background-color: #0e90d2; box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15); transition: 10px .6s ease; background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent); background-size: 36px 36px; -webkit-animation: slider-bar-stripes 2s linear infinite; animation: slider-bar-stripes 2s linear infinite; }\r\n.mt-slider-active-green .mt-slider-active-bar {background-color: #5EB95E; }\r\n.mt-slider-active-red .mt-slider-active-bar {background-color: #FB4E47; }\r\n\r\n/*表单之 switch选择*/\r\n.mt-switch {display: inline-block; vertical-align: middle; width: 60px; height: 30px; line-height: 26px; border-radius: 100px; background: #f3f3f3; border: 1px solid #DBDFE8; box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.05); position: relative; cursor: pointer; text-align: center; transition: 0.3s; }\r\n.mt-switch .mt-switch-btn {transition: 0.4s;transform:translateX(0); display: inline-block; position: absolute; left: 1px; top: 1px; background: #fff; width: 26px; height: 26px; z-index: 100; overflow: hidden; border-radius: 100px; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.6); text-indent: 0;}\r\n.mt-switch .mt-switch-info { transition:0.5s; transform:scale(1.05); font-size: 12px; display: block; height: 100%; background: #5EB95E; border-radius: 100px; position: relative; -moz-user-select: none; -khtml-user-select: none; user-select: none; }\r\n.mt-switch-off .mt-switch-info{background: #fff; transform:scale(0);}\r\n.mt-switch-off .mt-switch-btn {background: #fff; transform:translateX(31px);}\r\n.mt-switch[disabled] {background: #ccc; }\r\n.mt-switch[disabled] .mt-switch-btn {background: #ddd; }\r\n.mt-switch[disabled] .mt-switch-info {background: #ccc; }\r\n/*\r\n.mt-switch-btn:after{ display: inline-block; content: \"\"; position: absolute; width: 6px; height: 10px; top: 50%; left: 50%; margin: -5px 0 0 -3px; border-right: 1px solid #ccc; border-left: 1px solid #ccc;}\r\n*/\r\n\r\n/*按钮*/\r\n.mt-btn-grey,\r\n.mt-btn-red,\r\n.mt-btn-yellow,\r\n.mt-btn-green,\r\n.mt-btn-blue,\r\n.mt-btn-round-grey,\r\n.mt-btn-round-red,\r\n.mt-btn-round-yellow,\r\n.mt-btn-round-green,\r\n.mt-btn-round-blue {text-align: center; cursor: pointer; display: inline-block; padding: 5px 16px; background: #e6e6e6; color: #fff; transition: 0.3s; border-radius: 2px; vertical-align: middle; }\r\n.mt-btn-grey:active,\r\n.mt-btn-red:active,\r\n.mt-btn-yellow:active,\r\n.mt-btn-green:active,\r\n.mt-btn-blue:active,\r\n.mt-btn-round-grey:active,\r\n.mt-btn-round-red:active,\r\n.mt-btn-round-yellow:active,\r\n.mt-btn-round-green:active,\r\n.mt-btn-round-blue:active {box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3); }\r\n.mt-btn-round-grey,\r\n.mt-btn-round-red,\r\n.mt-btn-round-yellow,\r\n.mt-btn-round-green,\r\n.mt-btn-round-blue {border-radius: 100px; }\r\n.mt-btn-grey,\r\n.mt-btn-round-grey {color: #666; }\r\n.mt-btn-grey:hover,\r\n.mt-btn-round-grey:hover {background: #d4d4d4; }\r\n.mt-btn-red,\r\n.mt-btn-round-red {background: #FB4E47; }\r\n.mt-btn-red:hover,\r\n.mt-btn-round-red:hover {background: #ec4a44; }\r\n.mt-btn-yellow,\r\n.mt-btn-round-yellow {background: #ff9f22; }\r\n.mt-btn-yellow:hover,\r\n.mt-btn-round-yellow:hover {background: #F37B1D; }\r\n.mt-btn-blue,\r\n.mt-btn-round-blue {background: #0e90d2; }\r\n.mt-btn-blue:hover,\r\n.mt-btn-round-blue:hover {background: #0d86c4; }\r\n.mt-btn-green,\r\n.mt-btn-round-green {background: #5EB95E; }\r\n.mt-btn-green:hover,\r\n.mt-btn-round-green:hover {background: #57ac57; }\r\n.mt-btn-block {display: block; }\r\n\r\n/*字体按钮*/\r\n.mt-text-fs12 {font-size: 12px; }\r\n.mt-text-fs14 {font-size: 14px; }\r\n.mt-text-fs16 {font-size: 16px; }\r\n.mt-text-fs18 {font-size: 18px; }\r\n.mt-btn-text-grey {color: #ccc; }\r\n.mt-btn-text-grey:hover {color: #999; }\r\n.mt-btn-text-red {color: #FB4E47; }\r\n.mt-btn-text-red:hover {color: #ec4a44; }\r\n.mt-btn-text-yellow {color: #ff9f22; }\r\n.mt-btn-text-yellow:hover {color: #F37B1D; }\r\n.mt-btn-text-blue {color: #0e90d2; }\r\n.mt-btn-text-blue:hover {color: #0d86c4; }\r\n.mt-btn-text-green {color: #5EB95E; }\r\n.mt-btn-text-green:hover {color: #57ac57; }\r\n\r\n/*按钮点击后触发的效果*/\r\n.ink-reaction {position: relative; overflow: hidden; }\r\n.ink-reaction .ink {position: absolute; width: 200px; height: 200px; margin-left: -100px; margin-top: -100px; background-color: rgba(255, 255, 255, 0.3); border-radius: 50%; z-index: 1; pointer-events: none; opacity: 0; -webkit-animation: ripple-animation 1.5s; animation: ripple-animation 1.5s; }\r\n.ink-reaction .ink.inverse {background-color: rgba(12, 12, 12, 0.5); }\r\n@-webkit-keyframes ripple-animation {\r\n  from {-webkit-transform: scale(0); transform: scale(0); opacity: 1; }\r\n  to {-webkit-transform: scale(1, 1); transform: scale(1, 1); opacity: 0; }\r\n}\r\n@keyframes ripple-animation {\r\n  from {-webkit-transform: scale(0); transform: scale(0); opacity: 1; }\r\n  to {-webkit-transform: scale(1, 1); transform: scale(1, 1); opacity: 0; }\r\n}\r\n\r\n/*按钮尺寸*/\r\n.mt-btn-xl {padding: 10px 20px; font-size: 18px; }\r\n.mt-btn-xl .iconfont {font-size: 18px; }\r\n.mt-btn-lg {padding: 8px 16px; font-size: 16px; }\r\n.mt-btn-lg .iconfont {font-size: 16px; }\r\n.mt-btn-sm {padding: 5px 8px; font-size: 12px; } \r\n.mt-btn-sm .iconfont {font-size: 12px; } \r\n.mt-btn-xs {padding: 2px 6px; font-size: 12px; }\r\n.mt-btn-xs .iconfont {font-size: 12px; }\r\n\r\n/*table 样式*/\r\n.mt-table {width: 100%; margin: 10px 0; }\r\n.mt-table th {text-align: left; padding: 10px 8px; border-bottom: 2px solid #E8EAEA; color: #666; font-weight: bolder; }\r\n.mt-table td {padding: 10px 8px; border-bottom: 1px solid #E8EAEA; font-size: 14px; color: #333; }\r\n.mt-table-border {border-top: 1px solid #E8EAEA; border-left: 1px solid #E8EAEA; border-right: 1px solid #E8EAEA; }\r\n.mt-table-bordered {border-top: 1px solid #E8EAEA; border-left: 1px solid #E8EAEA; border-right: 1px solid #E8EAEA; }\r\n.mt-table-bordered td,\r\n.mt-table-bordered th {border-left: 1px solid #E8EAEA; }\r\n.mt-table-striped tr:nth-child(even) {background: #f9f9f9; }\r\n.mt-table-center {text-align: center; }\r\n.mt-table-center th {text-align: center; }\r\n.mt-table-hover tr + tr:hover {background: #e6e6e6; }\r\n\r\n/*折叠面板*/\r\n.mt-panel-group {border-top: 1px solid #ddd; }\r\n.mt-panel-group .mt-panel-header,\r\n.mt-panel-group .mt-panel-header-one {background: #f5f5f5; border: 1px solid #ddd; border-top: 0; padding: 5px 10px; cursor: pointer; }\r\n.mt-panel-group .mt-panel-content {background: #fff; border: 1px solid #ddd; border-top: 0; padding: 5px 10px; display: none; }\r\n.mt-panel-group .mt-panel-active .mt-panel-content,\r\n.mt-panel-group .mt-panel-active .mt-panel-header-one {display: block; }\r\n\r\n/*下拉列表*/\r\n.mt-dropdown {display: inline-block; position: relative; }\r\n.mt-dropdown .mt-dropdown-content {padding: 10px; background: #fff; border: 1px solid #E8EAEA; border-radius: 2px; min-width: 160px; position: absolute; top: 100%; box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05); -webkit-animation-duration: 0.5s; animation-duration: 0.5s; z-index: 100; display: none; }\r\n.mt-dropdown .mt-dropdown-content li {padding: 5px 0; font-size: 14px; color: #999; }\r\n.mt-dropdown-active .mt-dropdown-content {display: block; }\r\n.mt-dropdown-active .mt-dropdown-toggle .icon-xia:before,\r\n.mt-dropdown-active .mt-dropdown-toggle-hover .icon-xia:before {content: \"\\E601\"; }\r\n\r\n/*模态弹窗*/\r\n.mt-modal-dialog {box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); position: fixed; background: #fff; display: none; -webkit-animation-name: bounceInDown; animation-name: bounceInDown; -webkit-animation-duration: 1s; animation-duration: 1s; -webkit-animation-fill-mode: both; animation-fill-mode: both; z-index: 10000; }\r\n.mt-modal-dialog .mt-modal-close {position: absolute; top: 10px; right: 10px; color: #333; transition: 0.3s; z-index: 100; }\r\n.mt-modal-dialog .mt-modal-close:hover {transform: rotate(180deg); } \r\n.mt-modal-dialog .mt-dialog-title {height: 40px; line-height: 40px; text-align: center; color: #fff; background: #4a89dc; position: relative; }\r\n.mt-modal-dialog .mt-dialog-title .mt-modal-close {top: 0; color: #fff; }\r\n.mt-modal-dialog .mt-dialog-content {padding: 10px; }\r\n\r\n/*popup*/\r\n.mt-popup {position: fixed; background: #fff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); text-align: center; -webkit-animation-name: bounceInDown; animation-name: bounceInDown; -webkit-animation-duration: 1s; animation-duration: 1s; -webkit-animation-fill-mode: both; animation-fill-mode: both; z-index: 1000; }\r\n.mt-popup .mt-btn-grey, .mt-popup .mt-btn-blue {margin: 0 10px 20px 10px; }\r\n.mt-popup .mt-popup-h1 {height: 35px; line-height: 35px; font-size: 16px; color: #fff; text-align: center; background: #0e90d2; }\r\n.mt-popup .mt-popup-h2 {color: #333; font-size: 14px; text-align: center; padding: 10px 0; }\r\n.mt-popup .mt-popup-content {margin: 10px; }\r\n.mt-popup .mt-popup-str {color: #333333; padding: 10px 0; font-size: 14px; }\r\n.mt-popup .mt-popup-ico {display: inline-block; width: 30px; height: 30px; }\r\n.mt-popup .mt-popup-btn-close {position: absolute; top: 5px; right: 10px; color: #fff; transition:0.3s; }\r\n.mt-popup .mt-popup-btn-close:hover {top: 7px; transform: rotate(180deg); }\r\n.mt-popup .mt-popup-btn-close .iconfont {font-size: 12px; }\r\n\r\n/*插件之 mt-tabs*/\r\n.mt-tabs {position: relative; }\r\n.mt-tabs .mt-tabs-header {position: relative; bottom: -1px; z-index: 100;}\r\n.mt-tabs .mt-tabs-header li {float: left; padding: 5px 20px; }\r\n.mt-tabs .mt-tabs-header li a {color: #999; }\r\n.mt-tabs .mt-tabs-header .mt-tabs-active {border: 1px solid #e4eaec; border-bottom: none; background: #fff; }\r\n.mt-tabs .mt-tabs-header .mt-tabs-active a {color: #333; }\r\n.mt-tabs .mt-tabs-header:after {content: \"\"; display: block; height: 0; clear: both; visibility: hidden; }\r\n.mt-tabs .mt-tabs-content {border: 1px solid #e4eaec; overflow: hidden; position: relative; background: #fff; }\r\n.mt-tabs .mt-tabs-wrap {position: relative; left: 0; top: 0; }\r\n.mt-tabs .mt-tabs-wrap:after {content: \"\"; display: block; height: 0; clear: both; visibility: hidden; }\r\n.mt-tabs .mt-tabs-item { float: left; width: 100%; z-index:100; display: none; position: absolute; top: 0; left: 0; }\r\n.mt-tabs .mt-tabs-content .mt-tabs-active { display: block; z-index:101; position: relative; }\r\n\r\n/*mt-tabs 无动画*/\r\n.mt-tabs .mt-tabs-animate .mt-tabs-item{transition:transform 0.5s; display: block; transform: translateX(-100%);}\r\n.mt-tabs .mt-tabs-animate .mt-tabs-active{ display: block; transform: translateX(0);}\r\n.mt-tabs .mt-tabs-animate .mt-tabs-active~.mt-tabs-item{transform: translateX(100%);}\r\n\r\n/*插件之图片预加载*/\r\n[data-mt-imgload] {background-image: url(" + __webpack_require__(684) + "); background-repeat: no-repeat; background-position: center; }\r\n\r\n/*插件之mt-tips*/\r\n.mt-tips {position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 2px; padding: 5px; color: #fff; font-size: 14px; z-index: 10000; }\r\n\r\n/*插件之分页*/\r\n.mt-pagelist {width: 100%; margin-top: 40px; margin-bottom: 40px; vertical-align: center; }\r\n.mt-pagelist .mt-pagelist-left {line-height: 28px; float: left; }\r\n.mt-pagelist .mt-pagelist-left .mt-select {width: 100px; }\r\n.mt-pagelist .mt-pagelist-left .mt-select-title {width: 60px; }\r\n.mt-pagelist .mt-pagelist-content {display: inline-block; max-width: 280px; vertical-align: middle; height: 28px; overflow: hidden; position: relative; }\r\n.mt-pagelist .mt-pagelist-right {float: right; }\r\n.mt-pagelist .mt-pagelist-page {height: 28px; display: inline-block; position: relative; left: 0; margin-top: 1px; transition:transform 0.5s;}\r\n.mt-pagelist .mt-pagelist-page li {float: left; margin: 0 5px; background: #fff; }\r\n.mt-pagelist .mt-pagelist-page li a {display: inline-block; border: 1px solid #dddddd; border-radius: 2px; font-size: 14px; width: 30px; height: 26px; line-height: 24px; color: #333; text-align: center; transition: 0.3s; }\r\n.mt-pagelist .mt-pagelist-page li a:hover {color: #fff; background-color: #0393dc; border: 1px solid #0393dc; }\r\n.mt-pagelist .mt-pagelist-page .on a {color: #fff; background-color: #0393dc; cursor: default; border: 1px solid #0393dc; }\r\n.mt-pagelist .mt-pagelist-input {margin: 0 12px; }\r\n.mt-pagelist .mt-pagelist-input .mt-input {border: 1px solid #dddddd; height: 26px; width: 40px; margin: 0 2px; text-align: center; background: #fff; }\r\n.mt-pagelist .mt-pagelist-prev,\r\n.mt-pagelist .mt-pagelist-next,\r\n.mt-pagelist .mt-pagelist-btn,\r\n.mt-pagelist .mt-pagelist-end,\r\n.mt-pagelist .mt-pagelist-first {border: 1px solid #dddddd; border-radius: 2px; font-size: 14px; color: #333; padding: 4px 10px; background: #fff; vertical-align: middle; }\r\n.mt-pagelist .mt-pagelist-prev:hover,\r\n.mt-pagelist .mt-pagelist-next:hover,\r\n.mt-pagelist .mt-pagelist-btn:hover,\r\n.mt-pagelist .mt-pagelist-end:hover,\r\n.mt-pagelist .mt-pagelist-first:hover {color: #fff; background-color: #0393dc; border: 1px solid #0393dc; }\r\n.mt-pagelist .mt-pagelist-runprev,\r\n.mt-pagelist .mt-pagelist-runnext {border: 1px solid #fff; padding: 4px; }\r\n\r\n/*日历组件*/\r\n.mt-date-main{ width: 240px; height: 250px; overflow: hidden; background: #f3f3f3; display: none; position: absolute; z-index: 9999; box-shadow: 0 2px 4px rgba(150, 162, 186, 0.5);}\r\n.mt-date-title{ height: 30px; line-height: 25px; background: #333; color: #fff; text-align: center;} \r\n.mt-date-title .mt-btn-blue{ background: #333;} \r\n.mt-date-title a{ margin: 0 5px; padding: 2px 5px;line-height: normal; font-size: 16px;}\r\n.mt-date-title .mt-date-nowday,\r\n.mt-date-title .mt-date-clear{ position: absolute; top: 8px; font-size: 12px; z-index: 20;}\r\n.mt-date-title .mt-date-nowday{ left: 0; top: 5px;}\r\n.mt-date-title .mt-date-clear{ right: 0; top: 5px;}\r\n.mt-date-month,.mt-date-year{ display: none;}\r\n.mt-date-ym,\r\n.mt-date-y,\r\n.mt-date-m{ display: inline-block; width: 100px; position: relative; top: 0px;}\r\n.mt-date-week{ height: 25px; line-height: 25px; text-align: center; font-weight: bolder;}\r\n.mt-date-week li{ display: inline-block; width:14.28%;}\r\n.mt-date-warp{ height: 240px; width: 900px; background: #ccc;}\r\n.mt-date-item{ height: 100%; width: 240px; float: left;}\r\n.mt-date-day li{ float: left; text-align: center; width: 14.28%; height: 32px; line-height: 32px;}\r\n.mt-date-day li a{ color: #666; display: inline-block; width: 100%; height: 100%; transition:0.3s;}\r\n.mt-date-day li a:hover{ background: #ccc;}\r\n.mt-date-day li .mt-date-prevday,\r\n.mt-date-day li .mt-date-nextday{ color: #ccc;} \r\n.mt-date-day li .mt-date-selected{background: #40c583; color:#fff;}\r\n.mt-date-years,\r\n.mt-date-months{ width: 100%; height: 220px; position: absolute; bottom: 0; z-index: 100; background: #fff; opacity: 0; transform: scale(5); display: none; transition:0.3s;}\r\n.mt-date-animate{display:block; opacity: 1; transform: scale(1);}\r\n.mt-date-months li{line-height: 64px; font-size: 14px; cursor: pointer; float: left; border-radius: 0; background: #fff; color: #333; width: 25%; height: 25%; text-align: center; }\r\n.mt-date-months li:hover{ color: #000; background: #ccc;}\r\n.mt-date-months .mt-active{ color: #000; background: #e9e9e9;}\r\n.mt-date-years li{ cursor: pointer; float: left; background: #fff; line-height: normal; color: #333; width: 50px; height: 28px; margin:4px 5px;}\r\n.mt-date-years .mt-active{ color: #000; background: #e9e9e9;}\r\n.mt-date-years li:hover{ color: #000; background: #ccc;}\r\n.mt-date-main .mt-btn-blue{ box-shadow: none;}\r\n.mt-dates{ position: absolute; display: none; box-shadow: 0 2px 4px rgba(150, 162, 186, 0.5); width: 490px; height: 290px; background: #f3f3f3; z-index: 9999;}\r\n.mt-dates .mt-date-main{box-shadow:none;}\r\n.mt-dates .mt-date-main+.mt-date-main{ left: 250px;}\r\n.mt-dates:after{ content: \"\"; display: inline-block; position: absolute; height: 30px; background: #333; width: 100%; left: 0; top: 0;}\r\n.mt-dates:before{ content: \"\"; display: inline-block; position: absolute; left: 245px; top: 40px; height: 200px; background: #e6e6e6; width: 1px; }\r\n.mt-dates .mt-dates-text{ position: absolute;}\r\n.mt-dates-bottom{ position: absolute; bottom: 0; left: 0; width: 100%; border-top: 1px solid #e6e6e6; height: 40px; padding: 8px; text-align: right;}\r\n.mt-dates-bottom a{ margin-left: 20px!important;}\r\n/*\r\n.mt-dates-start .mt-dates-down,\r\n.mt-dates-end .mt-dates-up{ background: #e4e4e4;}\r\n*/\r\n/*二级菜单*/\r\n.mt-treemenu{ display: inline-block;}\r\n.mt-treemenu-box{ padding-left: 20px;}\r\n.mt-treemenu-title{ position: relative; cursor: pointer;}\r\n.mt-treemenu-title .iconfont{ transition:0.3s; position: absolute; left: -15px; top: 3px; font-size: 12px;}\r\n.mt-treemenu .mt-treemenu-box .mt-treemenu-box{ display: none;} \r\n.mt-treemenu-active .iconfont{ /*content: \"\\e60e\";*/ transform:rotate(90deg); -webkit-transform:rotate(90deg);}\r\n\r\n/*more tips*/\r\n.mt-more {height: 20px; display: inline-block; position: relative; vertical-align: middle; margin-left: 5px; }\r\n.mt-more .iconfont {color: #999; cursor: pointer; }\r\n.mt-more .mt-more-content {font-size: 14px; position: absolute; min-width: 120px; max-width: 300px; top: 30px; left: -60px; background: #fff; border: 1px solid #ddd; box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05); padding: 10px; border-radius: 4px; display: none; color: #999; }\r\n.mt-more .mt-more-content:before {content: \"\"; display: inline-block; border: 10px solid transparent; border-bottom: 10px solid #ddd; position: absolute; top: -20px; left: 60px; }\r\n.mt-more:hover {z-index: 10000; }\r\n.mt-more:hover .mt-more-content {display: block; }\r\n\r\n/* popover 提示*/\r\n.mt-popover{ position: absolute; background: #333; color: #fff; max-width: 300px; padding: 10px;}\r\n.mt-popover .mt-arrow{ display: inline-block; position: absolute; width: 0; height: 0; border:8px solid transparent;}\r\n.mt-popover-top .mt-arrow{ bottom: -15px; left: 50%; margin-left: -8px; border-top:8px solid #333; }\r\n.mt-popover-left .mt-arrow{ top: 50%; right: -15px; margin-top: -8px; border-left:8px solid #333; }\r\n.mt-popover-down .mt-arrow{ left: 50%; top: -15px; margin-left: -8px; border-bottom:8px solid #333; }\r\n.mt-popover-right .mt-arrow{ top: 50%; left: -15px; margin-top: -8px; border-right:8px solid #333; }\r\n\r\n/* loading... */\r\n.mt-loading {pointer-events: none; }\r\n.mt-loading .mt-bar {background: #29d; position: fixed; top: 0; left: 0; width: 100%; height: 2px; transform: translate3d(-100%, 0px, 0px); transition: all 200ms ease;}\r\n.mt-loading .mt-spinner {display: block; position: fixed; top: 8px; right: 8px;} \r\n.mt-loading .mt-spinner-icon {width: 18px; height: 18px; box-sizing: border-box; border: solid 2px transparent; border-top-color: #29d; border-left-color: #29d; border-radius: 50%;\r\n  -webkit-animation: rotateInfinite 400ms linear infinite;\r\n          animation: rotateInfinite 400ms linear infinite;\r\n}\r\n\r\n/*占位loading*/\r\n.mt-loading-box{ position: relative;  height: 100px;}\r\n.mt-loading-cricle{ display: inline-block; text-align: center; line-height: 130px; width: 60px; height: 60px; margin: -40px 0 0 -30px; position: absolute; left: 50%; top: 50%; opacity: 0.2;}\r\n.mt-loading-cricle:before, \r\n.mt-loading-cricle:after{content: \"\"; position: absolute; top: 50%; left: 50%; display: inline-block; border-radius: 1000px; border:3px solid #000; }\r\n.mt-loading-cricle:before{-webkit-animation: rotateInfinite 500ms linear infinite; width: 40px; height: 40px; margin: -20px 0 0 -20px; border-top-color:transparent; border-bottom-color:transparent;}\r\n.mt-loading-cricle:after{-webkit-animation: rotateInfiniteN 400ms linear infinite;width: 20px; height: 20px;  margin:-10px 0 0 -10px; border-left-color:transparent; border-right-color:transparent;}\r\n\r\n/*循环旋转*/ \r\n@-webkit-keyframes rotateInfinite {\r\n  0%   { -webkit-transform: rotate(0deg); }\r\n  100% { -webkit-transform: rotate(360deg); }\r\n}\r\n@-webkit-keyframes rotateInfiniteN {\r\n  0%   { -webkit-transform: rotate(360deg); }\r\n  100% { -webkit-transform: rotate(0deg); }\r\n}\r\n\r\n.mt-input-error input{ border-color:#FF6262!important;}\r\n.mt-validate-error{ position: absolute; top: 50%; margin-top: -10px; padding: 2px 5px; background: #FF6262;  color: #fff; border-radius: 3px; left: 100%; margin-left: 5px; word-break:keep-all; white-space:nowrap; font-size: 12px;}\r\n.mt-validate-error:after{ content: \"\"; display: inline-block; width: 0; height: 0; border:5px solid transparent; border-right:5px solid #FF6262; position: absolute; left: -10px; top: 50%; margin-top: -4.5px;}\r\n\r\n/*文件上传*/\r\n.mt-upload{ position: relative; cursor: pointer; overflow: hidden; display: inline-block;}\r\n.mt-upload input[type=file]{ position: absolute; height: 100%; width: 100%; top:0; left: 0; opacity: 0; cursor: pointer; z-index: 200;}\r\n.mt-upload-progress{ position: absolute; height: 100%; width: 0; left: 0; top: 0; background: #ccc; transition:1s;}\r\n.mt-upload-text{ position: relative; z-index: 100;}", ""]);
+	exports.push([module.id, "/*格式化，UI*/\r\n/* ---------------CSS 格式化------------------------ */\r\n\r\n*:not(input,textarea) {margin: 0; padding: 0; outline: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-box-sizing: border-box; -webkit-touch-callout: inherit; -webkit-user-select: auto; outline: none; }\r\nhtml {height: 100%; font-size: 100%; -webkit-text-size-adjust: 100%; }\r\nbody {margin: 0; padding: 0; width: 100%; height: 100%; font-family:\"Microsoft YaHei\"; -webkit-touch-callout: inherit ; -webkit-user-select: auto ; font-size: 14px; position: relative; word-break: break-all; float: left; }\r\ni, em {font-style: normal; } \r\na {-webkit-tap-highlight-color: rgba(0, 0, 0, 0.35); text-decoration: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); color: #4a89dc; }\r\nimg {-ms-interpolation-mode: bicubic; vertical-align: middle; border: none; }\r\ntable {border-collapse: collapse; border-spacing: 0; }\r\nth, td, caption {vertical-align: middle; }\r\ntextarea {resize: none; }\r\ninput, button, select, textarea {outline: none; border-radius: 0; font-family: inherit; font-size: inherit; }\r\nbutton {border: none; cursor: pointer; } \r\np, ul, ol, li {list-style: none; margin: 0; padding: 0; }\r\naddress, caption, cite, code, dfn, em, th, var {font-weight: normal; font-style: normal; }\r\nstrong {font-weight: bold; }\r\nh1, h2, h3, h4, h5, h6 {font-weight: normal; margin: 0; padding: 0; }\r\nlabel {padding-right: 10px; }\r\n\r\n.iconfont {padding: 0; margin: 0; line-height: normal;}\r\n \r\n/*清除浮动*/\r\n.clear {clear: both; display: block; font-size: 0; height: 0; line-height: 0; width: 100%; }\r\n.clearfix:after {content: \"\"; display: block; height: 0; clear: both; visibility: hidden; }\r\n/**\r\n * Fix the flawed CSS box model - Yes, IE6's box model is better\r\n * Browser support: IE8+\r\n * via: http://paulirish.com/2012/box-sizing-border-box-ftw/\r\n */\r\n*, *:before, *:after {-moz-box-sizing: border-box; box-sizing: border-box; }\r\n/* normalize.css v3.0.2 | git.io/normalize */\r\n/* Set <html> and <body> to inherit the height of the viewport */\r\nhtml, body {min-height: 100%; }\r\n/**\r\n * 1. Prevent iOS text size adjust after orientation change, without disabling\r\n *    user zoom.\r\n *    https://developer.mozilla.org/en-US/docs/Web/CSS/text-size-adjust\r\n */\r\nhtml {-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }\r\nh1 {font-size: 1.5em; } \r\nh2 {font-size: 1.25em; }\r\n\r\ninput[type=text][disabled],\r\ninput[type=password][disabled] {background: #f3f3f3!important; color: #ccc!important; }\r\ninput[type=text][disabled] + .mt-iconbtn,\r\ninput[type=password][disabled] + .mt-iconbtn {color: #ccc!important; z-index: 11; }\r\n\r\n/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/\r\n::-webkit-scrollbar {width: 8px; height: 8px; background-color: #F5F5F5; }\r\n/*定义滚动条轨道 内阴影+圆角*/\r\n::-webkit-scrollbar-track {-webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.1); border-radius: 10px; background-color: #F5F5F5; }\r\n/*定义滑块 内阴影+圆角*/\r\n::-webkit-scrollbar-thumb {border-radius: 10px; background-color: #ccc; }\r\n\r\n.html-body-overflow {overflow-x:hidden; overflow-y:hidden; }\r\n\r\n/*框架需要加入的 ID*/\r\n#MTUI_MODAL,#MTUI_POPUP,#MTUI_LOADING,#MTUI_POPOVER{position: absolute; top: 0; left: 0; height: 0; width: 0; z-index: 20000;}\r\n#MTUI_POPOVER{z-index: auto; width: 100%;}\r\n#MTUI_BG {position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.3); z-index: 9999; display: none; }\r\n\r\n/*馒头UI grid 24多栏栅格 (A*n)-i=W i=4 n=24 A=4 */\r\n.mt-g {position: relative; }\r\n.mt-g:after {content: \"\"; display: block; clear: both; height: 0; visibility: hidden; }\r\n.mt-g .mt-g-1 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-1:first-child {margin-left: 0; }\r\n.mt-g .mt-g-1{ width: 8.33333%; }\r\n.mt-g .mt-g-offset-1,\r\n.mt-g .mt-g-offset-1:first-child {margin-left: 8.33333%; }\r\n.mt-g .mt-g-2 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-2:first-child {margin-left: 0; }\r\n.mt-g .mt-g-2{ width: 16.66666%; }\r\n.mt-g .mt-g-offset-2,\r\n.mt-g .mt-g-offset-2:first-child {margin-left: 16.66666%; }\r\n.mt-g .mt-g-3 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-3:first-child {margin-left: 0; }\r\n.mt-g .mt-g-3{ width: 24.99999%; }\r\n.mt-g .mt-g-offset-3,\r\n.mt-g .mt-g-offset-3:first-child {margin-left: 24.99999%; }\r\n.mt-g .mt-g-4 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-4:first-child {margin-left: 0; } \r\n.mt-g .mt-g-4{ width: 33.33332%; }\r\n.mt-g .mt-g-offset-4,\r\n.mt-g .mt-g-offset-4:first-child {margin-left: 33.33332%; }\r\n.mt-g .mt-g-5 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-5:first-child {margin-left: 0; }\r\n.mt-g .mt-g-5{ width: 41.66665%; }\r\n.mt-g .mt-g-offset-5,\r\n.mt-g .mt-g-offset-5:first-child {margin-left: 41.66665%; }\r\n.mt-g .mt-g-6 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-6:first-child {margin-left: 0; }\r\n.mt-g .mt-g-6{ width: 49.99998%; }\r\n.mt-g .mt-g-offset-6,\r\n.mt-g .mt-g-offset-6:first-child {margin-left: 49.99998%; }\r\n.mt-g .mt-g-7 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-7:first-child {margin-left: 0; }\r\n.mt-g .mt-g-7{ width: 58.33331%; }\r\n.mt-g .mt-g-offset-7,\r\n.mt-g .mt-g-offset-7:first-child {margin-left: 58.33331%; }\r\n.mt-g .mt-g-8 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-8:first-child {margin-left: 0; }\r\n.mt-g .mt-g-8{ width: 66.66664%; }\r\n.mt-g .mt-g-offset-8,\r\n.mt-g .mt-g-offset-8:first-child {margin-left: 66.66664%; }\r\n.mt-g .mt-g-9 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-9:first-child {margin-left: 0; }\r\n.mt-g .mt-g-9{ width: 74.99997%; }\r\n.mt-g .mt-g-offset-9,\r\n.mt-g .mt-g-offset-9:first-child {margin-left: 74.99997%; }\r\n.mt-g .mt-g-10 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-10:first-child {margin-left: 0; }\r\n.mt-g .mt-g-10{ width: 83.3333%; }\r\n.mt-g .mt-g-offset-10,\r\n.mt-g .mt-g-offset-10:first-child {margin-left: 83.3333%; }\r\n.mt-g .mt-g-11 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-11:first-child {margin-left: 0; }\r\n.mt-g .mt-g-11{ width: 91.66663%; }\r\n.mt-g .mt-g-offset-11,\r\n.mt-g .mt-g-offset-11:first-child {margin-left: 91.66663%; }\r\n.mt-g .mt-g-12 {float: left; margin-left: 0; position: relative; padding: 20px; }\r\n.mt-g .mt-g-12:first-child {margin-left: 0; }\r\n.mt-g .mt-g-12{ width: 99.99996%; }\r\n.mt-g .mt-g-offset-12,\r\n.mt-g .mt-g-offset-12:first-child {margin-left: 99.99996%; }\r\n\r\n/*居中*/\r\n.mt-g-center {text-align: center; }\r\n.mt-g-center .mt-g-1,\r\n.mt-g-center .mt-g-2,\r\n.mt-g-center .mt-g-3,\r\n.mt-g-center .mt-g-4,\r\n.mt-g-center .mt-g-5,\r\n.mt-g-center .mt-g-6,\r\n.mt-g-center .mt-g-7,\r\n.mt-g-center .mt-g-8,\r\n.mt-g-center .mt-g-9,\r\n.mt-g-center .mt-g-10,\r\n.mt-g-center .mt-g-11,\r\n.mt-g-center .mt-g-12 {float: none; display: inline-block; text-align: left; }\r\n\r\n/*馒头UI 插件样式 */\r\n.mt-padding {padding: 20px; }\r\n.mt-margin {margin: 20px; }\r\n\r\n/*404*/\r\n.mt-404 {height: 400px; width: 500px; position: absolute; left: 50%; top: 50%; text-align: center; color: #fff; margin: -200px 0 0 -250px; }\r\n.mt-404 h1 {font-size: 25px; font-weight: bolder; }\r\n\r\n/*表格头部*/\r\n.mt-form-header {height: 50px; position: fixed; top: 50px; left: 90px; right: 0; background: #fff; z-index: 999; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; padding-left: 15px; padding-top: 10px; }\r\n.mt-form-header-block {height: 50px; padding-top: 10px; }\r\n\r\n/*x分栏*/\r\n.mt-content-2x,\r\n.mt-content-1x {padding: 20px; }\r\n.mt-content-2x:after,\r\n.mt-content-1x:after {content: \"\"; display: block; height: 0; clear: both; visibility: hidden; }\r\n.mt-content-2x .mt-content-x,\r\n.mt-content-1x .mt-content-x {padding: 20px; width: 49%; margin-left: 2%; background: #fff; float: left; }\r\n.mt-content-2x .mt-content-x:first-child,\r\n.mt-content-1x .mt-content-x:first-child {margin-left: 0; }\r\n.mt-content-1x {padding: 10px 20px 20px 20px; background: #fff; margin: 20px; }\r\n\r\n/*面包屑导航*/\r\n.mt-breadcrumb {padding: 20px; font-size: 14px; }\r\n.mt-breadcrumb ul, \r\n.mt-breadcrumb li {display: inline-block; }\r\n.mt-breadcrumb ul a,\r\n.mt-breadcrumb li a {color: #666; }\r\n.mt-breadcrumb ul {margin-left: 10px; }\r\n.mt-breadcrumb li a:before {content: \"/\"; color: #999; margin: 0 8px; display: inline-block; }\r\n.mt-breadcrumb li:first-child a:before {display: none; }\r\n\r\n/*主要内容区域*/\r\n.mt-main-content {margin: 50px 0 0 90px; }\r\n.mt-main-content:before {content: \"\"; display: block; height: 1px; }\r\n\r\n/*内容区域*/\r\n.mt-page-content {margin: 10px 20px; background: #fff; padding-bottom: 50px; }\r\n\r\n/*表单*/\r\n.mt-input,\r\n.mt-input-block {display: inline-block; position: relative; background: #fff; border-radius: 2px; vertical-align: middle; }\r\n.mt-input input[type=text],\r\n.mt-input-block input[type=text],\r\n.mt-input input[type=password],\r\n.mt-input-block input[type=password] {height: 28px; padding: 0 10px; font-size: 14px; border-radius: 2px; border: 1px solid #e4eaec; transition: 0.6s; display: inline-block; position: relative; z-index: 10; background: none; width: 100%; }\r\n.mt-input input[type=text]:focus,\r\n.mt-input-block input[type=text]:focus,\r\n.mt-input input[type=password]:focus,\r\n.mt-input-block input[type=password]:focus {border: 1px solid #62a8ea; }\r\n.mt-input input[type=text].mt-round,\r\n.mt-input-block input[type=text].mt-round,\r\n.mt-input input[type=password].mt-round,\r\n.mt-input-block input[type=password].mt-round {border-radius: 1000px; }\r\n.mt-input .mt-iconbtn,\r\n.mt-input-block .mt-iconbtn {display: inline-block; position: absolute; height: 24px; right: 2px; top: 50%; margin-top: -12px; line-height: 26px; width: 28px; text-align: center; color: #999; overflow: hidden; z-index: 11; }\r\n.mt-input .mt-iconbtn:hover,\r\n.mt-input-block .mt-iconbtn:hover {color: #62a8ea; cursor: default; }\r\n.mt-input-block {display: block; }\r\n.mt-input-block input[type=text],\r\n.mt-input-block input[type=password] {display: block; width: 100%; }\r\n.mt-icon-input input[type=text],\r\n.mt-icon-input input[type=password] {padding-right: 28px; }\r\n.mt-icon-inputr input[type=text],\r\n.mt-icon-inputr input[type=password] {padding-left: 28px; }\r\n.mt-icon-inputr .mt-iconbtn {left: 2px; }\r\n.mt-icon-inputr .mt-iconbtn:hover{cursor: pointer;}\r\n\r\n/*表单之 mt-textarea*/\r\n.mt-textarea {display: inline-block; position: relative; background: #fff; border-radius: 2px; vertical-align: middle; }\r\n.mt-textarea textarea {padding: 6px 13px; font-size: 14px; border-radius: 2px; border: 1px solid #e4eaec; transition: 0.6s; }\r\n.mt-textarea textarea:focus {border: 1px solid #62a8ea; }\r\n\r\n/*表单之 checkbox*/\r\n.mt-checkbox {display: inline-block; vertical-align: middle; position: relative; cursor: pointer; color: #666; }\r\n.mt-checkbox .icon-checkbox {vertical-align: middle; display: inline-block; width: 16px; height: 16px; background: #fff; border: 1px solid #62a8ea; border-radius: 2px; color: #fff; overflow: hidden; margin-right: 5px; font-size: 12px; }\r\n.mt-checkbox .icon-checkbox:before {transition: 0.3s; transform: scale(0); }\r\n.mt-checkbox input[type=checkbox] {width: 0; height: 0; position: absolute; opacity: 0; }\r\n.mt-checkbox input[type=checkbox][disabled] + i {border: 1px solid #ccc; background: #f3f3f3; color: #f3f3f3; cursor: default; }\r\n.mt-checkbox input[type=checkbox][disabled] + i + span {color: #ccc; cursor: default; }\r\n.mt-checkbox-active .icon-checkbox {color: #62a8ea; }\r\n.mt-checkbox-active .icon-checkbox:before {transform: scale(1); }\r\n.mt-checkbox-active input[type=checkbox][disabled] + i {border: 1px solid #ccc; background: #fff; color: #ccc; }\r\n\r\n/*表单之 radio*/\r\n.mt-radio {display: inline-block; vertical-align: middle; position: relative; cursor: pointer; }\r\n.mt-radio-group{display: inline-block; }\r\n.mt-radio .icon-radio {vertical-align: middle; display: inline-block; width: 18px; height: 18px; background: #fff; border: 1px solid #62a8ea; border-radius: 50%; color: #fff; overflow: hidden; margin-right: 5px; font-size: 12px; line-height: 18px; text-align: center; }\r\n.mt-radio .icon-radio:before {transition: 0.3s; transform: scale(0); }\r\n.mt-radio input[type=radio] {width: 0; height: 0; position: absolute; opacity: 0; }\r\n.mt-radio input[type=radio][disabled] + i {border: 1px solid #ccc; background: #f3f3f3; color: #f3f3f3; cursor: default; }\r\n.mt-radio input[type=radio][disabled] + i + span {color: #ccc; cursor: default; }\r\n.mt-radio-active .icon-radio {color: #62a8ea; }\r\n.mt-radio-active .icon-radio:before {transform: scale(1); }\r\n.mt-radio-active input[type=radio][disabled] + i {border: 1px solid #ccc; color: #ccc; }\r\n\r\n/*表单之 select*/\r\n.mt-select {display: inline-block; position: relative; cursor: pointer; height: 28px; line-height: 28px; padding: 0 13px; padding-right: 30px; font-size: 14px; border-radius: 2px; border: 1px solid #e4eaec; background-color: #fff; vertical-align: middle; z-index: 10; }\r\n.mt-select .mt-select-title {height: 28px; line-height: 26px; overflow: hidden; }\r\n.mt-select .mt-select-title .placeholder{color: #b7c1cf; }\r\n.mt-select .iconfont {position: absolute; right: 5px; top: 5px; color: #c4c4c4; }\r\n.mt-select .icon-xia:before {content: \"\\E602\"; }\r\n.mt-select .mt-select-box {position: absolute; left: -1px; right: -1px; top: 100%; background: #fff; padding: 5px; border: 1px solid #e4eaec; box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05); overflow: auto; max-height: 260px; display: none; }\r\n.mt-select .mt-select-box .option {position: relative; padding: 0 4px; transition: 0.3s; height: 28px; overflow: hidden; }\r\n.mt-select .mt-select-box .option:hover {background: #62a8ea; color: #fff; }\r\n.mt-select .mt-select-box .mt-select-add {position: relative; }\r\n.mt-select .mt-select-box .mt-select-add .mt-add-select-val {text-indent: 5px; width: 100%; border: 1px solid #e4eaec; transition: 0.6s; }\r\n.mt-select .mt-select-box .mt-select-add .mt-add-select-val:focus {border: 1px solid #62a8ea; }\r\n.mt-select .mt-select-box .mt-select-add .mt-add-select-btn {position: absolute; color: #fff; background: #62a8ea; right: 0; top: 4px; height: 20px; width: 20px; line-height: 17px; text-align: center; transition: 0.3s; }\r\n.mt-select .mt-select-box .mt-select-add .mt-add-select-btn:hover {background: #4a89dc; }\r\n.mt-selected .icon-xia:before {content: \"\\E601\"; }\r\n.mt-select-disabled {background-color: #f3f3f3; color: #ccc; cursor: default; }\r\n.mt-select-disabled .icon-xia {color: #ccc; }\r\n\r\n/*表单之 日历*/\r\n.mt-date input[type=text] {width: 120px; }\r\n\r\n/*表单之 滑动杆*/\r\n.mt-slider {display: block; height: 8px; background: #e4eaec; border-radius: 100px; margin-right: 100px; position: relative; }\r\n.mt-slider .mt-slider-val {position: absolute; right: -80px; top: -6px; border: 1px solid #e4eaec; width: 60px; height: 20px; padding: 2px 5px; border-radius: 2px; font-size: 12px; transition: 0.3s; text-align: center; }\r\n.mt-slider .mt-slider-val:focus {border: 1px solid #62a8ea; }\r\n.mt-slider .mt-slider-btn {width: 16px; height: 16px; border-radius: 100px; position: absolute; background: #62a8ea; top: -4px; right: -10px; cursor: pointer; z-index: 100; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5); }\r\n.mt-slider .mt-slider-bar {position: absolute; height: 100%; width: 0; border-radius: 100px; background: #62a8ea; top: 0; left: 0; }\r\n.mt-slider-red .mt-slider-btn {background: #FB4E47; }\r\n.mt-slider-red .mt-slider-bar {background: #FB4E47; }\r\n.mt-slider-green .mt-slider-btn {background: #5EB95E; }\r\n.mt-slider-green .mt-slider-bar {background: #5EB95E; }\r\n\r\n/*表单之进度条*/\r\n@-webkit-keyframes slider-bar-stripes {\r\n  from {background-position: 36px 0; }\r\n  to {background-position: 0 0; }\r\n}\r\n@keyframes slider-bar-stripes {\r\n  from {background-position: 36px 0; }\r\n  to {background-position: 0 0; }\r\n}\r\n\r\n/* slider bar */\r\n.mt-slider-active {display: block; height: 8px; background: #e4eaec; border-radius: 100px; }\r\n.mt-slider-active-bar {float: left; width: 0; height: 100%; font-size: 1.2rem; line-height: 2rem; border-radius: 100px; color: #fff; text-align: center; background-color: #0e90d2; box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15); transition: 10px .6s ease; background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent); background-size: 36px 36px; -webkit-animation: slider-bar-stripes 2s linear infinite; animation: slider-bar-stripes 2s linear infinite; }\r\n.mt-slider-active-green .mt-slider-active-bar {background-color: #5EB95E; }\r\n.mt-slider-active-red .mt-slider-active-bar {background-color: #FB4E47; }\r\n\r\n/*表单之 switch选择*/\r\n.mt-switch {display: inline-block; vertical-align: middle; width: 60px; height: 30px; line-height: 26px; border-radius: 100px; background: #f3f3f3; border: 1px solid #DBDFE8; box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.05); position: relative; cursor: pointer; text-align: center; transition: 0.3s; }\r\n.mt-switch .mt-switch-btn {transition: 0.4s;transform:translateX(0); display: inline-block; position: absolute; left: 1px; top: 1px; background: #fff; width: 26px; height: 26px; z-index: 100; overflow: hidden; border-radius: 100px; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.6); text-indent: 0;}\r\n.mt-switch .mt-switch-info { transition:0.5s; transform:scale(1.05); font-size: 12px; display: block; height: 100%; background: #5EB95E; border-radius: 100px; position: relative; -moz-user-select: none; -khtml-user-select: none; user-select: none; }\r\n.mt-switch-off .mt-switch-info{background: #fff; transform:scale(0);}\r\n.mt-switch-off .mt-switch-btn {background: #fff; transform:translateX(31px);}\r\n.mt-switch[disabled] {background: #ccc; }\r\n.mt-switch[disabled] .mt-switch-btn {background: #ddd; }\r\n.mt-switch[disabled] .mt-switch-info {background: #ccc; }\r\n/*\r\n.mt-switch-btn:after{ display: inline-block; content: \"\"; position: absolute; width: 6px; height: 10px; top: 50%; left: 50%; margin: -5px 0 0 -3px; border-right: 1px solid #ccc; border-left: 1px solid #ccc;}\r\n*/\r\n\r\n/*按钮*/\r\n.mt-btn-grey,\r\n.mt-btn-red,\r\n.mt-btn-yellow,\r\n.mt-btn-green,\r\n.mt-btn-blue,\r\n.mt-btn-round-grey,\r\n.mt-btn-round-red,\r\n.mt-btn-round-yellow,\r\n.mt-btn-round-green,\r\n.mt-btn-round-blue {text-align: center; cursor: pointer; display: inline-block; padding: 5px 16px; background: #e6e6e6; color: #fff; transition: 0.3s; border-radius: 2px; vertical-align: middle; }\r\n.mt-btn-grey:active,\r\n.mt-btn-red:active,\r\n.mt-btn-yellow:active,\r\n.mt-btn-green:active,\r\n.mt-btn-blue:active,\r\n.mt-btn-round-grey:active,\r\n.mt-btn-round-red:active,\r\n.mt-btn-round-yellow:active,\r\n.mt-btn-round-green:active,\r\n.mt-btn-round-blue:active {box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3); }\r\n.mt-btn-round-grey,\r\n.mt-btn-round-red,\r\n.mt-btn-round-yellow,\r\n.mt-btn-round-green,\r\n.mt-btn-round-blue {border-radius: 100px; }\r\n.mt-btn-grey,\r\n.mt-btn-round-grey {color: #666; }\r\n.mt-btn-grey:hover,\r\n.mt-btn-round-grey:hover {background: #d4d4d4; }\r\n.mt-btn-red,\r\n.mt-btn-round-red {background: #FB4E47; }\r\n.mt-btn-red:hover,\r\n.mt-btn-round-red:hover {background: #ec4a44; }\r\n.mt-btn-yellow,\r\n.mt-btn-round-yellow {background: #ff9f22; }\r\n.mt-btn-yellow:hover,\r\n.mt-btn-round-yellow:hover {background: #F37B1D; }\r\n.mt-btn-blue,\r\n.mt-btn-round-blue {background: #0e90d2; }\r\n.mt-btn-blue:hover,\r\n.mt-btn-round-blue:hover {background: #0d86c4; }\r\n.mt-btn-green,\r\n.mt-btn-round-green {background: #5EB95E; }\r\n.mt-btn-green:hover,\r\n.mt-btn-round-green:hover {background: #57ac57; }\r\n.mt-btn-block {display: block; }\r\n\r\n/*字体按钮*/\r\n.mt-text-fs12 {font-size: 12px; }\r\n.mt-text-fs14 {font-size: 14px; }\r\n.mt-text-fs16 {font-size: 16px; }\r\n.mt-text-fs18 {font-size: 18px; }\r\n.mt-btn-text-grey {color: #ccc; }\r\n.mt-btn-text-grey:hover {color: #999; }\r\n.mt-btn-text-red {color: #FB4E47; }\r\n.mt-btn-text-red:hover {color: #ec4a44; }\r\n.mt-btn-text-yellow {color: #ff9f22; }\r\n.mt-btn-text-yellow:hover {color: #F37B1D; }\r\n.mt-btn-text-blue {color: #0e90d2; }\r\n.mt-btn-text-blue:hover {color: #0d86c4; }\r\n.mt-btn-text-green {color: #5EB95E; }\r\n.mt-btn-text-green:hover {color: #57ac57; }\r\n\r\n/*按钮点击后触发的效果*/\r\n.ink-reaction {position: relative; overflow: hidden; }\r\n.ink-reaction .ink {position: absolute; width: 200px; height: 200px; margin-left: -100px; margin-top: -100px; background-color: rgba(255, 255, 255, 0.3); border-radius: 50%; z-index: 1; pointer-events: none; opacity: 0; -webkit-animation: ripple-animation 1.5s; animation: ripple-animation 1.5s; }\r\n.ink-reaction .ink.inverse {background-color: rgba(12, 12, 12, 0.5); }\r\n@-webkit-keyframes ripple-animation {\r\n  from {-webkit-transform: scale(0); transform: scale(0); opacity: 1; }\r\n  to {-webkit-transform: scale(1, 1); transform: scale(1, 1); opacity: 0; }\r\n}\r\n@keyframes ripple-animation {\r\n  from {-webkit-transform: scale(0); transform: scale(0); opacity: 1; }\r\n  to {-webkit-transform: scale(1, 1); transform: scale(1, 1); opacity: 0; }\r\n}\r\n\r\n/*按钮尺寸*/\r\n.mt-btn-xl {padding: 10px 20px; font-size: 18px; }\r\n.mt-btn-xl .iconfont {font-size: 18px; }\r\n.mt-btn-lg {padding: 8px 16px; font-size: 16px; }\r\n.mt-btn-lg .iconfont {font-size: 16px; }\r\n.mt-btn-sm {padding: 5px 8px; font-size: 12px; } \r\n.mt-btn-sm .iconfont {font-size: 12px; } \r\n.mt-btn-xs {padding: 2px 6px; font-size: 12px; }\r\n.mt-btn-xs .iconfont {font-size: 12px; }\r\n\r\n/*table 样式*/\r\n.mt-table {width: 100%; margin: 10px 0; }\r\n.mt-table th {text-align: left; padding: 10px 8px; border-bottom: 2px solid #E8EAEA; color: #666; font-weight: bolder; }\r\n.mt-table td {padding: 10px 8px; border-bottom: 1px solid #E8EAEA; font-size: 14px; color: #333; }\r\n.mt-table-border {border-top: 1px solid #E8EAEA; border-left: 1px solid #E8EAEA; border-right: 1px solid #E8EAEA; }\r\n.mt-table-bordered {border-top: 1px solid #E8EAEA; border-left: 1px solid #E8EAEA; border-right: 1px solid #E8EAEA; }\r\n.mt-table-bordered td,\r\n.mt-table-bordered th {border-left: 1px solid #E8EAEA; }\r\n.mt-table-striped tr:nth-child(even) {background: #f9f9f9; }\r\n.mt-table-center {text-align: center; }\r\n.mt-table-center th {text-align: center; }\r\n.mt-table-hover tr + tr:hover {background: #e6e6e6; }\r\n\r\n/*折叠面板*/\r\n.mt-panel-group {border-top: 1px solid #ddd; }\r\n.mt-panel-group .mt-panel-header,\r\n.mt-panel-group .mt-panel-header-one {background: #f5f5f5; border: 1px solid #ddd; border-top: 0; padding: 5px 10px; cursor: pointer; }\r\n.mt-panel-group .mt-panel-content {background: #fff; border: 1px solid #ddd; border-top: 0; padding: 5px 10px; display: none; }\r\n.mt-panel-group .mt-panel-active .mt-panel-content,\r\n.mt-panel-group .mt-panel-active .mt-panel-header-one {display: block; }\r\n\r\n/*下拉列表*/\r\n.mt-dropdown {display: inline-block; position: relative; }\r\n.mt-dropdown .mt-dropdown-content {padding: 10px; background: #fff; border: 1px solid #E8EAEA; border-radius: 2px; min-width: 160px; position: absolute; top: 100%; box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05); -webkit-animation-duration: 0.5s; animation-duration: 0.5s; z-index: 100; display: none; }\r\n.mt-dropdown .mt-dropdown-content li {padding: 5px 0; font-size: 14px; color: #999; }\r\n.mt-dropdown-active .mt-dropdown-content {display: block; }\r\n.mt-dropdown-active .mt-dropdown-toggle .icon-xia:before,\r\n.mt-dropdown-active .mt-dropdown-toggle-hover .icon-xia:before {content: \"\\E601\"; }\r\n\r\n/*模态弹窗*/\r\n.mt-modal-dialog {box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); position: fixed; background: #fff; display: none; -webkit-animation-name: bounceInDown; animation-name: bounceInDown; -webkit-animation-duration: 1s; animation-duration: 1s; -webkit-animation-fill-mode: both; animation-fill-mode: both; z-index: 10000; }\r\n.mt-modal-dialog .mt-modal-close {position: absolute; top: 10px; right: 10px; color: #333; transition: 0.3s; z-index: 100; }\r\n.mt-modal-dialog .mt-modal-close:hover {transform: rotate(180deg); } \r\n.mt-modal-dialog .mt-dialog-title {height: 40px; line-height: 40px; text-align: center; color: #fff; background: #4a89dc; position: relative; }\r\n.mt-modal-dialog .mt-dialog-title .mt-modal-close {top: 0; color: #fff; }\r\n.mt-modal-dialog .mt-dialog-content {padding: 10px; }\r\n\r\n/*popup*/\r\n.mt-popup {position: fixed; background: #fff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); text-align: center; -webkit-animation-name: bounceInDown; animation-name: bounceInDown; -webkit-animation-duration: 1s; animation-duration: 1s; -webkit-animation-fill-mode: both; animation-fill-mode: both; z-index: 1000; }\r\n.mt-popup .mt-btn-grey, .mt-popup .mt-btn-blue {margin: 0 10px 20px 10px; }\r\n.mt-popup .mt-popup-h1 {height: 35px; line-height: 35px; font-size: 16px; color: #fff; text-align: center; background: #0e90d2; }\r\n.mt-popup .mt-popup-h2 {color: #333; font-size: 14px; text-align: center; padding: 10px 0; }\r\n.mt-popup .mt-popup-content {margin: 10px; }\r\n.mt-popup .mt-popup-str {color: #333333; padding: 10px 0; font-size: 14px; }\r\n.mt-popup .mt-popup-ico {display: inline-block; width: 30px; height: 30px; }\r\n.mt-popup .mt-popup-btn-close {position: absolute; top: 5px; right: 10px; color: #fff; transition:0.3s; }\r\n.mt-popup .mt-popup-btn-close:hover {top: 7px; transform: rotate(180deg); }\r\n.mt-popup .mt-popup-btn-close .iconfont {font-size: 12px; }\r\n\r\n/*插件之 mt-tabs*/\r\n.mt-tabs {position: relative; }\r\n.mt-tabs .mt-tabs-header {position: relative; bottom: -1px; z-index: 100;}\r\n.mt-tabs .mt-tabs-header li {float: left; padding: 5px 20px; }\r\n.mt-tabs .mt-tabs-header li a {color: #999; }\r\n.mt-tabs .mt-tabs-header .mt-tabs-active {border: 1px solid #e4eaec; border-bottom: none; background: #fff; }\r\n.mt-tabs .mt-tabs-header .mt-tabs-active a {color: #333; }\r\n.mt-tabs .mt-tabs-header:after {content: \"\"; display: block; height: 0; clear: both; visibility: hidden; }\r\n.mt-tabs .mt-tabs-content {border: 1px solid #e4eaec; overflow: hidden; position: relative; background: #fff; }\r\n.mt-tabs .mt-tabs-wrap {position: relative; left: 0; top: 0; }\r\n.mt-tabs .mt-tabs-wrap:after {content: \"\"; display: block; height: 0; clear: both; visibility: hidden; }\r\n.mt-tabs .mt-tabs-item { float: left; width: 100%; z-index:100; display: none; position: absolute; top: 0; left: 0; }\r\n.mt-tabs .mt-tabs-content .mt-tabs-active { display: block; z-index:101; position: relative; }\r\n\r\n/*mt-tabs 无动画*/\r\n.mt-tabs .mt-tabs-animate .mt-tabs-item{transition:transform 0.5s; display: block; transform: translateX(-100%);}\r\n.mt-tabs .mt-tabs-animate .mt-tabs-active{ display: block; transform: translateX(0);}\r\n.mt-tabs .mt-tabs-animate .mt-tabs-active~.mt-tabs-item{transform: translateX(100%);}\r\n\r\n/*插件之图片预加载*/\r\n[data-mt-imgload] {background-image: url(" + __webpack_require__(685) + "); background-repeat: no-repeat; background-position: center; }\r\n\r\n/*插件之mt-tips*/\r\n.mt-tips {position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 2px; padding: 5px; color: #fff; font-size: 14px; z-index: 10000; }\r\n\r\n/*插件之分页*/\r\n.mt-pagelist {width: 100%; margin-top: 40px; margin-bottom: 40px; vertical-align: center; }\r\n.mt-pagelist .mt-pagelist-left {line-height: 28px; float: left; }\r\n.mt-pagelist .mt-pagelist-left .mt-select {width: 100px; }\r\n.mt-pagelist .mt-pagelist-left .mt-select-title {width: 60px; }\r\n.mt-pagelist .mt-pagelist-content {display: inline-block; max-width: 280px; vertical-align: middle; height: 28px; overflow: hidden; position: relative; }\r\n.mt-pagelist .mt-pagelist-right {float: right; }\r\n.mt-pagelist .mt-pagelist-page {height: 28px; display: inline-block; position: relative; left: 0; margin-top: 1px; transition:transform 0.5s;}\r\n.mt-pagelist .mt-pagelist-page li {float: left; margin: 0 5px; background: #fff; }\r\n.mt-pagelist .mt-pagelist-page li a {display: inline-block; border: 1px solid #dddddd; border-radius: 2px; font-size: 14px; width: 30px; height: 26px; line-height: 24px; color: #333; text-align: center; transition: 0.3s; }\r\n.mt-pagelist .mt-pagelist-page li a:hover {color: #fff; background-color: #0393dc; border: 1px solid #0393dc; }\r\n.mt-pagelist .mt-pagelist-page .on a {color: #fff; background-color: #0393dc; cursor: default; border: 1px solid #0393dc; }\r\n.mt-pagelist .mt-pagelist-input {margin: 0 12px; }\r\n.mt-pagelist .mt-pagelist-input .mt-input {border: 1px solid #dddddd; height: 26px; width: 40px; margin: 0 2px; text-align: center; background: #fff; }\r\n.mt-pagelist .mt-pagelist-prev,\r\n.mt-pagelist .mt-pagelist-next,\r\n.mt-pagelist .mt-pagelist-btn,\r\n.mt-pagelist .mt-pagelist-end,\r\n.mt-pagelist .mt-pagelist-first {border: 1px solid #dddddd; border-radius: 2px; font-size: 14px; color: #333; padding: 4px 10px; background: #fff; vertical-align: middle; }\r\n.mt-pagelist .mt-pagelist-prev:hover,\r\n.mt-pagelist .mt-pagelist-next:hover,\r\n.mt-pagelist .mt-pagelist-btn:hover,\r\n.mt-pagelist .mt-pagelist-end:hover,\r\n.mt-pagelist .mt-pagelist-first:hover {color: #fff; background-color: #0393dc; border: 1px solid #0393dc; }\r\n.mt-pagelist .mt-pagelist-runprev,\r\n.mt-pagelist .mt-pagelist-runnext {border: 1px solid #fff; padding: 4px; }\r\n\r\n/*日历组件*/\r\n.mt-date-main{ border:1px solid #EAEAEA; width: 240px; height: 250px; overflow: hidden; background: #fff; display: none; position: absolute; z-index: 9999; box-shadow: 0 2px 4px rgba(150, 162, 186, 0.5);}\r\n.mt-date-title{ height: 30px; line-height: 25px; background: #fff; color: #333; text-align: center;} \r\n.mt-date-title .mt-btn-blue{ background: #fff; color: #333;} \r\n.mt-date-title a{ margin: 0 5px; padding: 2px 5px;line-height: normal; font-size: 16px;}\r\n.mt-date-title .mt-date-nowday,\r\n.mt-date-title .mt-date-clear{ position: absolute; top: 8px; font-size: 12px; z-index: 20;}\r\n.mt-date-title .mt-date-nowday{ left: 0; top: 5px;}\r\n.mt-date-title .mt-date-clear{ right: 0; top: 5px;}\r\n.mt-date-month,.mt-date-year{ display: none;}\r\n.mt-date-ym,\r\n.mt-date-y,\r\n.mt-date-m{ display: inline-block; width: 100px; position: relative; top: 0px;}\r\n.mt-date-week{ height: 25px; line-height: 25px; text-align: center; font-weight: bolder;}\r\n.mt-date-week li{ display: inline-block; width:14.28%;}\r\n.mt-date-warp{ height: 240px; width: 900px; background: #ccc;}\r\n.mt-date-item{ height: 100%; width: 240px; float: left;}\r\n.mt-date-day li{ float: left; text-align: center; width: 14.28%; height: 32px; line-height: 32px;}\r\n.mt-date-day li a{ color: #666; display: inline-block; width: 100%; height: 100%; transition:0.3s;}\r\n.mt-date-day li a:hover{ background: #ccc;}\r\n.mt-date-day li .mt-date-prevday,\r\n.mt-date-day li .mt-date-nextday{ color: #ccc;} \r\n.mt-date-day li .mt-date-selected{background: #e9e9e9; color:#000;}\r\n.mt-date-years,\r\n.mt-date-months{ width: 100%; height: 220px; position: absolute; bottom: 0; z-index: 100; background: #fff; transition:0.3s;}\r\n.mt-date-months li{line-height: 64px; font-size: 14px; cursor: pointer; float: left; border-radius: 0; background: #fff; color: #333; width: 25%; height: 25%; text-align: center; }\r\n.mt-date-months li:hover{ color: #000; background: #e9e9e9;}\r\n.mt-date-months .mt-active{ color: #000; background: #e9e9e9;}\r\n.mt-date-years li{ cursor: pointer; float: left; background: #fff; line-height: normal; color: #333; width: 49px; height: 28px; margin:4px 5px;}\r\n.mt-date-years .mt-active{ color: #000; background: #e9e9e9;}\r\n.mt-date-years li:hover{ color: #000; background: #ccc;}\r\n.mt-date-main .mt-btn-blue{ box-shadow: none;}\r\n.mt-dates{border:1px solid #EAEAEA; overflow: hidden; position: absolute; display: none; box-shadow: 0 2px 4px rgba(150, 162, 186, 0.5); width: 490px; height: 290px; background: #fff; z-index: 9999;}\r\n.mt-dates .mt-date-main{box-shadow:none; display: block; border:none; background: none;}\r\n.mt-dates .mt-date-main+.mt-date-main{ left: 250px;}\r\n.mt-dates:before{ content: \"\"; display: inline-block; position: absolute; left: 245px; top: 0px; height: 250px; background: #e6e6e6; width: 1px; }\r\n.mt-dates .mt-dates-text{ position: absolute;}\r\n.mt-dates-bottom{ position: absolute; bottom: 0; left: 0; width: 100%; border-top: 1px solid #e6e6e6; height: 40px; text-align: right;}\r\n.mt-dates-bottom a{ display: inline-block; margin-right: 10px!important; background: #F3F3F3; color: #333; border:1px solid #EAEAEA; margin-top: 5px; padding: 5px 15px;}\r\n.mt-dates .yesdate{}\r\n.mt-dates .cleardate{}\r\n/*\r\n.mt-dates-start .mt-dates-down,\r\n.mt-dates-end .mt-dates-up{ background: #e4e4e4;}\r\n*/\r\n/*二级菜单*/\r\n.mt-treemenu{ display: inline-block;}\r\n.mt-treemenu-box{ padding-left: 20px;}\r\n.mt-treemenu-title{ position: relative; cursor: pointer;}\r\n.mt-treemenu-title .iconfont{ transition:0.3s; position: absolute; left: -15px; top: 3px; font-size: 12px;}\r\n.mt-treemenu .mt-treemenu-box .mt-treemenu-box{ display: none;} \r\n.mt-treemenu-active .iconfont{ /*content: \"\\e60e\";*/ transform:rotate(90deg); -webkit-transform:rotate(90deg);}\r\n\r\n/*more tips*/\r\n.mt-more {height: 20px; display: inline-block; position: relative; vertical-align: middle; margin-left: 5px; }\r\n.mt-more .iconfont {color: #999; cursor: pointer; }\r\n.mt-more .mt-more-content {font-size: 14px; position: absolute; min-width: 120px; max-width: 300px; top: 30px; left: -60px; background: #fff; border: 1px solid #ddd; box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05); padding: 10px; border-radius: 4px; display: none; color: #999; }\r\n.mt-more .mt-more-content:before {content: \"\"; display: inline-block; border: 10px solid transparent; border-bottom: 10px solid #ddd; position: absolute; top: -20px; left: 60px; }\r\n.mt-more:hover {z-index: 10000; }\r\n.mt-more:hover .mt-more-content {display: block; }\r\n\r\n/* popover 提示*/\r\n.mt-popover{ position: absolute; background: #333; color: #fff; max-width: 300px; padding: 10px;}\r\n.mt-popover .mt-arrow{ display: inline-block; position: absolute; width: 0; height: 0; border:8px solid transparent;}\r\n.mt-popover-top .mt-arrow{ bottom: -15px; left: 50%; margin-left: -8px; border-top:8px solid #333; }\r\n.mt-popover-left .mt-arrow{ top: 50%; right: -15px; margin-top: -8px; border-left:8px solid #333; }\r\n.mt-popover-down .mt-arrow{ left: 50%; top: -15px; margin-left: -8px; border-bottom:8px solid #333; }\r\n.mt-popover-right .mt-arrow{ top: 50%; left: -15px; margin-top: -8px; border-right:8px solid #333; }\r\n\r\n/* loading... */\r\n.mt-loading {pointer-events: none; }\r\n.mt-loading .mt-bar {background: #29d; position: fixed; top: 0; left: 0; width: 100%; height: 2px; transform: translate3d(-100%, 0px, 0px); transition: all 200ms ease;}\r\n.mt-loading .mt-spinner {display: block; position: fixed; top: 8px; right: 8px;} \r\n.mt-loading .mt-spinner-icon {width: 18px; height: 18px; box-sizing: border-box; border: solid 2px transparent; border-top-color: #29d; border-left-color: #29d; border-radius: 50%;\r\n  -webkit-animation: rotateInfinite 400ms linear infinite;\r\n          animation: rotateInfinite 400ms linear infinite;\r\n}\r\n\r\n/*占位loading*/\r\n.mt-loading-box{ position: relative;  height: 100px;}\r\n.mt-loading-cricle{ display: inline-block; text-align: center; line-height: 130px; width: 60px; height: 60px; margin: -40px 0 0 -30px; position: absolute; left: 50%; top: 50%; opacity: 0.2;}\r\n.mt-loading-cricle:before, \r\n.mt-loading-cricle:after{content: \"\"; position: absolute; top: 50%; left: 50%; display: inline-block; border-radius: 1000px; border:3px solid #000; }\r\n.mt-loading-cricle:before{-webkit-animation: rotateInfinite 500ms linear infinite; width: 40px; height: 40px; margin: -20px 0 0 -20px; border-top-color:transparent; border-bottom-color:transparent;}\r\n.mt-loading-cricle:after{-webkit-animation: rotateInfiniteN 400ms linear infinite;width: 20px; height: 20px;  margin:-10px 0 0 -10px; border-left-color:transparent; border-right-color:transparent;}\r\n\r\n/*循环旋转*/ \r\n@-webkit-keyframes rotateInfinite {\r\n  0%   { -webkit-transform: rotate(0deg); }\r\n  100% { -webkit-transform: rotate(360deg); }\r\n}\r\n@-webkit-keyframes rotateInfiniteN {\r\n  0%   { -webkit-transform: rotate(360deg); }\r\n  100% { -webkit-transform: rotate(0deg); }\r\n}\r\n\r\n.mt-input-error input{ border-color:#FF6262!important;}\r\n.mt-validate-error{ position: absolute; top: 50%; margin-top: -10px; padding: 2px 5px; background: #FF6262;  color: #fff; border-radius: 3px; left: 100%; margin-left: 5px; word-break:keep-all; white-space:nowrap; font-size: 12px;}\r\n.mt-validate-error:after{ content: \"\"; display: inline-block; width: 0; height: 0; border:5px solid transparent; border-right:5px solid #FF6262; position: absolute; left: -10px; top: 50%; margin-top: -4.5px;}\r\n\r\n/*文件上传*/\r\n.mt-upload{ position: relative; cursor: pointer; overflow: hidden; display: inline-block;}\r\n.mt-upload input[type=file]{ position: absolute; height: 100%; width: 100%; top:0; left: 0; opacity: 0; cursor: pointer; z-index: 200;}\r\n.mt-upload-progress{ position: absolute; height: 100%; width: 0; left: 0; top: 0; background: #ccc; transition:1s;}\r\n.mt-upload-text{ position: relative; z-index: 100;}", ""]);
 
 	// exports
 
 
 /***/ },
-/* 684 */
+/* 685 */
 /***/ function(module, exports) {
 
 	module.exports = "data:image/gif;base64,R0lGODlhHwAfAPMMAJ6enpmZmbi4uNnZ2bKysnNzc1lZWczMzNHR0b+/v4yMjKampv///wAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQFAAAMACwAAAAAHwAfAAAEpZDJSWm5NevNruegpIyShzFGGlJj25loqq5MS76FJM+rrWg7A010A/I2geSwMmhWktClpEmlQJVSqnNyDUgZ2sET+61+v4D0uYJoM9LwtaRNh6vl9LYdIGfkEW93fXR9QwuHaweKFYeNX4qQFI2IUpCLE5MLj5aMlJsHIQSiHAmlS6KoGqWrQ6ijDAKxEqumNK4EsLGytAmnr7qyDKxywAKFFbpDEQAh+QQFAAAMACwAAAAAHwAfAAAEpZDJSam6NevNruegFIyShzFFGlJj25loqq5MS76KJM+rHWi7Ak10A/I2gOSwYmhWktClpEmlQJVSqnNyBUgZWsMT+61+v4v0uTJoM9LwtaRNh6vl9LZ9IWfkB293fXR9QwSHawiKFYeNX4qQFI2IUpCLE5MEj5aMlJsIIQKiHAelS6KoGqWrQ6ijDAmxEqumNK4CsLGytAenr7qyDKxywAmFFbpDEQAh+QQFAAAMACwAAAAAHwAfAAAEpZDJSWm4NevNruegBIyShzFKGlJj25loqq5MS76BJM+rDWg7BU10A/I2i+SwUmhWktClpEmlQJVSqnNyXUgZ2sIT+61+v4T0uWJoM9LwtaRNh6vl9LadIGfkDW93fXR9QwKHawOKFYeNX4qQFI2IUpCLE5MCj5aMlJsDIQmiHAilS6KoGqWrQ6ijDAexEqumNK4JsLGytAinr7qyDKxywAeFFbpDEQAh+QQFAAAMACwAAAAAHwAfAAAEpZDJSSm4NevNruegtIyShzFBGlJj25loqq5MS76AJM+rvWi7AE10A/I2hOSwomhWktClpEmlQJVSqnNyJUgZWsUT+61+v4L0uVJoM9LwtaRNh6vl9LZdIGfkC293fXR9QwmHawaKFYeNX4qQFI2IUpCLE5MJj5aMlJsGIQeiHAOlS6KoGqWrQ6ijDAixEqumNK4HsLGytAOnr7qyDKxywAiFFbpDEQAh+QQFAAAMACwAAAAAHwAfAAAEpZDJSem6NevNruegRIyShzFAGlJj25loqq5MS76LJM+rTWg7AE10A/I2guSwEmhWktClpEmlQJVSqnNyFUgZ2sAT+61+v4n0uaJoM9LwtaRNh6vl9LY9IWfkFW93fXR9QweHawWKFYeNX4qQFI2IUpCLE5MHj5aMlJsFIQiiHAalS6KoGqWrQ6ijDAOxEqumNK4IsLGytAanr7qyDKxywAOFFbpDEQAh+QQFAAAMACwAAAAAHwAfAAAEpZDJSSm5NevNruegJIyShzFLGlJj25loqq5MS76EJM+rLWi7BU10A/I2ieSwAmhWktClpEmlQJVSqnNyTUgZWsAT+61+v4f0uRJoM9LwtaRNh6vl9Lb9IGfkA293fXR9QwiHawqKFYeNX4qQFI2IUpCLE5MIj5aMlJsKIQOiHAWlS6KoGqWrQ6ijDAaxEqumNK4DsLGytAWnr7qyDKxywAaFFbpDEQAh+QQFAAAMACwAAAAAHwAfAAAEpZDJSam4NevNrueglIyShzFEGlJj25loqq5MS76CJM+rnWg7Ak10A/I2h+SwsmhWktClpEmlQJVSqnNyPUgZ2sUT+61+v4j0uQJoM9LwtaRNh6vl9LYdIWfkAW93fXR9QwOHawGKFYeNX4qQFI2IUpCLE5MDj5aMlJsBIQaiHAqlS6KoGqWrQ6ijDAWxEqumNK4GsLGytAqnr7qyDKxywAWFFbpDEQAh+QQFAAAMACwAAAAAHwAfAAAEpZDJSWm6NevNruegdIyShzFCGlJj25loqq5MS76JJM+rfWg7AU10A/I2iOSwQmhWktClpEmlQJVSqnNyRUgZWsIT+61+v4P0ubJoM9LwtaRNh6vl9LZ9IGfkF293fXR9QwaHawCKFYeNX4qQFI2IUpCLE5MGj5aMlJsAIQWiHAGlS6KoGqWrQ6ijDAqxEqumNK4FsLGytAGnr7qyDKxywAqFFbpDEQAh+QQFAAAMACwAAAAAHwAfAAAEpZDJSem5NevNrueghIyShzFJGlJj25loqq5MS76HJM+rjWi7BE10A/I2g+SwImhWktClpEmlQJVSqnNyHUgZWsET+61+v4b0uUJoM9LwtaRNh6vl9LbdIGfkCW93fXR9QwWHawuKFYeNX4qQFI2IUpCLE5MFj5aMlJsLIQqiHAClS6KoGqWrQ6ijDAGxEqumNK4KsLGytACnr7qyDKxywAGFFbpDEQAh+QQFAAAMACwAAAAAHwAfAAAEpZDJSSm6NevNruegNIyShzFHGlJj25loqq5MS76IJM+rPWi7A010A/I2huSwkmhWktClpEmlQJVSqnNyNUgZ2sQT+61+v4X0uSJoM9LwtaRNh6vl9La9IGfkBW93fXR9QwqHawSKFYeNX4qQFI2IUpCLE5MKj5aMlJsEIQGiHAulS6KoGqWrQ6ijDACxEqumNK4BsLGytAunr7qyDKxywACFFbpDEQAh+QQFAAAMACwAAAAAHwAfAAAEpZDJSem4NevNruegZIyShzFIGlJj25loqq5MS76DJM+rbWg7BE10A/I2heSwcmhWktClpEmlQJVSqnNyLUgZ2sMT+61+v4r0uZJoM9LwtaRNh6vl9LZdIWfkE293fXR9QwGHawKKFYeNX4qQFI2IUpCLE5MBj5aMlJsCIQCiHASlS6KoGqWrQ6ijDAuxEqumNK4AsLGytASnr7qyDKxywAuFFbpDEQAh+QQFAAAMACwAAAAAHwAfAAAEpZDJSam5NevNruegVIyShzFDGlJj25loqq5MS76GJM+rXWi7AU10A/I2iuSwgmhWktClpEmlQJVSqnNyVUgZWsQT+61+v4H0uXJoM9LwtaRNh6vl9LY9IGfkD293fXR9QwCHawmKFYeNX4qQFI2IUpCLE5MAj5aMlJsJIQuiHAKlS6KoGqWrQ6ijDASxEqumNK4LsLGytAKnr7qyDKxywASFFbpDEQA7LyogIHx4R3YwMHwwMWE1NzgzY2FlMGQzN2NhZjVjZWE0OGIzYTAxNjk0ZSAqLw=="
 
 /***/ },
-/* 685 */
+/* 686 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -51259,7 +51452,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 686 */
+/* 687 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -51270,21 +51463,33 @@
 		value: true
 	});
 
-	__webpack_require__(682);
+	__webpack_require__(683);
 
 	var _react = __webpack_require__(138);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _DateBox = __webpack_require__(687);
+	var _DateBox = __webpack_require__(688);
 
 	var _DateBox2 = _interopRequireDefault(_DateBox);
 
+	var _dateMixin = __webpack_require__(689);
+
+	var _dateMixin2 = _interopRequireDefault(_dateMixin);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	/**
+	* 一个简单的日历插件
+	* @author : Mantou
+	* @date : 2016-03-01
+	*/
+
 
 	var DateInput = _react2.default.createClass({
 		displayName: 'DateInput',
 
+		mixins: [_dateMixin2.default],
 		getInitialState: function getInitialState() {
 			//获取当前时间
 			var myDate = new Date();
@@ -51292,8 +51497,8 @@
 				year: myDate.getFullYear(),
 				month: 1 + parseInt(myDate.getMonth()),
 				day: myDate.getDate(),
-				placeholder: this.props.placeholder,
-				defaultValue: this.props.defaultValue //默认值，可以是now，null
+				defaultValue: this.props.defaultValue, //默认值，可以是now，null
+				style: {}
 			};
 		},
 
@@ -51310,15 +51515,14 @@
 
 		//选择日历后，设置input ,将该函数传递到子对象
 		handleChange: function handleChange(e, obj) {
-			this.setState({
-				defaultValue: 'static'
-			});
 			//console.log(e);
+			console.log(obj);
 			if (obj != undefined) {
 				this.setState({
 					day: obj.day,
 					year: obj.year,
-					month: obj.month
+					month: obj.month,
+					defaultValue: 'static'
 				});
 			} else {
 				this.setState({
@@ -51329,74 +51533,99 @@
 
 		//点击input按钮后
 		handleClick: function handleClick(e) {
-			$(".mt-date-yearMonth").show().siblings('div').hide();
-			$(".mt-date-months").hide().removeClass('mt-date-animate');
-			$(".mt-date-years").hide().removeClass('mt-date-animate');
+			var $input = $(e.target);
+			var $win = $(window);
+			var $main = $input.siblings(".mt-date-main");
 			if (e.target.value != "") {
 				//分离value
-				var arr = e.target.value.split("/");
-				console.log(arr);
+				var arr = $input.attr('data-date').split("/");
+				//console.log(arr);
 				this.setState({
 					year: arr[0],
 					month: arr[1],
 					day: arr[2]
 				});
 			}
-			var $main = $(e.target).siblings(".mt-date-main");
+
+			//碰撞检测 高：250，宽：240
+			var top = $input.offset().top - $win.scrollTop(),
+			    left = $input.offset().left - $win.scrollLeft(),
+			    inputHei = $input.height(),
+			    inputWid = $input.width(),
+			    winHei = $win.height(),
+			    winWid = $win.width();
+
+			//超出情况
+			var topMark = false,
+			    leftMark = false;
+			if (top + inputHei + 250 > winHei) {
+				topMark = true;
+			}
+			if (left + inputWid + 240 > winWid) {
+				leftMark = true;
+			}
+			if (leftMark && topMark) {
+				this.setState({
+					style: { top: -250, right: 0 }
+				});
+			} else if (topMark && !leftMark) {
+				this.setState({
+					style: { top: -250 }
+				});
+			} else if (!topMark && leftMark) {
+				this.setState({
+					style: { right: 0 }
+				});
+			} else {
+				this.setState({
+					style: {}
+				});
+			}
+
 			$main.show();
-
-			$(document).off("click.DateInput").on("click.DateInput", function (e) {
+			$(document).one("click.DateInput", function (e) {
 				e.stopPropagation();
-
 				if (!$(e.target).closest('.mt-date-main')[0]) {
 					$main.hide();
-					$(this).off("click.DateInputs");
 				}
 			});
-			e.stopPropagation();
 		},
 
 		//渲染
 		render: function render() {
-			if (this.state.defaultValue == "null") {
-				var val = "";
-			} else {
-				var val = this.state.year + '/' + this.state.month + '/' + this.state.day;
-			}
+			//规范数据格式
+			var format = this.format(this.state); //this.state.year+'/'+this.state.month+'/'+this.state.day;
+			var val = this.state.defaultValue == "null" ? "" : format.val;
+			var formatShow = format.formatShow;
 			return _react2.default.createElement(
 				'div',
 				{ className: 'mt-input mt-date mt-icon-input' },
-				_react2.default.createElement('input', { style: { width: this.props.width }, readOnly: true, onClick: this.handleClick, placeholder: this.props.placeholder == undefined ? "日期..." : this.props.placeholder, onChange: this.handleChange, type: 'text', value: val }),
+				_react2.default.createElement('input', { style: { width: this.props.width }, readOnly: true, 'data-date': this.state.year + '/' + this.state.month + '/' + this.state.day, onClick: this.handleClick, placeholder: this.props.placeholder == undefined ? "日期..." : this.props.placeholder, onChange: this.handleChange, type: 'text', value: val }),
 				_react2.default.createElement(
 					'a',
 					{ style: { zIndex: 9 }, className: 'mt-iconbtn' },
 					_react2.default.createElement('i', { className: 'iconfont icon-date' })
 				),
-				_react2.default.createElement(_DateBox2.default, { changeEvent: this.handleChange, year: this.state.year, month: this.state.month, day: this.state.day })
+				_react2.default.createElement(_DateBox2.default, { formatShow: formatShow, style: this.state.style, changeEvent: this.handleChange, year: this.state.year, month: this.state.month, day: this.state.day })
 			);
 		}
 	});
 
 	//配置信息
-	/**
-	* 一个简单的日历插件
-	* @author : Mantou
-	* @date : 2016-03-01
-	*/
 	exports.default = DateInput;
 
 	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(658); if (makeExportsHot(module, __webpack_require__(138))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "DateInput.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 687 */
+/* 688 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
 
 	'use strict';
 
-	__webpack_require__(682);
+	__webpack_require__(683);
 
 	var _react = __webpack_require__(138);
 
@@ -51469,102 +51698,111 @@
 				year: this.props.year,
 				month: this.props.month,
 				day: this.props.day,
-				yearArr: []
+				yearArr: [],
+				dataShow: {},
+				selectMark: 'ymd' //ymd,md,ymd
 			};
 		},
 
 		//hide DIV
 		hideDiv: function hideDiv() {
-			if (this.props.mark == "start") {
-				return;
-			} else if (this.props.mark == "end") {
-				//$(this.refs.myDate).parent(".mt-dates").hide();
+			console.log('hideDiv');
+			if (this.props.dataMark == "start" || this.props.dataMark == "end") {
 				return;
 			} else {
 				$(this.refs.myDate).hide();
-				//...
 			}
 		},
 
 		//点击后触发
 		clickDay: function clickDay(e, mark) {
+			console.log('clickDay');
 			var obj = MtDate.addAndDelOneMonth(this.state.year, this.state.month, mark);
 			var data = {
 				day: e.target.text,
 				year: obj.y,
-				month: obj.m,
-				mark: this.props.mark
+				month: obj.m
 			};
-			this.props.changeEvent(e, data);
+			this.propsChangeEvent(e, data);
 			this.hideDiv();
 		},
 
 		//点击事件
 		handleClickPrev: function handleClickPrev(e) {
+			console.log('handleClickPrev');
 			//console.log("点击上个月的：",e.target.text);
 			this.clickDay(e, 'del');
 		},
 		handleClickThis: function handleClickThis(e) {
+			console.log('handleClickThis');
 			//console.log("点击这个月的：",e.target.text);
 			this.clickDay(e, 'null');
 		},
 		handleClickNext: function handleClickNext(e) {
+			console.log('handleClickNext');
 			//console.log("点击下个月的：",e.target.text);
 			this.clickDay(e, 'add');
 		},
-
 		//点击上一年,点击下一年
 		handleClickPrevYear: function handleClickPrevYear(e) {
+			console.log('handleClickPrevYear');
+			var year = this.state.year - 1;
 			this.setState({
-				year: this.state.year - 1
+				year: year
 			});
+			this.propsChangeEvent(e, { year: year });
+			this.resetYear();
 		},
 		handleClickNextYear: function handleClickNextYear(e) {
+			console.log('handleClickNextYear');
+			var year = parseInt(this.state.year) + 1;
 			this.setState({
-				year: parseInt(this.state.year) + 1
+				year: year
 			});
+			this.propsChangeEvent(e, { year: year });
+			this.resetYear();
 		},
-
 		//点击上个月，点击下个月
 		handleClickPrevMonth: function handleClickPrevMonth(e) {
+			console.log('handleClickPrevMonth');
 			var obj = MtDate.addAndDelOneMonth(this.state.year, this.state.month, 'del');
 			this.setState({
 				month: obj.m,
 				year: obj.y
 			});
+			var data = {
+				month: obj.m,
+				year: obj.y
+			};
+			this.propsChangeEvent(e, data);
 		},
 		handleClickNextMonth: function handleClickNextMonth(e) {
+			console.log('handleClickNextMonth');
 			var obj = MtDate.addAndDelOneMonth(this.state.year, this.state.month, 'add');
 			this.setState({
 				month: obj.m,
 				year: obj.y
 			});
+			var data = {
+				month: obj.m,
+				year: obj.y
+			};
+			this.propsChangeEvent(e, data);
 		},
-
-		//选择显示
-		hideWitch: function hideWitch(str) {
-			$(this.refs.yearMonth).hide();
-			$(this.refs.year).hide();
-			$(this.refs.month).hide();
-
-			if (str == 'month') {
-				$(this.refs.month).show();
-			} else if (str == 'year') {
-				$(this.refs.year).show();
-			} else {
-				$(this.refs.yearMonth).show();
-			}
-		},
-
 		//点击年月的 title
 		handleClickYandM: function handleClickYandM(e) {
-			this.hideWitch('month');
-			$(this.refs.dateMonths).show(0).addClass('mt-date-animate');
+			console.log('handleClickYandM');
+			this.setState({
+				dataShow: {
+					year: false,
+					month: true,
+					day: false
+				}
+			});
 		},
-		//点击月
-		handleClickM: function handleClickM(e) {
 
-			//根据当前的year 前 12年，后 12年 初始化数据
+		//根据当前的year 前 12年，后 12年 初始化数据
+		resetYear: function resetYear() {
 			var y = this.state.year;
 			var arr = [];
 			for (var i = 12; i > 0; i--) {
@@ -51573,42 +51811,94 @@
 			for (var i = 0; i < 12; i++) {
 				arr.push(i + parseInt(y));
 			};
-			//console.log(arr);
 			this.setState({
 				yearArr: arr
 			});
-
-			this.hideWitch('year');
-			$(this.refs.dateYears).show(0).addClass('mt-date-animate');
 		},
+
+		//点击月
+		handleClickM: function handleClickM(e) {
+			console.log('handleClickM');
+			this.resetYear();
+			this.setState({
+				dataShow: {
+					year: true,
+					month: false,
+					day: false
+				}
+			});
+		},
+
+		propsChangeEvent: function propsChangeEvent(e, data) {
+
+			var newData = {
+				year: this.state.year,
+				month: this.state.month,
+				day: this.state.day
+			};
+
+			if (data.year != undefined) {
+				newData.year = data.year;
+			}
+			if (data.month != undefined) {
+				newData.month = data.month;
+			}
+			if (data.day != undefined) {
+				newData.day = data.day;
+			}
+
+			if (data == undefined) {
+				newData = undefined;
+			}
+
+			this.props.changeEvent(e, newData, this.props.dataMark);
+		},
+
 		//选择月份
 		handleClickMonth: function handleClickMonth(e) {
-			this.hideWitch('yearMonth');
+			console.log('handleClickMonth');
+			if (this.state.selectMark == 'ym') {
+				this.setState({
+					month: $(e.target).data("val")
+				});
+				this.propsChangeEvent(e, { month: $(e.target).data("val") });
+				this.hideDiv();
+				return;
+			}
 			this.setState({
-				month: $(e.target).data("val")
+				month: $(e.target).data("val"),
+				dataShow: {
+					year: false,
+					month: false,
+					day: true
+				}
 			});
-			var $dateMonths = $(this.refs.dateMonths);
-			$dateMonths.removeClass('mt-date-animate');
-			setTimeout(function () {
-				$dateMonths.hide();
-			}, 300);
 		},
 		//选择年份
 		handleClickYear: function handleClickYear(e) {
+			console.log('handleClickYear');
+			//只选择年
+			var year = $(e.target).text();
+			if (this.state.selectMark == 'y') {
+				this.propsChangeEvent(e, { year: year });
+				this.hideDiv();
+				return;
+			}
 
-			this.hideWitch('month');
 			this.setState({
-				year: $(e.target).text()
+				year: year,
+				dataShow: {
+					year: false,
+					month: true,
+					day: false
+				}
 			});
-			var $dateYears = $(this.refs.dateYears);
-			$dateYears.removeClass('mt-date-animate');
-			setTimeout(function () {
-				$dateYears.hide();
-			}, 300);
+			this.propsChangeEvent(e, { year: year });
 		},
 		//日历更新后
 		componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
-			//console.log("我擦，更新咯~");
+			console.log('componentWillReceiveProps');
+			//this.resetYear();
 			this.setState({
 				year: nextProps.year,
 				month: nextProps.month,
@@ -51618,21 +51908,22 @@
 
 		//点击今天
 		handleClickNowDay: function handleClickNowDay(e) {
+			console.log('handleClickNowDay');
 			//获取当前时间
 			var myDate = new Date();
 			var data = {
 				year: myDate.getFullYear(),
 				month: 1 + parseInt(myDate.getMonth()),
-				day: myDate.getDate(),
-				mark: this.props.mark
+				day: myDate.getDate()
 			};
-			this.props.changeEvent(e, data);
+			this.propsChangeEvent(e, data);
 			this.hideDiv();
 		},
 
 		//点击清除
 		handleClickClear: function handleClickClear(e) {
-			this.props.changeEvent(e, undefined);
+			console.log('handleClickClear');
+			this.propsChangeEvent(e, undefined);
 			this.hideDiv();
 		},
 
@@ -51703,15 +51994,61 @@
 			);
 		},
 
+		//这里开始决定渲染哪些
+		componentWillMount: function componentWillMount() {
+			console.log('componentWillMount');
+
+			//可选择 年，月
+			if (!this.props.formatShow.day && this.props.formatShow.month && this.props.formatShow.year) {
+				this.setState({
+					selectMark: 'ym',
+					dataShow: {
+						year: false,
+						month: true,
+						day: false
+					}
+				});
+			}
+
+			//可选择 年
+			if (!this.props.formatShow.day && !this.props.formatShow.month && this.props.formatShow.year) {
+				this.handleClickM(); //重置年li
+				this.setState({
+					selectMark: 'y',
+					dataShow: {
+						year: true,
+						month: false,
+						day: false
+					}
+				});
+			}
+
+			//可选 年，月，日
+			if (this.props.formatShow.day && this.props.formatShow.month && this.props.formatShow.year) {
+				var year = false;
+				var month = false;
+				var day = true;
+				this.setState({
+					selectMark: 'ymd',
+					dataShow: {
+						year: false,
+						month: false,
+						day: true
+					}
+				});
+			}
+		},
+
 		//渲染
 		render: function render() {
 			var prevDay = MtDate.addAndDelOneMonth(this.state.year, this.state.month, 'del'),
 			    nowDay = MtDate.addAndDelOneMonth(this.state.year, this.state.month),
 			    nextDay = MtDate.addAndDelOneMonth(this.state.year, this.state.month, 'add');
 			var arr = ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'];
+
 			return _react2.default.createElement(
 				'div',
-				{ ref: 'myDate', className: 'mt-date-main ' + (this.props.cName != undefined ? this.props.cName : "") },
+				{ ref: 'myDate', style: this.props.style, className: 'mt-date-main ' + (this.props.cName != undefined ? this.props.cName : "") },
 				_react2.default.createElement(
 					'div',
 					{ className: 'mt-date-title' },
@@ -51723,11 +52060,11 @@
 					_react2.default.createElement(
 						'a',
 						{ onClick: this.handleClickClear, href: 'javascript:;', className: 'mt-btn-blue mt-btn-sm mt-date-clear' },
-						this.props.mark != undefined ? "" : "清除"
+						this.props.dataMark != undefined ? "" : "清除"
 					),
 					_react2.default.createElement(
 						'div',
-						{ className: 'mt-date-yearMonth', ref: 'yearMonth' },
+						{ className: 'mt-date-day', style: { display: this.state.dataShow.day ? 'block' : 'none' } },
 						_react2.default.createElement(
 							'a',
 							{ onClick: this.handleClickPrevMonth, className: 'mt-btn-blue mt-btn-sm', href: 'javascript:;' },
@@ -51748,7 +52085,7 @@
 					),
 					_react2.default.createElement(
 						'div',
-						{ className: 'mt-date-month', ref: 'month' },
+						{ className: 'mt-date-month', style: { display: this.state.dataShow.month ? 'block' : 'none' } },
 						_react2.default.createElement(
 							'a',
 							{ onClick: this.handleClickPrevMonth, className: 'mt-btn-blue mt-btn-sm', href: 'javascript:;' },
@@ -51767,7 +52104,7 @@
 					),
 					_react2.default.createElement(
 						'div',
-						{ className: 'mt-date-year', ref: 'year' },
+						{ className: 'mt-date-year', style: { display: this.state.dataShow.year ? 'block' : 'none' } },
 						_react2.default.createElement(
 							'a',
 							{ onClick: this.handleClickPrevYear, className: 'mt-btn-blue mt-btn-sm', href: 'javascript:;' },
@@ -51790,7 +52127,7 @@
 					{ className: 'mt-date-body' },
 					_react2.default.createElement(
 						'div',
-						{ className: 'mt-date-days clearfix' },
+						{ className: 'mt-date-days clearfix', style: { display: this.state.dataShow.day ? 'block' : 'none' } },
 						_react2.default.createElement(
 							'ul',
 							{ className: 'mt-date-week' },
@@ -51838,7 +52175,7 @@
 					),
 					_react2.default.createElement(
 						'div',
-						{ ref: 'dateMonths', className: 'mt-date-months' },
+						{ className: 'mt-date-months', style: { display: this.state.dataShow.month ? 'block' : 'none' } },
 						_react2.default.createElement(
 							'ul',
 							null,
@@ -51853,7 +52190,7 @@
 					),
 					_react2.default.createElement(
 						'div',
-						{ ref: 'dateYears', className: 'mt-date-years' },
+						{ className: 'mt-date-years', style: { display: this.state.dataShow.year ? 'block' : 'none' } },
 						_react2.default.createElement(
 							'ul',
 							null,
@@ -51878,7 +52215,83 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 688 */
+/* 689 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	/**
+	* 一个简单的日历插件
+	* @author : Mantou
+	* @date : 2016-03-01
+	*/
+	var DateInput = {
+		format: function format(data) {
+			if (this.props.format != undefined) {
+
+				var yearLen = this.props.format.indexOf('y') == -1 ? 0 : this.props.format.match(/[y]/ig).length;
+				var monthLen = this.props.format.indexOf('m') == -1 ? 0 : this.props.format.match(/[m]/ig).length;
+				var dayLen = this.props.format.indexOf('d') == -1 ? 0 : this.props.format.match(/[d]/ig).length;
+
+				var val = this.props.format;
+				if (yearLen > 4 || monthLen > 2 || dayLen > 2) {
+					console.error('format 格式错误，请参考 yyyy-mm-dd');
+					return;
+				}
+				var year = data.year.toString().substr(4 - yearLen, yearLen);
+				var y = function y() {
+					var str = '';
+					for (var i = 0; i < yearLen; i++) {
+						str += 'y';
+					}
+					return str;
+				};
+				val = val.replace(y(), year);
+
+				if (monthLen == 2) {
+					var month = data.month < 10 ? '0' + parseInt(data.month, 10) : data.month;
+					val = val.replace('mm', month);
+				} else {
+					var month = data.month;
+					val = val.replace('m', month);
+				}
+				if (dayLen == 2) {
+					var day = data.day < 10 ? '0' + parseInt(data.day, 10) : data.day;
+					val = val.replace('dd', day);
+				} else {
+					var day = data.day;
+					val = val.replace('d', day);
+				}
+			} else {
+				var yearLen = 4;
+				var monthLen = 2;
+				var dayLen = 2;
+				var val = data.year + '/' + data.month + '/' + data.day;
+			}
+			return {
+				val: val,
+				formatShow: {
+					year: yearLen == 0 ? false : true,
+					month: monthLen == 0 ? false : true,
+					day: dayLen == 0 ? false : true
+				}
+			};
+		}
+	};
+
+	//配置信息
+	exports.default = DateInput;
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(658); if (makeExportsHot(module, __webpack_require__(138))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "dateMixin.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
+
+/***/ },
+/* 690 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -51889,170 +52302,263 @@
 		value: true
 	});
 
-	__webpack_require__(682);
+	__webpack_require__(683);
 
 	var _react = __webpack_require__(138);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _DateBox = __webpack_require__(687);
+	var _DateBox = __webpack_require__(688);
 
 	var _DateBox2 = _interopRequireDefault(_DateBox);
 
+	var _dateMixin = __webpack_require__(689);
+
+	var _dateMixin2 = _interopRequireDefault(_dateMixin);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var DateInputs = _react2.default.createClass({
-		displayName: 'DateInputs',
+	/**
+	* 一个简单的日历插件
+	* @author : Mantou
+	* @date : 2016-03-01
+	*/
 
-		//初始化
+
+	var DateInput = _react2.default.createClass({
+		displayName: 'DateInput',
+
+		mixins: [_dateMixin2.default],
 		getInitialState: function getInitialState() {
-
-			//获取当前时间
-			if (this.props.start == undefined) {
-				var myDate = new Date();
-				var start = myDate.getFullYear() + "/" + (1 + parseInt(myDate.getMonth())) + "/" + myDate.getDate();
-			} else {
-				var start = this.props.start;
-			}
-			//end
-			if (this.props.end == undefined) {
-				var end = myDate.getFullYear() + "/" + (1 + parseInt(myDate.getMonth())) + "/" + myDate.getDate();
-			} else {
-				var end = this.props.end;
-			}
-			var s_arr = start.split("/");
-			var e_arr = end.split("/");
-
-			//对比起始，结束日期
-			e_arr = this.compareDate(s_arr, e_arr);
-
+			var myDate = new Date();
 			return {
-				placeholder: this.props.placeholder,
-				defaultValue: this.props.defaultValue, //默认值
-				s_year: s_arr[0],
-				s_month: s_arr[1],
-				s_day: s_arr[2],
-				e_year: e_arr[0],
-				e_month: e_arr[1],
-				e_day: e_arr[2],
-				width: this.props.width == undefined ? 200 : this.props.width
+				start: {
+					year: myDate.getFullYear(),
+					month: 1 + parseInt(myDate.getMonth()),
+					day: myDate.getDate()
+				},
+				end: {
+					year: myDate.getFullYear(),
+					month: 1 + parseInt(myDate.getMonth()),
+					day: myDate.getDate()
+				},
+				inputShow: false,
+				haveValue: false,
+				style: { top: 'auto', right: 'auto' }
 			};
 		},
+		componentWillMount: function componentWillMount() {
+			if (this.props.start == undefined || this.props.end == undefined) {
+				console.log('没配置起始时间');
+				this.setState({
+					haveValue: false
+				});
+			} else {
+				if (this.props.start == 'now') {
+					var myDate = new Date();
+					var start = [myDate.getFullYear(), 1 + parseInt(myDate.getMonth()), myDate.getDate()];
+				} else {
+					var start = this.props.start.split('/');
+				}
+				if (this.props.end == 'now') {
+					var myDate = new Date();
+					var end = [myDate.getFullYear(), 1 + parseInt(myDate.getMonth()), myDate.getDate()];
+				} else {
+					var end = this.props.end.split('/');
+				}
+
+				this.setState({
+					haveValue: true,
+					start: {
+						year: start[0],
+						month: start[1],
+						day: start[2]
+					},
+					end: {
+						year: end[0],
+						month: end[1],
+						day: end[2]
+					}
+				});
+			}
+		},
+
 
 		//比较日期,返回最大的那个
-		compareDate: function compareDate(s_arr, e_arr) {
-			var arr = [];
-
+		compareDate: function compareDate(start, end) {
+			var s_arr = start.split('/');
+			var e_arr = end.split('/');
 			//如果结束大与开始，结束 = 开始
 			var start = s_arr[0] + "" + (parseInt(s_arr[1], 10) < 10 ? "0" + parseInt(s_arr[1], 10) : parseInt(s_arr[1], 10)) + (parseInt(s_arr[2], 10) < 10 ? "0" + parseInt(s_arr[2], 10) : parseInt(s_arr[2], 10));
 			var end = e_arr[0] + "" + (parseInt(e_arr[1], 10) < 10 ? "0" + parseInt(e_arr[1], 10) : parseInt(e_arr[1], 10)) + (parseInt(e_arr[2], 10) < 10 ? "0" + parseInt(e_arr[2], 10) : parseInt(e_arr[2], 10));
 
 			if (parseInt(start, 10) > parseInt(end, 10)) {
-				arr = s_arr;
+				return {
+					mark: 'startMax',
+					arr: s_arr
+				};
 			} else {
-				arr = e_arr;
+				return {
+					mark: 'endMax',
+					arr: e_arr
+				};
 			}
-			return arr;
 		},
 
-		// //初始化参数
-		componentWillMount: function componentWillMount() {
-			if (this.props.year != undefined) {
+
+		//选择时间后
+		handleChange: function handleChange(e, obj, dataMark) {
+			console.log(obj, dataMark);
+			//console.log(arr)
+			var setCommon = function () {
 				this.setState({
-					day: this.props.day,
-					year: this.props.year,
-					month: this.props.month
+					start: {
+						year: obj.year,
+						month: obj.month,
+						day: obj.day
+					},
+					end: {
+						year: obj.year,
+						month: obj.month,
+						day: obj.day
+					}
 				});
-			}
-		},
+			}.bind(this);
 
-		//选择日历后，设置input ,将该函数传递到子对象
-		handleChange: function handleChange(e, obj) {
 			this.setState({
-				defaultValue: 'static'
+				haveValue: true
 			});
-			//console.log(obj);
-			if (obj != undefined) {
-				if (obj.mark == 'start') {
-					var arr = this.compareDate([obj.year, obj.month, obj.day], [this.state.e_year, this.state.e_month, this.state.e_day]);
-					this.setState({
-						s_year: obj.year,
-						s_month: obj.month,
-						s_day: obj.day,
-						e_year: arr[0],
-						e_month: arr[1],
-						e_day: arr[2]
-					});
-				} else if (obj.mark == 'end') {
-					var arr = this.compareDate([this.state.s_year, this.state.s_month, this.state.s_day], [obj.year, obj.month, obj.day]);
-					this.setState({
-						e_year: arr[0],
-						e_month: arr[1],
-						e_day: arr[2]
-					});
+
+			//设置开始时间
+			if (dataMark == 'start') {
+				var max = this.compareDate(obj.year + '/' + obj.month + '/' + obj.day, $(this.refs.inputDom).attr('data-enddate'));
+				if (max.mark == 'startMax') {
+					setCommon();
 				} else {
-					//...
-				}
-			} else {
 					this.setState({
-						defaultValue: 'null'
+						start: {
+							year: obj.year,
+							month: obj.month,
+							day: obj.day
+						}
 					});
 				}
+			} else {
+				//设置结束时间
+				var max = this.compareDate($(this.refs.inputDom).attr('data-startdate'), obj.year + '/' + obj.month + '/' + obj.day);
+				if (max.mark == 'startMax') {
+					setCommon();
+				} else {
+					this.setState({
+						end: {
+							year: obj.year,
+							month: obj.month,
+							day: obj.day
+						}
+					});
+				}
+			}
+
+			//设置区间class
 		},
 
-		//点击input按钮后
-		handleClick: function handleClick(e) {
-			$(".mt-date-yearMonth").show().siblings('div').hide();
-			$(".mt-date-months").hide().removeClass('mt-date-animate');
-			$(".mt-date-years").hide().removeClass('mt-date-animate');
-			if (e.target.value != "") {
-				//分离value
-				var arr = e.target.value.split("~");
-				//console.log(arr);
-				var s_arr = arr[0].split("/");
-				var e_arr = arr[1].split("/");
-				//如果结束大与开始，结束 = 开始
-				e_arr = this.compareDate(s_arr, e_arr);
+
+		//点击输入框
+		handleClickInput: function handleClickInput(e) {
+
+			if (this.state.inputShow) {
 				this.setState({
-					s_year: s_arr[0],
-					s_month: s_arr[1],
-					s_day: s_arr[2],
-					e_year: e_arr[0],
-					e_month: e_arr[1],
-					e_day: e_arr[2]
+					inputShow: false
+				});
+			} else {
+				this.setState({
+					inputShow: true
+				});
+				$(document).one("click.DateInputs", function (e) {
+					e.stopPropagation();
+					if (!$(e.target).closest('.mt-date-main')[0]) {
+						this.setState({
+							inputShow: false
+						});
+					}
+				}.bind(this));
+			}
+
+			var $input = $(e.target);
+			var $win = $(window);
+			var $main = $input.closest(".mt-dates");
+
+			//碰撞检测 高：250，宽：240
+			var top = $input.offset().top - $win.scrollTop(),
+			    left = $input.offset().left - $win.scrollLeft(),
+			    inputHei = $input.height(),
+			    inputWid = $input.width(),
+			    winHei = $win.height(),
+			    winWid = $win.width();
+
+			//超出情况
+			var topMark = false,
+			    leftMark = false;
+			if (top + inputHei + 250 > winHei) {
+				topMark = true;
+			}
+			if (left + inputWid + 240 > winWid) {
+				leftMark = true;
+			}
+			if (leftMark && topMark) {
+				this.setState({
+					style: { top: -250, right: 0 }
+				});
+			} else if (topMark && !leftMark) {
+				this.setState({
+					style: { top: -250, right: 'auto' }
+				});
+			} else if (!topMark && leftMark) {
+				this.setState({
+					style: { top: 'auto', right: 0 }
+				});
+			} else {
+				this.setState({
+					style: { top: 'auto', right: 'auto' }
 				});
 			}
-			var $dates = $(e.target).siblings('.mt-dates');
-			$dates.show().find(".mt-date-main").show();
-
-			//点击后隐藏
-			$(document).off("click.DateInputs").on("click.DateInputs", function (e) {
-				e.stopPropagation();
-				if (!$(e.target).closest('.mt-date-main')[0]) {
-					$dates.hide();
-					$(this).off("click.DateInputs");
-				}
-			});
-			e.stopPropagation();
+			// this.setState({
+			// 	haveValue:true
+			// })
 		},
-
-		handleClickClear: function handleClickClear(e) {
+		handleClickClear: function handleClickClear() {
 			this.setState({
-				defaultValue: 'null'
+				haveValue: false
 			});
 		},
+		handleClickYes: function handleClickYes() {
+			this.setState({
+				inputShow: false
+			});
+		},
+
 
 		//渲染
 		render: function render() {
-			if (this.state.defaultValue == "null") {
-				var val = "";
-			} else {
-				var val = this.state.s_year + '/' + this.state.s_month + '/' + this.state.s_day + "~" + this.state.e_year + '/' + this.state.e_month + '/' + this.state.e_day;
-			}
+			//规范数据格式
+			var formatStart = this.format(this.state.start); //this.state.year+'/'+this.state.month+'/'+this.state.day;
+			var formatEnd = this.format(this.state.end); //this.state.year+'/'+this.state.month+'/'+this.state.day;
+			var val = formatStart.val + (this.props.splitStr == undefined ? ' ~ ' : this.props.splitStr) + formatEnd.val;
+			var formatShow = formatStart.formatShow;
+
+			var style = this.state.style;
+			style['display'] = this.state.inputShow ? 'block' : 'none';
+
 			return _react2.default.createElement(
 				'div',
 				{ className: 'mt-input mt-date mt-icon-input' },
-				_react2.default.createElement('input', { style: { width: this.state.width }, readOnly: true, onClick: this.handleClick, placeholder: this.props.placeholder == undefined ? "日期..." : this.props.placeholder, onChange: this.handleChange, type: 'text', value: val }),
+				_react2.default.createElement('input', { ref: 'inputDom', onClick: this.handleClickInput,
+					style: { width: this.props.width }, readOnly: true,
+					'data-startdate': this.state.start.year + '/' + this.state.start.month + '/' + this.state.start.day,
+					'data-enddate': this.state.end.year + '/' + this.state.end.month + '/' + this.state.end.day,
+					placeholder: this.props.placeholder == undefined ? "日期..." : this.props.placeholder,
+					onChange: this.handleChange, type: 'text',
+					value: !this.state.haveValue ? '' : val }),
 				_react2.default.createElement(
 					'a',
 					{ style: { zIndex: 9 }, className: 'mt-iconbtn' },
@@ -52060,20 +52566,24 @@
 				),
 				_react2.default.createElement(
 					'div',
-					{ className: 'mt-dates' },
-					_react2.default.createElement(_DateBox2.default, { cName: 'mt-dates-start', changeEvent: this.handleChange, mark: 'start', year: this.state.s_year, month: this.state.s_month, day: this.state.s_day }),
-					_react2.default.createElement(_DateBox2.default, { cName: 'mt-dates-end', changeEvent: this.handleChange, mark: 'end', year: this.state.e_year, month: this.state.e_month, day: this.state.e_day }),
+					{ className: 'mt-dates', style: {
+							display: this.state.inputShow ? 'block' : 'none',
+							top: this.state.style.top,
+							right: this.state.style.right
+						} },
+					_react2.default.createElement(_DateBox2.default, { formatShow: formatShow, dataMark: 'start', changeEvent: this.handleChange, year: this.state.start.year, month: this.state.start.month, day: this.state.start.day }),
+					_react2.default.createElement(_DateBox2.default, { formatShow: formatShow, dataMark: 'end', changeEvent: this.handleChange, year: this.state.end.year, month: this.state.end.month, day: this.state.end.day }),
 					_react2.default.createElement(
 						'div',
 						{ className: 'mt-dates-bottom' },
 						_react2.default.createElement(
 							'a',
-							{ onClick: this.handleClickClear, className: 'mt-btn-grey mt-btn-sm', href: 'javascript:;' },
+							{ onClick: this.handleClickClear, className: 'cleardate', href: 'javascript:;' },
 							'清除'
 						),
 						_react2.default.createElement(
 							'a',
-							{ onClick: this.handleClickYes, className: 'mt-btn-green mt-btn-sm', href: 'javascript:;' },
+							{ onClick: this.handleClickYes, className: 'yesdate', href: 'javascript:;' },
 							'确定'
 						)
 					)
@@ -52083,18 +52593,13 @@
 	});
 
 	//配置信息
-	/**
-	* 一个简单的日历插件
-	* @author : Mantou
-	* @date : 2016-03-01
-	*/
-	exports.default = DateInputs;
+	exports.default = DateInput;
 
 	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(658); if (makeExportsHot(module, __webpack_require__(138))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "DateInputs.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 689 */
+/* 691 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -52201,7 +52706,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 690 */
+/* 692 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -52315,7 +52820,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 691 */
+/* 693 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -52332,7 +52837,7 @@
 
 	var _reactDom = __webpack_require__(247);
 
-	var _mtuiMixins = __webpack_require__(679);
+	var _mtuiMixins = __webpack_require__(680);
 
 	var _mtuiMixins2 = _interopRequireDefault(_mtuiMixins);
 
@@ -52455,7 +52960,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 692 */
+/* 694 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -52497,7 +53002,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 693 */
+/* 695 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -52514,7 +53019,7 @@
 
 	var _reactDom = __webpack_require__(247);
 
-	var _mtuiMixins = __webpack_require__(679);
+	var _mtuiMixins = __webpack_require__(680);
 
 	var _mtuiMixins2 = _interopRequireDefault(_mtuiMixins);
 
@@ -52683,7 +53188,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 694 */
+/* 696 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -52740,7 +53245,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 695 */
+/* 697 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -52755,7 +53260,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _index = __webpack_require__(681);
+	var _index = __webpack_require__(682);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -53107,7 +53612,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 696 */
+/* 698 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -53204,7 +53709,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 697 */
+/* 699 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -53260,7 +53765,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 698 */
+/* 700 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -53370,7 +53875,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 699 */
+/* 701 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -53557,7 +54062,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 700 */
+/* 702 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -53622,7 +54127,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 701 */
+/* 703 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -53666,7 +54171,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 702 */
+/* 704 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -53797,7 +54302,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 703 */
+/* 705 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -53862,7 +54367,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 704 */
+/* 706 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -53877,7 +54382,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _index = __webpack_require__(681);
+	var _index = __webpack_require__(682);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -53933,7 +54438,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 705 */
+/* 707 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -53948,7 +54453,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _index = __webpack_require__(681);
+	var _index = __webpack_require__(682);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -54085,7 +54590,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 706 */
+/* 708 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -54100,9 +54605,9 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _index = __webpack_require__(681);
+	var _index = __webpack_require__(682);
 
-	var _mtuiMixins = __webpack_require__(679);
+	var _mtuiMixins = __webpack_require__(680);
 
 	var _mtuiMixins2 = _interopRequireDefault(_mtuiMixins);
 
@@ -54163,7 +54668,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 707 */
+/* 709 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -54178,7 +54683,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _index = __webpack_require__(681);
+	var _index = __webpack_require__(682);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -54258,7 +54763,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 708 */
+/* 710 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -54273,7 +54778,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _index = __webpack_require__(681);
+	var _index = __webpack_require__(682);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -54317,7 +54822,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 709 */
+/* 711 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -54342,49 +54847,49 @@
 
 	var _setCode2 = _interopRequireDefault(_setCode);
 
-	var _index = __webpack_require__(681);
+	var _index = __webpack_require__(682);
 
-	var _PageListDom = __webpack_require__(710);
+	var _PageListDom = __webpack_require__(712);
 
 	var _PageListDom2 = _interopRequireDefault(_PageListDom);
 
-	var _ModalShowDom = __webpack_require__(711);
+	var _ModalShowDom = __webpack_require__(713);
 
 	var _ModalShowDom2 = _interopRequireDefault(_ModalShowDom);
 
-	var _PopupDom = __webpack_require__(712);
+	var _PopupDom = __webpack_require__(714);
 
 	var _PopupDom2 = _interopRequireDefault(_PopupDom);
 
-	var _TabDom = __webpack_require__(713);
+	var _TabDom = __webpack_require__(715);
 
 	var _TabDom2 = _interopRequireDefault(_TabDom);
 
-	var _DateDom = __webpack_require__(714);
+	var _DateDom = __webpack_require__(716);
 
 	var _DateDom2 = _interopRequireDefault(_DateDom);
 
-	var _TreeDom = __webpack_require__(715);
+	var _TreeDom = __webpack_require__(717);
 
 	var _TreeDom2 = _interopRequireDefault(_TreeDom);
 
-	var _LoadDom = __webpack_require__(716);
+	var _LoadDom = __webpack_require__(718);
 
 	var _LoadDom2 = _interopRequireDefault(_LoadDom);
 
-	var _PopoverDom = __webpack_require__(717);
+	var _PopoverDom = __webpack_require__(719);
 
 	var _PopoverDom2 = _interopRequireDefault(_PopoverDom);
 
-	var _SliderDom = __webpack_require__(718);
+	var _SliderDom = __webpack_require__(720);
 
 	var _SliderDom2 = _interopRequireDefault(_SliderDom);
 
-	var _ValidateDom = __webpack_require__(719);
+	var _ValidateDom = __webpack_require__(721);
 
 	var _ValidateDom2 = _interopRequireDefault(_ValidateDom);
 
-	var _UploadDom = __webpack_require__(720);
+	var _UploadDom = __webpack_require__(722);
 
 	var _UploadDom2 = _interopRequireDefault(_UploadDom);
 
@@ -54421,20 +54926,35 @@
 
 
 	// 下拉选择模块
-	var codeDateInput = 'import { DateInput } from \'../../MTUI/index\'\
-	#var data = {\
+	var codeDateInput = 'import { DateInput, DateInputs } from \'../../MTUI/index\'\
+	#var data = {  // DateInput\
 	#  width : \'200px\', //日历输入框宽度，默认是120px\
 	#  defaultValue : null, //可以是now，null \
 	#  placeholder : \'日期\', //内容为空时的描述 \
+	#  format : \'yyyy-mm-dd\', //日期格式 \
 	#  year : 2015, //年\
 	#  month : 3, //月\
 	#  day : 18 //日\
 	#}\
+	#var datas = {  //DateInputs\
+	#  width : \'200px\', //日历输入框宽度，默认是120px\
+	#  start : \'now\', //可以是now，null \ 开始时间 固定格式 eg：2016/8/4 这里注意下，必须用/分割\
+	#  end : \'now\', //可以是now，null \ 结束时间 固定格式 eg：2016/8/4\
+	#  placeholder : \'日期\', //内容为空时的描述 \
+	#  format : \'yyyy年mm月dd\', //日期格式 \
+	#  splitStr : \' 至 \' //日期分割符 \
+	#}\
 	#render:\
-	#\
-	#<DateInput {...data}/>\
-	#多个日期组合：<DateInputs defaultValue="null" placeholder="选择时间段..."/>\
-	#多个日期组合：<DateInputs start="2016/4/10" end="2016/5/12" placeholder="选择时间段..."/>';
+	#  \
+	#  年：<DateInput format="yyyy" defaultValue="null"/> \
+	##  年-月：<DateInput format="yyyy-mm" defaultValue="now"/>\
+	##  年-月-日：<DateInput format="yyyy年mm月dd日"  defaultValue="now"/>\
+	##  自定义默认值：<DateInput year="2015" month="5" day="18"/>\
+	##  自定义提示内容：<DateInput format="yyyy+mm+dd"  width="140px" defaultValue="null" placeholder="我是的日期..." year="2015" month="3" day="18"/>\
+	##  多个日期组合：<DateInputs width="190px" format="yyyy-mm-dd" start="now" end="2016/10/5" placeholder="选择时间段..."/> <br/><br/>\
+	##  多个日期组合带格式：<DateInputs width="200px" splitStr="至" format="yyyy-mm" placeholder="选择时间段..."/> <br/><br/>\
+	##  多个日期组合带格式：<DateInputs width="200px" splitStr=" 至 " format="yyyy年" placeholder="选择时间段..."/> <br/><br/>\
+	';
 	//this.iniEditer(codeDateInput,'code-DateInput');
 
 	//分页
@@ -54723,7 +55243,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 710 */
+/* 712 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -54738,7 +55258,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _index = __webpack_require__(681);
+	var _index = __webpack_require__(682);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -54823,7 +55343,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 711 */
+/* 713 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -54838,7 +55358,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _index = __webpack_require__(681);
+	var _index = __webpack_require__(682);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -54909,7 +55429,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 712 */
+/* 714 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -54924,7 +55444,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _index = __webpack_require__(681);
+	var _index = __webpack_require__(682);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -55018,7 +55538,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 713 */
+/* 715 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -55033,7 +55553,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _index = __webpack_require__(681);
+	var _index = __webpack_require__(682);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -55105,7 +55625,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 714 */
+/* 716 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -55120,7 +55640,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _index = __webpack_require__(681);
+	var _index = __webpack_require__(682);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -55147,14 +55667,20 @@
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'mt-g-3' },
-	            '没有默认值：',
-	            _react2.default.createElement(_index.DateInput, { defaultValue: 'null' })
+	            '年：',
+	            _react2.default.createElement(_index.DateInput, { format: 'yyyy', defaultValue: 'null' })
 	          ),
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'mt-g-3' },
-	            '默认值是今天：',
-	            _react2.default.createElement(_index.DateInput, { defaultValue: 'now' })
+	            '年-月：',
+	            _react2.default.createElement(_index.DateInput, { format: 'yyyy-mm', defaultValue: 'now' })
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'mt-g-3' },
+	            '年-月-日：',
+	            _react2.default.createElement(_index.DateInput, { width: '160px', format: 'yyyy年mm月dd日', defaultValue: 'now' })
 	          ),
 	          _react2.default.createElement(
 	            'div',
@@ -55166,18 +55692,34 @@
 	            'div',
 	            { className: 'mt-g-3' },
 	            '自定义提示内容：',
-	            _react2.default.createElement(_index.DateInput, { width: '200px', defaultValue: 'null', placeholder: '我是个任性的日期...', year: '2015', month: '3', day: '18' })
+	            _react2.default.createElement(_index.DateInput, { format: 'yyyy+mm+dd', width: '140px', defaultValue: 'null', placeholder: '我是的日期...', year: '2015', month: '3', day: '18' })
 	          ),
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'mt-g-3' },
 	            '多个日期组合：',
-	            _react2.default.createElement(_index.DateInputs, { defaultValue: 'null', placeholder: '选择时间段...' }),
+	            _react2.default.createElement(_index.DateInputs, { width: '190px', format: 'yyyy-mm-dd', start: 'now', end: '2016/10/5', placeholder: '选择时间段...' }),
 	            ' ',
 	            _react2.default.createElement('br', null),
+	            _react2.default.createElement('br', null)
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'mt-g-3' },
+	            '多个日期组合带格式：',
+	            _react2.default.createElement(_index.DateInputs, { width: '200px', splitStr: '至', format: 'yyyy-mm', placeholder: '选择时间段...' }),
+	            ' ',
 	            _react2.default.createElement('br', null),
-	            '多个日期组合2：',
-	            _react2.default.createElement(_index.DateInputs, { start: '2016/4/10', end: '2016/5/12', placeholder: '选择时间段...' })
+	            _react2.default.createElement('br', null)
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'mt-g-3' },
+	            '多个日期组合带格式：',
+	            _react2.default.createElement(_index.DateInputs, { width: '200px', splitStr: ' 至 ', format: 'yyyy年', placeholder: '选择时间段...' }),
+	            ' ',
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement('br', null)
 	          ),
 	          _react2.default.createElement(
 	            'div',
@@ -55196,7 +55738,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 715 */
+/* 717 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -55211,7 +55753,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _index = __webpack_require__(681);
+	var _index = __webpack_require__(682);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -55264,7 +55806,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 716 */
+/* 718 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -55279,7 +55821,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _index = __webpack_require__(681);
+	var _index = __webpack_require__(682);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -55342,7 +55884,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 717 */
+/* 719 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -55357,7 +55899,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _index = __webpack_require__(681);
+	var _index = __webpack_require__(682);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -55524,7 +56066,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 718 */
+/* 720 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -55539,7 +56081,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _index = __webpack_require__(681);
+	var _index = __webpack_require__(682);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -55601,7 +56143,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 719 */
+/* 721 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -55616,7 +56158,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _index = __webpack_require__(681);
+	var _index = __webpack_require__(682);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -55680,7 +56222,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 720 */
+/* 722 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -55695,7 +56237,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(681);
+	__webpack_require__(682);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -55734,14 +56276,14 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 721 */
+/* 723 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
 
 	'use strict';
 
-	__webpack_require__(722);
+	__webpack_require__(724);
 
 	var _react = __webpack_require__(138);
 
@@ -55787,13 +56329,13 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 722 */
+/* 724 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(723);
+	var content = __webpack_require__(725);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(246)(content, {});
@@ -55802,8 +56344,8 @@
 	if(true) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept(723, function() {
-				var newContent = __webpack_require__(723);
+			module.hot.accept(725, function() {
+				var newContent = __webpack_require__(725);
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -55813,7 +56355,7 @@
 	}
 
 /***/ },
-/* 723 */
+/* 725 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(244)();
@@ -55821,19 +56363,19 @@
 
 
 	// module
-	exports.push([module.id, "/*我的报告页面*/\r\n/*report 菜单*/\r\n.report-menubox{ position: fixed; height: 60px; left: 100px; top: 0; right:0; background: #273747; z-index: 2000;}\r\n.searchboxsub{ float: left; margin: 10px;}\r\n.searchboxsub .item{ width: 300px; height: 40px; background: #2c3e50; display: inline-block; vertical-align: middle;}\r\n.searchboxsub .key{ float: left; border: none; height: 40px; width: 250px; background: none; text-indent: 10px;}\r\n.searchboxsub .searchbtn{ line-height: 40px; width: 50px; display: inline-block; float: left; text-align: center;}\r\n.searchboxsub .search-option{ margin: 0 15px;}\r\n.searchboxsub a{color: #96a2ba;}\r\n.report-menubox .menu{ float: right; margin-right: 20px; }\r\n.report-menubox .menu .item{display: inline-block; padding: 20px 10px; position: relative; z-index: 1;}\r\n.report-menubox .sub-menu{ box-shadow:0 2px 4px rgba(150, 162, 186, 0.5);display: block;  top: 60px; left: 0px; width: 120px; height: 190px; background: #fff; position: absolute; z-index: 10;}\r\n.report-menubox .sub-menu li{ height:30px; line-height: 30px; text-align: center; margin: 0 10px; border-bottom:1px dashed #dfe7f2;}\r\n.report-menubox .sub-menu .links{ color: #273747;}\r\n.myreport-leftmenu{ box-shadow:3px 0 8px rgba(39, 55, 71, 0.3);}\r\n.myreport-leftmenu .links .ico{ margin:15px 35px 8px 35px;}\r\n\r\n/*myreport*/\r\n.myreport-menubox .menu{ width: 98%;}\r\n.myreport-subhead{ position: fixed; height: 60px; line-height: 60px; background: #fff; top: 60px; left: 100px; right: 0; z-index: 1000;}\r\n.myreport-subhead h1{ font-size: 16px; margin-left: 20px; display: inline-block;}\r\n.myreport-subhead .infos{ color: #4a89dc; display: inline-block; margin-left: 50px;}\r\n.myreport-subbody{ padding-top: 60px; margin: 0 20px;}\r\n.myreport-subbody .mt-tabs-header li{ background: none; font-size: 14px;}\r\n.myreport-subbody .mt-tabs-header .mt-tabs-active{ border:none; border-bottom: 6px solid #333;}\r\n.myreport-subbody .mt-tabs .mt-tabs-header li a{ padding: 10px 5px;}\r\n\r\n.myreport-type{ width: 100px; position: fixed; top: 60px; bottom: 0; background: #273747; color: #fff;} \r\n.myreport-list{ margin-left: 100px;}\r\n\r\n.myreport-sub{ margin: 60px 0 0 100px;}\r\n.myreport-sub .myreport-leftmenu{ width: 100px; position: fixed; z-index: 1100; top: 0; left: 0; bottom: 0; background: #273747; color: #fff;}\r\n.myreport-sub .logo{ width: 100px; height: 90px; background: url(" + __webpack_require__(724) + ");}\r\n\r\n.myreport-leftmenu .links{ display: inline-block; height: 90px; width: 100%; text-align: center; color: #96a2ba;}\r\n.myreport-leftmenu .active{ height: 90px; text-align: center; background: #32465a; }", ""]);
+	exports.push([module.id, "/*我的报告页面*/\r\n/*report 菜单*/\r\n.report-menubox{ position: fixed; height: 60px; left: 100px; top: 0; right:0; background: #273747; z-index: 2000;}\r\n.searchboxsub{ float: left; margin: 10px;}\r\n.searchboxsub .item{ width: 300px; height: 40px; background: #2c3e50; display: inline-block; vertical-align: middle;}\r\n.searchboxsub .key{ float: left; border: none; height: 40px; width: 250px; background: none; text-indent: 10px;}\r\n.searchboxsub .searchbtn{ line-height: 40px; width: 50px; display: inline-block; float: left; text-align: center;}\r\n.searchboxsub .search-option{ margin: 0 15px;}\r\n.searchboxsub a{color: #96a2ba;}\r\n.report-menubox .menu{ float: right; margin-right: 20px; }\r\n.report-menubox .menu .item{display: inline-block; padding: 20px 10px; position: relative; z-index: 1;}\r\n.report-menubox .sub-menu{ box-shadow:0 2px 4px rgba(150, 162, 186, 0.5);display: block;  top: 60px; left: 0px; width: 120px; height: 190px; background: #fff; position: absolute; z-index: 10;}\r\n.report-menubox .sub-menu li{ height:30px; line-height: 30px; text-align: center; margin: 0 10px; border-bottom:1px dashed #dfe7f2;}\r\n.report-menubox .sub-menu .links{ color: #273747;}\r\n.myreport-leftmenu{ box-shadow:3px 0 8px rgba(39, 55, 71, 0.3);}\r\n.myreport-leftmenu .links .ico{ margin:15px 35px 8px 35px;}\r\n\r\n/*myreport*/\r\n.myreport-menubox .menu{ width: 98%;}\r\n.myreport-subhead{ position: fixed; height: 60px; line-height: 60px; background: #fff; top: 60px; left: 100px; right: 0; z-index: 1000;}\r\n.myreport-subhead h1{ font-size: 16px; margin-left: 20px; display: inline-block;}\r\n.myreport-subhead .infos{ color: #4a89dc; display: inline-block; margin-left: 50px;}\r\n.myreport-subbody{ padding-top: 60px; margin: 0 20px;}\r\n.myreport-subbody .mt-tabs-header li{ background: none; font-size: 14px;}\r\n.myreport-subbody .mt-tabs-header .mt-tabs-active{ border:none; border-bottom: 6px solid #333;}\r\n.myreport-subbody .mt-tabs .mt-tabs-header li a{ padding: 10px 5px;}\r\n\r\n.myreport-type{ width: 100px; position: fixed; top: 60px; bottom: 0; background: #273747; color: #fff;} \r\n.myreport-list{ margin-left: 100px;}\r\n\r\n.myreport-sub{ margin: 60px 0 0 100px;}\r\n.myreport-sub .myreport-leftmenu{ width: 100px; position: fixed; z-index: 1100; top: 0; left: 0; bottom: 0; background: #273747; color: #fff;}\r\n.myreport-sub .logo{ width: 100px; height: 90px; background: url(" + __webpack_require__(726) + ");}\r\n\r\n.myreport-leftmenu .links{ display: inline-block; height: 90px; width: 100%; text-align: center; color: #96a2ba;}\r\n.myreport-leftmenu .active{ height: 90px; text-align: center; background: #32465a; }", ""]);
 
 	// exports
 
 
 /***/ },
-/* 724 */
+/* 726 */
 /***/ function(module, exports) {
 
 	module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAA8CAIAAAAiz+n/AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjkyODdCQkMwRUM0QzExRTVCMDJDRUNGODgwMTFBNDVBIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjkyODdCQkMxRUM0QzExRTVCMDJDRUNGODgwMTFBNDVBIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6OTI4N0JCQkVFQzRDMTFFNUIwMkNFQ0Y4ODAxMUE0NUEiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6OTI4N0JCQkZFQzRDMTFFNUIwMkNFQ0Y4ODAxMUE0NUEiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4yitrHAAAHHElEQVR42uybbWwURRjHO3tvvZYrWAwBbUVi5NUvYECriA1FGoHEgtRIYuIHfEkwmgjB+BZMDDEkRvyixA8oUWOilAgfCkkrRDEhFQiNJgIJxkigSKVQuL27Xnt3u+NzO3dzc7dvs3u7vQ3sk0szt/fc7jy/efY/z8z20OLHnq7zzX0TfAQ+aB+0bz5oH7QP2jcftA/aNx+0D9oH7ZsP2gftmw/aB31nW9D7XVwXq1/cEFpQHxZleTCV2Tuakqtwq5Uhj2/875zZtGZaI3vk7/Hstis3L2UlG241tMCs1gc9S/mV5sZN02NJGe/6T/zievInMX1PKLgoGp4TFnrjaYSQJTcvSsfgiSO03X/s17d37DI90bvbX9vYtZa0Dxw6/NHHn5P2nk93Prpsib3ODT7/AvzdNjR6eixDjvx+efTAnLsfmRJtqxcHxiUCcVljxNSNRvTqG++cPvOHFyfD1R0rovURY5+mWOPqlSvoWyzjXC5bbdeGh5c0Ri5mchQfWBbjQ/E0NOCjTGYCYzw7FOBxox9JuZwsy17J6Ap7tmvNvm9/CIXCeg4d7cubmmLsEUnKi2MwGNry5vvZbEYd2+YXN219/WVoDJw689KW7epzzomEeue3qI/LCjWhLp/LeYihgGaXKtzYj6A/EIsgCN7KaLDOVU8CKeif7kg8ozGjAmuS1/ai+mciO5gavz8cXNpQGuAQQhumNeRVJTVOjvyVGuNxqzDNsa8Z6LPnL5DGogVz4aXHev68BxYumAsNUUw4y/pkMo/pk5bmrmkN8+pDgHJPa3NrOHgymf5ZHLPqVlvWRtIhJhJ9R49DOpOkBu6EdYWGrGpfTho9B3tBENSsiYbAt6zG9tnwzfvCwbV3Tdkxcypbt304dMOGmybrSdMQk2v0Hf2FNLrXrytonyqvN3atUTyPx8Wk5kmqyeu3Lo3sG4nTt99dF9dfGLo4kVW7vXd55M+xghYfF8c03WqY1yZhD5waJIIAc13bsofVrDvaHyfTIB0Sx1mfSKRp+5uRuIS13Q6NJvvjKdIGxdBzqxVrk5iBMqQqnRJLc3qR9VMrn6hwc4O12zYJrM0DZkGzNRz0DOprqLKhvffr73kuxrL2xnpt8libg4Y6d+jKVaIebFKT+rpCyvlZC8hzG4eusuaKdv+PvWr1oG/pSFhl7UFzjzUXaJqwMB+23DuLLa5ZbbHEWsb4jmLNBRoSli5eOle1s+nMMw1qGvYqaJdY8wolpfnchnVEr0llDcfVC8LbwBxnzQsaVn2kAdIBikErEHvpbMkuT2RvA9a8oCsKaqIbICkwE7odsCiVom2NhAw8W8OFT4cyOa+xtlBjsctxskqk1YjboM+mC2vrhdGwgefC4gaegzeBU6yNQSPlEQZ5leSYLlvKy2cXVyC/JQq7nZ3lDwZZawoIi6IRks5OZfSkajSgVl556zl4mJ0er/w7jEpWxy72mBFCxTFAtodk/w2xUFNGI5tnTNX02TqrmTT2XrvlwdnV2vKs71hp6us/pj8NInaE6DjVMUPCPjJFrKnfwmsoI+2+epMC3T17RlusgV6pLRaFI93Tlcn5VqrnhherIGv/13Hu/IWHlna42qGKPRD69quReEKSP2iZTgREU0P64qltl0ZcFTH3QBdSz3B5gZXYXF+A9IwmAGV3cwwmvc6pjexs+eW1+EAyfS6dUQ+V1kCW7ieIiwYIDfq3PDonEkjvH2gMnhDaWgcaj5OnLRgMVb+vq5vR5MlTue5irbYdQdBQdCtjU0w6r48Qr3QA6/JtNqRu8+1YYGfHBiEBocrNEi+Im32NhrvGeEuTb/++VN5Z2UrCZh3LYSxbuWmQRU2b3KqDhGRDli0NDFKlKMaoXCgqTxIMBhXWuBqh50kURx4GcZV3EJIkmbMux4EsBgwmyLKkGZ5eqKRjCmvkUIa6JTK8dXQgYM7axsgzXBCZ2Tk2FjA7ikrHJKohVWcf0pqB0OSBpiFVX+kV+43VXAhrVnm1BgapOhaAfll8kkAzl+avRiI7+ATZ2spQCUkyVgCzgE12PIA1nECWsabWI6QdP3QMZMfg0qqVCNKaJF1cUlr+aQUJydBBsLGvWK7IedrFkyDO0lsQCOs6SyPk0b0OJiQDlHlOTEpaEsfSnaGktmypICMdK+a1t3Y8bP5YSEEp6ycmYEI6DohTTJX9CKHcGZMTcHQM28oeF3/wYn8Jr7P8R8YOqHyHlKPmUy9HTU6gXBdZf+VZ631Us4xmJi7ZigNSccIcea2uKBBPx/jLENolzTvVEWWvdlMKmf1nl+JQSA0aD8PaPGvYJzgVz3GMr8t561TcNy79A6YDP+iEkIxlVzNg5SBv7asou42OIY6bRkPKNG/E2oO2NMWpUZAvmiafpYEp/5Zu3wxS3jR7agPafIZy5os2L2Lva87+EvR/AQYAApPMqOhKkjYAAAAASUVORK5CYII="
 
 /***/ },
-/* 725 */
+/* 727 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -55846,11 +56388,11 @@
 
 	var _reactRouter = __webpack_require__(269);
 
-	var _Menu = __webpack_require__(726);
+	var _Menu = __webpack_require__(728);
 
 	var _Menu2 = _interopRequireDefault(_Menu);
 
-	var _Footer = __webpack_require__(729);
+	var _Footer = __webpack_require__(731);
 
 	var _Footer2 = _interopRequireDefault(_Footer);
 
@@ -55882,7 +56424,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 726 */
+/* 728 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -55893,7 +56435,7 @@
 	  value: true
 	});
 
-	__webpack_require__(727);
+	__webpack_require__(729);
 
 	var _react = __webpack_require__(138);
 
@@ -55993,13 +56535,13 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 727 */
+/* 729 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(728);
+	var content = __webpack_require__(730);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(246)(content, {});
@@ -56008,8 +56550,8 @@
 	if(true) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept(728, function() {
-				var newContent = __webpack_require__(728);
+			module.hot.accept(730, function() {
+				var newContent = __webpack_require__(730);
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -56019,7 +56561,7 @@
 	}
 
 /***/ },
-/* 728 */
+/* 730 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(244)();
@@ -56027,13 +56569,13 @@
 
 
 	// module
-	exports.push([module.id, "/*\r\n顶部背景色 #313a49\r\n\r\n字灰色 #b7c0ce\r\n字深灰色 #5e6a7f\r\n*/\r\n/*菜单*/ \r\n.menubox{ height: 60px; background: #313a49; position: fixed; left: 0; top: 0; right: 0; z-index: 1000;} \r\n.menubox .menu{ height: 60px; margin: 0 auto; vertical-align: middle;}\r\n.menubox .menu-logobox{ width: 120px; height: 60px; float: left; margin-left: 20px;}\r\n.menubox .menu-logo{ width: 120px; height: 60px;float: left; background: url(" + __webpack_require__(724) + ") no-repeat;}\r\n.menubox .langs,\r\n.menubox .login-register{ float: right; height: 60px; line-height: 60px;}\r\n.menubox .login-register a{ color:#b7c0ce; margin-left: 10px;}\r\n.menubox .langs{ color:#b7c0ce; margin-left: 20px;}\r\n.menubox .langs a{ color:#5e6a7f;}\r\n.menubox .langs .active{ color:#b7c0ce;}\r\n.menubox .menu-list{ float: right; margin-right: 20px;}\r\n.menubox .menu-list .item{ display: inline-block; margin: 20px 10px; position: relative;}\r\n.menubox .menu-list .item a{ color: #b7c0ce; font-size: 16px;}\r\n.menubox .menu-list .item a.active{ color: #FF6262;}\r\n.menubox .menu-list .tips{ display: block; position: absolute; background: #FF6262; color: #fff; border-radius: 100px; width: 20px; height: 20px; text-align: center; line-height: 20px; right: -15px; top: -8px;}", ""]);
+	exports.push([module.id, "/*\r\n顶部背景色 #313a49\r\n\r\n字灰色 #b7c0ce\r\n字深灰色 #5e6a7f\r\n*/\r\n/*菜单*/ \r\n.menubox{ height: 60px; background: #313a49; position: fixed; left: 0; top: 0; right: 0; z-index: 1000;} \r\n.menubox .menu{ height: 60px; margin: 0 auto; vertical-align: middle;}\r\n.menubox .menu-logobox{ width: 120px; height: 60px; float: left; margin-left: 20px;}\r\n.menubox .menu-logo{ width: 120px; height: 60px;float: left; background: url(" + __webpack_require__(726) + ") no-repeat;}\r\n.menubox .langs,\r\n.menubox .login-register{ float: right; height: 60px; line-height: 60px;}\r\n.menubox .login-register a{ color:#b7c0ce; margin-left: 10px;}\r\n.menubox .langs{ color:#b7c0ce; margin-left: 20px;}\r\n.menubox .langs a{ color:#5e6a7f;}\r\n.menubox .langs .active{ color:#b7c0ce;}\r\n.menubox .menu-list{ float: right; margin-right: 20px;}\r\n.menubox .menu-list .item{ display: inline-block; margin: 20px 10px; position: relative;}\r\n.menubox .menu-list .item a{ color: #b7c0ce; font-size: 16px;}\r\n.menubox .menu-list .item a.active{ color: #FF6262;}\r\n.menubox .menu-list .tips{ display: block; position: absolute; background: #FF6262; color: #fff; border-radius: 100px; width: 20px; height: 20px; text-align: center; line-height: 20px; right: -15px; top: -8px;}", ""]);
 
 	// exports
 
 
 /***/ },
-/* 729 */
+/* 731 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -56068,7 +56610,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 730 */
+/* 732 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -56083,7 +56625,7 @@
 
 	var _reactRouterRedux = __webpack_require__(326);
 
-	var _user = __webpack_require__(731);
+	var _user = __webpack_require__(733);
 
 	var _user2 = _interopRequireDefault(_user);
 
@@ -56104,7 +56646,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 731 */
+/* 733 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -56146,6 +56688,145 @@
 	}
 
 	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(658); if (makeExportsHot(module, __webpack_require__(138))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "user.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
+
+/***/ },
+/* 734 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+
+	'use strict';
+	//国际化支持
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.langProvider = exports.setLanguage = exports.languageData = exports.Language = undefined;
+
+	var _react = __webpack_require__(138);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _zh_CN = __webpack_require__(735);
+
+	var _zh_CN2 = _interopRequireDefault(_zh_CN);
+
+	var _en_US = __webpack_require__(736);
+
+	var _en_US2 = _interopRequireDefault(_en_US);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var LANG = null;
+
+	function langProvider(defaultVal) {
+		//判断当前语言环境
+		if (localStorage.mtui_language == undefined) {
+			localStorage.mtui_language = defaultVal; //默认是中文
+		}
+		if (localStorage.mtui_language == 'zh_CN') {
+			LANG = _zh_CN2.default;
+		} else {
+			LANG = _en_US2.default;
+		}
+	};
+
+	function languageData(obj) {
+		if (LANG == null) {
+			console.log('没有加载 LangProvider');
+		} else {
+			if (LANG[obj.id] == undefined) {
+				LANG[obj.id] = obj.tips;
+			}
+			var text = LANG[obj.id];
+			text = expText(obj.tips, obj.value, text);
+			return text;
+		}
+	}
+
+	function setLanguage(str) {
+		localStorage.mtui_language = str;
+		location.reload();
+	}
+
+	function expText(tips, value, text) {
+		if (value != undefined) {
+			for (var key in value) {
+				var exp = new RegExp('{' + key + '}', "ig");
+				text = text.replace(exp, value[key]);
+			}
+		}
+		return text;
+	}
+
+	var Language = _react2.default.createClass({
+		displayName: 'Language',
+		render: function render() {
+			if (LANG == null) {
+				return _react2.default.createElement(
+					'span',
+					null,
+					'没有加载 LangProvider'
+				);
+			}
+			var text = LANG[this.props.id];
+			if (text == undefined) {
+				text = this.props.tips;
+			}
+			text = expText(this.props.tips, this.props.value, text);
+			return _react2.default.createElement(
+				'span',
+				null,
+				text
+			);
+		}
+	});
+
+	exports.Language = Language;
+	exports.languageData = languageData;
+	exports.setLanguage = setLanguage;
+	exports.langProvider = langProvider;
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(658); if (makeExportsHot(module, __webpack_require__(138))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Language.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
+
+/***/ },
+/* 735 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	var zh_CN = {
+	    'name': '我的名字叫：{name},我今年{age}岁！'
+	};
+	exports.default = zh_CN;
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(658); if (makeExportsHot(module, __webpack_require__(138))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "zh_CN.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
+
+/***/ },
+/* 736 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(76), RootInstanceProvider = __webpack_require__(84), ReactMount = __webpack_require__(86), React = __webpack_require__(138); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	var en_US = {
+	    'name': 'My name is {name}, I\'m {age} years old!'
+	};
+	exports.default = en_US;
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(658); if (makeExportsHot(module, __webpack_require__(138))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "en_US.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ }
