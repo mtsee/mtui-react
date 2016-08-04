@@ -486,9 +486,9 @@ input[type=password][disabled] + .mt-iconbtn {color: #ccc!important; z-index: 11
 .mt-pagelist .mt-pagelist-runnext {border: 1px solid #fff; padding: 4px; }
 
 /*日历组件*/
-.mt-date-main{ width: 240px; height: 250px; overflow: hidden; background: #f3f3f3; display: none; position: absolute; z-index: 9999; box-shadow: 0 2px 4px rgba(150, 162, 186, 0.5);}
-.mt-date-title{ height: 30px; line-height: 25px; background: #333; color: #fff; text-align: center;} 
-.mt-date-title .mt-btn-blue{ background: #333;} 
+.mt-date-main{ border:1px solid #EAEAEA; width: 240px; height: 250px; overflow: hidden; background: #fff; display: none; position: absolute; z-index: 9999; box-shadow: 0 2px 4px rgba(150, 162, 186, 0.5);}
+.mt-date-title{ height: 30px; line-height: 25px; background: #fff; color: #333; text-align: center;} 
+.mt-date-title .mt-btn-blue{ background: #fff; color: #333;} 
 .mt-date-title a{ margin: 0 5px; padding: 2px 5px;line-height: normal; font-size: 16px;}
 .mt-date-title .mt-date-nowday,
 .mt-date-title .mt-date-clear{ position: absolute; top: 8px; font-size: 12px; z-index: 20;}
@@ -507,25 +507,25 @@ input[type=password][disabled] + .mt-iconbtn {color: #ccc!important; z-index: 11
 .mt-date-day li a:hover{ background: #ccc;}
 .mt-date-day li .mt-date-prevday,
 .mt-date-day li .mt-date-nextday{ color: #ccc;} 
-.mt-date-day li .mt-date-selected{background: #40c583; color:#fff;}
+.mt-date-day li .mt-date-selected{background: #e9e9e9; color:#000;}
 .mt-date-years,
-.mt-date-months{ width: 100%; height: 220px; position: absolute; bottom: 0; z-index: 100; background: #fff; opacity: 0; transform: scale(5); display: none; transition:0.3s;}
-.mt-date-animate{display:block; opacity: 1; transform: scale(1);}
+.mt-date-months{ width: 100%; height: 220px; position: absolute; bottom: 0; z-index: 100; background: #fff; transition:0.3s;}
 .mt-date-months li{line-height: 64px; font-size: 14px; cursor: pointer; float: left; border-radius: 0; background: #fff; color: #333; width: 25%; height: 25%; text-align: center; }
-.mt-date-months li:hover{ color: #000; background: #ccc;}
+.mt-date-months li:hover{ color: #000; background: #e9e9e9;}
 .mt-date-months .mt-active{ color: #000; background: #e9e9e9;}
-.mt-date-years li{ cursor: pointer; float: left; background: #fff; line-height: normal; color: #333; width: 50px; height: 28px; margin:4px 5px;}
+.mt-date-years li{ cursor: pointer; float: left; background: #fff; line-height: normal; color: #333; width: 49px; height: 28px; margin:4px 5px;}
 .mt-date-years .mt-active{ color: #000; background: #e9e9e9;}
 .mt-date-years li:hover{ color: #000; background: #ccc;}
 .mt-date-main .mt-btn-blue{ box-shadow: none;}
-.mt-dates{ position: absolute; display: none; box-shadow: 0 2px 4px rgba(150, 162, 186, 0.5); width: 490px; height: 290px; background: #f3f3f3; z-index: 9999;}
-.mt-dates .mt-date-main{box-shadow:none;}
+.mt-dates{border:1px solid #EAEAEA; overflow: hidden; position: absolute; display: none; box-shadow: 0 2px 4px rgba(150, 162, 186, 0.5); width: 490px; height: 290px; background: #fff; z-index: 9999;}
+.mt-dates .mt-date-main{box-shadow:none; display: block; border:none; background: none;}
 .mt-dates .mt-date-main+.mt-date-main{ left: 250px;}
-.mt-dates:after{ content: ""; display: inline-block; position: absolute; height: 30px; background: #333; width: 100%; left: 0; top: 0;}
-.mt-dates:before{ content: ""; display: inline-block; position: absolute; left: 245px; top: 40px; height: 200px; background: #e6e6e6; width: 1px; }
+.mt-dates:before{ content: ""; display: inline-block; position: absolute; left: 245px; top: 0px; height: 250px; background: #e6e6e6; width: 1px; }
 .mt-dates .mt-dates-text{ position: absolute;}
-.mt-dates-bottom{ position: absolute; bottom: 0; left: 0; width: 100%; border-top: 1px solid #e6e6e6; height: 40px; padding: 8px; text-align: right;}
-.mt-dates-bottom a{ margin-left: 20px!important;}
+.mt-dates-bottom{ position: absolute; bottom: 0; left: 0; width: 100%; border-top: 1px solid #e6e6e6; height: 40px; text-align: right;}
+.mt-dates-bottom a{ display: inline-block; margin-right: 10px!important; background: #F3F3F3; color: #333; border:1px solid #EAEAEA; margin-top: 5px; padding: 5px 15px;}
+.mt-dates .yesdate{}
+.mt-dates .cleardate{}
 /*
 .mt-dates-start .mt-dates-down,
 .mt-dates-end .mt-dates-up{ background: #e4e4e4;}

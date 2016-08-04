@@ -6,47 +6,69 @@
 import './style.css';
 import React from 'react';
 import DateBox from './DateBox'
+import dateMixin from './Mixins/dateMixin'
 
-var DateInputs = React.createClass({
-	//初始化
-	getInitialState: function(){
+var DateInput = React.createClass({
+	mixins:[dateMixin],
+	getInitialState() {
+		var myDate = new Date();
+	    return {
+	        start : {
+	        	year:myDate.getFullYear(),
+		        month:1+parseInt(myDate.getMonth()),
+		        day:myDate.getDate()
+	        },
+	        end : {
+				year:myDate.getFullYear(),
+		        month:1+parseInt(myDate.getMonth()),
+		        day:myDate.getDate()
+	        },
+	        inputShow:false,
+	        haveValue:false,
+	        style:{top:'auto',right:'auto'}
+	    };
+	},
 
-		//获取当前时间
-		if(this.props.start == undefined){
-			var myDate = new Date();
-			var start = myDate.getFullYear()+"/"+(1+parseInt(myDate.getMonth()))+"/"+myDate.getDate();
+	componentWillMount() {
+		if(this.props.start == undefined || this.props.end == undefined){
+			console.log('没配置起始时间');
+			this.setState({
+				haveValue:false
+			})
 		}else{
-			var start = this.props.start;
+			if(this.props.start == 'now'){
+				var myDate = new Date();
+				var start = [myDate.getFullYear(),1+parseInt(myDate.getMonth()),myDate.getDate()]
+			}else{
+				var start = this.props.start.split('/');
+			}
+			if(this.props.end == 'now'){
+				var myDate = new Date();
+				var end = [myDate.getFullYear(),1+parseInt(myDate.getMonth()),myDate.getDate()]
+			}else{
+				var end = this.props.end.split('/');
+			}
+			
+			this.setState({
+				haveValue:true,
+				start : {
+					year:start[0],
+				    month:start[1],
+				    day:start[2]
+				},
+				end : {
+					year:end[0],
+				    month:end[1],
+				    day:end[2]
+				}
+			})
 		}
-		//end 
-		if(this.props.end == undefined){
-			var end = myDate.getFullYear()+"/"+(1+parseInt(myDate.getMonth()))+"/"+myDate.getDate();
-		}else{
-			var end = this.props.end;
-		}
-		var s_arr = start.split("/");
-		var e_arr = end.split("/");
-
-		//对比起始，结束日期
-		e_arr = this.compareDate(s_arr,e_arr); 
-
-		return {
-			placeholder : this.props.placeholder,
-			defaultValue : this.props.defaultValue, //默认值
-			s_year : s_arr[0],
-			s_month : s_arr[1],
-			s_day : s_arr[2],
-			e_year : e_arr[0],
-			e_month : e_arr[1],
-			e_day : e_arr[2],
-			width : this.props.width==undefined?200:this.props.width
-		} 
 	},
 
 	//比较日期,返回最大的那个
-	compareDate : function(s_arr,e_arr){
-		var arr = [];
-
+	compareDate(start,end){
+		var s_arr = start.split('/');
+		var e_arr = end.split('/');
 		//如果结束大与开始，结束 = 开始
 		var start = s_arr[0] +""+ 
 					(parseInt(s_arr[1],10) < 10 ? "0"+parseInt(s_arr[1],10) : parseInt(s_arr[1],10))+
@@ -56,119 +78,181 @@ var DateInputs = React.createClass({
 					(parseInt(e_arr[2],10) < 10 ? "0"+parseInt(e_arr[2],10) : parseInt(e_arr[2],10));
 
 		if(parseInt(start, 10) > parseInt(end, 10)){
-			arr = s_arr;
+			return {
+				mark : 'startMax',
+				arr : s_arr
+			};
 		}else{
-			arr = e_arr;
+			return {
+				mark : 'endMax',
+				arr : e_arr
+			};
 		}
-		return arr;
 	},
-
-	// //初始化参数
-	componentWillMount: function(){
-		if(this.props.year != undefined){
+	
+	//选择时间后
+	handleChange(e , obj, dataMark){
+		console.log( obj, dataMark);
+		//console.log(arr)
+		var setCommon = function() {
 			this.setState({
-				day : this.props.day,
-				year : this.props.year,
-				month : this.props.month
+				start : {
+		        	year:obj.year,
+			        month:obj.month,
+			        day:obj.day
+		        },
+		        end : {
+		        	year:obj.year,
+			        month:obj.month,
+			        day:obj.day
+		        }
 			});
-		}
-	},
+		}.bind(this)
 
-	//选择日历后，设置input ,将该函数传递到子对象
-	handleChange: function(e, obj){
 		this.setState({
-			defaultValue : 'static'
-		});
-		//console.log(obj);
-		if(obj != undefined){
-			if(obj.mark == 'start'){
-				var arr = this.compareDate([obj.year,obj.month,obj.day],[this.state.e_year,this.state.e_month,this.state.e_day]);
-				this.setState({
-					s_year : obj.year,
-					s_month : obj.month,
-					s_day : obj.day,
-					e_year : arr[0],
-					e_month : arr[1],
-					e_day : arr[2]
-				});
-			}else if(obj.mark == 'end'){
-				var arr = this.compareDate([this.state.s_year,this.state.s_month,this.state.s_day],[obj.year,obj.month,obj.day]);
-				this.setState({
-					e_year : arr[0],
-					e_month : arr[1],
-					e_day : arr[2]
-				});
+			haveValue:true
+		})
+
+		//设置开始时间
+		if(dataMark == 'start'){
+			var max = this.compareDate(obj.year+'/'+obj.month+'/'+obj.day , $(this.refs.inputDom).attr('data-enddate'));
+			if(max.mark == 'startMax'){
+				setCommon();
 			}else{
-				//...
+				this.setState({
+					start : {
+			        	year:obj.year,
+				        month:obj.month,
+				        day:obj.day
+			        }
+				});
 			}
+		}else{ //设置结束时间
+			var max = this.compareDate($(this.refs.inputDom).attr('data-startdate') , obj.year+'/'+obj.month+'/'+obj.day);
+			if(max.mark == 'startMax'){
+				setCommon();
+			}else{
+				this.setState({
+					end : {
+			        	year:obj.year,
+				        month:obj.month,
+				        day:obj.day
+			        }
+				});
+			}
+		}
+
+		//设置区间class
+
+	},
+
+	//点击输入框
+	handleClickInput(e){
+
+		if(this.state.inputShow){
+			this.setState({
+				inputShow: false
+			})
 		}else{
 			this.setState({
-				defaultValue : 'null'
-			});
+				inputShow: true
+			})
+			$(document).one("click.DateInputs", function(e){
+				e.stopPropagation();
+				if(!$(e.target).closest('.mt-date-main')[0]){
+					this.setState({
+						inputShow: false
+					})
+				}
+    		}.bind(this));
 		}
-	},
 
-	//点击input按钮后
-	handleClick: function(e){
-		$(".mt-date-yearMonth").show().siblings('div').hide();
-		$(".mt-date-months").hide().removeClass('mt-date-animate');
-		$(".mt-date-years").hide().removeClass('mt-date-animate');
-		if(e.target.value != ""){
-			//分离value
-			var arr = e.target.value.split("~");
-			//console.log(arr);
-			var s_arr = arr[0].split("/");
-			var e_arr = arr[1].split("/");
-			//如果结束大与开始，结束 = 开始
-			e_arr = this.compareDate(s_arr,e_arr);
+		var $input = $(e.target);
+		var $win = $(window);
+		var $main = $input.closest(".mt-dates");
+
+		//碰撞检测 高：250，宽：240
+		var top = $input.offset().top - $win.scrollTop(),
+			left = $input.offset().left - $win.scrollLeft(),
+			inputHei = $input.height(),
+			inputWid = $input.width(),
+			winHei = $win.height(),
+			winWid = $win.width();
+
+		//超出情况
+		var topMark = false,
+			leftMark = false;
+		if(top+inputHei+250 > winHei){
+			topMark = true;
+		}
+		if(left+inputWid+240 > winWid){
+			leftMark = true;
+		}
+		if(leftMark && topMark){
 			this.setState({
-				s_year : s_arr[0],
-				s_month : s_arr[1],
-				s_day : s_arr[2],
-				e_year : e_arr[0],
-				e_month : e_arr[1],
-				e_day : e_arr[2]
+				style:{top:-250,right:0}
+			});
+		}else if( topMark && !leftMark){
+			this.setState({
+				style:{top:-250,right:'auto'}
+			});
+		}else if( !topMark && leftMark){
+			this.setState({
+				style:{top:'auto',right:0}
+			});
+		}else{
+			this.setState({
+				style:{top:'auto',right:'auto'}
 			});
 		}
-		var $dates = $(e.target).siblings('.mt-dates');
-		$dates.show().find(".mt-date-main").show();
-
-		//点击后隐藏
-		$(document).off("click.DateInputs").on("click.DateInputs", function(e){
-			e.stopPropagation();
-			if(!$(e.target).closest('.mt-date-main')[0]){
-				$dates.hide();
-				$(this).off("click.DateInputs");
-			}
-    	});
-    	e.stopPropagation();
-
+		// this.setState({
+		// 	haveValue:true
+		// })
 	},
 
-	handleClickClear: function(e){
+	handleClickClear(){
 		this.setState({
-			defaultValue : 'null'
-		});
+			haveValue:false
+		})
+	},
+
+	handleClickYes(){
+		this.setState({
+			inputShow:false
+		})
 	},
 
 	//渲染
-    render: function() {
-    	if(this.state.defaultValue == "null"){ 
-    		var val = "";
-    	}else{
-    		var val = this.state.s_year+'/'+this.state.s_month+'/'+this.state.s_day+"~"+
-    				  this.state.e_year+'/'+this.state.e_month+'/'+this.state.e_day;
-    	}
+    render() {
+    	//规范数据格式
+		var formatStart = this.format(this.state.start); //this.state.year+'/'+this.state.month+'/'+this.state.day;
+		var formatEnd = this.format(this.state.end); //this.state.year+'/'+this.state.month+'/'+this.state.day;
+		var val = formatStart.val+(this.props.splitStr==undefined?' ~ ':this.props.splitStr)+formatEnd.val;
+		var formatShow = formatStart.formatShow;
+
+		var style = this.state.style;
+		style['display'] = (this.state.inputShow?'block':'none');
+
         return (
-        	<div className="mt-input mt-date mt-icon-input"> 
-        		<input style={{width:this.state.width}} readOnly onClick={this.handleClick} placeholder={this.props.placeholder==undefined?"日期...":this.props.placeholder} onChange={this.handleChange} type="text" value={val} />
+        	<div className="mt-input mt-date mt-icon-input">
+        		<input ref="inputDom" onClick={this.handleClickInput} 
+		        		style={{width:this.props.width}} readOnly 
+		        		data-startdate={this.state.start.year+'/'+this.state.start.month+'/'+this.state.start.day} 
+		        		data-enddate={this.state.end.year+'/'+this.state.end.month+'/'+this.state.end.day} 
+		        		placeholder={this.props.placeholder==undefined?"日期...":this.props.placeholder} 
+		        		onChange={this.handleChange} type="text" 
+		        		value={!this.state.haveValue?'':val} />
         		<a style={{zIndex:9}} className="mt-iconbtn"><i className="iconfont icon-date"></i></a>
-        		<div className="mt-dates">
-        			<DateBox cName="mt-dates-start" changeEvent={this.handleChange} mark="start" year={this.state.s_year} month={this.state.s_month} day={this.state.s_day}/>
-        			<DateBox cName="mt-dates-end" changeEvent={this.handleChange} mark="end" year={this.state.e_year} month={this.state.e_month} day={this.state.e_day}/>
+        		<div className="mt-dates" style={{
+        			display:this.state.inputShow?'block':'none',
+        			top:this.state.style.top,
+        			right:this.state.style.right
+        		}}>
+        			<DateBox formatShow={formatShow} dataMark='start' changeEvent={this.handleChange} year={this.state.start.year} month={this.state.start.month} day={this.state.start.day}/>
+        			<DateBox formatShow={formatShow} dataMark='end' changeEvent={this.handleChange} year={this.state.end.year} month={this.state.end.month} day={this.state.end.day}/>
         			<div className="mt-dates-bottom">
-	        			<a onClick={this.handleClickClear} className="mt-btn-grey mt-btn-sm" href="javascript:;">清除</a>
-	        			<a onClick={this.handleClickYes} className="mt-btn-green mt-btn-sm" href="javascript:;">确定</a>
+	        			<a onClick={this.handleClickClear} className="cleardate" href="javascript:;">清除</a>
+	        			<a onClick={this.handleClickYes} className="yesdate" href="javascript:;">确定</a>
 	        		</div>
         		</div>
         	</div>
@@ -177,4 +261,4 @@ var DateInputs = React.createClass({
 });
 
 //配置信息
-export default DateInputs;
+export default DateInput;

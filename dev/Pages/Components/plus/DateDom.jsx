@@ -12,11 +12,15 @@ const DateInputDom = React.createClass({
           <div className="mt-g-12">
             
             <div className="mt-g-3">
-              没有默认值：<DateInput defaultValue="null"/> 
+              年：<DateInput format="yyyy" defaultValue="null"/> 
             </div>
 
             <div className="mt-g-3">
-              默认值是今天：<DateInput defaultValue="now"/>
+              年-月：<DateInput format="yyyy-mm" defaultValue="now"/>
+            </div>
+
+            <div className="mt-g-3">
+              年-月-日：<DateInput width="160px" format="yyyy年mm月dd日" defaultValue="now"/> 
             </div>
 
             <div className="mt-g-3">
@@ -24,12 +28,19 @@ const DateInputDom = React.createClass({
             </div>
 
             <div className="mt-g-3">
-              自定义提示内容：<DateInput width="200px" defaultValue="null" placeholder="我是个任性的日期..." year="2015" month="3" day="18"/>
+              自定义提示内容：<DateInput format="yyyy+mm+dd"  width="140px" defaultValue="null" placeholder="我是的日期..." year="2015" month="3" day="18"/>
             </div>
 
             <div className="mt-g-3">
-              多个日期组合：<DateInputs defaultValue="null" placeholder="选择时间段..."/> <br/><br/>
-              多个日期组合2：<DateInputs start="2016/4/10" end="2016/5/12" placeholder="选择时间段..."/>
+              多个日期组合：<DateInputs width="190px" format="yyyy-mm-dd" start="now" end="2016/10/5" placeholder="选择时间段..."/> <br/><br/>
+            </div>
+
+            <div className="mt-g-3">
+              多个日期组合带格式：<DateInputs width="200px" splitStr="至" format="yyyy-mm" placeholder="选择时间段..."/> <br/><br/>
+            </div>
+
+            <div className="mt-g-3">
+              多个日期组合带格式：<DateInputs width="200px" splitStr=" 至 " format="yyyy年" placeholder="选择时间段..."/> <br/><br/>
             </div>
 
             <div className="mt-g-12">

@@ -63,102 +63,111 @@ var DateBox = React.createClass({
 			year : this.props.year,
 			month : this.props.month,
 			day : this.props.day,
-			yearArr : []
-		} 
+			yearArr : [],
+			dataShow:{},
+			selectMark : 'ymd' //ymd,md,ymd
+		}
 	},
 
 	//hide DIV
 	hideDiv : function(){
-		if(this.props.mark == "start"){
-			return;
-		}else if(this.props.mark == "end"){
-			//$(this.refs.myDate).parent(".mt-dates").hide();
+		console.log('hideDiv')
+		if(this.props.dataMark == "start" || this.props.dataMark == "end"){
 			return;
 		}else{
 			$(this.refs.myDate).hide();
-			//...
 		}
 	},
 
 	//点击后触发
 	clickDay : function (e,mark) {
+		console.log('clickDay')
 		var obj = MtDate.addAndDelOneMonth(this.state.year, this.state.month, mark);
 		var data = {
 			day : e.target.text,
 			year : obj.y,
-			month : obj.m,
-			mark : this.props.mark
+			month : obj.m
 		}
-		this.props.changeEvent(e,data);
+		this.propsChangeEvent(e,data);
 		this.hideDiv();
 	},
 
 	//点击事件
 	handleClickPrev : function(e){
+		console.log('handleClickPrev')
 		//console.log("点击上个月的：",e.target.text);
 		this.clickDay(e,'del');
 	},
 	handleClickThis : function(e){
+		console.log('handleClickThis')
 		//console.log("点击这个月的：",e.target.text);
 		this.clickDay(e,'null');
 	},
 	handleClickNext : function(e){
+		console.log('handleClickNext')
 		//console.log("点击下个月的：",e.target.text);
 		this.clickDay(e,'add');
 	},
-
 	//点击上一年,点击下一年
 	handleClickPrevYear : function(e) {
+		console.log('handleClickPrevYear')
+		var year = this.state.year-1;
 		this.setState({
-			year : this.state.year-1
+			year : year
 		})
+		this.propsChangeEvent(e,{year : year});
+		this.resetYear();
 	},
 	handleClickNextYear : function(e) {
+		console.log('handleClickNextYear')
+		var year = parseInt(this.state.year)+1
 		this.setState({
-			year : parseInt(this.state.year)+1
+			year : year
 		})
+		this.propsChangeEvent(e,{year : year});
+		this.resetYear();
 	},
-
 	//点击上个月，点击下个月
 	handleClickPrevMonth : function(e) {
+		console.log('handleClickPrevMonth')
 		var obj = MtDate.addAndDelOneMonth(this.state.year, this.state.month, 'del');
 		this.setState({
 			month : obj.m,
 			year : obj.y
 		})
+		var data = {
+			month : obj.m,
+			year : obj.y
+		}
+		this.propsChangeEvent(e,data);
 	},
 	handleClickNextMonth : function(e) {
+		console.log('handleClickNextMonth')
 		var obj = MtDate.addAndDelOneMonth(this.state.year, this.state.month, 'add');
 		this.setState({
 			month : obj.m,
 			year : obj.y
 		})
-	},
-
-	//选择显示
-	hideWitch : function(str) {
-		$(this.refs.yearMonth).hide();
-		$(this.refs.year).hide();
-		$(this.refs.month).hide();
-
-		if(str == 'month'){
-			$(this.refs.month).show();
-		}else if(str == 'year'){
-			$(this.refs.year).show();
-		}else{
-			$(this.refs.yearMonth).show();
+		var data = {
+			month : obj.m,
+			year : obj.y
 		}
+		this.propsChangeEvent(e,data);
 	},
-
 	//点击年月的 title
 	handleClickYandM: function(e) {
-		this.hideWitch('month');
-		$(this.refs.dateMonths).show(0).addClass('mt-date-animate');
+		console.log('handleClickYandM');
+		this.setState({
+			dataShow:{ 
+				year:false,
+				month:true,
+				day:false
+			}
+		});
 	},
-	//点击月
-	handleClickM: function(e) {
 
-		//根据当前的year 前 12年，后 12年 初始化数据
+	//根据当前的year 前 12年，后 12年 初始化数据
+	resetYear: function(){
 		var y = this.state.year;
 		var arr = [];
 		for(var i=12; i > 0 ; i--){
@@ -167,42 +176,94 @@ var DateBox = React.createClass({
 		for(var i=0; i < 12 ; i++){
 			arr.push(i+parseInt(y));
 		};
-		//console.log(arr);
 		this.setState({
 			yearArr : arr
 		});
-
-		this.hideWitch('year');
-		$(this.refs.dateYears).show(0).addClass('mt-date-animate');
 	},
+
+	//点击月
+	handleClickM: function(e) {
+		console.log('handleClickM');
+		this.resetYear();
+		this.setState({
+			dataShow:{
+				year:true,
+				month:false,
+				day:false
+			}
+		});
+	},
+
+	propsChangeEvent: function(e,data){
+
+		var newData = {
+			year:this.state.year,
+			month:this.state.month,
+			day:this.state.day
+		}
+
+		if(data.year != undefined){
+			newData.year = data.year
+		}
+		if(data.month != undefined){
+			newData.month = data.month
+		}
+		if(data.day != undefined){
+			newData.day = data.day
+		}
+
+		if(data == undefined){
+			newData = undefined
+		}
+
+		this.props.changeEvent(e,newData,this.props.dataMark);
+	},
+
 	//选择月份
 	handleClickMonth : function(e) {
-		this.hideWitch('yearMonth');
+		console.log('handleClickMonth');
+		if(this.state.selectMark == 'ym'){
+			this.setState({
+				month : $(e.target).data("val")
+			});
+			this.propsChangeEvent(e,{month : $(e.target).data("val")});
+			this.hideDiv();
+			return 
+		}
 		this.setState({
-			month : $(e.target).data("val")
+			month : $(e.target).data("val"),
+			dataShow:{
+				year:false,
+				month:false,
+				day:true
+			}
 		});
-		var $dateMonths = $(this.refs.dateMonths);
-		$dateMonths.removeClass('mt-date-animate');
-		setTimeout(function(){
-			$dateMonths.hide();
-		},300);
 	},
 	//选择年份
 	handleClickYear : function(e) {
+		console.log('handleClickYear');
+		//只选择年
+		var year = $(e.target).text();
+		if(this.state.selectMark == 'y'){
+			this.propsChangeEvent(e,{year : year});
+			this.hideDiv();
+			return 
+		}
 
-		this.hideWitch('month');
 		this.setState({
-			year : $(e.target).text()
+			year : year,
+			dataShow:{
+				year:false,
+				month:true,
+				day:false
+			}
 		});
-		var $dateYears = $(this.refs.dateYears);
-		$dateYears.removeClass('mt-date-animate');
-		setTimeout(function(){
-			$dateYears.hide();
-		},300);
+		this.propsChangeEvent(e,{year : year});
 	},
 	//日历更新后
 	componentWillReceiveProps: function(nextProps) {
-		//console.log("我擦，更新咯~");
+		console.log('componentWillReceiveProps');
+		//this.resetYear();
 		this.setState({
 			year : nextProps.year,
 			month : nextProps.month,
@@ -212,21 +273,22 @@ var DateBox = React.createClass({
 
 	//点击今天
 	handleClickNowDay: function(e) {
+		console.log('handleClickNowDay')
 		//获取当前时间
 		var myDate = new Date();
 		var data ={
 			year : myDate.getFullYear(),
 			month : 1+parseInt(myDate.getMonth()),
-			day : myDate.getDate(),
-			mark : this.props.mark
+			day : myDate.getDate()
 		};
-		this.props.changeEvent(e,data);
+		this.propsChangeEvent(e,data);
 		this.hideDiv();
 	},
 
 	//点击清除
 	handleClickClear: function(e) {
-		this.props.changeEvent(e,undefined);
+		console.log('handleClickClear')
+		this.propsChangeEvent(e,undefined);
 		this.hideDiv();
 	},
 
@@ -272,41 +334,88 @@ var DateBox = React.createClass({
 		);
 	},
 
+	//这里开始决定渲染哪些
+	componentWillMount: function() {
+		console.log('componentWillMount')
+
+		//可选择 年，月
+		if(!this.props.formatShow.day && this.props.formatShow.month && this.props.formatShow.year){ 
+			this.setState({
+				selectMark : 'ym',
+				dataShow:{
+					year : false,
+					month : true,
+					day : false
+				}
+			})
+		}
+
+		//可选择 年
+		if(!this.props.formatShow.day && !this.props.formatShow.month && this.props.formatShow.year){ 
+			this.handleClickM(); //重置年li
+			this.setState({
+				selectMark : 'y',
+				dataShow:{
+					year : true,
+					month : false,
+					day : false
+				}
+			})
+		}
+
+		//可选 年，月，日
+		if(this.props.formatShow.day && this.props.formatShow.month && this.props.formatShow.year){ 
+			var year = false;
+			var month = false;
+			var day = true;
+			this.setState({
+				selectMark : 'ymd',
+				dataShow:{
+					year : false,
+					month : false,
+					day : true
+				}
+			})
+		}
+
+	},
+
 	//渲染
     render: function() {
     	var prevDay = MtDate.addAndDelOneMonth(this.state.year, this.state.month, 'del'),
     		nowDay = MtDate.addAndDelOneMonth(this.state.year, this.state.month),
     		nextDay = MtDate.addAndDelOneMonth(this.state.year, this.state.month, 'add');
     	var arr = ['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月'];
+
         return (
-            <div ref="myDate" className={'mt-date-main '+(this.props.cName!=undefined?this.props.cName:"")}> 
+            <div ref="myDate" style={this.props.style} className={'mt-date-main '+(this.props.cName!=undefined?this.props.cName:"")}> 
 				<div className='mt-date-title'>
 					<a onClick={this.handleClickNowDay} href="javascript:;" className="mt-btn-blue mt-btn-sm mt-date-nowday">今天</a>
-					<a onClick={this.handleClickClear} href="javascript:;" className="mt-btn-blue mt-btn-sm mt-date-clear">{this.props.mark != undefined ? "" : "清除"}</a>
-					<div className="mt-date-yearMonth" ref="yearMonth">
+					<a onClick={this.handleClickClear} href="javascript:;" className="mt-btn-blue mt-btn-sm mt-date-clear">{this.props.dataMark != undefined ? "" : "清除"}</a>
+					<div className="mt-date-day" style={{display: this.state.dataShow.day?'block':'none'}}>
 						<a onClick={this.handleClickPrevMonth} className="mt-btn-blue mt-btn-sm" href="javascript:;"><i className="iconfont icon-left"></i></a>
 						<a onClick={this.handleClickYandM} className="mt-btn-blue mt-btn-sm mt-date-ym" href="javascript:;" >{this.state.year} / {this.state.month}</a>
 						<a onClick={this.handleClickNextMonth} className="mt-btn-blue mt-btn-sm" href="javascript:;"><i className="iconfont icon-right"></i></a>
 					</div>
-					<div className="mt-date-month" ref="month">
+					<div className="mt-date-month" style={{display: this.state.dataShow.month?'block':'none'}}>
 						<a onClick={this.handleClickPrevMonth} className="mt-btn-blue mt-btn-sm" href="javascript:;"><i className="iconfont icon-left"></i></a>
 						<a onClick={this.handleClickM} className="mt-btn-blue mt-btn-sm mt-date-m" href="javascript:;" >{this.state.month}</a>
 						<a onClick={this.handleClickNextMonth} className="mt-btn-blue mt-btn-sm" href="javascript:;"><i className="iconfont icon-right"></i></a>
 					</div>
-					<div className="mt-date-year" ref="year">
+					<div className="mt-date-year" style={{display: this.state.dataShow.year?'block':'none'}}>
 						<a onClick={this.handleClickPrevYear} className="mt-btn-blue mt-btn-sm" href="javascript:;"><i className="iconfont icon-left"></i></a>
 						<a onClick={this.handleClickY} className="mt-btn-blue mt-btn-sm mt-date-y" href="javascript:;" >{this.state.year}</a>
 						<a onClick={this.handleClickNextYear} className="mt-btn-blue mt-btn-sm" href="javascript:;"><i className="iconfont icon-right"></i></a>
 					</div>
 				</div> 
 				<div className="mt-date-body">
-					<div className="mt-date-days clearfix">
+					<div className="mt-date-days clearfix" style={{display: this.state.dataShow.day?'block':'none'}}>
 						<ul className='mt-date-week'><li>日</li><li>一</li><li>二</li><li>三</li><li>四</li><li>五</li><li>六</li></ul>
 						<div ref="dateDays" className="mt-date-item">
 							{this.initMonthDay(nowDay)}
 						</div>
 					</div>
-					<div ref="dateMonths" className="mt-date-months">
+					<div className="mt-date-months" style={{display: this.state.dataShow.month?'block':'none'}}>
 						<ul>
 							{
 								arr.map(function(index, elem) {
@@ -315,7 +424,7 @@ var DateBox = React.createClass({
 							}
 						</ul>
 					</div>
-					<div ref="dateYears" className="mt-date-years">
+					<div className="mt-date-years" style={{display: this.state.dataShow.year?'block':'none'}}>
 						<ul>
 							{
 								this.state.yearArr.map(function(index, elem) {

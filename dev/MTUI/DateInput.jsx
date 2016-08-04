@@ -6,8 +6,10 @@
 import './style.css';
 import React from 'react';
 import DateBox from './DateBox'
+import dateMixin from './Mixins/dateMixin'
 
 var DateInput = React.createClass({
+	mixins:[dateMixin],
 	getInitialState: function(){
 		//获取当前时间
 		var myDate = new Date();
@@ -15,8 +17,8 @@ var DateInput = React.createClass({
 			year : myDate.getFullYear(),
 			month : 1+parseInt(myDate.getMonth()),
 			day : myDate.getDate(),
-			placeholder : this.props.placeholder,
-			defaultValue : this.props.defaultValue //默认值，可以是now，null 
+			defaultValue : this.props.defaultValue, //默认值，可以是now，null 
+			style:{}
 		} 
 	},
 
@@ -33,15 +35,14 @@ var DateInput = React.createClass({
 
 	//选择日历后，设置input ,将该函数传递到子对象
 	handleChange: function(e, obj){
-		this.setState({
-			defaultValue : 'static'
-		});
 		//console.log(e);
+		console.log(obj);
 		if(obj != undefined){
 			this.setState({
 				day : obj.day,
 				year : obj.year,
-				month : obj.month
+				month : obj.month,
+				defaultValue : 'static'
 			});
 		}else{
 			this.setState({
@@ -52,46 +53,77 @@ var DateInput = React.createClass({
 
 	//点击input按钮后
 	handleClick: function(e){
-		$(".mt-date-yearMonth").show().siblings('div').hide();
-		$(".mt-date-months").hide().removeClass('mt-date-animate');
-		$(".mt-date-years").hide().removeClass('mt-date-animate');
+		var $input = $(e.target);
+		var $win = $(window);
+		var $main = $input.siblings(".mt-date-main");
 		if(e.target.value != ""){
 			//分离value
-			var arr = e.target.value.split("/");
-			console.log(arr);
+			var arr = $input.attr('data-date').split("/");
+			//console.log(arr);
 			this.setState({
 				year : arr[0],
 				month : arr[1],
 				day : arr[2]
 			});
 		}
-		var $main = $(e.target).siblings(".mt-date-main");
+
+		//碰撞检测 高：250，宽：240
+		var top = $input.offset().top - $win.scrollTop(),
+			left = $input.offset().left - $win.scrollLeft(),
+			inputHei = $input.height(),
+			inputWid = $input.width(),
+			winHei = $win.height(),
+			winWid = $win.width();
+
+		//超出情况
+		var topMark = false,
+			leftMark = false;
+		if(top+inputHei+250 > winHei){
+			topMark = true;
+		}
+		if(left+inputWid+240 > winWid){
+			leftMark = true;
+		}
+		if(leftMark && topMark){
+			this.setState({
+				style:{top:-250,right:0}
+			});
+		}else if( topMark && !leftMark){
+			this.setState({
+				style:{top:-250}
+			});
+		}else if( !topMark && leftMark){
+			this.setState({
+				style:{right:0}
+			});
+		}else{
+			this.setState({
+				style:{}
+			});
+		}
+
 		$main.show();
-
-    	$(document).off("click.DateInput").on("click.DateInput", function(e){
+		$(document).one("click.DateInput", function(e){
 			e.stopPropagation();
-
 			if(!$(e.target).closest('.mt-date-main')[0]){
 				$main.hide();
-				$(this).off("click.DateInputs");
 			}
     	});
-    	e.stopPropagation();
+		
 
 	},
 
 	//渲染
     render: function() {
-    	if(this.state.defaultValue == "null"){ 
-    		var val = "";
-    	}else{
-    		var val = this.state.year+'/'+this.state.month+'/'+this.state.day;
-    	}
+    	//规范数据格式
+		var format = this.format(this.state); //this.state.year+'/'+this.state.month+'/'+this.state.day;
+		var val = (this.state.defaultValue == "null"?"":format.val);
+		var formatShow = format.formatShow;
         return (
         	<div className="mt-input mt-date mt-icon-input">
-        		<input style={{width:this.props.width}} readOnly onClick={this.handleClick} placeholder={this.props.placeholder==undefined?"日期...":this.props.placeholder} onChange={this.handleChange} type="text" value={val} />
+        		<input style={{width:this.props.width}} readOnly data-date={this.state.year+'/'+this.state.month+'/'+this.state.day} onClick={this.handleClick} placeholder={this.props.placeholder==undefined?"日期...":this.props.placeholder} onChange={this.handleChange} type="text" value={val} />
         		<a style={{zIndex:9}} className="mt-iconbtn"><i className="iconfont icon-date"></i></a>
-        		<DateBox changeEvent={this.handleChange} year={this.state.year} month={this.state.month} day={this.state.day}/>
+        		<DateBox formatShow={formatShow} style={this.state.style} changeEvent={this.handleChange} year={this.state.year} month={this.state.month} day={this.state.day}/>
         	</div>
         );
     }

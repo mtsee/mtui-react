@@ -45,20 +45,35 @@ var codeTreeMenu = "import { TreeMenu } from '../../MTUI/index'\
 #<TreeMenu {...treeData}/>#"; 
 
 //日历
-var codeDateInput = 'import { DateInput } from \'../../MTUI/index\'\
-#var data = {\
+var codeDateInput = 'import { DateInput, DateInputs } from \'../../MTUI/index\'\
+#var data = {  // DateInput\
 #  width : \'200px\', //日历输入框宽度，默认是120px\
 #  defaultValue : null, //可以是now，null \
 #  placeholder : \'日期\', //内容为空时的描述 \
+#  format : \'yyyy-mm-dd\', //日期格式 \
 #  year : 2015, //年\
 #  month : 3, //月\
 #  day : 18 //日\
 #}\
+#var datas = {  //DateInputs\
+#  width : \'200px\', //日历输入框宽度，默认是120px\
+#  start : \'now\', //可以是now，null \ 开始时间 固定格式 eg：2016/8/4 这里注意下，必须用/分割\
+#  end : \'now\', //可以是now，null \ 结束时间 固定格式 eg：2016/8/4\
+#  placeholder : \'日期\', //内容为空时的描述 \
+#  format : \'yyyy年mm月dd\', //日期格式 \
+#  splitStr : \' 至 \' //日期分割符 \
+#}\
 #render:\
-#\
-#<DateInput {...data}/>\
-#多个日期组合：<DateInputs defaultValue="null" placeholder="选择时间段..."/>\
-#多个日期组合：<DateInputs start="2016/4/10" end="2016/5/12" placeholder="选择时间段..."/>';
+#  \
+#  年：<DateInput format="yyyy" defaultValue="null"/> \
+##  年-月：<DateInput format="yyyy-mm" defaultValue="now"/>\
+##  年-月-日：<DateInput format="yyyy年mm月dd日"  defaultValue="now"/>\
+##  自定义默认值：<DateInput year="2015" month="5" day="18"/>\
+##  自定义提示内容：<DateInput format="yyyy+mm+dd"  width="140px" defaultValue="null" placeholder="我是的日期..." year="2015" month="3" day="18"/>\
+##  多个日期组合：<DateInputs width="190px" format="yyyy-mm-dd" start="now" end="2016/10/5" placeholder="选择时间段..."/> <br/><br/>\
+##  多个日期组合带格式：<DateInputs width="200px" splitStr="至" format="yyyy-mm" placeholder="选择时间段..."/> <br/><br/>\
+##  多个日期组合带格式：<DateInputs width="200px" splitStr=" 至 " format="yyyy年" placeholder="选择时间段..."/> <br/><br/>\
+'; 
 //this.iniEditer(codeDateInput,'code-DateInput'); 
 
 //分页
