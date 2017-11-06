@@ -3,7 +3,7 @@
 - node : v5.9.0
 - npm : v3.7.3
 
-####React MTUI 1.0版本:[UI地址](http://mtui.mtsee.com)
+####React MTUI 1.0版本:[UI地址](http://mtui.h5ds.com)
 
 
 ####命令说明：
