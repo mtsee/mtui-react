@@ -1,0 +1,57 @@
+/**
+*	颜色
+*/
+@import "../var.scss";
+
+$marginLeft:3px;
+.mt-pagelist{
+	display: inline-block;
+	.mt-pagelist-next{
+		margin-left:$marginLeft;
+	}
+	a{
+		font-size: 12px;
+	}
+}
+
+@mixin fontFamily($display,$code){
+	display: $display;
+	content: $code;
+	font-family: "iconfont" !important;
+	line-height: normal;
+}
+.mt-pagelist-list{
+	display:inline-block;
+	li{
+		display: inline-block;
+		margin-left:$marginLeft;
+	}
+	.active{
+		a{
+			background: $mcolor;
+			color: #fff;
+			border-color:$mcolor;
+		}
+	}
+	.mt-pagelist-prevsize,.mt-pagelist-nextsize{
+		&:before{
+			@include fontFamily('inline-block','\e611');
+		}
+		&:after{
+			@include fontFamily(none,'\e601');
+		}
+
+		//hover
+		&:hover:before{
+			display: none;
+		}
+		&:hover:after{
+			display: inline-block;
+		}
+	}
+	.mt-pagelist-prevsize{
+		&:after{
+			@include fontFamily(none,'\e653');
+		}
+	}
+}

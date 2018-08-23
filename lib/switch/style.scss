@@ -1,0 +1,66 @@
+/**
+*	颜色
+*/
+@import "../var.scss";
+
+.mt-switch{
+	min-width:42px;
+	height:22px;
+	display:inline-block;
+	border-radius:100px;
+	position: relative;
+	cursor:pointer;
+	&:before{
+		content: '';
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		left: 1px;
+		top: 1px;
+		position:absolute;
+		z-index: 10;
+		background:#fff;
+		border-radius:100px;
+		transition: 0.3s;
+	}
+}
+.mt-switch-disabled{
+	opacity:0.5;
+}
+.mt-switch-lg{
+	min-width:46px;
+	height:24px;
+	&:before{
+		width: 22px;
+		height: 22px;
+	}
+}
+.mt-switch-sm{
+	min-width:34px;
+	height:18px;
+	&:before{
+		width: 16px;
+		height: 16px;
+	}
+}
+.mt-switch-xs{
+	min-width:26px;
+	height:14px;
+	&:before{
+		width: 12px;
+		height: 12px;
+	}
+}
+
+.mt-switch-off{
+	background:#CCC;
+	&:before{
+		transform: translateX(0)
+	}
+}
+.mt-switch-on{
+	background:$blue;
+	&:before{
+		transform: translateX(100%)
+	}
+}

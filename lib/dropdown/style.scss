@@ -1,0 +1,33 @@
+/*modal*/
+.mt-dropdown{
+	width: 100px;
+	background:#fff;
+	position: absolute;
+	box-shadow: 0 0 10px rgba(0,0,0,.2);
+	z-index: 1000;
+	display:none;
+	.mt-modal-close{
+		width: 20px;
+		height: 20px;
+		text-align:center;
+		line-height: normal;
+		position:absolute;
+		right: 10px;
+		top:10px;
+		color:#333;
+		.iconfont{
+			font-size: 20px;
+		}
+	}
+}
+.mt-dropdown-btn{
+	display: inline-block;
+}
+
+.mt-dropdown-hover{
+	&:hover{
+		.mt-dropdown{
+			display: block;
+		}
+	}
+}

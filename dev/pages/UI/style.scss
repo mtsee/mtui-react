@@ -1,0 +1,94 @@
+/*ui CSS*/
+.ui .btnw{ width: 200px;}
+.ui .mt-panel,.ui .mt-panel-min{
+	margin-bottom:20px;
+}
+.ui .btns{
+	margin-top:10px;
+	a{
+		margin-right: 10px;
+	}
+}
+.ui .grids{
+	border:1px solid #E9EEF1;
+	padding:10px;
+	margin-top:10px;
+	.mt-grid{
+		background:#E8ECF0;
+		margin-top:10px;
+		padding:5px;
+	}
+}
+
+.hljs{
+	font-family:"Microsoft YaHei";
+	font-size:12px;
+}
+
+.collapse .mt-collapse-content{
+	padding:10px;
+	font-size:12px;
+}
+
+.ui-icons{
+	padding:20px 0;
+	li{
+		display: inline-block;
+		height: 50px;
+		width: 50px;
+		text-align: center;
+		border: 1px solid rgba(0,0,0,0.1);
+		margin: 5px;
+		.iconfont{
+			font-size: 30px;
+			vertical-align: middle;
+		}
+		&:before{
+			display: inline-block;
+			content: '';
+			height: 100%;
+			width: 0;
+			vertical-align: middle;
+		}
+	}
+}
+
+.max-pre-code{
+	max-width: 500px;
+	overflow: auto;
+}
+
+.api{
+	margin-top: 20px;
+	.apispan{
+		font-size: 16px;
+		margin-top: 20px;
+		margin-right: 10px;
+		color: #333;
+	}
+	.tips{
+		padding: 10px 0;
+		color: #ff9b00;
+		.tipspan{
+			display: inline-block;
+			padding: 2px 8px;
+			border-radius: 100px;
+			background: #ff9b00;
+			color: #fff;
+			font-size: 12px;
+			margin-right: 10px;
+		}
+	}
+	.mt-table{
+		th{
+			background: #f1f1f1;
+		}
+		th:nth-of-type(2){
+			width: 500px;
+		}
+		td{
+			color: #666;
+			font-size: 13px;
+		}
+	} 
+}

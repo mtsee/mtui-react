@@ -1,0 +1,35 @@
+/*modal*/
+.mt-modal{
+	position:fixed;
+	top:0;
+	left:0;
+	bottom:0;
+	right:0;
+	background:rgba(0,0,0,.4);
+	overflow: auto;
+	z-index:1000;
+	display:none;
+}
+.mt-modal-box{
+	background:#fff;
+	position: absolute;
+	width: 600px;
+	height: 400px;
+	top: 50%;
+	left: 50%;
+	box-shadow: 0 0 10px rgba(0,0,0,.2);
+	.mt-modal-close{
+		width: 20px;
+		height: 20px;
+		text-align:center;
+		line-height: normal;
+		position:absolute;
+		right: 10px;
+		top:10px;
+		color:#333;
+		z-index: 1000;
+		.iconfont{
+			font-size: 20px;
+		}
+	}
+}

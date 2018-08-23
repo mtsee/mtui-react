@@ -1,0 +1,89 @@
+@import '../public.scss';
+
+$leftWidth : 200px;
+//头部
+.header{
+	background:#fff;
+	height:60px;
+	box-shadow:$boxshadow;
+	margin-left: $leftWidth + 1px;
+	&:before{
+		content: '';
+		display: inline-block;
+		height: 100%;
+		width: 0;
+		margin-left: 20px;
+		vertical-align: middle;
+	}
+	.menus{
+		padding: 5px;
+		a{
+			color: #333;
+		}
+	}
+}
+
+//菜单
+.menu{
+	background:#fff;
+	position: fixed;
+	width: $leftWidth;
+	top: 0;
+	bottom:0;
+	box-shadow:$boxshadow;
+	.logo{
+		height: 60px;
+		line-height: 60px;
+		text-align: center;
+		font-size: 18px;
+		background:#108ee9;
+		color: #fff;
+		a{
+			color:#fff;
+		}
+	}
+	.navlist{
+		position: absolute;
+		top: 60px;
+		bottom:0;
+		width: 100%;
+		padding: 20px;
+		overflow: auto;
+		li{
+			margin-left: 10px;
+			margin-bottom: 10px;
+			position:relative;
+			a{
+				color:#108ee9;
+				display: block;
+				i{
+					margin-left: 5px;
+					font-size: 12px;
+					color:#bbb;
+				}
+			}
+			.active-menu{
+				border-left: 4px solid rgba(16,142,233,1);
+				margin-left: -9px;
+				background:rgba(16,142,233,0.2);
+				padding:5px;
+			}
+		}
+		.classn:before{
+			content: '';
+			display: inline-block;
+			width: 10px;
+			height: 10px;
+			border-radius: 100px;
+			background:#108ee9;
+			position:absolute;
+			left:-15px;
+			top:5px;
+		}
+	}
+}
+
+.uibody{
+	margin-left: $leftWidth;
+	padding:20px;
+}

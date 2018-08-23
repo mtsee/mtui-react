@@ -1,0 +1,69 @@
+/**
+*	颜色
+*/
+@import "../var.scss";
+
+/* sliderbar bar */
+.mt-sliderbar-active {
+	display: block; 
+	height: 8px; 
+	background: #e4eaec; 
+	border-radius: 100px; 
+}
+.mt-sliderbar-active-bar {
+	float: left; 
+	width: 0; 
+	height: 100%; 
+	font-size: 1.2rem; 
+	line-height: 2rem; 
+	border-radius: 100px; 
+	color: #fff; 
+	text-align: center; 
+	background-color: #0e90d2; 
+	box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15); 
+	transition: 10px .6s ease; 
+	background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent); 
+	background-size: 36px 36px; 
+	-webkit-animation: sliderbar-bar-stripes 2s linear infinite; 
+	animation: sliderbar-bar-stripes 2s linear infinite; 
+}
+.mt-sliderbar-active-success{
+	.mt-sliderbar-active-bar{
+		background-color: $colorSuccess; 
+	}
+}
+.mt-sliderbar-active-danger{
+	.mt-sliderbar-active-bar{
+		background-color: $colorDanger; 
+	}
+}
+.mt-sliderbar-active-info{
+	.mt-sliderbar-active-bar{
+		background-color: $colorInfo; 
+	}
+}
+.mt-sliderbar-active-primary{
+	.mt-sliderbar-active-bar{
+		background-color: $colorPrimary; 
+	}
+}
+.mt-sliderbar-active-warning{
+	.mt-sliderbar-active-bar{
+		background-color: $colorWarning; 
+	}
+}
+.mt-sliderbar-active-default{
+	.mt-sliderbar-active-bar{
+		background-color: $colorDefault; 
+	}
+}
+
+/*表单之进度条*/
+@-webkit-keyframes sliderbar-bar-stripes {
+  from {background-position: 36px 0; }
+  to {background-position: 0 0; }
+}
+@keyframes sliderbar-bar-stripes {
+  from {background-position: 36px 0; }
+  to {background-position: 0 0; }
+}

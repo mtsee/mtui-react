@@ -1,0 +1,48 @@
+/**
+*	颜色
+*/
+@import "../var.scss";
+
+//面板
+.mt-panle{
+	background:#fff;
+	padding:20px;
+	.mt-panle-h1{
+		padding-bottom:20px;
+		font-size: 18px;
+		color: $cfont;
+		border-bottom: 1px solid $cborder;
+	}
+	.mt-panle-h2{
+		 @extend .mt-panle-h1;
+		 font-size: 16px;
+	}
+	.mt-panle-h3{
+		 @extend .mt-panle-h1;
+		 font-size: 14px;
+	}
+	.mt-panle-box{
+		margin-top: 20px;
+		color: $cfont;
+	}
+}
+//小面板
+.mt-panle-min{
+	@extend .mt-panle;
+	padding:10px;
+	.mt-panle-h1{
+		font-size: 16px;
+		padding-bottom:10px;
+	}
+	.mt-panle-h2{
+		font-size: 14px;
+	}
+	.mt-panle-h3{
+		font-size: 12px;
+	}
+	.mt-panle-box{
+		margin-top: 10px;
+		font-size: 12px;
+		color: $cfont;
+	}
+}

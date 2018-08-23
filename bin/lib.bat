@@ -1,0 +1,1 @@
+npm run lib & npm run bump & npm run bumplib & pause

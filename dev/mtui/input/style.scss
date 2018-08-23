@@ -1,0 +1,76 @@
+/**
+*	颜色
+*/
+@import "../var.scss";
+
+.mt-input{
+	display:inline-block;
+	border:1px solid $iborder;
+	border-radius:2px;
+	padding: 2px 4px;
+	vertical-align: middle;
+	position: relative;
+	background: #fff;
+	input, textarea{
+		border:0;
+		height: 20px;
+		width: 100%;
+	}
+	textarea{
+		height: auto;
+	}
+}
+.mt-input-disabled{
+	background-color: #ededed;
+	cursor: not-allowed;
+	input{
+		background-color: #ededed;
+		cursor: not-allowed;
+	}
+}
+.mt-input-prefix-out{
+	input{
+		padding-left: 20px;
+	}
+}
+.mt-input-suffix-out{
+	input{
+		padding-right: 20px;
+	}
+}
+.mt-input-prefix,
+.mt-input-suffix{
+	display: inline-block;
+	vertical-align: middle;
+	position: absolute;
+	z-index: 100;
+	top:50%;
+	margin-top: -9px;
+}
+.mt-input-prefix{
+	padding-right:2px;
+	left: 4px;
+}
+.mt-input-suffix{
+	padding-left:2px;
+	right: 4px;
+}
+.mt-input-lg{
+	padding:2px 6px;
+	input{
+		height: 28px;
+	}
+}
+.mt-input-sm{
+	padding:1px 3px;
+	input{
+		height: 20px;
+	}
+}
+.mt-input-xs{
+	padding:0 2px;
+	input{
+		height: 20px;
+		font-size: 12px;
+	}
+}

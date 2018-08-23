@@ -1,0 +1,1 @@
+npm run ftp & pause

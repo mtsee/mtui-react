@@ -1,24 +1,32 @@
-/**
-* 整个项目的入口
-* @author : Mantou
-* @date : 2016-03-01
-*/
-import React from 'react'
-import { Link } from 'react-router' 
+'use strict';
+import React, { Component } from 'react';
+import { Link } from 'react-router';
+import conf from './Conf/Conf';
+import '../mtui/style.scss';
 
-import Menu from './Common/Menu'
-import Footer from './Common/Footer'
+class App extends Component {
+    constructor(props) {
+        super(props);
+    }
 
-const App = React.createClass({
-  render() {
-    return (
-    	<div className="app">
-    		<Menu />
-    		{this.props.children}
-    		<Footer/>
-    	</div>
-    );
-  }
-});
-//APP入口
-module.exports = App;
+    componentDidUpdate(prevProps, prevState) {
+        $('pre code').each(function (i, block) {
+            hljs.highlightBlock(block);
+        });
+    }
+
+    componentDidMount() {
+        hljs.initHighlightingOnLoad();
+    }
+
+    render() {
+        return (
+            <div className="app">
+                {this.props.children}
+            </div>
+        );
+    }
+}
+
+// APP入口
+export default App;

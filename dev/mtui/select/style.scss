@@ -1,0 +1,69 @@
+/*select.scss*/
+@import '../var.scss';
+
+.mt-placeholder{
+	color:#ccc;
+}
+.mt-select-input{
+	input{
+		display: none;
+	}
+	display:inline-block;
+	font-size:12px;
+	border:1px solid $iborder;
+	padding:5px 6px;
+	cursor: pointer;
+	position:relative;
+	padding-right:20px;
+	border-radius:2px;
+	color:#333;
+	vertical-align:middle;
+	.iconfont{
+		position:absolute;
+		right: 2px;
+		top: 50%;
+		margin-top:-7px;
+	}
+	&:before{
+		content: '';
+		display: inline-block;
+		height: 100%;
+		width: 0px;
+		vertical-align: middle;
+	}
+}
+.mt-select{
+	position: absolute;
+	background:#fff;
+	position: absolute;
+	box-shadow: 0 0 10px rgba(0,0,0,.2);
+	z-index: 1000;
+	display:none;
+	overflow: auto;
+	.mt-select-option{
+		font-size: 12px;
+		padding:2px 5px;
+		cursor: pointer;
+		&:hover{
+			background:$colorInfo;
+			color: #fff;
+		}
+	}
+}
+.mt-select-ie10{
+	// transition: 0.3s;
+	// transform-origin: top left;
+	// transform:scale(1,0);
+}
+
+.mt-select-animate{
+	transform:scale(1,1);
+}
+
+.mt-select-hover{
+	&:hover{
+		.mt-select{
+			display: block;
+		}
+	}
+}

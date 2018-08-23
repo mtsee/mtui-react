@@ -1,0 +1,126 @@
+/**
+* @type MTUI2.0
+* @author : Mantou
+*/
+@import './var.scss';
+
+body{margin:0; padding:0; font-family:"Microsoft YaHei"; -webkit-touch-callout: inherit; -webkit-user-select: auto; font-size: 14px; word-break: break-all;}
+i, em {font-style: normal;} 
+a {-webkit-tap-highlight-color: rgba(0, 0, 0, 0.35); cursor: pointer; text-decoration: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+img {-ms-interpolation-mode: bicubic; vertical-align: middle; border: none; }
+table {border-collapse: collapse; border-spacing: 0; }
+th, td, caption {vertical-align: middle; }
+textarea {resize: none; }
+input, button, select, textarea {outline: none; border-radius: 0; font-family: inherit; font-size: inherit; }
+button {border: none; cursor: pointer; } 
+p, ul, ol, li {list-style: none; margin: 0; padding: 0; }
+address, caption, cite, code, dfn, em, th, var {font-weight: normal; font-style: normal; }
+strong {font-weight: bold; }
+h1, h2, h3, h4, h5, h6 {font-weight: normal; margin: 0; padding: 0; }
+label {padding-right: 10px; }
+.iconfont {padding: 0; margin: 0; line-height: normal;}
+/*清除浮动*/
+.clear {clear: both; display: block; font-size: 0; height: 0; line-height: 0; width: 100%; }
+.clearfix:after {content: ""; display: block; height: 0; clear: both; visibility: hidden; }
+*, *:before, *:after {-moz-box-sizing: border-box; box-sizing: border-box; }
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar {width: 5px; height: 5px; background-color: #F8F8F8; }
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track { background-color: #F5F5F5; }
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb { background-color: #D0D8DB; }
+
+.mt-text{
+	vertical-align:middle;
+}
+
+//404
+.mt-404{
+	padding:40px 10px;
+	.mt-404-title{
+		font-size: 40px;
+    	font-weight: bold;
+    	text-align: center;
+    	line-height: 64px;
+    	color: #838FA1;
+	}
+	.mt-404-info{
+		line-height: 30px;
+	    font-size: 21px;
+	    margin-top: 20px;
+	    text-align: center;
+	    color: #dce2ec;
+	}
+	.mt-404-content{
+		margin-top: 20px;
+	    margin-bottom: 20px;
+	    font-size: 16px;
+	    text-align: center;
+	    color: #96a2b4;
+	    p{
+	    	padding-bottom:30px;
+	    }
+	}
+}
+
+//无限旋转
+.mt-animate-rotate{
+	display:inline-block;
+	position: relative;
+	animation:mtrotate 2s infinite linear;
+	transform-origin:50% 45%;
+}
+@keyframes mtrotate {
+	from{transform:rotate(0);}
+	to{transform:rotate(360deg);}
+}
+
+/* table 样式 */
+.mt-table {
+	width: 100%;
+	margin: 10px 0;
+	th {
+		text-align: left;
+		padding: 10px 8px;
+		border-bottom: 2px solid #E8EAEA;
+		color: #666;
+		font-weight: bolder;
+	}
+	td {
+		padding: 10px 8px;
+		border-bottom: 1px solid #E8EAEA;
+		font-size: 14px;
+		color: #333;
+	}
+}
+.mt-table-noborder {
+  	border: none;
+	td {
+		border: none;
+	}
+}
+.mt-table-border {
+  border-top: 1px solid #E8EAEA;
+  border-left: 1px solid #E8EAEA;
+  border-right: 1px solid #E8EAEA;
+}
+.mt-table-bordered {
+  border-top: 1px solid #E8EAEA;
+  border-left: 1px solid #E8EAEA;
+  border-right: 1px solid #E8EAEA;
+  td, th{
+	  border-left: 1px solid #E8EAEA;
+  }
+}
+.mt-table-striped tr:nth-child(even) {
+  background: #f9f9f9;
+}
+.mt-table-center {
+  	text-align: center;
+  	th {
+  		text-align: center;
+	}
+}
+.mt-table-hover tr + tr:hover {
+  	background: #e6e6e6;
+}

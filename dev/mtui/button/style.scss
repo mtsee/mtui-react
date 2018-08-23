@@ -1,0 +1,107 @@
+/**
+*	颜色
+*/
+@import "../var.scss";
+
+/*按钮*/
+@mixin mtbtn(
+	$padding:5px 10px,
+	$color:$colorDefault,
+	$bg:#fff,
+	$border:1px solid $c2border,
+	$hover:$hoverDefault,
+	$fsize:14px){ 
+	display: inline-block;
+	padding: $padding;
+	background: $bg;
+	color: $color;
+	font-size: $fsize;
+	border:$border;
+	border-radius:2px;
+	text-align:center;
+	cursor: pointer;
+	vertical-align: middle;
+    -webkit-user-select: none;
+    user-select: none;
+	&:hover{
+		background: $hover;
+	}
+}
+.mt-btn{
+	@include mtbtn;
+	.mt-button-prefix,
+	.mt-button-suffix{
+		vertical-align: middle;
+	}
+	.mt-button-prefix{
+		padding-right:5px;
+	}
+	.mt-button-suffix{
+		padding-left:5px;
+	}
+}
+.mt-button-prefix-out{
+	padding-left: 10px;
+}
+.mt-button-suffix-out{
+	padding-right: 10px;
+}
+.mt-btn-lg{
+	@include mtbtn($fsize:18px);
+}
+.mt-btn-sm{
+	@include mtbtn($fsize:12px);
+}
+.mt-btn-xs{
+	@include mtbtn($fsize:12px, $padding:2px 4px);
+}
+@mixin mtBtnType(
+	$color:#fff,
+	$bg:#fff,
+	$borderColor:$bg,
+	$hover:$hoverDefault){
+	background: $bg;
+	color: $color;
+	border:1px solid $borderColor;
+	&:hover{
+		background: $hover;
+	}
+}
+.mt-btn-default{
+	@include mtBtnType($color:$colorDefault,$borderColor:$c2border);
+}
+.mt-btn-primary{
+	@include mtBtnType($bg:$colorPrimary,$hover:$hoverPrimary);
+}
+.mt-btn-success{
+	@include mtBtnType($bg:$colorSuccess,$hover:$hoverSuccess);
+}
+.mt-btn-info{
+	@include mtBtnType($bg:$colorInfo,$hover:$hoverInfo);
+}
+.mt-btn-warning{
+	@include mtBtnType($bg:$colorWarning,$hover:$hoverWarning);
+}
+.mt-btn-danger{
+	@include mtBtnType($bg:$colorDanger,$hover:$hoverDanger);
+}
+.mt-btn-block{
+	display: block;
+	text-align:center;
+}
+.mt-btn-disabled{
+	opacity:0.5;
+}
+
+/*按钮点击后触发的效果*/
+.mt-ink-reaction {position: relative; overflow: hidden; }
+.mt-ink-reaction .mt-ink {position: absolute; width: 200px; height: 200px; margin-left: -100px; margin-top: -100px; background-color: rgba(255, 255, 255, 0.3); border-radius: 50%; z-index: 1; pointer-events: none; opacity: 0; -webkit-animation: ripple-animation 1.5s; animation: ripple-animation 1.5s; }
+.mt-ink-reaction .mt-ink.inverse {background-color: rgba(12, 12, 12, 0.5); }
+@-webkit-keyframes ripple-animation {
+  from {-webkit-transform: scale(0); transform: scale(0); opacity: 1; }
+  to {-webkit-transform: scale(1, 1); transform: scale(1, 1); opacity: 0; }
+}
+@keyframes ripple-animation {
+  from {-webkit-transform: scale(0); transform: scale(0); opacity: 1; }
+  to {-webkit-transform: scale(1, 1); transform: scale(1, 1); opacity: 0; }
+}

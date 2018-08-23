@@ -1,5 +1,5 @@
 //定义方法名称，取个名称，action 内使用一个字符串类型的 type 字段来表示将要执行的动作
-import { SET_USER_INFO } from '../containers/constants'
+import { SET_USER_INFO } from '../actions/user'
 
 //初始化数据
 const initialState = {

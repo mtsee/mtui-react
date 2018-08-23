@@ -1,0 +1,36 @@
+/*Grid*/
+.mt-grid{
+	display: inline-block;
+    box-sizing: border-box;
+    position: relative;
+    vertical-align: middle;
+}
+
+@mixin GridFun($n){
+	//栅格函数 24 栅格
+	@for $i from 1 through 16 {
+		@for $j from 1 through $i {
+	  		//宽度
+			.mt-grid#{$n}-#{$i}-#{$j} {
+				width: percentage($j/$i); 
+			}
+			//偏距//
+			.mt-grid#{$n}-offset-#{$i}-#{$j}{
+				margin-left:percentage($j/$i); 
+			} 
+		}
+	}
+}
+
+@include GridFun('');
+
+//媒体查询- 响应式
+@media (min-width:0) and (max-width:640px) {
+	@include GridFun('-sm');
+}
+@media (min-width:641px) and (max-width:1024px) {
+	@include GridFun('-md');
+}
+@media (min-width:1025px) {
+	@include GridFun('-lg');
+}

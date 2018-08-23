@@ -1,0 +1,53 @@
+/* popover 提示*/
+$borderColor: #fff;
+$borderColorOut: #e6e6e6;
+$borderColorArrow: #d9d9d9;
+$wid : 6px;
+.mt-popover{ 
+	position: absolute; 
+	font-size:12px;
+	padding: 6px;
+	box-shadow:0 0 8px rgba(0,0,0,.1);
+	background:#fff;
+	border-radius:3px;
+	border:1px solid $borderColorOut;
+	z-index: 9999;
+}
+.mt-popover-arrow{
+	display: inline-block; 
+	position: absolute; 
+	width: 0; 
+	height: 0; 
+	border:$wid solid transparent;
+	&:before{ 
+		content:''; 
+		display: inline-block; 
+		position: absolute; 
+		width: 0; 
+		height: 0;
+		top: -$wid;
+		left: -$wid;
+		border:$wid solid transparent;
+	}
+}
+
+@mixin ArrowFun($a,$b,$c,$d,$e){
+	.mt-popover-#{$a}{
+		.mt-popover-arrow{
+			#{$c}: -$wid*2; 
+			#{$b}: 50%; 
+			margin-#{$b}: -$wid; 
+			border-#{$a}:$wid solid $borderColorArrow; 
+			&:before{
+				border-#{$a}:$wid solid $borderColor; 
+				top: -$wid + $d;
+				left: -$wid + $e;
+			}
+		}
+	}
+}
+
+@include ArrowFun('top','left','bottom', -1px, 0);
+@include ArrowFun('bottom','left','top', 1px, 0);
+@include ArrowFun('right','top','left', 0, 1px);
+@include ArrowFun('left','top','right', 0, -1px);

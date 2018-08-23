@@ -1,0 +1,40 @@
+/**
+*	颜色
+*/
+@import "../var.scss";
+
+.mt-slider{
+	display:inline-block;
+	border-radius:100px;
+	vertical-align: middle;
+	background:#e9e9e9;
+	height:4px;
+	position:relative;
+	.mt-slider-bar{
+		display: block;
+		height:100%;
+		background:$blue;
+		position:relative;
+		float: left;
+		border-radius:100px;
+		.mt-slider-btn{
+			content: '';
+			display: inline-block;
+			width: 14px;
+			height: 14px;
+			border-radius:100px;
+			background:#fff;
+			position:absolute;
+			top: 50%;
+			right: 0;
+			margin-left: -7px;
+			margin-top: -7px;
+			border:2px solid $blue;
+			transition: 0.3s;
+			transform:scale(1);
+			&:hover{
+				transform:scale(1.2);
+			}
+		}
+	}
+}

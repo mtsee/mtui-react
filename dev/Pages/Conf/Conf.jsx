@@ -3,8 +3,8 @@
 * @author : Mantou
 * @date : 2016-03-01
 */
-let Conf = {
-  pageAnimate : 'fadeInLeft animated' 
+const Conf = {
+	env:'dev'
 }
 //配置信息
-module.exports = Conf;
+export default Conf;

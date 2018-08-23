@@ -1,0 +1,19 @@
+{
+  "name": "mtui",
+  "author": "Mantou",
+  "version": "2.4.61",
+  "description": "webpack and gulp for react",
+  "main": "index.js",
+  "license": "MIT",
+  "keywords": [
+    "mtui",
+    "react",
+    "react ui",
+    "react form",
+    "react plugin"
+  ],
+  "homepage": "https://git.oschina.net/676015863/mtui2.0",
+  "directories": {
+    "example": "example"
+  }
+}

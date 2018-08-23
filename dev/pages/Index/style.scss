@@ -1,0 +1,184 @@
+/*CSS*/
+@import '../../mtui/var.scss';
+.index{
+
+}
+
+.index-header{
+	height:50px;
+	line-height:50px;
+	background:#fff;
+	.headerbox{
+		max-width: 1000px;
+		margin:0 auto;
+	}
+	.logo{
+		float: left;
+		height: 30px;
+		width: 80px;
+		img{
+			width: 100%;
+		}
+	}
+}
+
+.menus{
+	float: right;
+	.update{
+		i:after{
+			content: '';
+			display: inline-block;
+			width: 8px;
+			height: 8px;
+			background: red;
+			margin-left: 5px;
+			border-radius: 100px;
+			position: relative;
+			top: -6px;
+		}
+	}
+
+	.btns{
+		margin-top: 10px;
+		a{
+			display: inline-block;
+			width: 80px;
+			text-align: center;
+			height: 30px;
+			line-height: 30px;
+			overflow: hidden;
+			position:relative;
+			color: #333;
+			&:after{
+				content: '';
+				display: inline-block;
+				width: 200px;
+				height: 200px;
+				background:$blue;
+				position:absolute;
+				left:0;
+				right:0;
+				transform:translate(-250px,-100px) rotate(45deg);
+				transition:1s;
+			}
+			&:hover{
+				&:after{
+					transform:translate(0,-100px) rotate(45deg);
+				}
+				i{
+					color: #fff;
+				}
+			}
+			i{
+				display: inline-block;
+				position:relative;
+				z-index: 100;
+				transition: 0.5s;
+			}
+		}
+		.active{
+			color:$blue;
+		}
+		span{
+			display: inline-block;
+			width: 130px;
+			text-align: center;
+			height: 30px;
+			line-height: 30px;
+			overflow: hidden;
+			position:relative;
+			color: $blue;
+		}
+	}
+}
+
+.index-body{
+	background:$blue;
+}
+.index-body2{
+	background:#fff;
+}
+.indexbox{
+	max-width:1000px;
+	margin:0 auto;
+	padding:160px 0;
+	text-align:center;
+	&.sytle1{
+		h1{
+			font-size: 30px;
+			font-weight: bolder;
+			padding:20px 0;
+			color: rgba(255,255,255,1);
+		}
+		p{
+			font-size: 14px;
+			color:rgba(0,0,0,.5);
+		}
+	}
+	&.sytle2{
+		h1{
+			font-size: 30px;
+			font-weight: bolder;
+			padding:20px 0;
+			color:$blue;
+		}
+		p{
+			font-size: 14px;
+			color: rgba(0,0,0,0.5);
+		}
+	}
+	@mixin Icon{
+		display: inline-block;
+		position:absolute;
+		transform-origin: 50% 50%;
+		top: 0;
+		left: 34.25px;
+		width: 68.5px;
+		height: 120px;
+		border-top:4px solid $blue;
+		border-bottom:4px solid $blue;
+		box-sizing: border-box;
+	}
+	.item{
+		display: inline-block;
+		.info{
+			color: rgba(0,0,0,0.5);
+		}
+	}
+	.icobox{
+		display: inline-block;
+		position:relative;
+		width: 140px;
+		height: 120px;
+		margin: 40px 50px 20px 50px;
+		text-align: center;
+		.icon{
+			span{
+				line-height: 110px;
+				font-size: 20px;
+				font-weight: bolder;
+				color: $blue;
+				z-index: 100;
+				cursor: pointer;
+				@include Icon;
+			}
+			&:hover{
+				span,&:before,&:after{
+					transition: 0.5s;
+					background:$blue;
+					color: #fff;
+				}
+			}
+			&:before{
+				@include Icon;
+				content: '';
+				transform:rotate(60deg);
+			}
+			&:after{
+				@include Icon;
+				content: '';
+				transform:rotate(120deg);
+			}
+		}
+	}
+}

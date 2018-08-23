@@ -1,0 +1,54 @@
+/**
+*	验证
+*/
+@import "../var.scss";
+
+@mixin Info($color){
+	.iconfont{
+		color:$color;
+	}
+	.mt-validate-info{
+		color:$color;
+		position: absolute;
+		left:0;
+		right: 0;
+		top:100%;
+		font-size: 12px;
+		margin-top: 2px;
+	}
+}
+
+.mt-validate{
+	position:relative;
+	transition: 0.3s;
+	.icon-null{
+		transition: 0.3s;
+		transform:scale(0);
+	}
+	.icon-null{
+		width: 16px;
+		height: 16px;
+		display: inline-block;
+	}
+}
+
+.mt-validate-danger{
+	border:1px solid $colorDanger;
+	@include Info($colorDanger);
+}
+
+.mt-validate-warning{
+	border:1px solid $colorWarning;
+	@include Info($colorWarning);
+}
+
+.mt-validate-success{
+	@include Info($colorSuccess);
+}
+
+/* mt-select-input 没有提示符号 */
+.mt-select-input{
+	.mt-input-suffix{
+		display: none;
+	}
+}

@@ -1,0 +1,11 @@
+/**
+*	颜色
+*/
+@import "../var.scss";
+
+.mt-tree{
+	display: inline-block;
+	.mt-tree-child{
+		margin-left: 20px;
+	}
+}

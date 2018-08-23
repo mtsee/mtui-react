@@ -1,30 +1,56 @@
-# mtui-react
+# MTUI2.0 UI React
 
-- node : v5.9.0
-- npm : v3.7.3
+demo地址：[mtui] components build with React.
 
-####React MTUI 1.0版本:[UI地址](http://mtui.h5ds.com)
+基于 React 封装的 Web 组件库。
 
+npm地址：[npm](https://www.npmjs.com/package/mtui)  [Node V6.9.5]  [React V15+] 
 
-####命令说明：
-- npm install 安装插件 
-- npm build 打包发布(start-build.bat)
+## 使用
 
-#####HOT开发模式(推荐)：
-- 第一步启动服务器：npm server (start-server.bat)
-- 第二步进入热开发：npm hot (start-dev-hot.bat)
+### npm安装使用
 
-#####普通开发模式：
-- 页面刷新模式 npm start（start-dev-old.bat） 
+- 安装使用
+  ```
+  npm install mtui
+  ```
 
-tips:热开发模式和自动刷新模式二选一。
+```javascript
 
-浏览器输入：localhost:3000
+  import 'mtui/style.css';
+  import {DatePicker} from 'mtui/index';
 
-####目录结构：
-- mtui-react
- + build `发布的文件`
- + dev `开发的文件`
+  ReactDOM.render(<DatePicker format="yyyy-mm-dd"/>, mountNode);
 
+```   
 
-@by 馒头
+## 开发及构建
+
+### 目录结构
+```
+├── package.json
+├── build         # 生成目录
+├── dev           # 源文件目录 
+├── dev/mtui      # 组件库目录 
+└── lib           # npm 包构建目录
+```
+
+### 开发
+
+使用之前先安装相关依赖：
+```
+npm install webpack -g
+npm install
+
+浏览器输入
+http://localhost:4001
+```
+- 开发
+  ```
+  npm start
+  ```
+- 构建
+  ```
+  npm run build
+  ```
+[mtui]: http://mtui.h5ds.com/

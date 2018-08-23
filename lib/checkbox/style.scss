@@ -1,0 +1,113 @@
+/**
+*	颜色
+*/
+@import "../var.scss";
+
+.mt-checkbox{
+	display:inline-block;
+	cursor:pointer;
+	vertical-align:middle;
+	&:hover{
+		.mt-checkbox-icon{
+			border-color:$blue;
+		}
+	}
+	.mt-checkbox-icon{
+		display:inline-block;
+		width: 14px;
+		height:14px;
+		vertical-align:middle;
+		border:1px solid #ccc;
+		margin-right:5px;
+		transition:0.5s;
+		box-sizing: content-box;
+		position:relative;
+		&:after{
+			content: '\e686';
+			font-family: "iconfont" !important;
+			font-size: 14px;
+			color:$blue;
+			float: left;
+			display: inline-block;
+			transition:0.2s;
+			width: 100%;
+			height: 100%;
+			position:relative;
+			text-align: center;
+			top:50%;
+			left:50%;
+			margin:-50% 0 0 -50%;
+			transform: scale(0);
+		}
+	}
+}
+
+.mt-checkbox-checked{
+	.mt-checkbox-icon{
+		border-color:$blue;
+		&:after{
+			transform: scale(1);
+		}
+	}
+}
+
+.mt-checkbox-other{
+	.mt-checkbox-icon{
+		border-color:$blue;
+		&:before{
+			content: '';
+			display: inline-block;
+			width: 80%;
+			height: 4px;
+			background:$blue;
+			position:relative;
+			float: left;
+			text-align: center;
+			top:50%;
+			left:50%;
+			margin:-2px 0 0 -40%;
+		}
+	}
+}
+
+.mt-checkbox-disabled{
+	opacity:0.6;
+	.mt-checkbox-icon{
+		border-color:#ccc;
+		&:after{
+			color:#ccc;
+			background: #fff;
+		}
+	}
+	&:hover{
+		.mt-checkbox-icon{
+			border-color:#ccc;
+		}
+	}
+}
+
+.mt-checkbox-group{
+	.mt-checkbox{
+		margin-right: 10px;
+	}
+}
+
+.mt-checkbox-group-button{
+	font-size:12px;
+	.mt-checkbox-icon{
+		display: none;
+	}
+	.mt-checkbox{
+		margin-right:-1px;
+		border:1px solid #ccc;
+		padding: 4px 10px;
+	}
+	.mt-checkbox-checked{
+		border-color:$blue;
+		background:$blue;
+		color:#fff;
+		box-shadow: 0 0 -1px 0 $blue;
+		position: relative;
+		z-index: 10;
+	}
+}

@@ -1,0 +1,38 @@
+/*首页的CSS*/
+@import '../public.scss';
+.update{
+	.list{
+		width: 1200px;
+		margin: 20px auto;
+		padding: 20px;
+		background: #fff;
+	}
+	.list li{ 
+		padding:10px; 
+		font-size:14px;
+		padding-bottom: 20px;
+		padding-left: 100px;
+		position: relative;
+		line-height: 20px;
+		&:before{
+			content: '';
+			display: inline-block;
+			height: 100%;
+			position: absolute;
+			width: 0;
+			border-left: 1px solid #ccc;
+			left: 50px;
+		}
+		i{
+			color:#fff;
+			background: $yellow;
+			position: absolute;
+			left: 10px;
+			z-index: 10;
+			font-size: 12px;
+			padding: 2px 5px;
+			border-radius: 100px;
+			margin-right: 10px;
+		}
+	}
+}

@@ -1,0 +1,55 @@
+/**
+*	loading
+*/
+@import "../var.scss";
+.mt-loading-bg{
+	.mt-loading-spin{
+		background:rgba(255,255,255,.6);
+		border-radius:50%;
+	}
+}
+.mt-loading{
+	position: absolute;
+	top:50%;
+	left:50%;
+	z-index: 1000;
+	width: 0;
+	height:0;
+	background:rgba(0,0,0,.2);
+	margin: -30px 0 0 -20px;
+	.mt-loading-spin{
+		display: inline-block;
+		.iconfont{
+			display: inline-block;
+			font-size: 40px;
+			animation:mtRotate 3s linear infinite;
+			color:$blue;
+			opacity: .7;
+		}
+	}
+	.mt-loading-info{
+		position:absolute;
+		font-size: 12px;
+		color: $blue;
+		left:0;
+		width: 200px;
+		margin-top: 5px;
+		margin-left: -80px;
+		text-align: center;
+	}
+}
+
+#mt-div-loading{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	// background: rgba(255, 255, 255, .5);
+}
+
+@keyframes mtRotate{
+	from {transform: rotate(0);}
+    to {transform: rotate(360deg);}
+}

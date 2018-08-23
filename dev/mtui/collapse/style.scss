@@ -1,0 +1,60 @@
+/**
+*	颜色
+*/
+@import "../var.scss";
+
+$border : #d9d9d9;
+$headerHei : 30px;
+.mt-collapse{
+	border:1px solid $border;
+	border-bottom:0;
+	border-radius:2px;
+	.mt-collapse-item{
+		border-bottom:1px solid $border;
+		overflow: hidden;
+	}
+	.mt-collapse-header{
+		background: #e9ecf3;
+		cursor: pointer;
+		height: $headerHei;
+		line-height: $headerHei;
+		font-size: 12px;
+		.iconfont{
+			vertical-align: middle;
+			font-size: 12px;
+			padding: 0 10px;
+			position: relative;
+			&:before{
+				transition: 0.3s;
+				transform:rotate(0);
+				display: inline-block;
+			}
+		}
+	}
+	.mt-collapse-content{
+		display: none;
+		overflow: hidden;
+	}
+	.mt-collapse-active{
+		.mt-collapse-header{
+			.iconfont{
+				&:before{
+					transform:rotate(90deg);
+				}
+			}
+		}
+		.mt-collapse-content{
+			display: block;
+			//animation: mtCollapse 0.5s;
+		}
+	}
+}
+
+// @keyframes mtCollapse{
+// 	from{
+// 		transform : scale(1,0);
+// 	}
+// 	to{ 
+// 		transform : scale(1,1);
+// 	}
+// }

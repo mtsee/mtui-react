@@ -1,0 +1,46 @@
+//黑色
+$black1:#272727;
+$black2:#303030;
+$wihte: #fff;
+
+$yellow:#FFB200;//黄色
+$heise:#333;//黑色
+$juse:#ff4200; //橘色
+$fontcolor:#4e4e4e; //黑色
+$bordercolor:#dcdcdc; //灰色
+$red:#ff3142;
+$bgcolor:#e9ecf3;//背景颜色
+$bgcolor2:#F4F5F7;//背景颜色
+$fcolor:#868E8E; //字体颜色
+$hcolor:#f2f6f9;//hover 的背景色
+
+//阴影
+$boxshadow:0 0 10px rgba(0,0,0,.1);
+
+@mixin error{
+	color: $red;
+	padding: 5px 0;
+	font-size: 12px;
+	display: none;
+}
+
+@mixin blockSize{
+	width: 100%;
+	height: 44px;
+	line-height: 44px;
+	padding: 0;
+	font-size: 16px;
+	color: $heise;
+}
+
+@mixin Input{
+	@include blockSize;
+	text-indent: 15px;
+	border:1px solid $bordercolor;
+}
+
+@mixin btnBlock($color:$yellow){
+	@include blockSize;
+	border:1px solid $color;
+	background: $color;
+}

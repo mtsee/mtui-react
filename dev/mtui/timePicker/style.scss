@@ -1,0 +1,82 @@
+.mt-timepicker-panel {
+    .mt-timepickers {
+        $itemHeight: 25px;
+        // 移到js控制显示数量
+        // $itemsToshow: 8;
+        // box-shadow: 0 2px 2px 0px rgba(0, 0, 0, 0.3);
+        
+        .mt-itempicker {
+            float: left;
+            width: 33.3333%;
+            
+            .mt-timepicker-title {
+                height: $itemHeight;
+                line-height: $itemHeight;
+                // border-bottom: 1px solid #888;
+                background: #fafafa;
+                height: 30px;
+                line-height: 30px;
+                text-align: center;
+            }
+
+            .mt-itemList {
+                box-sizing: content-box;
+                // 移到js控制显示数量
+                // max-height: $itemsToshow * $itemHeight;
+                overflow: hidden;
+                position: relative;
+
+                .mt-listWrap {
+                    position: absolute;
+                    width: 100%;
+                    left: 0;
+                    z-index: 1;
+                    transition: top 100ms linear;
+                }
+
+                .timeItem {
+                    width: 100%;
+                    text-align: center;
+                    height: $itemHeight;
+                    line-height: $itemHeight;
+                    cursor: pointer;
+                    transition: background-color 100ms linear;
+                    border-radius: 4px;
+
+                    &:hover {
+                        background-color: #eee;
+                    }
+                    &.active {
+                        color: #fff;
+                        background: none;
+                    }
+                }
+
+                .mt-timepicker-pointer {
+                    display: block;
+                    height: $itemHeight;
+                    position: absolute;
+                    content: '';
+                    width: 100%;
+                    // 移到js控制显示数量
+                    // top: $itemsToshow / 2 * $itemHeight;
+                    background-color: #23c6c8;
+                }
+                
+            }
+            
+        }
+        &:after {
+            content: '';
+            clear: both;
+            display: block;
+            height: 0;
+            visibility: hidden;
+        }
+    }
+    .mt-timepicker-operation {
+        margin: 5px 0;
+        text-align: right;
+        padding-right: 5px;
+    }
+}

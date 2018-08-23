@@ -1,0 +1,216 @@
+/**
+*	颜色
+*/
+@import "../var.scss";
+
+/*日历组件*/
+@mixin liStyle{
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+}
+.mt-input-date{
+	cursor:pointer;
+	input{
+		width:90px;
+	}
+}
+.mt-input-dates{
+	input{
+		width:175px;
+	}
+}
+.mt-date{
+	-webkit-user-select:none; 
+	-moz-user-select:none; 
+	-ms-user-select:none; 
+	user-select:none;
+	position: absolute;
+	z-index: 1000;
+	width: 230px;
+	height: 280px;
+	background:#fff;
+	border:1px solid $cborder;
+	box-shadow:0 0 5px rgba(0,0,0,.2);
+	font-size:12px;
+	.mt-disable-date{
+		background: #f2f2f2;
+	}
+	.mt-date-head{
+		height: 34px;
+		line-height: 24px;
+		text-align: center;
+		border-bottom:1px solid rgba(0,0,0,.1);
+		.mt-date-stime{
+			display: inline-block;
+			width: 120px;
+			margin:5px 10px;
+			font-weight: bolder;
+			color: #333;
+			cursor: pointer;
+			transition: .3s;
+			border-radius:2px;
+			&:hover{
+				background:rgba(0,0,0,.1);
+			}
+		}
+		.mt-date-btn-prev,
+		.mt-date-btn-next{
+			width: 20px;
+			position: relative;
+			top: 3px;
+			color: #999;
+		}
+		.icon-arrow3l,
+		.icon-arrow3r{
+			font-size: 14px;
+			position:relative;
+			top: -2px;
+			padding:0 5px;
+		}
+	}
+	.mt-date-body-days{
+		padding: 2px 8px;
+		.mt-date-week{
+			li{
+				@include liStyle;
+			}
+		}
+		.mt-date-day{
+			li{
+				@include liStyle;
+				float: left;
+				position:relative;
+			}
+			a{
+				width: 20px;
+				height: 20px;
+				display: inline-block;
+				line-height: 20px;
+				color: #666;
+				transition: 0.3s;
+				border-radius:2px;
+				position:relative;
+				z-index: 100;
+				&:hover{
+					background:rgba(0,0,0,.1);
+				}
+			}
+			.mt-date-day-prev,
+			.mt-date-day-next{
+				a{
+					color: #999;
+				}
+			}
+			.mt-date-day-now{
+				a{
+					color: #333;
+				}
+			}
+			.mt-date-active{
+				a{
+					background:$colorInfo;
+					color:#fff;
+				}
+			}
+			.mt-dates-start{
+				a{
+					background:$colorSuccess;
+				}
+			}
+		}
+	}
+	.mt-date-body-months{
+		li{
+			display: inline-block;
+			width: 33.33%;
+			text-align: center;
+			line-height: 53px;
+		}
+		a{
+			color: #333;
+			border-radius:4px;
+			display: inline-block;
+			width: 40px;
+			height: 30px;
+			text-align: center;
+			line-height: 30px;
+		}
+		.mt-date-active{
+			a{
+				background:$colorInfo;
+				color:#fff;
+			}
+		}
+	}
+	.mt-date-body-years{
+		.mt-date-year{
+			padding:5px 0;
+		}
+		.mt-date-yearli{
+			display: inline-block;
+			padding:9px 3.5px;
+			a{
+				color:#666;
+				padding:2px 5px;
+				border-radius:2px;
+			}
+		}
+		.mt-date-active{
+			a{
+				background:$colorInfo;
+				color: #fff;
+			}
+		}
+	}
+	.mt-date-foot{
+		border-top:1px solid rgba(0,0,0,.1);
+		height: 30px;
+		line-height: 30px;
+		.mt-date-btn-now,
+		.mt-date-btn-clear,
+		.mt-date-btn-time{
+			margin:0 10px;
+			color: #666;
+			line-height: normal;
+		}
+		.mt-date-btn-clear,
+		.mt-date-btn-ok{
+			line-height: normal;
+			float: right;
+			margin: 4px 10px;
+			margin-left: 0;
+			color: #fff;
+		}
+	}
+}
+
+.mt-dates{
+	position:absolute;
+	z-index:1000;
+	width:460px;
+	height:280px;
+	background:#ccc;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+	.mt-date{
+		position:relative;
+		display: inline-block;
+		box-shadow: none;
+	}
+
+	.mt-dates-inner{
+		&:after{
+			content: '';
+			display: inline-block;
+			height: 20px;
+			width: 100%;
+			position:absolute;
+			z-index: 0;
+			left: 0;
+			top: 5px;
+			background: rgba(0,0,0,0.05);
+		}
+	}
+}
